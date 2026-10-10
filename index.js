@@ -58,7 +58,7 @@ const typeWriterBig = async (text, delay = 100) => {
     cfonts.say(current, {
       font: 'block',
       align: 'center',
-      gradient: ['#00f5d4', '#9b5de5', '#f15bb5'],
+      gradient: ['#ffd1dc', '#ff8fab', '#ff5d8f'],
       transitionGradient: true,
     });
     await sleep(delay);
@@ -121,7 +121,7 @@ const typeWriter = async (text, delay = 25, color = '\x1b[36m') => {
 };
 
 async function epicStartup() {
-  if (process.env.FAST) return;
+  if (process.env.SLOW !== '1') return;
   console.clear();
   
   await sleep(300);

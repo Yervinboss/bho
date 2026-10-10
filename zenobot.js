@@ -639,10 +639,10 @@ async function requestPairingCodeFlow() {
 
 if (!pairingMode && !hasExistingSession) {
     const menu = `
-${chalk.bgHex('#9b5de5').white('┌┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┐')}
-${chalk.bgHex('#9b5de5').white('┆     ZENOBOT 2026      ┆')}
-${chalk.bgHex('#9b5de5').white('┆       V10.3           ┆')}
-${chalk.bgHex('#9b5de5').white('└┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┘')}
+${chalk.bgHex('#ff8fab').white('┌┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┐')}
+${chalk.bgHex('#ff8fab').white('┆     ZENOBOT 2026      ┆')}
+${chalk.bgHex('#ff8fab').white('┆       V10.3           ┆')}
+${chalk.bgHex('#ff8fab').white('└┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┘')}
 
 ${chalk.yellow('Seleziona come collegarti:')}
 
@@ -907,7 +907,7 @@ async function connectionUpdate(update) {
 
     if (qr && pairingMode === 'qr') { try { console.log(await (await import('qrcode')).default.toString(qr, { type: 'terminal', small: true })); } catch (e) { console.log('QR non disponibile:', e.message); } }
     if (qr && pairingMode === 'qr' && !global.qrGenerated) {
-        console.log(chalk.bold.hex('#00f5d4')(`
+        console.log(chalk.bold.hex('#ffd1dc')(`
        ZENOBOT — CONNESSIONE QR
 
 📲 Scansiona il QR qui sotto

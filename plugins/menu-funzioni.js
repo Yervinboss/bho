@@ -44,61 +44,61 @@ let handler = async (m, { conn, usedPrefix, isOwner, isROwner }) => {
   const tagliaEnabled = taglia !== false
   const parolaEnabled = parola !== false
 
-  const catalogsInfo = `┆┄┄┄┄┄┄┄┄┄┄┄┄┄┄
-┆ ℹ️  Per attivare/disattivare più funzioni insieme usa '&'
-┆  Esempio: ${p}attiva antilink & antispam & antitrava
-┆  Oppure: ${p}disabilita antilink & antispam
-┆┄┄┄┄┄┄┄┄┄┄┄┄┄┄`
+  const catalogsInfo = `⋆｡˚ ❀ ˚｡⋆
+ℹ️  Per attivare/disattivare più funzioni insieme usa '&'
+ Esempio: ${p}attiva antilink & antispam & antitrava
+ Oppure: ${p}disabilita antilink & antispam
+⋆｡˚ ❀ ˚｡⋆`
 
   const ownerSection = (isOwner || isROwner) ? `
-┆┄┄┄┄┄┄┄┄┄┄┄┄┄┄
-┆ 👑 ꜰᴜɴᴢɪᴏɴɪ ᴏᴡɴᴇʀ
-┆┄┄┄┄┄┄┄┄┄┄┄┄┄┄
-┆${s(antiprivato)} ▹ ${p}antiprivato
-┆${s(antiban)} ▹ ${p}antiban
-┆${s(soloCreatore)} ▹ ${p}solocreatore
-┆${s(read)} ▹ ${p}lettura
-┆${s(anticall)} ▹ ${p}anticall
-┆┄┄┄┄┄┄┄┄┄┄┄┄┄┄
-┆ 👤 Richiesto da: *${userName}*
-┆ 📱 Numero: *+${userNumber}*` : ''
+⋆｡˚ ❀ ˚｡⋆
+👑 ꜰᴜɴᴢɪᴏɴɪ ᴏᴡɴᴇʀ
+⋆｡˚ ❀ ˚｡⋆
+${s(antiprivato)} ❀ ${p}antiprivato
+${s(antiban)} ❀ ${p}antiban
+${s(soloCreatore)} ❀ ${p}solocreatore
+${s(read)} ❀ ${p}lettura
+${s(anticall)} ❀ ${p}anticall
+⋆｡˚ ❀ ˚｡⋆
+👤 Richiesto da: *${userName}*
+📱 Numero: *+${userNumber}*` : ''
 
   const menuFunzioniText =
-`┌┄┄┄┄┄┄┄┄┄┐
-┆ ⚙️ ᴍᴇɴᴜ ꜰᴜɴᴢɪᴏɴɪ ᴅɪ
-┆❖ ᴢᴇɴᴏʙᴏᴛ
-┆┄┄┄┄┄┄┄┄┄┄┄┄┄┄
-┆ 🔧 ꜰᴜɴᴢɪᴏɴɪ ɢʀᴜᴘᴘᴏ
-┆┄┄┄┄┄┄┄┄┄┄┄┄┄┄
-┆${s(welcome)} ▹ ${p}benvenuto
-┆${s(goodbye)} ▹ ${p}addio
-┆${s(modoadmin)} ▹ ${p}modoadmin
-┆${s(slowmode)} ▹ ${p}slowmode
-┆${s(tagliaEnabled)} ▹ ${p}taglia
-┆${s(parolaEnabled)} ▹ ${p}parola
-┆${s(bestemmiometro)} ▹ ${p}bestemmiometro
-┆┄┄┄┄┄┄┄┄┄┄┄┄┄┄
-┆ 🚫 ᴀɴᴛɪ
-┆┄┄┄┄┄┄┄┄┄┄┄┄┄┄
-┆${s(antispam)} ▹ ${p}antispam
-┆${s(antitrava)} ▹ ${p}antitrava
-┆${s(antiBot)} ▹ ${p}antibot
-┆${s(antibusiness)} ▹ ${p}antibusiness
-┆${s(antivoip)} ▹ ${p}antivoip
-┆${s(antimedia)} ▹ ${p}antimedia
-┆${s(antinuke)} ▹ ${p}antinuke
-┆${s(antiLink)} ▹ ${p}antilink
-┆${s(antilinkig)} ▹ ${p}antlinkig
-┆${s(antilinktiktok)} ▹ ${p}antilinktiktok
-┆${s(antilinktg)} ▹ ${p}antilinktg
+`⋆˚｡⋆୨🌸୧⋆｡˚⋆
+⚙️ ᴍᴇɴᴜ ꜰᴜɴᴢɪᴏɴɪ ᴅɪ
+🌸 ᴢᴇɴᴏʙᴏᴛ
+⋆｡˚ ❀ ˚｡⋆
+🔧 ꜰᴜɴᴢɪᴏɴɪ ɢʀᴜᴘᴘᴏ
+⋆｡˚ ❀ ˚｡⋆
+${s(welcome)} ❀ ${p}benvenuto
+${s(goodbye)} ❀ ${p}addio
+${s(modoadmin)} ❀ ${p}modoadmin
+${s(slowmode)} ❀ ${p}slowmode
+${s(tagliaEnabled)} ❀ ${p}taglia
+${s(parolaEnabled)} ❀ ${p}parola
+${s(bestemmiometro)} ❀ ${p}bestemmiometro
+⋆｡˚ ❀ ˚｡⋆
+🚫 ᴀɴᴛɪ
+⋆｡˚ ❀ ˚｡⋆
+${s(antispam)} ❀ ${p}antispam
+${s(antitrava)} ❀ ${p}antitrava
+${s(antiBot)} ❀ ${p}antibot
+${s(antibusiness)} ❀ ${p}antibusiness
+${s(antivoip)} ❀ ${p}antivoip
+${s(antimedia)} ❀ ${p}antimedia
+${s(antinuke)} ❀ ${p}antinuke
+${s(antiLink)} ❀ ${p}antilink
+${s(antilinkig)} ❀ ${p}antlinkig
+${s(antilinktiktok)} ❀ ${p}antilinktiktok
+${s(antilinktg)} ❀ ${p}antilinktg
 ${catalogsInfo}${ownerSection}
-┆┄┄┄┄┄┄┄┄┄┄┄┄┄┄
-┆ ✔️ = Attivo  ✖️ = Disattivo
-┆┄┄┄┄┄┄┄┄┄┄┄┄┄┄
-┆ ℹ️ ᴜꜱᴏ
-┆ ${p}attiva antilink
-┆ ${p}disabilita antilink
-└┄┄┄┄┄┄┄┄┄┘`.trim()
+⋆｡˚ ❀ ˚｡⋆
+✔️ = Attivo  ✖️ = Disattivo
+⋆｡˚ ❀ ˚｡⋆
+ℹ️ ᴜꜱᴏ
+${p}attiva antilink
+${p}disabilita antilink
+⋆˚｡⋆୨🌸୧⋆｡˚⋆`.trim()
 
   await conn.sendMessage(m.chat, {
     text: menuFunzioniText
