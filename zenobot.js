@@ -228,6 +228,7 @@ const fallbackSafetySystems = {
 const {
     useMultiFileAuthState,
     fetchLatestBaileysVersion,
+    fetchLatestWaWebVersion,
     makeCacheableSignalKeyStore,
     Browsers,
     jidNormalizedUser,
@@ -491,7 +492,7 @@ const {
 const msgRetryCounterCache = new NodeCache();
 const {
     version
-} = await fetchLatestBaileysVersion();
+} = await (async () => { try { const r = await fetchLatestWaWebVersion(); if (r?.version) return r; } catch {} return fetchLatestBaileysVersion(); })();
 
 
 const hasExistingSession = existsSync(`./${global.authFile}/creds.json`);
@@ -885,6 +886,8 @@ async function connectionUpdate(update) {
         qr
     } = update;
     global.stopped = connection;
+    if (qr) console.log('DEBUG: QR ricevuto');
+    if (connection === 'close') console.log('DEBUG chiusura:', lastDisconnect?.error?.output?.statusCode, lastDisconnect?.error?.message);
 
     if (isNewLogin) global.conn.isInit = true;
 
@@ -902,6 +905,7 @@ async function connectionUpdate(update) {
     if (connection === 'connecting')
         logConnectionState('Connessione a WhatsApp in corso...', 'whiteBright');
 
+    if (qr && pairingMode === 'qr') { try { console.log(await (await import('qrcode')).default.toString(qr, { type: 'terminal', small: true })); } catch (e) { console.log('QR non disponibile:', e.message); } }
     if (qr && pairingMode === 'qr' && !global.qrGenerated) {
         console.log(chalk.bold.hex('#00f5d4')(`
        ZENOBOT — CONNESSIONE QR

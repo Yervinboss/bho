@@ -121,6 +121,7 @@ const typeWriter = async (text, delay = 25, color = '\x1b[36m') => {
 };
 
 async function epicStartup() {
+  if (process.env.FAST) return;
   console.clear();
   
   await sleep(300);
