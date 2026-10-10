@@ -17,7 +17,7 @@ const formatBytes = (bytes) => {
   return `${formatted} ${units[unitIndex]}`
 }
 
-const cpu = cpus()[0].model
+const cpu = (cpus()[0]?.model || "CPU")
   .replace(/(TM|CPU|@.*?)|\(.*?\)/gi, '')
   .replace(/\s+/g, ' ')
   .trim()

@@ -13,4 +13,4 @@ handler.command = /^riscrivi$/i
 handler.help = ['riscrivi <frase>']
 handler.tags = ['fun']
 
-export default handler​
+export default handler
