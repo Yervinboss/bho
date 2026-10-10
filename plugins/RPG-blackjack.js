@@ -1,4 +1,4 @@
-//Plugin by Zeno, Lucifero & 333 staff
+//Plugin by Zeno, Lucifero & zenobot staff
 
 global.casinoRateLimit = global.casinoRateLimit || {}
 
@@ -31,8 +31,8 @@ let handler = async (m, { conn, args, command }) => {
     }
 
     let bet = parseInt(args[0])
-    if (!bet || bet < 50) return m.reply("💸 Puntata minima 50 XP333")
-    if (user.money < bet) return m.reply(`💸 Devi avere almeno ${bet} XP333`)
+    if (!bet || bet < 50) return m.reply("💸 Puntata minima 50 ZenoCoin")
+    if (user.money < bet) return m.reply(`💸 Devi avere almeno ${bet} ZenoCoin`)
 
     global.blackjack[m.sender] = {
       player: [pesca(), pesca()],
@@ -45,12 +45,12 @@ let handler = async (m, { conn, args, command }) => {
 
     return conn.sendMessage(m.chat, {
       text:
-`╔═🃏 𝐁𝐋𝐀𝐂𝐊𝐉𝐀𝐂𝐊 ═╗
-┃ 🧑 Tu: ${g.player.join(" + ")} = ${sum}
-┃ 🤖 Banco: ${g.dealer[0]} + ?
-┃
-┃ 🎮 Scegli:
-╚══════╝`,
+`┌┄🃏 ʙʟᴀᴄᴋᴊᴀᴄᴋ ┄┐
+┆ 🧑 Tu: ${g.player.join(" + ")} = ${sum}
+┆ 🤖 Banco: ${g.dealer[0]} + ?
+┆
+┆ 🎮 Scegli:
+└┄┄┄┄┄┄┘`,
       buttons: [
         { buttonId: ".pesco", buttonText: { displayText: "🃏 Pesco" }, type: 1 },
         { buttonId: ".sto", buttonText: { displayText: "✋ Sto" }, type: 1 }
@@ -60,7 +60,7 @@ let handler = async (m, { conn, args, command }) => {
   }
 
   let g = global.blackjack[m.sender]
-  if (!g) return m.reply("❌ Nessuna partita")
+  if (!g) return m.reply("✖️ Nessuna partita")
 
   if (command === "pesco") {
     g.player.push(pesca())
@@ -71,7 +71,7 @@ let handler = async (m, { conn, args, command }) => {
       delete global.blackjack[m.sender]
 
       return conn.sendMessage(m.chat, {
-        text: `💀 Hai sballato (${sum})\n-${g.bet} XP333`,
+        text: `💀 Hai sballato (${sum})\n-${g.bet} ZenoCoin`,
         buttons: [
           { buttonId: ".blackjackplay", buttonText: { displayText: "🔁 Gioca di nuovo" }, type: 1 },
           { buttonId: ".casino", buttonText: { displayText: "🎰 Torna al casinò" }, type: 1 }
@@ -100,23 +100,23 @@ let handler = async (m, { conn, args, command }) => {
     }
 
     let msg =
-`╔═🃏 𝐁𝐋𝐀𝐂𝐊𝐉𝐀𝐂𝐊 ═╗
-┃ 🧑 Tu: ${sumP}
-┃ 🤖 Banco: ${sumD}
-┃
+`┌┄🃏 ʙʟᴀᴄᴋᴊᴀᴄᴋ ┄┐
+┆ 🧑 Tu: ${sumP}
+┆ 🤖 Banco: ${sumD}
+┆
 `
 
     if (sumD > 21 || sumP > sumD) {
       user.money += g.bet
-      msg += `┃ 🏆 VITTORIA +${g.bet} XP333\n`
+      msg += `┆ 🏆 VITTORIA +${g.bet} ZenoCoin\n`
     } else if (sumP < sumD) {
       user.money -= g.bet
-      msg += `┃ 💀 SCONFITTA -${g.bet} XP333\n`
+      msg += `┆ 💀 SCONFITTA -${g.bet} ZenoCoin\n`
     } else {
-      msg += `┃ 😐 Pareggio\n`
+      msg += `┆ 😐 Pareggio\n`
     }
 
-    msg += `┃ 💼 Saldo: ${user.money} XP333\n╚══════╝`
+    msg += `┆ 💼 Saldo: ${user.money} ZenoCoin\n└┄┄┄┄┄┄┘`
 
     delete global.blackjack[m.sender]
 

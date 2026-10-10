@@ -1,4 +1,4 @@
-//Plugin by Zeno, Lucifero & 333 staff
+//Plugin by Zeno, Lucifero & zenobot staff
 
 
 
@@ -22,7 +22,7 @@ const handler = async (m, { conn, args, command }) => {
   if (isUnpinAll) {
     try {
       await conn.sendMessage(m.chat, { pin: { type: 3 } });
-      return m.reply('𝐓𝐮𝐭𝐭𝐢 𝐢 𝐦𝐞𝐬𝐬𝐚𝐠𝐠𝐢 𝐬𝐨𝐧𝐨 𝐬𝐭𝐚𝐭𝐢 𝐝𝐞𝐟𝐢𝐬𝐬𝐚𝐭𝐢');
+      return m.reply('ᴛᴜᴛᴛɪ ɪ ᴍᴇꜱꜱᴀɢɢɪ ꜱᴏɴᴏ ꜱᴛᴀᴛɪ ᴅᴇꜰɪꜱꜱᴀᴛɪ');
     } catch (e) {
       console.error('Errore durante lo sblocco di tutti i messaggi:', e);
       return m.reply(`${global.errore}`);
@@ -31,7 +31,7 @@ const handler = async (m, { conn, args, command }) => {
   */
 
   if (isUnpin) {
-    if (!m.quoted) return m.reply('𝐑𝐢𝐬𝐩𝐨𝐧𝐝𝐢 𝐚𝐥 𝐦𝐞𝐬𝐬𝐚𝐠𝐠𝐢𝐨 𝐝𝐚 𝐝𝐞𝐟𝐢𝐬𝐬𝐚𝐫𝐞');
+    if (!m.quoted) return m.reply('ʀɪꜱᴘᴏɴᴅɪ ᴀʟ ᴍᴇꜱꜱᴀɢɢɪᴏ ᴅᴀ ᴅᴇꜰɪꜱꜱᴀʀᴇ');
 
     let key = null;
 
@@ -51,7 +51,7 @@ const handler = async (m, { conn, args, command }) => {
 
     try {
       await conn.sendMessage(m.chat, { pin: { type: 2, key } });
-      return m.reply('✅ 𝐌𝐞𝐬𝐬𝐚𝐠𝐠𝐢𝐨 𝐝𝐞𝐟𝐢𝐬𝐬𝐚𝐭𝐨 𝐜𝐨𝐧 𝐬𝐮𝐜𝐜𝐞𝐬𝐬𝐨');
+      return m.reply('✔️ ᴍᴇꜱꜱᴀɢɢɪᴏ ᴅᴇꜰɪꜱꜱᴀᴛᴏ ᴄᴏɴ ꜱᴜᴄᴄᴇꜱꜱᴏ');
     } catch (e) {
       console.error('Errore durante lo sblocco:', e);
       return m.reply(`${global.errore}`);
@@ -76,7 +76,7 @@ const handler = async (m, { conn, args, command }) => {
     try {
       await conn.sendMessage(m.chat, { pin: { type: 1, time: seconds, key } });
       const label = Object.entries(DURATE).find(([, s]) => s === seconds)?.[0] || `${seconds}s`;
-      return m.reply(`📌 𝐌𝐞𝐬𝐬𝐚𝐠𝐠𝐢𝐨 𝐟𝐢𝐬𝐬𝐚𝐭𝐨 𝐩𝐞𝐫 ${label}.`);
+      return m.reply(`📌 ᴍᴇꜱꜱᴀɢɢɪᴏ ꜰɪꜱꜱᴀᴛᴏ ᴘᴇʀ ${label}.`);
     } catch (e) {
       console.error('Errore durante il pin finale:', e);
       return m.reply(`${global.errore}`);
@@ -121,7 +121,7 @@ const handler = async (m, { conn, args, command }) => {
         return m.reply(`${global.errore}`);
       }
     } else {
-      return m.reply('𝐑𝐢𝐬𝐩𝐨𝐧𝐝𝐢 𝐚𝐝 𝐮𝐧 𝐦𝐞𝐬𝐬𝐚𝐠𝐠𝐢𝐨 𝐨 𝐬𝐜𝐫𝐢𝐯𝐢𝐥𝐨 𝐩𝐞𝐫 𝐟𝐢𝐬𝐬𝐚𝐫𝐥𝐨');
+      return m.reply('ʀɪꜱᴘᴏɴᴅɪ ᴀᴅ ᴜɴ ᴍᴇꜱꜱᴀɢɢɪᴏ ᴏ ꜱᴄʀɪᴠɪʟᴏ ᴘᴇʀ ꜰɪꜱꜱᴀʀʟᴏ');
     }
   }
 };
@@ -143,7 +143,7 @@ async function inviaBottoniDurata(conn, chat, key) {
 
   try {
     await conn.sendMessage(chat, {
-      text: '⏱️𝐏𝐞𝐫 𝐪𝐮𝐚𝐧𝐭𝐨 𝐭𝐞𝐦𝐩𝐨 𝐯𝐮𝐨𝐢 𝐟𝐢𝐬𝐬𝐚𝐫𝐞 𝐢𝐥 𝐦𝐞𝐬𝐬𝐚𝐠𝐠𝐢𝐨?',
+      text: '⏱️ᴘᴇʀ ǫᴜᴀɴᴛᴏ ᴛᴇᴍᴘᴏ ᴠᴜᴏɪ ꜰɪꜱꜱᴀʀᴇ ɪʟ ᴍᴇꜱꜱᴀɢɢɪᴏ?',
       buttons,
       footer: '',
       headerType: 1,

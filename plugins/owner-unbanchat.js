@@ -1,4 +1,4 @@
-//Plugin by Zeno, Lucifero & 333 staff
+//Plugin by Zeno, Lucifero & zenobot staff
 
 let handler = async (m, { conn }) => {
   const chat = global.db.data.chats[m.chat] || {}
@@ -15,18 +15,18 @@ Il bot è già operativo qui.`
   global.db.data.chats[m.chat] = chat
 
   await conn.sendMessage(m.chat, {
-    text: `╭─────────────╮
-│ ✅ *BANCHAT RIMOSSO*
-│
-│ Il bot è di nuovo attivo
-│ nel gruppo.
-│
-│ 🤖 I comandi funzionano
-│ normalmente.
-│
-│ 👑 Riattivato da:
-│ @${m.sender.split('@')[0]}
-╰─────────────╯`,
+    text: `┌┄┄┄┄┄┄┄┄┄┄┄┄┄┐
+┆ ✔️ *BANCHAT RIMOSSO*
+┆
+┆ Il bot è di nuovo attivo
+┆ nel gruppo.
+┆
+┆ 🤖 I comandi funzionano
+┆ normalmente.
+┆
+┆ 👑 Riattivato da:
+┆ @${m.sender.split('@')[0]}
+└┄┄┄┄┄┄┄┄┄┄┄┄┄┘`,
     mentions: [m.sender]
   }, { quoted: m })
 }

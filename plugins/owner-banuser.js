@@ -1,4 +1,4 @@
-//Plugin by Zeno, Lucifero & 333 staff
+//Plugin by Zeno, Lucifero & zenobot staff
 
 import fetch from "node-fetch"
 
@@ -25,7 +25,7 @@ const scheduleUserBanExpiry = (conn, userId, durationMs, chatId) => {
       
       if (chatId) {
         await conn.sendMessage(chatId, {
-          text: `✅ @${userId.split('@')[0]} *non è più bannato e può usare il bot.*`,
+          text: `✔️ @${userId.split('@')[0]} *non è più bannato e può usare il bot.*`,
           mentions: [userId]
         }).catch(() => {})
       }
@@ -75,7 +75,7 @@ let handler = async (m, { conn, text }) => {
     who = text.replace(/[^0-9]/g, '') + '@s.whatsapp.net'
   }
 
-  if (!who) return m.reply('❌ Tagga, rispondi o scrivi un numero')
+  if (!who) return m.reply('✖️ Tagga, rispondi o scrivi un numero')
 
   global.db.data.users = global.db.data.users || {}
   global.db.data.users[who] = global.db.data.users[who] || {}
@@ -87,11 +87,11 @@ let handler = async (m, { conn, text }) => {
     key: {
       participants: '0@s.whatsapp.net',
       fromMe: false,
-      id: '333BanUser'
+      id: 'zenobotBanUser'
     },
     message: {
       contactMessage: {
-        displayName: `⏱️ 𝐃𝐮𝐫𝐚𝐭𝐚 𝐁𝐚𝐧`,
+        displayName: `⏱️ ᴅᴜʀᴀᴛᴀ ʙᴀɴ`,
         vcard: `BEGIN:VCARD\nVERSION:3.0\nN:Sy;Bot;;;\nFN:y\nitem1.TEL;waid=${number}:${number}\nitem1.X-ABLabel:Ponsel\nEND:VCARD`
       }
     },
@@ -112,7 +112,7 @@ let handler = async (m, { conn, text }) => {
   if (!selected) return m.reply('⏳ Tempo scaduto, ban annullato.')
 
   const selectedDuration = banDurations.find(option => `banuser_duration_${option.id}` === selected)
-  if (!selectedDuration) return m.reply('❌ Scelta non valida.')
+  if (!selectedDuration) return m.reply('✖️ Scelta non valida.')
 
   global.db.data.users[who].banned = true
   if (selectedDuration.ms > 0) {
@@ -126,7 +126,7 @@ let handler = async (m, { conn, text }) => {
   const durationText = selectedDuration.ms > 0 ? `per ${selectedDuration.label}` : 'finchè non viene sbannato'
 
   await conn.sendMessage(m.chat, {
-    text: `🚫 *𝐔𝐓𝐄𝐍𝐓𝐄 𝐁𝐀𝐍𝐍𝐀𝐓𝐎*\n\n👤 ${tag}\n📞 wa.me/${number}\n⏱️ ${durationText}`,
+    text: `🚫 *ᴜᴛᴇɴᴛᴇ ʙᴀɴɴᴀᴛᴏ*\n\n👤 ${tag}\n📞 wa.me/${number}\n⏱️ ${durationText}`,
     mentions: [who]
   }, { quoted: fake })
 }

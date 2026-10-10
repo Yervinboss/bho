@@ -1,4 +1,4 @@
-//Plugin by Zeno, Lucifero & 333 staff
+//Plugin by Zeno, Lucifero & zenobot staff
 
 const pendingPrelievo = global.pendingPrelievo || (global.pendingPrelievo = {})
 
@@ -7,15 +7,15 @@ const parsePrelievoInput = (input, bank) => {
   if (input === 'tutto') return { amount: bank }
   if (input.endsWith('%')) {
     const percent = parseInt(input.replace('%', ''))
-    if (isNaN(percent) || percent <= 0) return { error: '𝐈𝐧𝐬𝐞𝐫𝐢𝐬𝐜𝐢 𝐮𝐧 𝐩𝐞𝐫𝐜𝐞𝐧𝐭𝐨 𝐯𝐚𝐥𝐢𝐝𝐨.' }
+    if (isNaN(percent) || percent <= 0) return { error: 'ɪɴꜱᴇʀɪꜱᴄɪ ᴜɴ ᴘᴇʀᴄᴇɴᴛᴏ ᴠᴀʟɪᴅᴏ.' }
     return { amount: Math.floor(bank * percent / 100) }
   }
   if (!isNaN(input)) {
     const value = Number(input)
-    if (value <= 0) return { error: '𝐋\'𝐢𝐦𝐩𝐨𝐫𝐭𝐨 𝐝𝐞𝐯𝐞 𝐞𝐬𝐬𝐞𝐫𝐞 𝐦𝐚𝐠𝐠𝐢𝐨𝐫𝐞 𝐝𝐢 0.' }
+    if (value <= 0) return { error: 'ʟ\'ɪᴍᴘᴏʀᴛᴏ ᴅᴇᴠᴇ ᴇꜱꜱᴇʀᴇ ᴍᴀɢɢɪᴏʀᴇ ᴅɪ 0.' }
     return { amount: value }
   }
-  return { error: '𝐀𝐬𝐬𝐢𝐜𝐮𝐫𝐚𝐭𝐢 𝐝𝐢 𝐢𝐧𝐬𝐞𝐫𝐢𝐫𝐞 𝐮𝐧 𝐧𝐮𝐦𝐞𝐫𝐨, 25%, 50%, 75% 𝐨 𝐭𝐮𝐭𝐭𝐨.' }
+  return { error: 'ᴀꜱꜱɪᴄᴜʀᴀᴛɪ ᴅɪ ɪɴꜱᴇʀɪʀᴇ ᴜɴ ɴᴜᴍᴇʀᴏ, 25%, 50%, 75% ᴏ ᴛᴜᴛᴛᴏ.' }
 }
 
 let handler = async (m, { conn, text }) => {
@@ -40,13 +40,13 @@ let handler = async (m, { conn, text }) => {
   if (pendingPrelievo[who] && prelievoInput) {
     const parsed = parsePrelievoInput(prelievoInput, users[who].bank)
     if (parsed.error) {
-      const message = `══════ •⊰✦⊱• ══════\n𝐄𝐫𝐫𝐨𝐫𝐞: ${parsed.error}\n\n𝐒𝐜𝐞𝐠𝐥𝐢 𝐜𝐨𝐧 𝐢 𝐩𝐮𝐥𝐬𝐚𝐧𝐭𝐢 𝐨 𝐬𝐜𝐫𝐢𝐯𝐢 𝐥\'𝐢𝐦𝐩𝐨𝐫𝐭𝐨 𝐬𝐞𝐧𝐳𝐚 𝐩𝐮𝐧𝐭𝐨.`
+      const message = `┄┄┄┄┄┄ •‹❖›• ┄┄┄┄┄┄\nᴇʀʀᴏʀᴇ: ${parsed.error}\n\nꜱᴄᴇɢʟɪ ᴄᴏɴ ɪ ᴘᴜʟꜱᴀɴᴛɪ ᴏ ꜱᴄʀɪᴠɪ ʟ\'ɪᴍᴘᴏʀᴛᴏ ꜱᴇɴᴢᴀ ᴘᴜɴᴛᴏ.`
       return conn.sendMessage(m.chat, { text: message, buttons, headerType: 1 }, { quoted: m })
     }
 
     const prelievo = parsed.amount
     if (prelievo > users[who].bank) {
-      const message = `══════ •⊰✦⊱• ══════\n🏦 𝐍𝐨𝐧 𝐡𝐚𝐢 𝐚𝐛𝐛𝐚𝐬𝐭𝐚𝐧𝐳𝐚 *XP333* 𝐢𝐧 𝐛𝐚𝐧𝐜𝐚 👛\n\n𝐒𝐜𝐞𝐠𝐥𝐢 𝐜𝐨𝐧 𝐢 𝐩𝐮𝐥𝐬𝐚𝐧𝐭𝐢 𝐨 𝐬𝐜𝐫𝐢𝐯𝐢 𝐥\'𝐢𝐦𝐩𝐨𝐫𝐭𝐨 𝐬𝐞𝐧𝐳𝐚 𝐩𝐮𝐧𝐭𝐨.`
+      const message = `┄┄┄┄┄┄ •‹❖›• ┄┄┄┄┄┄\n🏦 ɴᴏɴ ʜᴀɪ ᴀʙʙᴀꜱᴛᴀɴᴢᴀ *ZenoCoin* ɪɴ ʙᴀɴᴄᴀ 👛\n\nꜱᴄᴇɢʟɪ ᴄᴏɴ ɪ ᴘᴜʟꜱᴀɴᴛɪ ᴏ ꜱᴄʀɪᴠɪ ʟ\'ɪᴍᴘᴏʀᴛᴏ ꜱᴇɴᴢᴀ ᴘᴜɴᴛᴏ.`
       return conn.sendMessage(m.chat, { text: message, buttons, headerType: 1 }, { quoted: m })
     }
 
@@ -56,7 +56,7 @@ let handler = async (m, { conn, text }) => {
     if (pendingPrelievo[who]?.timeout) clearTimeout(pendingPrelievo[who].timeout)
     delete pendingPrelievo[who]
 
-    let testo = `══════ •⊰✦⊱• ══════\n𝐇𝐚𝐢 𝐩𝐫𝐞𝐥𝐞𝐯𝐚𝐭𝐨 *${prelievo}* XP333\n\n💰𝐂𝐨𝐧𝐭𝐚𝐧𝐭𝐢: ${users[who].money} XP333\n🏦 𝐁𝐚𝐧𝐜𝐚: ${users[who].bank} XP333\n══════ •⊰✦⊱• ══════`
+    let testo = `┄┄┄┄┄┄ •‹❖›• ┄┄┄┄┄┄\nʜᴀɪ ᴘʀᴇʟᴇᴠᴀᴛᴏ *${prelievo}* ZenoCoin\n\n💰ᴄᴏɴᴛᴀɴᴛɪ: ${users[who].money} ZenoCoin\n🏦 ʙᴀɴᴄᴀ: ${users[who].bank} ZenoCoin\n┄┄┄┄┄┄ •‹❖›• ┄┄┄┄┄┄`
     return conn.reply(m.chat, testo, m)
   }
 
@@ -66,7 +66,7 @@ let handler = async (m, { conn, text }) => {
     timeout: setTimeout(() => delete pendingPrelievo[who], 60000)
   }
 
-  let message = `══════ •⊰✦⊱• ══════\n𝐐𝐮𝐚𝐧𝐭𝐢 *XP333* 𝐯𝐮𝐨𝐢 𝐩𝐫𝐞𝐥𝐞𝐯𝐚𝐫𝐞?\n𝐒𝐨𝐥𝐝𝐢 𝐢𝐧 𝐛𝐚𝐧𝐜𝐚: ${users[who].bank} XP333\n𝐓𝐨𝐭𝐚𝐥𝐞: ${totale} XP333\n\n𝐒𝐜𝐞𝐠𝐥𝐢 𝐜𝐨𝐧 𝐢 𝐩𝐮𝐥𝐬𝐚𝐧𝐭𝐢 𝐨 𝐬𝐜𝐫𝐢𝐯𝐢 𝐪𝐮𝐚𝐧𝐭𝐢 𝐬𝐨𝐥𝐝𝐢 𝐩𝐫𝐞𝐥𝐞𝐯𝐚𝐫𝐞 𝐬𝐞𝐧𝐳𝐚 𝐩𝐮𝐧𝐭𝐨.`
+  let message = `┄┄┄┄┄┄ •‹❖›• ┄┄┄┄┄┄\nǫᴜᴀɴᴛɪ *ZenoCoin* ᴠᴜᴏɪ ᴘʀᴇʟᴇᴠᴀʀᴇ?\nꜱᴏʟᴅɪ ɪɴ ʙᴀɴᴄᴀ: ${users[who].bank} ZenoCoin\nᴛᴏᴛᴀʟᴇ: ${totale} ZenoCoin\n\nꜱᴄᴇɢʟɪ ᴄᴏɴ ɪ ᴘᴜʟꜱᴀɴᴛɪ ᴏ ꜱᴄʀɪᴠɪ ǫᴜᴀɴᴛɪ ꜱᴏʟᴅɪ ᴘʀᴇʟᴇᴠᴀʀᴇ ꜱᴇɴᴢᴀ ᴘᴜɴᴛᴏ.`
 
   return conn.sendMessage(m.chat, { text: message, buttons, headerType: 1 }, { quoted: m })
 }
@@ -90,7 +90,7 @@ handler.before = async function (m, { conn }) {
 
   const parsed = parsePrelievoInput(prelievoInput, users[who].bank)
   if (parsed.error) {
-    const message = `𝐄𝐫𝐫𝐨𝐫𝐞: ${parsed.error}\n\n𝐒𝐜𝐞𝐠𝐥𝐢 𝐜𝐨𝐧 𝐢 𝐩𝐮𝐥𝐬𝐚𝐧𝐭𝐢 𝐨 𝐬𝐜𝐫𝐢𝐯𝐢 𝐥\'𝐢𝐦𝐩𝐨𝐫𝐭𝐨 𝐬𝐞𝐧𝐳𝐚 𝐩𝐮𝐧𝐭𝐨.`
+    const message = `ᴇʀʀᴏʀᴇ: ${parsed.error}\n\nꜱᴄᴇɢʟɪ ᴄᴏɴ ɪ ᴘᴜʟꜱᴀɴᴛɪ ᴏ ꜱᴄʀɪᴠɪ ʟ\'ɪᴍᴘᴏʀᴛᴏ ꜱᴇɴᴢᴀ ᴘᴜɴᴛᴏ.`
     await conn.sendMessage(m.chat, { text: message, buttons: [
       { buttonId: '.preleva 25%', buttonText: { displayText: '25%' }, type: 1 },
       { buttonId: '.preleva 50%', buttonText: { displayText: '50%' }, type: 1 },
@@ -102,7 +102,7 @@ handler.before = async function (m, { conn }) {
 
   const prelievo = parsed.amount
   if (prelievo > users[who].bank) {
-    const message = `𝐍𝐨𝐧 𝐡𝐚𝐢 𝐚𝐛𝐛𝐚𝐬𝐭𝐚𝐧𝐳𝐚 𝐬𝐨𝐥𝐝𝐢 𝐢𝐧 *XP333* 👛\n\n𝐒𝐜𝐞𝐠𝐥𝐢 𝐜𝐨𝐧 𝐢 𝐩𝐮𝐥𝐬𝐚𝐧𝐭𝐢 𝐨 𝐬𝐜𝐫𝐢𝐯𝐢 𝐥\'𝐢𝐦𝐩𝐨𝐫𝐭𝐨 𝐬𝐞𝐧𝐳𝐚 𝐩𝐮𝐧𝐭𝐨.`
+    const message = `ɴᴏɴ ʜᴀɪ ᴀʙʙᴀꜱᴛᴀɴᴢᴀ ꜱᴏʟᴅɪ ɪɴ *ZenoCoin* 👛\n\nꜱᴄᴇɢʟɪ ᴄᴏɴ ɪ ᴘᴜʟꜱᴀɴᴛɪ ᴏ ꜱᴄʀɪᴠɪ ʟ\'ɪᴍᴘᴏʀᴛᴏ ꜱᴇɴᴢᴀ ᴘᴜɴᴛᴏ.`
     await conn.sendMessage(m.chat, { text: message, buttons: [
       { buttonId: '.preleva 25%', buttonText: { displayText: '25%' }, type: 1 },
       { buttonId: '.preleva 50%', buttonText: { displayText: '50%' }, type: 1 },
@@ -118,7 +118,7 @@ handler.before = async function (m, { conn }) {
   if (pending.timeout) clearTimeout(pending.timeout)
   delete pendingPrelievo[who]
 
-  const testo = `══════ •⊰✦⊱• ══════\n𝐇𝐚𝐢 𝐩𝐫𝐞𝐥𝐞𝐯𝐚𝐭𝐨 *${prelievo}* XP333\n\n💰𝐂𝐨𝐧𝐭𝐚𝐧𝐭𝐢: ${users[who].money} XP333\n🏦 𝐁𝐚𝐧𝐜𝐚: ${users[who].bank} XP333\n══════ •⊰✦⊱• ══════`
+  const testo = `┄┄┄┄┄┄ •‹❖›• ┄┄┄┄┄┄\nʜᴀɪ ᴘʀᴇʟᴇᴠᴀᴛᴏ *${prelievo}* ZenoCoin\n\n💰ᴄᴏɴᴛᴀɴᴛɪ: ${users[who].money} ZenoCoin\n🏦 ʙᴀɴᴄᴀ: ${users[who].bank} ZenoCoin\n┄┄┄┄┄┄ •‹❖›• ┄┄┄┄┄┄`
   await conn.reply(m.chat, testo, m)
   return true
 }

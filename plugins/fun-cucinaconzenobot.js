@@ -1,4 +1,4 @@
-//Plugin by Zeno, Lucifero & 333 staff
+//Plugin by Zeno, Lucifero & zenobot staff
 
 const handler = async (m, { conn, text, command }) => {
     const menuPiatti = [
@@ -48,7 +48,7 @@ const handler = async (m, { conn, text, command }) => {
 
     if (command === 'ricetta') {
         if (!text) {
-            return await conn.sendMessage(m.chat, { text: "❌ Devi scrivere il nome del piatto! Esempio: *.ricetta carbonara*" }, { quoted: m });
+            return await conn.sendMessage(m.chat, { text: "✖️ Devi scrivere il nome del piatto! Esempio: *.ricetta carbonara*" }, { quoted: m });
         }
 
         const piatto = text.toLowerCase().trim();
@@ -60,7 +60,7 @@ const handler = async (m, { conn, text, command }) => {
 
             return await conn.sendMessage(m.chat, { text: risposta }, { quoted: m });
         } else {
-            return await conn.sendMessage(m.chat, { text: "❌ Ricetta non trovata! Assicurati di aver scritto il nome correttamente." }, { quoted: m });
+            return await conn.sendMessage(m.chat, { text: "✖️ Ricetta non trovata! Assicurati di aver scritto il nome correttamente." }, { quoted: m });
         }
     }
 };

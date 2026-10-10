@@ -1,6 +1,6 @@
 //Codice di gp-tagall.js
 
-//Plugin by Zeno, Lucifero & 333 staff
+//Plugin by Zeno, Lucifero & zenobot staff
 
 
 
@@ -14,7 +14,7 @@ let handler = async (m, { isOwner, isAdmin, conn, text, participants, args, used
             throw false;
         }
 
-        let pesan = args.join` ` || ' 🚨 *𝐀𝐋𝐋𝐄𝐑𝐓𝐀!*';
+        let pesan = args.join` ` || ' 🚨 *ᴀʟʟᴇʀᴛᴀ!*';
         let oi = `📢  ${pesan}`;
 
         let prova = {
@@ -25,7 +25,7 @@ let handler = async (m, { isOwner, isAdmin, conn, text, participants, args, used
             },
             message: {
                 locationMessage: {
-                    name: '𝐍𝐎𝐍 𝐒𝐈 𝐃𝐎𝐑𝐌𝐄!!! ',
+                    name: 'ɴᴏɴ ꜱɪ ᴅᴏʀᴍᴇ!!! ',
                     jpegThumbnail: await (await fetch('https://telegra.ph/file/92576d96e97bb7e3939e2.png')).buffer(),
                     vcard: `BEGIN:VCARD\nVERSION:3.0\nN:Sy;Bot;;;\nFN:y\nitem1.TEL;waid=${m.sender.split('@')[0]}:${m.sender.split('@')[0]}\nitem1.X-ABLabel:Ponsel\nEND:VCARD`
                 }
@@ -34,13 +34,13 @@ let handler = async (m, { isOwner, isAdmin, conn, text, participants, args, used
         };
 
         let teks = `
-╭─────────╮\n║ *𝐓𝐀𝐆𝐀𝐋𝐋:* 
-║ 🏠 *𝐆𝐫𝐮𝐩𝐩𝐨:*  ${groupMetadata.subject || 'Non sei in un gruppo'}
-║ 👥 *𝐌𝐞𝐦𝐛𝐫𝐢:*  ${participants.length}
-║ 💬 *𝐌𝐞𝐬𝐬𝐚𝐠𝐠𝐢𝐨:*  ${oi}
-━━━━━━━━━━━━━━
+┌┄┄┄┄┄┄┄┄┄┐\n┆ *ᴛᴀɢᴀʟʟ:* 
+┆ 🏠 *ɢʀᴜᴘᴘᴏ:*  ${groupMetadata.subject || 'Non sei in un gruppo'}
+┆ 👥 *ᴍᴇᴍʙʀɪ:*  ${participants.length}
+┆ 💬 *ᴍᴇꜱꜱᴀɢɢɪᴏ:*  ${oi}
+┄┄┄┄┄┄┄┄┄┄┄┄┄┄
 
- *𝐌𝐄𝐍𝐙𝐈𝐎𝐍𝐈:* \n
+ *ᴍᴇɴᴢɪᴏɴɪ:* \n
 `.trim(); 
 
         const validParticipants = participants.filter(mem => mem && typeof mem.id === 'string' && mem.id.includes('@'))
@@ -50,7 +50,7 @@ let handler = async (m, { isOwner, isAdmin, conn, text, participants, args, used
             teks += `\n➤ @${mem.id.split('@')[0]}`
         }
 
-        teks += `\n𝐁𝐘  ꙰  𝟥𝟥𝟥 𝔹𝕆𝕋  ꙰`;
+        teks += `\nʙʏ❖ ᴢᴇɴᴏʙᴏᴛ`;
 
         await conn.sendMessage(m.chat, {
             text: teks,
@@ -59,7 +59,7 @@ let handler = async (m, { isOwner, isAdmin, conn, text, participants, args, used
     }
 };
 
-handler.help = ['𝐭𝐚𝐠𝐚𝐥𝐥'];
+handler.help = ['ᴛᴀɢᴀʟʟ'];
 handler.tags = ['admin'];
 handler.admin = true
 handler.mods = true;

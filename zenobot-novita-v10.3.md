@@ -1,4 +1,4 @@
-# 333Bot V10.3 - Note dell'Aggiornamento
+# Zenobot V10.3 - Note dell'Aggiornamento
 
 Questo file contiene l'elenco delle modifiche apportate nell'ultima build per i nostri utenti.
 
@@ -21,4 +21,4 @@ Questo file contiene l'elenco delle modifiche apportate nell'ultima build per i 
 * **Soluzione Temporanea:** Questa configurazione è stata rilasciata come misura d'emergenza necessaria per non lasciare nessuno con il bot spento o inutilizzabile. Lo sviluppo è già al lavoro per trovare vie alternative e ripristinare la fluidità originale.
 
 ---
-*333 BOT -- Tutti i diritti riservato.*
+*ZENOBOT -- Tutti i diritti riservato.*

@@ -1,4 +1,4 @@
-//Plugin by Zeno, Lucifero & 333 staff
+//Plugin by Zeno, Lucifero & zenobot staff
 
 const handler = async (m, { conn }) => {
 
@@ -43,6 +43,6 @@ const handler = async (m, { conn }) => {
 
 
 handler.command = ['barzelletta'];
-handler.help = ['𝐛𝐚𝐫𝐳𝐞𝐥𝐥𝐞𝐭𝐭𝐚'];
+handler.help = ['ʙᴀʀᴢᴇʟʟᴇᴛᴛᴀ'];
 handler.tags = ['fun'];
 export default handler;

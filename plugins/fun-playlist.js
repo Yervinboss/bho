@@ -1,4 +1,4 @@
-//Plugin by Zeno, Lucifero & 333 staff
+//Plugin by Zeno, Lucifero & zenobot staff
 
 
 
@@ -13,7 +13,7 @@ import { generateWAMessageFromContent } from '@chatunity/baileys';
 
 const EMOJIS = {
   ERROR: '⚠️',
-  SUCCESS: '✅',
+  SUCCESS: '✔️',
   LOADING: '⌛',
   MUSIC: '🎵',
   VIDEO: '🎬',
@@ -23,7 +23,7 @@ const EMOJIS = {
   DELETE: '🗑️'
 };
 
-const BOT_SIGNATURE = '333⇝𝐁Ꮻ𝐓';
+const BOT_SIGNATURE = 'zenobot⇝ʙᏫᴛ';
 
 const DB_FOLDER = './database';
 const PLAYLIST_FILE = path.join(DB_FOLDER, 'Musica.json');
@@ -218,7 +218,7 @@ const handler = async (m, { conn, text, args, command }) => {
           message: {
             interactiveMessage: {
               body: { text: result.message },
-              footer: { text: '333 BOT - Playlist' },
+              footer: { text: 'ZENOBOT - Playlist' },
               header: {
                 hasMediaAttachment: false
               },
@@ -277,6 +277,6 @@ const handler = async (m, { conn, text, args, command }) => {
 
 handler.command = ['salva', 'playlist', 'elimina'];
 handler.tags = ['fun'];
-handler.help = ['𝐬𝐚𝐥𝐯𝐚 <𝐭𝐢𝐭𝐨𝐥𝐨 𝐜𝐚𝐧𝐳𝐨𝐧𝐞>', '𝐩𝐥𝐚𝐲𝐥𝐢𝐬𝐭', '𝐞𝐥𝐢𝐦𝐢𝐧𝐚 <𝐧𝐮𝐦𝐞𝐫𝐨>'];
+handler.help = ['ꜱᴀʟᴠᴀ <ᴛɪᴛᴏʟᴏ ᴄᴀɴᴢᴏɴᴇ>', 'ᴘʟᴀʏʟɪꜱᴛ', 'ᴇʟɪᴍɪɴᴀ <ɴᴜᴍᴇʀᴏ>'];
 
 export default handler;

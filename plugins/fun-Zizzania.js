@@ -1,4 +1,4 @@
-//Plugin by Zeno, Lucifero & 333 staff
+//Plugin by Zeno, Lucifero & zenobot staff
 
 let handler = async (m, {
 conn, groupMetadata
@@ -21,7 +21,7 @@ mentionedJid: [a, b]
 }
 })}
 handler.customPrefix = /zizzania/i
-handler.help = ['.𝐳𝐢𝐳𝐳𝐚𝐧𝐢𝐚']
+handler.help = ['.ᴢɪᴢᴢᴀɴɪᴀ']
 handler.tags = ['fun']
 handler.command = new RegExp
 export default handler

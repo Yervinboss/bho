@@ -1,4 +1,4 @@
-//Plugin by Zeno, Lucifero & 333 staff
+//Plugin by Zeno, Lucifero & zenobot staff
 
 import Jimp from 'jimp';
 
@@ -49,7 +49,7 @@ let handler = async (m, { args, conn, command }) => {
   await m.reply('La foto profilo del bot è stata cambiata con successo.');
 };
 
-handler.help = ['𝐬𝐞𝐭𝐩𝐩𝐛𝐨𝐭'];
+handler.help = ['ꜱᴇᴛᴘᴘʙᴏᴛ'];
 handler.tags = ['owner'];
 handler.command = /^setpp|setppbot|immagineprofilo?$/i;
 handler.owner = true;

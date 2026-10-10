@@ -1,4 +1,4 @@
-//Plugin by Zeno, Lucifero & 333 staff
+//Plugin by Zeno, Lucifero & zenobot staff
 
 let handler = async (m, { conn, usedPrefix, command, text }) => {
     let who;
@@ -13,7 +13,7 @@ let handler = async (m, { conn, usedPrefix, command, text }) => {
         who = text ? text.replace(/[^0-9]/g, '') + '@s.whatsapp.net' : m.chat;
     }
 
-    if (!who) return m.reply(`𝐦𝐞𝐧𝐳𝐢𝐨𝐧𝐚 𝐥𝐚 𝐩𝐞𝐫𝐬𝐨𝐧𝐚 𝐝𝐚 𝐬𝐜𝐨𝐩𝐚𝐫𝐞`);
+    if (!who) return m.reply(`ᴍᴇɴᴢɪᴏɴᴀ ʟᴀ ᴘᴇʀꜱᴏɴᴀ ᴅᴀ ꜱᴄᴏᴘᴀʀᴇ`);
 
 
     const thumbnailUrl = "https://files.catbox.moe/eu24ui.png"; 
@@ -21,9 +21,9 @@ let handler = async (m, { conn, usedPrefix, command, text }) => {
     const thumbnailText = "SCOPA"; 
 
     let abrazo = await conn.sendMessage(m.chat, {
-        text: `══════•⊰✰⊱•══════
-@${who.split('@')[0]} 𝐬𝐞𝐢 𝐬𝐭𝐚𝐭𝐚 𝐬𝐜𝐨𝐩𝐚𝐭𝐚 𝐢𝐧 𝐦𝐨𝐝𝐨 𝐯𝐢𝐨𝐥𝐞𝐧𝐭𝐨 𝐝𝐚 @${m.sender.split('@')[0]}, 𝐭𝐢 𝐡𝐚 𝐩𝐫𝐞𝐬𝐚, 𝐭𝐢 𝐡𝐚 𝐬𝐛𝐚𝐭𝐭𝐮𝐭𝐚 𝐚 𝐥𝐞𝐭𝐭𝐨 𝐞 𝐡𝐚 𝐢𝐧𝐢𝐳𝐢𝐚𝐭𝐨 𝐚 𝐬𝐟𝐨𝐧𝐝𝐚𝐫𝐭𝐢 𝐦𝐞𝐧𝐭𝐫𝐞 𝐮𝐫𝐥𝐚𝐯𝐢 𝐢𝐥 𝐬𝐮𝐨 𝐧𝐨𝐦𝐞, 𝐝𝐨𝐩𝐨 𝐬𝐨𝐥𝐢 𝟐𝟎 𝐬𝐞𝐜𝐨𝐧𝐝𝐢 𝐭𝐢 𝐯𝐢𝐞𝐧𝐞 𝐢𝐧 𝐠𝐨𝐥𝐚.
-══════•⊰✰⊱•══════`,
+        text: `┄┄┄┄┄┄•‹✧›•┄┄┄┄┄┄
+@${who.split('@')[0]} ꜱᴇɪ ꜱᴛᴀᴛᴀ ꜱᴄᴏᴘᴀᴛᴀ ɪɴ ᴍᴏᴅᴏ ᴠɪᴏʟᴇɴᴛᴏ ᴅᴀ @${m.sender.split('@')[0]}, ᴛɪ ʜᴀ ᴘʀᴇꜱᴀ, ᴛɪ ʜᴀ ꜱʙᴀᴛᴛᴜᴛᴀ ᴀ ʟᴇᴛᴛᴏ ᴇ ʜᴀ ɪɴɪᴢɪᴀᴛᴏ ᴀ ꜱꜰᴏɴᴅᴀʀᴛɪ ᴍᴇɴᴛʀᴇ ᴜʀʟᴀᴠɪ ɪʟ ꜱᴜᴏ ɴᴏᴍᴇ, ᴅᴏᴘᴏ ꜱᴏʟɪ 𝟸𝟶 ꜱᴇᴄᴏɴᴅɪ ᴛɪ ᴠɪᴇɴᴇ ɪɴ ɢᴏʟᴀ.
+┄┄┄┄┄┄•‹✧›•┄┄┄┄┄┄`,
         mentions: [who, m.sender],
     }, {
         quoted: {
@@ -46,7 +46,7 @@ let handler = async (m, { conn, usedPrefix, command, text }) => {
 };
 
 handler.command = ['scopa'];
-handler.help = ['stupra @𝐭𝐚𝐠'];
+handler.help = ['stupra @ᴛᴀɢ'];
 handler.tags = ['fun'];
 
 export default handler;

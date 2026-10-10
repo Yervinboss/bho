@@ -1,11 +1,11 @@
-//Plugin by Zeno, Lucifero & 333 staff
+//Plugin by Zeno, Lucifero & zenobot staff
 
 import fs from 'fs';
 import path from 'path';
 
 let handler = async (message, { text, usedPrefix, command }) => {
-  if (!text) throw '𝐈𝐧𝐬𝐞𝐫𝐢𝐬𝐜𝐢 𝐢𝐥 𝐩𝐚𝐭𝐡 𝐝𝐞𝐥 𝐟𝐢𝐥𝐞 𝐝𝐚 𝐞𝐝𝐢𝐭𝐚𝐫𝐞';
-  if (!message.quoted || !message.quoted.text) throw '𝐑𝐢𝐬𝐩𝐨𝐧𝐝𝐢 𝐚𝐥 𝐦𝐞𝐬𝐬𝐚𝐠𝐢𝐨 𝐜𝐡𝐞 𝐜𝐨𝐧𝐭𝐢𝐞𝐧𝐞 𝐢𝐥 𝐧𝐮𝐨𝐯𝐨 𝐜𝐨𝐧𝐭𝐞𝐧𝐮𝐭𝐨 𝐝𝐞𝐥 𝐟𝐢𝐥𝐞';
+  if (!text) throw 'ɪɴꜱᴇʀɪꜱᴄɪ ɪʟ ᴘᴀᴛʜ ᴅᴇʟ ꜰɪʟᴇ ᴅᴀ ᴇᴅɪᴛᴀʀᴇ';
+  if (!message.quoted || !message.quoted.text) throw 'ʀɪꜱᴘᴏɴᴅɪ ᴀʟ ᴍᴇꜱꜱᴀɢɪᴏ ᴄʜᴇ ᴄᴏɴᴛɪᴇɴᴇ ɪʟ ɴᴜᴏᴠᴏ ᴄᴏɴᴛᴇɴᴜᴛᴏ ᴅᴇʟ ꜰɪʟᴇ';
   
   let filePath = text;
   const normalized = path.normalize(filePath).replace(/\\/g, '/');
@@ -13,7 +13,7 @@ let handler = async (message, { text, usedPrefix, command }) => {
     throw 'Questo file è protetto e non può essere modificato.';
   
 
-  if (!fs.existsSync(filePath)) throw '𝐈𝐥 𝐟𝐢𝐥𝐞 𝐧𝐨𝐧 𝐞𝐬𝐢𝐬𝐭𝐞';
+  if (!fs.existsSync(filePath)) throw 'ɪʟ ꜰɪʟᴇ ɴᴏɴ ᴇꜱɪꜱᴛᴇ';
   
 
   fs.writeFileSync(filePath, message.quoted.text);
@@ -34,11 +34,11 @@ let handler = async (message, { text, usedPrefix, command }) => {
     participant: '0@s.whatsapp.net'
   };
   
-  conn.reply(message.chat, `𝐈𝐥 𝐟𝐢𝐥𝐞 "${text}" 𝐞̀ 𝐬𝐭𝐚𝐭𝐨 𝐞𝐝𝐢𝐭𝐚𝐭𝐨 𝐜𝐨𝐧 𝐬𝐮𝐜𝐜𝐞𝐬𝐬𝐨`, responseMessage);
+  conn.reply(message.chat, `ɪʟ ꜰɪʟᴇ "${text}" ᴇ̀ ꜱᴛᴀᴛᴏ ᴇᴅɪᴛᴀᴛᴏ ᴄᴏɴ ꜱᴜᴄᴄᴇꜱꜱᴏ`, responseMessage);
 };
 
 handler.tags = ['owner'];
-handler.help = ['𝐞𝐝𝐢𝐭𝐟𝐢𝐥𝐞'];
+handler.help = ['ᴇᴅɪᴛꜰɪʟᴇ'];
 handler.command = /^editfile$/i;
 handler.rowner = true;
 

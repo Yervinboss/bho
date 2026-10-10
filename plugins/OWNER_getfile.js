@@ -1,6 +1,6 @@
 //Codice di OWNER_getfile.js
 
-//Plugin by Zeno, Lucifero & 333 staff
+//Plugin by Zeno, Lucifero & zenobot staff
 
 import fs from 'fs'
 import syntaxError from 'syntax-error'
@@ -56,19 +56,19 @@ let handler = async (m, { text, usedPrefix, command, __dirname, conn }) => {
 
   if (!text || args.length === 0) {
     return m.reply(
-`╔═ 📁 𝐅𝐈𝐋𝐄 𝐌𝐀𝐍𝐀𝐆𝐄𝐑 ═╗
-┃
-┃ 🔍 *Utilizzo:*
-┃ ${usedPrefix + command} <nome file> [script|file]
-┃
-┃ 📌 *Esempi:*
-┃ ${usedPrefix}getplugin rpg_poker
-┃ ${usedPrefix}getfile config.js script
-┃
-┃ 💡 Puoi usare _ - . o spazi
-┃ nel nome, lo trova lo stesso!
-┃
-╚══════════════╝`.trim()
+`┌┄ 📁 ꜰɪʟᴇ ᴍᴀɴᴀɢᴇʀ ┄┐
+┆
+┆ 🔍 *Utilizzo:*
+┆ ${usedPrefix + command} <nome file> [script|file]
+┆
+┆ 📌 *Esempi:*
+┆ ${usedPrefix}getplugin rpg_poker
+┆ ${usedPrefix}getfile config.js script
+┆
+┆ 💡 Puoi usare _ - . o spazi
+┆ nel nome, lo trova lo stesso!
+┆
+└┄┄┄┄┄┄┄┄┄┄┄┄┄┄┘`.trim()
     )
   }
 
@@ -94,21 +94,21 @@ let handler = async (m, { text, usedPrefix, command, __dirname, conn }) => {
 
     if (simili.length === 0) {
       return m.reply(
-`╔═ ❌ 𝐅𝐈𝐋𝐄 𝐍𝐎𝐍 𝐓𝐑𝐎𝐕𝐀𝐓𝐎 ═╗
-┃
-┃ 📂 File cercato:
-┃ *${filename}*
-┃
-┃ 😕 Nessun file simile trovato.
-┃
-╚══════════════╝`
+`┌┄ ✖️ ꜰɪʟᴇ ɴᴏɴ ᴛʀᴏᴠᴀᴛᴏ ┄┐
+┆
+┆ 📂 File cercato:
+┆ *${filename}*
+┆
+┆ 😕 Nessun file simile trovato.
+┆
+└┄┄┄┄┄┄┄┄┄┄┄┄┄┄┘`
       )
     }
 
     const barre = simili.map((x, i) => {
       const filled = Math.round(x.score / 10)
       const bar    = '█'.repeat(filled) + '░'.repeat(10 - filled)
-      return `┃ ${i + 1}. [${bar}] ${x.score}%\n┃    ${x.file}`
+      return `┆ ${i + 1}. [${bar}] ${x.score}%\n┆    ${x.file}`
     }).join('\n')
 
     const buttons = simili.map(x => [
@@ -117,28 +117,28 @@ let handler = async (m, { text, usedPrefix, command, __dirname, conn }) => {
     ])
 
     return await conn.sendButton(m.chat,
-`╔═ 🔍 𝐅𝐈𝐋𝐄 𝐍𝐎𝐍 𝐓𝐑𝐎𝐕𝐀𝐓𝐎 ═╗
-┃
-┃ ❓ Cercavi: *${filename}*
-┃
-┃ 🎯 *File più simili:*
-┃
+`┌┄ 🔍 ꜰɪʟᴇ ɴᴏɴ ᴛʀᴏᴠᴀᴛᴏ ┄┐
+┆
+┆ ❓ Cercavi: *${filename}*
+┆
+┆ 🎯 *File più simili:*
+┆
 ${barre}
-┃
-┃ 👆 Tocca per selezionare
-╚══════════════╝`,
-    '333 File Manager', null, buttons, m)
+┆
+┆ 👆 Tocca per selezionare
+└┄┄┄┄┄┄┄┄┄┄┄┄┄┄┘`,
+    'zenobot File Manager', null, buttons, m)
   }
 
   if (!option) {
     return await conn.sendButton(m.chat,
-`╔═ 📁 𝐅𝐈𝐋𝐄 𝐓𝐑𝐎𝐕𝐀𝐓𝐎 ═╗
-┃
-┃ ✅ *${filename}*
-┃
-┃ ❓ Come vuoi riceverlo?
-╚══════════════╝`,
-    '333 File Manager', null, [
+`┌┄ 📁 ꜰɪʟᴇ ᴛʀᴏᴠᴀᴛᴏ ┄┐
+┆
+┆ ✔️ *${filename}*
+┆
+┆ ❓ Come vuoi riceverlo?
+└┄┄┄┄┄┄┄┄┄┄┄┄┄┄┘`,
+    'zenobot File Manager', null, [
       [`📄 Come script (testo)`, `${usedPrefix + command} ${text} script`],
       [`📎 Come documento`,      `${usedPrefix + command} ${text} file`  ]
     ], m)
@@ -157,20 +157,20 @@ ${barre}
           document: Buffer.from(fileContent, 'utf8'),
           mimetype: 'application/javascript',
           fileName: filename,
-          caption: `✅ Ecco il plugin: *${filename}*`
+          caption: `✔️ Ecco il plugin: *${filename}*`
         }, { quoted: m })
       } else {
         await conn.sendMessage(m.chat, {
           document: fileContent,
           fileName: filename,
-          caption: `✅ Ecco il file: *${filename}*`
+          caption: `✔️ Ecco il file: *${filename}*`
         }, { quoted: m })
       }
     } else if (option === 'script') {
-      if (!isJS) throw '❌ L\'opzione script è disponibile solo per file JavaScript.'
+      if (!isJS) throw '✖️ L\'opzione script è disponibile solo per file JavaScript.'
       await m.reply(`//Codice di ${filename}\n\n${fileContent}`)
     } else {
-      throw '❌ Opzione non valida! Usa *file* o *script*.'
+      throw '✖️ Opzione non valida! Usa *file* o *script*.'
     }
 
     if (isJS) {
@@ -184,12 +184,12 @@ ${barre}
 
   } catch (err) {
     await m.reply(
-`╔═ ❌ 𝐄𝐑𝐑𝐎𝐑𝐄 ═╗
-┃
-┃ 📂 File: *${filename}*
-┃ ${err}
-┃
-╚══════════════╝`
+`┌┄ ✖️ ᴇʀʀᴏʀᴇ ┄┐
+┆
+┆ 📂 File: *${filename}*
+┆ ${err}
+┆
+└┄┄┄┄┄┄┄┄┄┄┄┄┄┄┘`
     )
   }
 }

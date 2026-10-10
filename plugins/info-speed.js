@@ -1,4 +1,4 @@
-//Plugin by Zeno, Lucifero & 333 staff
+//Plugin by Zeno, Lucifero & zenobot staff
 
 
 import { totalmem, freemem, cpus } from 'os'
@@ -42,54 +42,54 @@ const handler = async (m, { conn }) => {
   const ulSpeed = (Math.random() * 50 + 10).toFixed(2)
 
   const text = `
-┏━━━━━━━━━━━━━━━━━━━━━
-┃ ⚡ *PERFORMANCE MONITOR*
-┃ 「 333 BOT SYSTEM 」
-┗━━━━━━━━━━━━━━━━━━━━━
+┌┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄
+┆ ⚡ *PERFORMANCE MONITOR*
+┆ 「 ZENOBOT SYSTEM 」
+└┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄
 
-╭─────────────────────
-│ 📊 *STATO SISTEMA*
-├─────────────────────
-│ 📡 *Ping:* ${ping.toFixed(2)} ms
-│ ⚡ *Velocità:* ${ping < 100 ? '🟢 Ottima' : ping < 300 ? '🟡 Buona' : '🔴 Lenta'}
-│ 🕒 *Uptime:* ${uptime}
-│ 🖥️ *Platform:* ${platform.toUpperCase()}
-│ 📦 *Node.js:* ${nodeVersion}
-╰─────────────────────
+┌┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄
+┆ 📊 *STATO SISTEMA*
+├┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄
+┆ 📡 *Ping:* ${ping.toFixed(2)} ms
+┆ ⚡ *Velocità:* ${ping < 100 ? '🟢 Ottima' : ping < 300 ? '🟡 Buona' : '🔴 Lenta'}
+┆ 🕒 *Uptime:* ${uptime}
+┆ 🖥️ *Platform:* ${platform.toUpperCase()}
+┆ 📦 *Node.js:* ${nodeVersion}
+└┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄
 
-╭─────────────────────
-│ 💾 *MEMORIA RAM*
-├─────────────────────
-│ 📊 *Totale:* ${formatBytes(ramtot)}
-│ 🔴 *Usata:* ${formatBytes(ramusata)} (${perc}%)
-│ 🟢 *Libera:* ${formatBytes(ramtot - ramusata)}
-│ 🤖 *Bot RAM:* ${formatBytes(ramBot)} (${percBot}%)
-│ 🗂️ *Heap Usato:* ${formatBytes(ramHeap)}
-│ 📦 *Heap Totale:* ${formatBytes(ramHeapTotal)}
-╰─────────────────────
+┌┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄
+┆ 💾 *MEMORIA RAM*
+├┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄
+┆ 📊 *Totale:* ${formatBytes(ramtot)}
+┆ 🔴 *Usata:* ${formatBytes(ramusata)} (${perc}%)
+┆ 🟢 *Libera:* ${formatBytes(ramtot - ramusata)}
+┆ 🤖 *Bot RAM:* ${formatBytes(ramBot)} (${percBot}%)
+┆ 🗂️ *Heap Usato:* ${formatBytes(ramHeap)}
+┆ 📦 *Heap Totale:* ${formatBytes(ramHeapTotal)}
+└┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄
 
-╭─────────────────────
-│ ⚙️ *PROCESSORE*
-├─────────────────────
-│ 🖥️ *CPU:* ${cpu}
-│ 🔁 *Threads:* ${cpuThreads} Core
-│ 🏗️ *Architettura:* ${cpuArch.toUpperCase()}
-│ 📈 *Carico:* ${((ramusata / ramtot) * 100).toFixed(0)}%
-╰─────────────────────
+┌┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄
+┆ ⚙️ *PROCESSORE*
+├┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄
+┆ 🖥️ *CPU:* ${cpu}
+┆ 🔁 *Threads:* ${cpuThreads} Core
+┆ 🏗️ *Architettura:* ${cpuArch.toUpperCase()}
+┆ 📈 *Carico:* ${((ramusata / ramtot) * 100).toFixed(0)}%
+└┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄
 
-╭─────────────────────
-│ 🌐 *CONNESSIONE*
-├─────────────────────
-│ 📥 *Download:* ${dlSpeed} Mbps
-│ 📤 *Upload:* ${ulSpeed} Mbps
-│ 🔗 *Latenza:* ${ping.toFixed(0)} ms
-│ 📶 *Stato:* ${ping < 200 ? '🟢 Stabile' : '🟡 Variabile'}
-╰─────────────────────
+┌┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄
+┆ 🌐 *CONNESSIONE*
+├┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄
+┆ 📥 *Download:* ${dlSpeed} Mbps
+┆ 📤 *Upload:* ${ulSpeed} Mbps
+┆ 🔗 *Latenza:* ${ping.toFixed(0)} ms
+┆ 📶 *Stato:* ${ping < 200 ? '🟢 Stabile' : '🟡 Variabile'}
+└┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄
 
-┏━━━━━━━━━━━━━━━━━━━━━
-┃ ✨ Powered by *333 BOT*
-┃ 🚀 Performance Optimized
-┗━━━━━━━━━━━━━━━━━━━━━
+┌┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄
+┆ ✨ Powered by *ZENOBOT*
+┆ 🚀 Performance Optimized
+└┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄
 `.trim()
 
   await conn.reply(m.chat, text, m, { ...global.rcanal })

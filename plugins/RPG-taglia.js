@@ -1,4 +1,4 @@
-//Plugin by Zeno, Lucifero & 333 staff
+//Plugin by Zeno, Lucifero & zenobot staff
 
 import { loadBounty, saveBounty } from '../lib/bounty-store.js'
 
@@ -44,11 +44,11 @@ handler.before = async function (m) {
     saveBounty(global.bounty)
 
     await this.sendMessage(m.chat, {
-        text: `🎯 𝐓𝐀𝐆𝐋𝐈𝐀 𝐀𝐓𝐓𝐈𝐕𝐀!
+        text: `🎯 ᴛᴀɢʟɪᴀ ᴀᴛᴛɪᴠᴀ!
 
-👤 @${target.split('@')[0]} 𝐡𝐚 𝐮𝐧𝐚 𝐭𝐚𝐠𝐥𝐢𝐚 𝐝𝐢 ${reward} XP333
+👤 @${target.split('@')[0]} ʜᴀ ᴜɴᴀ ᴛᴀɢʟɪᴀ ᴅɪ ${reward} ZenoCoin
 
-💥 𝐒𝐜𝐫𝐢𝐯𝐢 ’’.𝐬𝐩𝐚𝐫𝐚’’ 𝐞𝐧𝐭𝐫𝐨 𝟑𝟎 𝐬𝐞𝐜𝐨𝐧𝐝𝐢 𝐩𝐞𝐫 𝐫𝐢𝐬𝐜𝐚𝐭𝐭𝐚𝐫𝐥𝐚!`,
+💥 ꜱᴄʀɪᴠɪ ’’.ꜱᴘᴀʀᴀ’’ ᴇɴᴛʀᴏ 𝟹𝟶 ꜱᴇᴄᴏɴᴅɪ ᴘᴇʀ ʀɪꜱᴄᴀᴛᴛᴀʀʟᴀ!`,
         contextInfo: {
             mentionedJid: [target]
         }

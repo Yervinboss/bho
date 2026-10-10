@@ -1,4 +1,4 @@
-//Plugin by Zeno, Lucifero & 333 staff
+//Plugin by Zeno, Lucifero & zenobot staff
 
 import { createHash } from 'crypto';
 import PhoneNumber from 'awesome-phonenumber';
@@ -22,7 +22,7 @@ const handler = async (m, { conn, usedPrefix, command }) => {
   let prova = { "key": {"participants":"0@s.whatsapp.net", "fromMe": false, "id": "Halo"
             }, "message": { 
         "locationMessage": {
-        name: `𝐎𝐁𝐁𝐈𝐄𝐓𝐓𝐈𝐕𝐈`,
+        name: `ᴏʙʙɪᴇᴛᴛɪᴠɪ`,
         jpegThumbnail: await loadBalIcon(),
         vcard: `BEGIN:VCARD\nVERSION:3.0\nN:Sy;Bot;;;\nFN:y\nitem1.TEL;waid=${m.sender.split('@')[0]}:${m.sender.split('@')[0]}\nitem1.X-ABLabel:Ponsel\nEND:VCARD`
       }
@@ -38,13 +38,13 @@ const handler = async (m, { conn, usedPrefix, command }) => {
   }
 
   conn.sendMessage(m.chat, {
-    text: `══════•⊰✦⊱•══════
-➣ 𝐌𝐞𝐬𝐬𝐚𝐠𝐠𝐢: ${user.messaggi > 0 ? '✅' : '❌'}
-➣ 𝐑𝐚𝐠𝐠𝐢𝐮𝐧𝐠𝐢 𝐢 𝟏𝟎.𝟎𝟎𝟎 𝐦𝐞𝐬𝐬𝐚𝐠𝐠𝐢: ${user.messaggi > 10000 ? '✅' : '❌'}
-➣ 𝐁𝐞𝐬𝐭𝐞𝐦𝐦𝐢𝐞: ${user.blasphemy > 0 ? '✅' : '❌'}
-➣ 𝐑𝐚𝐠𝐠𝐢𝐮𝐧𝐠𝐢 𝐥𝐞 𝟏𝟎𝟎𝟎 𝐛𝐞𝐬𝐭𝐞𝐦𝐦𝐢𝐞: ${user.blasphemy > 1000 ? '✅' : '❌'}
-➣ 𝐄𝐬𝐞𝐠𝐮𝐢 𝟏𝟎𝟎𝟎 𝐜𝐨𝐦𝐚𝐧𝐝𝐢: ${user.command > 1000 ? '✅' : '❌'}
-══════•⊰✦⊱•══════`,
+    text: `┄┄┄┄┄┄•‹❖›•┄┄┄┄┄┄
+▹ ᴍᴇꜱꜱᴀɢɢɪ: ${user.messaggi > 0 ? '✔️' : '✖️'}
+▹ ʀᴀɢɢɪᴜɴɢɪ ɪ 𝟷𝟶.𝟶𝟶𝟶 ᴍᴇꜱꜱᴀɢɢɪ: ${user.messaggi > 10000 ? '✔️' : '✖️'}
+▹ ʙᴇꜱᴛᴇᴍᴍɪᴇ: ${user.blasphemy > 0 ? '✔️' : '✖️'}
+▹ ʀᴀɢɢɪᴜɴɢɪ ʟᴇ 𝟷𝟶𝟶𝟶 ʙᴇꜱᴛᴇᴍᴍɪᴇ: ${user.blasphemy > 1000 ? '✔️' : '✖️'}
+▹ ᴇꜱᴇɢᴜɪ 𝟷𝟶𝟶𝟶 ᴄᴏᴍᴀɴᴅɪ: ${user.command > 1000 ? '✔️' : '✖️'}
+┄┄┄┄┄┄•‹❖›•┄┄┄┄┄┄`,
     contextInfo: {
       mentionedJid: [who],
       externalAdReply: {

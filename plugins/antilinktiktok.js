@@ -1,4 +1,4 @@
-//Plugin by Zeno, Lucifero & 333 staff
+//Plugin by Zeno, Lucifero & zenobot staff
 
 export async function before(m, { conn, isAdmin, isBotAdmin }) {
   if (m.isBaileys && m.fromMe) return true;
@@ -33,14 +33,14 @@ export async function before(m, { conn, isAdmin, isBotAdmin }) {
 
   if (warn < 3) {
     await conn.sendMessage(m.chat, {
-      text: `⚠️ @${m.sender.split('@')[0]} 𝐢 𝐥𝐢𝐧𝐤 𝐝𝐢 𝐭𝐢𝐤𝐭𝐨𝐤 𝐧𝐨𝐧 𝐬𝐨𝐧𝐨 𝐜𝐨𝐧𝐬𝐞𝐧𝐭𝐢𝐭𝐢!!\n\n➣ 𝐰𝐚𝐫𝐧: ${warn} / 3`,
+      text: `⚠️ @${m.sender.split('@')[0]} ɪ ʟɪɴᴋ ᴅɪ ᴛɪᴋᴛᴏᴋ ɴᴏɴ ꜱᴏɴᴏ ᴄᴏɴꜱᴇɴᴛɪᴛɪ!!\n\n▹ ᴡᴀʀɴ: ${warn} / 3`,
       mentions: [m.sender]
     });
   } else {
     global.db.data.users[m.sender].warnTiktok = 0;
 
     await conn.sendMessage(m.chat, {
-      text: `🚫 @${m.sender.split('@')[0]} 𝐞𝐬𝐩𝐮𝐥𝐬𝐨 𝐩𝐞𝐫 𝐥𝐢𝐧𝐤 𝐭𝐢𝐤𝐭𝐨𝐤!!\n\n𝐰𝐚𝐫𝐧 𝐭𝐨𝐭𝐚𝐥𝐢: 𝟑/𝟑`,
+      text: `🚫 @${m.sender.split('@')[0]} ᴇꜱᴘᴜʟꜱᴏ ᴘᴇʀ ʟɪɴᴋ ᴛɪᴋᴛᴏᴋ!!\n\nᴡᴀʀɴ ᴛᴏᴛᴀʟɪ: 𝟹/𝟹`,
       mentions: [m.sender]
     });
 

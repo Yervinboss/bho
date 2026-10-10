@@ -1,4 +1,4 @@
-//Plugin by Zeno, Lucifero & 333 staff
+//Plugin by Zeno, Lucifero & zenobot staff
 
 let handler = async (m, { conn }) => {
 
@@ -9,7 +9,7 @@ Se vuoi supportare lo sviluppo del bot e del progetto puoi fare una piccola dona
 
 👉 https://www.paypal.me/ZenoWTcomm
 
-Grazie per il supporto da parte dello staff di 333 🙏`;
+Grazie per il supporto da parte dello staff di zenobot 🙏`;
 
   await conn.sendMessage(m.chat, { text });
 };

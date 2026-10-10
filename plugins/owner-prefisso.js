@@ -1,11 +1,11 @@
-//Plugin by Zeno, Lucifero & 333 staff
+//Plugin by Zeno, Lucifero & zenobot staff
 
 let handler = async(m, { conn, text }) => {
-  if (!text) throw ` ⓘ 𝐒𝐜𝐞𝐠𝐥𝐢 𝐮𝐧 𝐩𝐫𝐞𝐟𝐢𝐬𝐬𝐨`
+  if (!text) throw ` ⓘ ꜱᴄᴇɢʟɪ ᴜɴ ᴘʀᴇꜰɪꜱꜱᴏ`
   global.prefix = new RegExp('^[' + (text || global.opts['prefix'] || '‎xzXZ/i!#$%+£¢€¥^°=¶∆×÷π√✓©®:;?&.\\-').replace(/[|\\{}()[\]^$+*?.\-\^]/g, '\\$&') + ']')
-  await m.reply(`ⓘ 𝐈𝐥 𝐩𝐫𝐞𝐟𝐢𝐬𝐬𝐨 𝐝𝐞𝐥 𝐛𝐨𝐭 𝐞' 𝐬𝐭𝐚𝐭𝐨 𝐜𝐚𝐦𝐛𝐢𝐚𝐭𝐨 𝐢𝐧: *${text}*`)
+  await m.reply(`ⓘ ɪʟ ᴘʀᴇꜰɪꜱꜱᴏ ᴅᴇʟ ʙᴏᴛ ᴇ' ꜱᴛᴀᴛᴏ ᴄᴀᴍʙɪᴀᴛᴏ ɪɴ: *${text}*`)
 }
-handler.help = ['𝐩𝐫𝐞𝐟𝐢𝐬𝐬𝐨'].map(v => v + ' [prefix]')
+handler.help = ['ᴘʀᴇꜰɪꜱꜱᴏ'].map(v => v + ' [prefix]')
 handler.tags = ['owner']
 handler.command = /^(prefisso)$/i
 handler.rowner = true

@@ -1,4 +1,4 @@
-//Plugin by Zeno, Lucifero & 333 staff
+//Plugin by Zeno, Lucifero & zenobot staff
 
 import { getRpgXpStatus } from '../lib/rpg-xp.js'
 
@@ -37,14 +37,14 @@ let handler = async (m, { conn }) => {
 
 🏆 Livello: ${user.lvl}
 💬 Progress: ${user.msgCount}/${LEVEL_STEP}
-⚡ XP333 disponibili: ${currencyTotal}
+⚡ ZenoCoin disponibili: ${currencyTotal}
 🎰 Moltiplicatore RPG: x${rpgStatus.multiplier.toFixed(2)}
 
 ${bar} ${percent}%
 
 📈 Mancano: ${missing}
-💰 XP333 guadagnati coi rank: ${user.rankMoneyEarned}
-💰 Prossimo guadagno: ${nextRankReward} XP333
+💰 ZenoCoin guadagnati coi rank: ${user.rankMoneyEarned}
+💰 Prossimo guadagno: ${nextRankReward} ZenoCoin
 `
 
   await conn.sendMessage(m.chat, {

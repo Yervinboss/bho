@@ -1,4 +1,4 @@
-//Plugin by Zeno, Lucifero & 333 staff
+//Plugin by Zeno, Lucifero & zenobot staff
 
 
 
@@ -13,24 +13,24 @@ const handler = async (m, { conn, participants, groupMetadata, args }) => {
         `${m.chat.split('-')[0]}@s.whatsapp.net`;
 
     let pesan = args.join(' ');
-    let message = pesan ? pesan : '❌ Nessun messaggio fornito';
+    let message = pesan ? pesan : '✖️ Nessun messaggio fornito';
 
     const listAdmin = groupAdmins
         .map((v, i) => `✧👑 ${i + 1}. @${v.id.split('@')[0]}`)
         .join('\n');
 
     let text = `
-╭─────────╮
-│ 🔔 𝐒𝐕𝐄𝐆𝐋𝐈𝐀 𝐀𝐃𝐌𝐈𝐍!
-━━━━━━━━━━━━━━
-✎ 𝐌𝐄𝐒𝐒𝐀𝐆𝐆𝐈𝐎:
+┌┄┄┄┄┄┄┄┄┄┐
+┆ 🔔 ꜱᴠᴇɢʟɪᴀ ᴀᴅᴍɪɴ!
+┄┄┄┄┄┄┄┄┄┄┄┄┄┄
+✎ ᴍᴇꜱꜱᴀɢɢɪᴏ:
 ➥ ${message}
 
-♔ *𝐋𝐈𝐒𝐓𝐀 𝐀𝐃𝐌𝐈𝐍:*\n${listAdmin}
+♔ *ʟɪꜱᴛᴀ ᴀᴅᴍɪɴ:*\n${listAdmin}
 
-━━━━━━━━━━━━━━
-> 𝟥𝟥𝟥 𝔹𝕆𝕋 
-╰─────────╯
+┄┄┄┄┄┄┄┄┄┄┄┄┄┄
+> ᴢᴇɴᴏʙᴏᴛ 
+└┄┄┄┄┄┄┄┄┄┘
 `.trim();
 
     const groupProfilePicture = await conn.profilePictureUrl(m.chat, 'image').catch(_ => null) ||

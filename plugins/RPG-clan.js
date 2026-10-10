@@ -1,4 +1,4 @@
-//Plugin by Zeno, Lucifero & 333 staff
+//Plugin by Zeno, Lucifero & zenobot staff
 
 global.clans = global.clans || {};
 global.db = global.db || {};
@@ -66,19 +66,19 @@ let handler = async (m, { conn, command, text }) => {
     if (getClanByUser(sender, chat)) return m.reply("Sei già in un clan");
 
     const tagged = m.mentionedJid || [];
-    if (tagged.length !== 4) return m.reply("𝐈 𝐜𝐥𝐚𝐧 𝐬𝐨𝐧𝐨 𝐜𝐨𝐦𝐩𝐨𝐬𝐭𝐢 𝐝𝐚 𝟓 𝐩𝐞𝐫𝐬𝐨𝐧𝐞, 𝐭𝐚𝐠𝐠𝐚𝐧𝐞 𝟒 𝐩𝐞𝐫 𝐟𝐨𝐧𝐝𝐚𝐫𝐞 𝐮𝐧 𝐜𝐥𝐚𝐧.");
+    if (tagged.length !== 4) return m.reply("ɪ ᴄʟᴀɴ ꜱᴏɴᴏ ᴄᴏᴍᴘᴏꜱᴛɪ ᴅᴀ 𝟻 ᴘᴇʀꜱᴏɴᴇ, ᴛᴀɢɢᴀɴᴇ 𝟺 ᴘᴇʀ ꜰᴏɴᴅᴀʀᴇ ᴜɴ ᴄʟᴀɴ.");
 
     const name = text.split("@")[0].trim();
-    if (!name) return m.reply("𝐃𝐞𝐯𝐢 𝐬𝐜𝐫𝐢𝐯𝐞𝐫𝐞 𝐢𝐥 𝐧𝐨𝐦𝐞 𝐝𝐞𝐥 𝐜𝐥𝐚𝐧 𝐩𝐫𝐢𝐦𝐚 𝐝𝐢 𝐭𝐚𝐠𝐠𝐚𝐫𝐞\n𝐄𝐬𝐞𝐦𝐩𝐢𝐨: .𝐜𝐥𝐚𝐧 𝟑𝟑𝟑 𝐛𝐨𝐭 @𝟏 @𝟐 @𝟑 @𝟒");
+    if (!name) return m.reply("ᴅᴇᴠɪ ꜱᴄʀɪᴠᴇʀᴇ ɪʟ ɴᴏᴍᴇ ᴅᴇʟ ᴄʟᴀɴ ᴘʀɪᴍᴀ ᴅɪ ᴛᴀɢɢᴀʀᴇ\nᴇꜱᴇᴍᴘɪᴏ: .ᴄʟᴀɴ ᴢᴇɴᴏʙᴏᴛ ʙᴏᴛ @𝟷 @𝟸 @𝟹 @𝟺");
 
     const members = [sender, ...tagged];
-    for (let u of members) if (getClanByUser(u, chat)) return m.reply("𝐔𝐧 𝐦𝐞𝐦𝐛𝐫𝐨 𝐭𝐚𝐠𝐠𝐚𝐭𝐨 𝐟𝐚 𝐠𝐢𝐚̀ 𝐩𝐚𝐫𝐭𝐞 𝐝𝐢 𝐮𝐧 𝐜𝐥𝐚𝐧!");
+    for (let u of members) if (getClanByUser(u, chat)) return m.reply("ᴜɴ ᴍᴇᴍʙʀᴏ ᴛᴀɢɢᴀᴛᴏ ꜰᴀ ɢɪᴀ̀ ᴘᴀʀᴛᴇ ᴅɪ ᴜɴ ᴄʟᴀɴ!");
 
     const id = "clan_" + Date.now();
 
     global.clans[chat][id] = { id, chat, name, founder: sender, members, reputation: 0 };
 
-    let msg = `𝐂𝐋𝐀𝐍 𝐅𝐎𝐍𝐃𝐀𝐓𝐎!\n\n𝐧𝐨𝐦𝐞 𝐜𝐥𝐚𝐧: *${name}*\n𝐅𝐨𝐧𝐝𝐚𝐭𝐨𝐫𝐞: @${sender.split("@")[0]}\n> 𝐃𝐢𝐠𝐢𝐭𝐚 ’’.𝐞𝐬𝐜𝐢𝐜𝐥𝐚𝐧’’ 𝐩𝐞𝐫 𝐮𝐬𝐜𝐢𝐫𝐞 𝐝𝐚𝐥 𝐜𝐥𝐚𝐧\n> 𝐃𝐢𝐠𝐢𝐭𝐚 ’’.𝐠𝐮𝐞𝐫𝐫𝐚’’ 𝐩𝐞𝐫 𝐚𝐭𝐭𝐚𝐜𝐜𝐚𝐫𝐞 𝐮𝐧 𝐜𝐥𝐚𝐧.\n𝐌𝐞𝐦𝐛𝐫𝐢:\n`;
+    let msg = `ᴄʟᴀɴ ꜰᴏɴᴅᴀᴛᴏ!\n\nɴᴏᴍᴇ ᴄʟᴀɴ: *${name}*\nꜰᴏɴᴅᴀᴛᴏʀᴇ: @${sender.split("@")[0]}\n> ᴅɪɢɪᴛᴀ ’’.ᴇꜱᴄɪᴄʟᴀɴ’’ ᴘᴇʀ ᴜꜱᴄɪʀᴇ ᴅᴀʟ ᴄʟᴀɴ\n> ᴅɪɢɪᴛᴀ ’’.ɢᴜᴇʀʀᴀ’’ ᴘᴇʀ ᴀᴛᴛᴀᴄᴄᴀʀᴇ ᴜɴ ᴄʟᴀɴ.\nᴍᴇᴍʙʀɪ:\n`;
     members.forEach(u => msg += `- @${u.split("@")[0]}\n`);
 
     return conn.sendMessage(chat, { text: msg, mentions: members });
@@ -86,20 +86,20 @@ let handler = async (m, { conn, command, text }) => {
 
   if (command === "esciclan") {
     const clan = getClanByUser(sender, chat);
-    if (!clan) return m.reply("𝐍𝐨𝐧 𝐬𝐞𝐢 𝐢𝐧 𝐮𝐧 𝐜𝐥𝐚𝐧");
+    if (!clan) return m.reply("ɴᴏɴ ꜱᴇɪ ɪɴ ᴜɴ ᴄʟᴀɴ");
 
     if (clan.founder === sender) {
       delete global.clans[chat][clan.id];
-      return m.reply("𝐈𝐥 𝐟𝐨𝐧𝐝𝐚𝐭𝐨𝐫𝐞 𝐞̀ 𝐮𝐬𝐜𝐢𝐭𝐨, 𝐢𝐥 𝐜𝐥𝐚𝐧 𝐞̀ 𝐬𝐭𝐚𝐭𝐨 𝐚𝐮𝐭𝐨𝐦𝐚𝐭𝐢𝐜𝐚𝐦𝐞𝐧𝐭𝐞 𝐬𝐜𝐢𝐨𝐥𝐭𝐨");
+      return m.reply("ɪʟ ꜰᴏɴᴅᴀᴛᴏʀᴇ ᴇ̀ ᴜꜱᴄɪᴛᴏ, ɪʟ ᴄʟᴀɴ ᴇ̀ ꜱᴛᴀᴛᴏ ᴀᴜᴛᴏᴍᴀᴛɪᴄᴀᴍᴇɴᴛᴇ ꜱᴄɪᴏʟᴛᴏ");
     }
 
     clan.members = clan.members.filter(u => u !== sender);
-    return m.reply("𝐒𝐞𝐢 𝐮𝐬𝐜𝐢𝐭𝐨 𝐝𝐚𝐥 𝐜𝐥𝐚𝐧");
+    return m.reply("ꜱᴇɪ ᴜꜱᴄɪᴛᴏ ᴅᴀʟ ᴄʟᴀɴ");
   }
 
   if (command === "guerra") {
     const clan = getClanByUser(sender, chat);
-    if (!clan) return m.reply("𝐍𝐨𝐧 𝐬𝐞𝐢 𝐢𝐧 𝐧𝐞𝐬𝐬𝐮𝐧 𝐜𝐥𝐚𝐧");
+    if (!clan) return m.reply("ɴᴏɴ ꜱᴇɪ ɪɴ ɴᴇꜱꜱᴜɴ ᴄʟᴀɴ");
 
     global.db.data.users[sender] = global.db.data.users[sender] || {};
     const user = global.db.data.users[sender];
@@ -109,7 +109,7 @@ let handler = async (m, { conn, command, text }) => {
 
     if (user.warCount >= MAX_WARS && timePassed < COOLDOWN) {
       const remaining = COOLDOWN - timePassed;
-      return m.reply(`𝐋𝐢𝐦𝐢𝐭𝐞 𝐝𝐢 𝟓 𝐠𝐮𝐞𝐫𝐫𝐞 𝐫𝐚𝐠𝐠𝐢𝐮𝐧𝐭𝐨.\n𝐈𝐥 𝐥𝐢𝐦𝐢𝐭𝐞 𝐬𝐜𝐚𝐝𝐞 𝐭𝐫𝐚 *${msToTime(remaining)}* `);
+      return m.reply(`ʟɪᴍɪᴛᴇ ᴅɪ 𝟻 ɢᴜᴇʀʀᴇ ʀᴀɢɢɪᴜɴᴛᴏ.\nɪʟ ʟɪᴍɪᴛᴇ ꜱᴄᴀᴅᴇ ᴛʀᴀ *${msToTime(remaining)}* `);
     }
 
     if (timePassed >= COOLDOWN) {
@@ -120,20 +120,20 @@ let handler = async (m, { conn, command, text }) => {
     const clans = global.clans[chat];
     const enemyClan = Object.values(clans).find(c => c.id !== clan.id);
 
-    if (!enemyClan) return m.reply("𝐍𝐨𝐧 𝐜’𝐞̀ 𝐧𝐞𝐬𝐬𝐮𝐧 𝐜𝐥𝐚𝐧 𝐝𝐚 𝐚𝐭𝐭𝐚𝐜𝐜𝐚𝐫𝐞.");
+    if (!enemyClan) return m.reply("ɴᴏɴ ᴄ’ᴇ̀ ɴᴇꜱꜱᴜɴ ᴄʟᴀɴ ᴅᴀ ᴀᴛᴛᴀᴄᴄᴀʀᴇ.");
 
     await conn.sendMessage(chat, {
-      text: `⚔️ 𝐆𝐮𝐞𝐫𝐫𝐚 𝐢𝐧 𝐜𝐨𝐫𝐬𝐨: *${clan.name}* 🆚 *${enemyClan.name}* ⚔️`
+      text: `⚔️ ɢᴜᴇʀʀᴀ ɪɴ ᴄᴏʀꜱᴏ: *${clan.name}* 🆚 *${enemyClan.name}* ⚔️`
     });
 
-    for (let u of clan.members) if (getMoney(u) < WAR_COST) return m.reply("𝐓𝐮𝐭𝐭𝐢 𝐢 𝐦𝐞𝐦𝐛𝐫𝐢 𝐝𝐞𝐥 𝐜𝐥𝐚𝐧 𝐝𝐞𝐯𝐨𝐧𝐨 𝐚𝐯𝐞𝐫𝐞 𝐚𝐥𝐦𝐞𝐧𝐨 𝟐𝟎𝟎 XP333 𝐭𝐫𝐚 𝐛𝐚𝐧𝐜𝐚 𝐞 𝐩𝐨𝐫𝐭𝐚𝐟𝐨𝐠𝐥𝐢𝐨.");
+    for (let u of clan.members) if (getMoney(u) < WAR_COST) return m.reply("ᴛᴜᴛᴛɪ ɪ ᴍᴇᴍʙʀɪ ᴅᴇʟ ᴄʟᴀɴ ᴅᴇᴠᴏɴᴏ ᴀᴠᴇʀᴇ ᴀʟᴍᴇɴᴏ 𝟸𝟶𝟶 ZenoCoin ᴛʀᴀ ʙᴀɴᴄᴀ ᴇ ᴘᴏʀᴛᴀꜰᴏɢʟɪᴏ.");
 
     clan.members.forEach(u => payAmount(u, WAR_COST));
 
     const win = Math.random() > 0.5;
 
     if (win) {
-      for (let u of enemyClan.members) if (getMoney(u) < WIN_REWARD) return m.reply("𝐈𝐥 𝐜𝐥𝐚𝐧 𝐧𝐞𝐦𝐢𝐜𝐨 𝐧𝐨𝐧 𝐡𝐚 𝐚𝐛𝐛𝐚𝐬𝐭𝐚𝐧𝐳𝐚 𝐬𝐨𝐥𝐝𝐢.");
+      for (let u of enemyClan.members) if (getMoney(u) < WIN_REWARD) return m.reply("ɪʟ ᴄʟᴀɴ ɴᴇᴍɪᴄᴏ ɴᴏɴ ʜᴀ ᴀʙʙᴀꜱᴛᴀɴᴢᴀ ꜱᴏʟᴅɪ.");
 
       enemyClan.members.forEach(u => payAmount(u, WIN_REWARD));
       clan.members.forEach(u => payAmount(u, -WIN_REWARD));
@@ -143,7 +143,7 @@ let handler = async (m, { conn, command, text }) => {
       user.warCount = (user.warCount || 0) + 1;
       user.lastWar = now;
 
-      return m.reply("𝐆𝐔𝐄𝐑𝐑𝐀 𝐕𝐈𝐍𝐓𝐀!\n+𝟓𝟎𝟎 XP333 𝐚 𝐭𝐞𝐬𝐭𝐚\n-𝟐𝟎𝟎 XP333 𝐚 𝐭𝐞𝐬𝐭𝐚 𝐩𝐞𝐫 𝐢𝐥 𝐜𝐥𝐚𝐧 𝐚𝐯𝐯𝐞𝐫𝐬𝐚𝐫𝐢𝐨\n𝐈𝐥 𝐜𝐥𝐚𝐧 𝐜𝐫𝐞𝐬𝐜𝐞 𝐝𝐢 +𝟏 𝐫𝐞𝐩𝐮𝐭𝐚𝐳𝐢𝐨𝐧𝐞");
+      return m.reply("ɢᴜᴇʀʀᴀ ᴠɪɴᴛᴀ!\n+𝟻𝟶𝟶 ZenoCoin ᴀ ᴛᴇꜱᴛᴀ\n-𝟸𝟶𝟶 ZenoCoin ᴀ ᴛᴇꜱᴛᴀ ᴘᴇʀ ɪʟ ᴄʟᴀɴ ᴀᴠᴠᴇʀꜱᴀʀɪᴏ\nɪʟ ᴄʟᴀɴ ᴄʀᴇꜱᴄᴇ ᴅɪ +𝟷 ʀᴇᴘᴜᴛᴀᴢɪᴏɴᴇ");
     } else {
       clan.members.forEach(u => payAmount(u, LOSE_PENALTY));
 
@@ -152,7 +152,7 @@ let handler = async (m, { conn, command, text }) => {
       user.warCount = (user.warCount || 0) + 1;
       user.lastWar = now;
 
-      return m.reply("𝐆𝐔𝐄𝐑𝐑𝐀 𝐏𝐄𝐑𝐒𝐀.\n-𝟐𝟎𝟎 XP333 𝐚 𝐭𝐞𝐬𝐭𝐚 𝐩𝐞𝐫 𝐢𝐥 𝐜𝐥𝐚𝐧 𝐜𝐡𝐞 𝐡𝐚 𝐚𝐭𝐭𝐚𝐜𝐜𝐚𝐭𝐨\n+𝟐𝟎𝟎 XP333 𝐚 𝐭𝐞𝐬𝐭𝐚 𝐩𝐞𝐫 𝐢𝐥 𝐜𝐥𝐚𝐧 𝐯𝐢𝐧𝐜𝐞𝐧𝐭𝐞\n+𝟏 𝐫𝐞𝐩𝐮𝐭𝐚𝐳𝐢𝐨𝐧𝐞 𝐩𝐞𝐫 𝐢𝐥 𝐜𝐥𝐚𝐧 𝐧𝐞𝐦𝐢𝐜𝐨.");
+      return m.reply("ɢᴜᴇʀʀᴀ ᴘᴇʀꜱᴀ.\n-𝟸𝟶𝟶 ZenoCoin ᴀ ᴛᴇꜱᴛᴀ ᴘᴇʀ ɪʟ ᴄʟᴀɴ ᴄʜᴇ ʜᴀ ᴀᴛᴛᴀᴄᴄᴀᴛᴏ\n+𝟸𝟶𝟶 ZenoCoin ᴀ ᴛᴇꜱᴛᴀ ᴘᴇʀ ɪʟ ᴄʟᴀɴ ᴠɪɴᴄᴇɴᴛᴇ\n+𝟷 ʀᴇᴘᴜᴛᴀᴢɪᴏɴᴇ ᴘᴇʀ ɪʟ ᴄʟᴀɴ ɴᴇᴍɪᴄᴏ.");
     }
   }
 
@@ -160,10 +160,10 @@ let handler = async (m, { conn, command, text }) => {
     const clans = Object.values(global.clans[chat] || {});
     if (!clans.length) return m.reply("Non ci sono clan in questo gruppo.");
 
-    let msg = "📜 𝐓𝐎𝐏 𝐂𝐋𝐀𝐍 𝐏𝐄𝐑𝐈𝐂𝐎𝐋𝐎𝐒𝐈:\n\n";
+    let msg = "📜 ᴛᴏᴘ ᴄʟᴀɴ ᴘᴇʀɪᴄᴏʟᴏꜱɪ:\n\n";
 
     clans.forEach(c => {
-      msg += `- *${c.name}*, 𝐅𝐨𝐧𝐝𝐚𝐭𝐨𝐫𝐞: @${c.founder.split("@")[0]}, 𝐌𝐞𝐦𝐛𝐫𝐢: *${c.members.length}*, 𝐑𝐞𝐩𝐮𝐭𝐚𝐳𝐢𝐨𝐧𝐞 *${c.reputation}*\n`;
+      msg += `- *${c.name}*, ꜰᴏɴᴅᴀᴛᴏʀᴇ: @${c.founder.split("@")[0]}, ᴍᴇᴍʙʀɪ: *${c.members.length}*, ʀᴇᴘᴜᴛᴀᴢɪᴏɴᴇ *${c.reputation}*\n`;
     });
 
     return conn.sendMessage(chat, { text: msg, mentions: clans.map(c => c.members).flat() });

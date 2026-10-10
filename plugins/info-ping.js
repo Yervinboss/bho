@@ -5,8 +5,8 @@ import { performance } from 'perf_hooks';
 
 const toMathematicalAlphanumericSymbols = number => {
   const map = {
-    '0': '𝟎', '1': '𝟏', '2': '𝟐', '3': '𝟑', '4': '𝟒',
-    '5': '𝟓', '6': '𝟔', '7': '𝟕', '8': '𝟖', '9': '𝟗', '.': '.'
+    '0': '𝟶', '1': '𝟷', '2': '𝟸', '3': '𝟹', '4': '𝟺',
+    '5': '𝟻', '6': '𝟼', '7': '𝟽', '8': '𝟾', '9': '𝟿', '.': '.'
   };
   return number.toString().split('').map(digit => map[digit] || digit).join('');
 };
@@ -42,29 +42,29 @@ const handler = async (m, { conn }) => {
 
   const image = fs.readFileSync('./icone/ping.png');
 
-  let nomeDelBot = global.db.data.nomedelbot || ' ꙰ 𝟥𝟥𝟥 𝔹𝕆𝕋  ꙰⇝';
+  let nomeDelBot = global.db.data.nomedelbot || '❖ ᴢᴇɴᴏʙᴏᴛ';
 
   const prova = {
     key: { participants: "0@s.whatsapp.net", fromMe: false, id: "Halo" },
     message: {
       documentMessage: {
-        title: `${nomeDelBot} 𝐏𝕀𝐍𝐆 🏓`,
+        title: `${nomeDelBot} ᴘɪɴɢ 🏓`,
         jpegThumbnail: image
       }
     },
     participant: "0@s.whatsapp.net"
   };
 
-  const info = `ೋೋ══ • ══ೋೋ
-𝚲𝐓𝐓𝕀𝐕𝕀𝐓𝚲: ${uptime}
-𝐕𝚵𝐋͎Ꮻ𝐂𝕀𝐓𝚲: ${speedWithFont} 𝐒𝚵𝐂Ꮻ𝐍𝐃𝕀
-𝐑𝐀𝐌 (server): ${usedMemMB} MB / ${totalMemMB} MB
-𝐌𝐄𝐌 (process): ${heapUsedMB} MB / ${heapTotalMB} MB
-ೋೋ══ • ══ೋೋ`.trim();
+  const info = `ೋೋ┄┄ • ┄┄ೋೋ
+ᴀᴛᴛɪᴠɪᴛᴀ: ${uptime}
+ᴠᴇʟ͎Ꮻᴄɪᴛᴀ: ${speedWithFont} ꜱᴇᴄᏫɴᴅɪ
+ʀᴀᴍ (server): ${usedMemMB} MB / ${totalMemMB} MB
+ᴍᴇᴍ (process): ${heapUsedMB} MB / ${heapTotalMB} MB
+ೋೋ┄┄ • ┄┄ೋೋ`.trim();
 
   await conn.sendMessage(m.chat, {
     text: info,
-    footer: "𝟑𝟑𝟑 𝐁𝐨𝐭 𝐯𝐞𝐫𝐬𝐢𝐨𝐧𝐞 𝟏𝟎.𝟑"
+    footer: "ᴢᴇɴᴏʙᴏᴛ ʙᴏᴛ ᴠᴇʀꜱɪᴏɴᴇ 𝟷𝟶.𝟹"
   }, { quoted: prova });
 };
 

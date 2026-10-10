@@ -1,6 +1,6 @@
 //Codice di fun-coda.js
 
-//Plugin by Zeno, Lucifero & 333 staff
+//Plugin by Zeno, Lucifero & zenobot staff
 
 import fs from 'fs'
 import { exec } from 'child_process'
@@ -69,7 +69,7 @@ const buildQueuedAudio = async () => {
   } catch (error) {
     cleanupFiles(tempFiles)
     if (fs.existsSync(listFile)) fs.unlinkSync(listFile)
-    return { success: false, message: `❌ Errore nella creazione dell’audio: ${error.message}` }
+    return { success: false, message: `✖️ Errore nella creazione dell’audio: ${error.message}` }
   }
 }
 
@@ -110,7 +110,7 @@ const playQueue = async (m, conn) => {
     }, { quoted: m })
   } catch (error) {
     console.error(error)
-    await m.reply('❌ Errore nell’invio dell’audio della coda.')
+    await m.reply('✖️ Errore nell’invio dell’audio della coda.')
   } finally {
     cleanupFiles(result.cleanup || [result.file])
     global.queuePlayback[SHARED_QUEUE_KEY] = false
@@ -123,7 +123,7 @@ const handler = async (m, { conn, usedPrefix, command, text }) => {
 
   if (command === 'add_queue') {
     const video = global.playChoice?.[m.sender]
-    if (!video) return m.reply('❌ Nessuna canzone selezionata.')
+    if (!video) return m.reply('✖️ Nessuna canzone selezionata.')
 
     queue.push({
       title: video.title,
@@ -150,7 +150,7 @@ const handler = async (m, { conn, usedPrefix, command, text }) => {
     return conn.sendButton(
       jid,
       textMessage,
-      '🎵 Gestione coda 333',
+      '🎵 Gestione coda zenobot',
       null,
       [
         ['▶️ Riproduci coda', `${usedPrefix}play_queue`],
@@ -177,7 +177,7 @@ const handler = async (m, { conn, usedPrefix, command, text }) => {
   if (command === 'remove_queue') {
     const pos = Number(text?.trim())
     if (!Number.isInteger(pos) || pos < 1 || pos > queue.length) {
-      return m.reply('❌ Posizione non valida.')
+      return m.reply('✖️ Posizione non valida.')
     }
 
     const removed = queue.splice(pos - 1, 1)[0]

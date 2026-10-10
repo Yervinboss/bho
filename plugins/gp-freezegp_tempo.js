@@ -1,4 +1,4 @@
-//Plugin by Zeno, Lucifero & 333 staff
+//Plugin by Zeno, Lucifero & zenobot staff
 
 
 
@@ -23,13 +23,13 @@ let handler = async (m, { conn, command, isBotAdmin }) => {
   freezeTimers[m.chat] = setTimeout(async () => {
     await conn.groupSettingUpdate(m.chat, 'not_announcement')
     await conn.sendMessage(m.chat, { 
-      text: "🔓 𝐆𝐫𝐮𝐩𝐩𝐨 𝐫𝐢𝐚𝐩𝐞𝐫𝐭𝐨 𝐚𝐮𝐭𝐨𝐦𝐚𝐭𝐢𝐜𝐚𝐦𝐞𝐧𝐭𝐞." 
+      text: "🔓 ɢʀᴜᴘᴘᴏ ʀɪᴀᴘᴇʀᴛᴏ ᴀᴜᴛᴏᴍᴀᴛɪᴄᴀᴍᴇɴᴛᴇ." 
     })
     delete freezeTimers[m.chat]
   }, duration)
 
   await conn.sendMessage(m.chat, {
-    text: `🚨 𝐆𝐑𝐔𝐏𝐏𝐎 𝐂𝐇𝐈𝐔𝐒𝐎 𝐓𝐄𝐌𝐏𝐎𝐑𝐀𝐍𝐄𝐀𝐌𝐄𝐍𝐓𝐄 𝐃𝐀 𝐔𝐍 𝐀𝐃𝐌𝐈𝐍 𝐏𝐄𝐑 𝐒𝐈𝐂𝐔𝐑𝐄𝐙𝐙𝐀\n\n⏳ 𝐒𝐢 𝐫𝐢𝐚𝐩𝐫𝐢𝐫𝐚̀ 𝐭𝐫𝐚 *${minutes}* 𝐦𝐢𝐧𝐮𝐭𝐨/𝐢.`
+    text: `🚨 ɢʀᴜᴘᴘᴏ ᴄʜɪᴜꜱᴏ ᴛᴇᴍᴘᴏʀᴀɴᴇᴀᴍᴇɴᴛᴇ ᴅᴀ ᴜɴ ᴀᴅᴍɪɴ ᴘᴇʀ ꜱɪᴄᴜʀᴇᴢᴢᴀ\n\n⏳ ꜱɪ ʀɪᴀᴘʀɪʀᴀ̀ ᴛʀᴀ *${minutes}* ᴍɪɴᴜᴛᴏ/ɪ.`
   })
 }
 

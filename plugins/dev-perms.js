@@ -1,4 +1,4 @@
-//Plugin by Zeno, Lucifero & 333 staff
+//Plugin by Zeno, Lucifero & zenobot staff
 
 import fs from 'fs'
 import path from 'path'
@@ -43,8 +43,8 @@ ${code ? code.slice(0, 3500) : 'Nessun codice (eliminazione)'}
 🆔 ID Approvazione: \`${id}\``,
 
     buttons: [
-      { buttonId: `.approva ${id}`, buttonText: { displayText: '✅ Approva' }, type: 1 },
-      { buttonId: `.rifiuta ${id}`, buttonText: { displayText: '❌ Rifiuta' }, type: 1 }
+      { buttonId: `.approva ${id}`, buttonText: { displayText: '✔️ Approva' }, type: 1 },
+      { buttonId: `.rifiuta ${id}`, buttonText: { displayText: '✖️ Rifiuta' }, type: 1 }
     ],
     headerType: 1
   })
@@ -57,10 +57,10 @@ let handler = async (m, { conn, text, command }) => {
     if (!isOwner(m.sender)) return
 
     const approvalId = text?.trim()
-    if (!approvalId) return m.reply('❌ ID approvazione mancante.')
+    if (!approvalId) return m.reply('✖️ ID approvazione mancante.')
 
     const approval = pendingApprovals[approvalId]
-    if (!approval) return m.reply(`❌ Nessuna richiesta trovata con ID *${approvalId}*`)
+    if (!approval) return m.reply(`✖️ Nessuna richiesta trovata con ID *${approvalId}*`)
 
     if (cmd === 'approva') {
       const { type, filename, code, devJid } = approval
@@ -72,18 +72,18 @@ let handler = async (m, { conn, text, command }) => {
         delete pendingApprovals[approvalId]
 
         await conn.sendMessage(STAFF_GROUP, {
-          text: `✅ Plugin *${filename}* approvato.`
+          text: `✔️ Plugin *${filename}* approvato.`
         })
 
         await conn.sendMessage(devJid, {
           text:
-`✅ *Richiesta Approvata!*
+`✔️ *Richiesta Approvata!*
 
 📄 Plugin: *${filename}*
 👮 Approvato da uno staff`
         })
       } catch (e) {
-        m.reply('❌ Errore: ' + e.message)
+        m.reply('✖️ Errore: ' + e.message)
       }
       return
     }
@@ -93,7 +93,7 @@ let handler = async (m, { conn, text, command }) => {
       return await conn.sendMessage(m.chat, {
         text: `✏️ Scrivi il motivo del rifiuto per *${approvalId}*`,
         buttons: [
-          { buttonId: `.annullarifiuto`, buttonText: { displayText: '❌ Annulla' }, type: 1 }
+          { buttonId: `.annullarifiuto`, buttonText: { displayText: '✖️ Annulla' }, type: 1 }
         ],
         headerType: 1
       }, { quoted: m })
@@ -106,7 +106,7 @@ let handler = async (m, { conn, text, command }) => {
   }
 
   if (!isDev(m.sender))
-    return m.reply('❌ Non hai il ruolo developer.')
+    return m.reply('✖️ Non hai il ruolo developer.')
 
   const type = cmd === 'devsave' ? 'save' : cmd === 'devedit' ? 'edit' : 'delete'
 
@@ -122,21 +122,21 @@ let handler = async (m, { conn, text, command }) => {
   }
 
   if (!filename)
-    return m.reply(`❌ Formato non valido`)
+    return m.reply(`✖️ Formato non valido`)
 
   if ((type === 'save' || type === 'edit') && !code)
-    return m.reply('❌ Nessun codice trovato.')
+    return m.reply('✖️ Nessun codice trovato.')
 
   const protectedPluginNames = new Set(['crediti'])
   const baseName = path.basename(filename, '.js').toLowerCase()
   if (protectedPluginNames.has(baseName))
-    return m.reply('❌ Questo plugin è protetto e non può essere salvato, modificato o eliminato.')
+    return m.reply('✖️ Questo plugin è protetto e non può essere salvato, modificato o eliminato.')
 
   const filePath = path.join(PLUGINS_DIR, filename)
   if (type === 'edit' && !fs.existsSync(filePath))
-    return m.reply(`❌ Il plugin non esiste.`)
+    return m.reply(`✖️ Il plugin non esiste.`)
   if (type === 'delete' && !fs.existsSync(filePath))
-    return m.reply(`❌ Il plugin non esiste.`)
+    return m.reply(`✖️ Il plugin non esiste.`)
 
   const devNum = m.sender.split('@')[0]
   const devName = m.pushName || devNum
@@ -166,12 +166,12 @@ handler.all = async function (m) {
   delete pendingApprovals[approvalId]
 
   await this.sendMessage(STAFF_GROUP, {
-    text: `❌ Rifiutato plugin *${approval.filename}*\nMotivo: ${motivo}`
+    text: `✖️ Rifiutato plugin *${approval.filename}*\nMotivo: ${motivo}`
   })
 
   await this.sendMessage(approval.devJid, {
     text:
-`❌ *Richiesta Rifiutata*
+`✖️ *Richiesta Rifiutata*
 
 📄 Plugin: *${approval.filename}*
 📝 Motivo: ${motivo}`

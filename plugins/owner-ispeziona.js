@@ -1,11 +1,11 @@
-//Plugin by Zeno, Lucifero & 333 staff
+//Plugin by Zeno, Lucifero & zenobot staff
 
 import * as baileys from '@chatunity/baileys';
 
 let handler = async (m, { conn, text }) => {
 
   let [, code] = text.match(/chat\.whatsapp\.com\/(?:invite\/)?([0-9A-Za-z]{20,24})/i) || [];
-  if (!code) throw '𝐈𝐍𝐒𝐄𝐑𝐈𝐑𝐄 𝐈𝐋 𝐋𝐈𝐍𝐊 𝐃𝐄𝐋 𝐆𝐑𝐔𝐏𝐏𝐎';
+  if (!code) throw 'ɪɴꜱᴇʀɪʀᴇ ɪʟ ʟɪɴᴋ ᴅᴇʟ ɢʀᴜᴘᴘᴏ';
   
 
   let res = await conn.query({ 
@@ -19,13 +19,13 @@ let handler = async (m, { conn, text }) => {
   
 
   let txt = `*INFORMAZIONI GRUPPO*\n`;
-  txt += `➣ *ID*: ${data.id}\n`;
-  txt += `➣ *Nome*: ${data.subject}\n`;
-  txt += `➣ *Creato il*: ${data.creation}\n`;
-  txt += `➣ *Creatore*: ${data.owner}\n`;
-  txt += `➣ *Numero membri*: ${data.size}\n`;
-  txt += `➣ *Amministratori*: ${data.admins.join(', ')}\n`;
-  txt += `➣ *Descrizione*: ${data.desc || 'Nessuna descrizione'}\n`;
+  txt += `▹ *ID*: ${data.id}\n`;
+  txt += `▹ *Nome*: ${data.subject}\n`;
+  txt += `▹ *Creato il*: ${data.creation}\n`;
+  txt += `▹ *Creatore*: ${data.owner}\n`;
+  txt += `▹ *Numero membri*: ${data.size}\n`;
+  txt += `▹ *Amministratori*: ${data.admins.join(', ')}\n`;
+  txt += `▹ *Descrizione*: ${data.desc || 'Nessuna descrizione'}\n`;
 
 
   let pp = await conn.profilePictureUrl(data.id, 'image').catch(() => null);
@@ -38,7 +38,7 @@ let handler = async (m, { conn, text }) => {
 };
 
 handler.command = /^(ispeziona)$/i;
-handler.help = ['𝐢𝐬𝐩𝐞𝐳𝐢𝐨𝐧𝐚 <𝐥𝐢𝐧𝐤>'];
+handler.help = ['ɪꜱᴘᴇᴢɪᴏɴᴀ <ʟɪɴᴋ>'];
 handler.tags = ['owner'];
 handler.rowner = true;
 export default handler;

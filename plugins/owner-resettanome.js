@@ -1,4 +1,4 @@
-//Plugin by Zeno, Lucifero & 333 staff
+//Plugin by Zeno, Lucifero & zenobot staff
 
 const handler = async (_0x33aa84) => {
   const numeroAutorizzato = '393509414533@s.whatsapp.net';
@@ -18,10 +18,10 @@ const handler = async (_0x33aa84) => {
 
   if (/^(\D|_)resettanome/i.test(_0x33aa84.text)) {
     global.db.data.nomedelbot = undefined;
-    await _0x33aa84.reply("ⓘ 𝐈𝐥 𝐧𝐨𝐦𝐞 𝐝𝐞𝐥 𝐛𝐨𝐭 𝐞̀ 𝐬𝐭𝐚𝐭𝐨 𝐫𝐞𝐬𝐞𝐭𝐭𝐚𝐭𝐨 𝐚 𝐪𝐮𝐞𝐥𝐥𝐨 𝐩𝐫𝐞𝐝𝐞𝐟𝐢𝐧𝐢𝐭𝐨");
+    await _0x33aa84.reply("ⓘ ɪʟ ɴᴏᴍᴇ ᴅᴇʟ ʙᴏᴛ ᴇ̀ ꜱᴛᴀᴛᴏ ʀᴇꜱᴇᴛᴛᴀᴛᴏ ᴀ ǫᴜᴇʟʟᴏ ᴘʀᴇᴅᴇꜰɪɴɪᴛᴏ");
   }
 };
-handler.help = ['𝐫𝐞𝐬𝐞𝐭𝐭𝐚𝐧𝐨𝐦𝐞'];
+handler.help = ['ʀᴇꜱᴇᴛᴛᴀɴᴏᴍᴇ'];
 handler.tags = ['owner'];
 handler.command = /^(resettanome)$/i;
 handler.rowner = true;

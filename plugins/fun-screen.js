@@ -1,4 +1,4 @@
-//Plugin by Zeno, Lucifero & 333 staff
+//Plugin by Zeno, Lucifero & zenobot staff
 
 
 
@@ -133,7 +133,7 @@ const handler = async (m, { conn, args, usedPrefix, command }) => {
   } catch (err) {
     console.error('[fun-screen] Errore:', err);
     await conn.sendMessage(m.chat, {
-      text: `❌ Errore: ${err.message}`,
+      text: `✖️ Errore: ${err.message}`,
     }, { quoted: m });
   }
 };

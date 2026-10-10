@@ -44,12 +44,12 @@ let handler = async (m, { conn, text, args, groupMetadata, isAdmin, isOwner }) =
     ]
 
     const buttonMessage = {
-      text: `╭━━━━━━━━━━━━━━━╮
-┃ 𝐆𝐄𝐒𝐓𝐈𝐎𝐍𝐄 𝐈𝐍𝐀𝐓𝐓𝐈𝐕𝐈 😴
-┃
-┃ 𝐓𝐨𝐭𝐚𝐥𝐞 Inattivi: ${total}/${member.length}
-┃ 𝘕𝘰𝘯 𝘴𝘤𝘳𝘪𝘷𝘰𝘯𝘰 𝘥𝘢: > 2 Ore
-╰━━━━━━━━━━━━━━━╯`,
+      text: `┌┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┐
+┆ ɢᴇꜱᴛɪᴏɴᴇ ɪɴᴀᴛᴛɪᴠɪ 😴
+┆
+┆ ᴛᴏᴛᴀʟᴇ Inattivi: ${total}/${member.length}
+┆ ɴᴏɴ ꜱᴄʀɪᴠᴏɴᴏ ᴅᴀ: > 2 Ore
+└┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┘`,
       footer: 'Gestione inattività',
       buttons: buttons,
       headerType: 1
@@ -60,19 +60,19 @@ let handler = async (m, { conn, text, args, groupMetadata, isAdmin, isOwner }) =
 
   if (args[0] === 'lista') {
     if (!isAdmin && !isOwner) {
-      return conn.reply(m.chat, '❌ Solo gli *admin* possono vedere la lista degli inattivi.', m)
+      return conn.reply(m.chat, '✖️ Solo gli *admin* possono vedere la lista degli inattivi.', m)
     }
 
     if (total === 0) {
       return conn.reply(m.chat, `✨ *Nessun inattivo!* Tutti hanno scritto nelle ultime 2 ore.`, m)
     }
 
-    const message = `╭━━━━━━━━━━━━━━━╮
-┃ 𝐈𝐍𝐀𝐓𝐓𝐈𝐕𝐈 𝐑𝐈𝐋𝐄𝐕𝐀𝐓𝐈 😴
-┃
-┃ 𝐓𝐨𝐭𝐚𝐥𝐞: ${sider.length}
+    const message = `┌┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┐
+┆ ɪɴᴀᴛᴛɪᴠɪ ʀɪʟᴇᴠᴀᴛɪ 😴
+┆
+┆ ᴛᴏᴛᴀʟᴇ: ${sider.length}
 ${sider.map(v => '┣➤ @' + v.split('@')[0]).join('\n')}
-╰━━━━━━━━━━━━━━━╯`
+└┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┘`
 
     const listButtons = [
       { buttonId: `.inattivi rimuovi`, buttonText: { displayText: '🗑️ Rimuovi Tutti' }, type: 1 },
@@ -92,7 +92,7 @@ ${sider.map(v => '┣➤ @' + v.split('@')[0]).join('\n')}
 
   if (args[0] === 'rimuovi') {
     if (!isOwner && !isAdmin) {
-      return conn.reply(m.chat, '❌ Solo gli *admin* possono rimuovere gli inattivi.', m)
+      return conn.reply(m.chat, '✖️ Solo gli *admin* possono rimuovere gli inattivi.', m)
     }
 
     if (total === 0) {
@@ -100,17 +100,17 @@ ${sider.map(v => '┣➤ @' + v.split('@')[0]).join('\n')}
     }
 
     const confirmButtons = [
-      { buttonId: `.inattivi conferma`, buttonText: { displayText: '✅ Conferma Rimozione' }, type: 1 },
-      { buttonId: `.inattivi`, buttonText: { displayText: '❌ Annulla' }, type: 1 }
+      { buttonId: `.inattivi conferma`, buttonText: { displayText: '✔️ Conferma Rimozione' }, type: 1 },
+      { buttonId: `.inattivi`, buttonText: { displayText: '✖️ Annulla' }, type: 1 }
     ]
 
     const confirmMessage = {
-      text: `╭━━━━━━━━━━━━━━━╮
-┃ 𝐂𝐎𝐍𝐅𝐄𝐑𝐌𝐀 ⚠️
-┃
-┃ Vuoi rimuovere ${total} utenti
-┃ inattivi da più di 2 ore?
-╰━━━━━━━━━━━━━━━╯`,
+      text: `┌┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┐
+┆ ᴄᴏɴꜰᴇʀᴍᴀ ⚠️
+┆
+┆ Vuoi rimuovere ${total} utenti
+┆ inattivi da più di 2 ore?
+└┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┘`,
       footer: 'Conferma rimozione',
       buttons: confirmButtons,
       headerType: 1
@@ -121,7 +121,7 @@ ${sider.map(v => '┣➤ @' + v.split('@')[0]).join('\n')}
 
   if (args[0] === 'conferma') {
     if (!isOwner && !isAdmin) {
-      return conn.reply(m.chat, '❌ Solo gli *admin* possono rimuovere gli inattivi.', m)
+      return conn.reply(m.chat, '✖️ Solo gli *admin* possono rimuovere gli inattivi.', m)
     }
 
     if (total === 0) {
@@ -142,11 +142,11 @@ ${sider.map(v => '┣➤ @' + v.split('@')[0]).join('\n')}
     }
 
     const resultButton = {
-      text: `╭━━━━━━━━━━━━━━━╮
-┃ 𝐑𝐄𝐒𝐎𝐂𝐎𝐍𝐓𝐎 📋
-┃
-┃ Rimossi: *${removedCount}*
-╰━━━━━━━━━━━━━━━╯`,
+      text: `┌┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┐
+┆ ʀᴇꜱᴏᴄᴏɴᴛᴏ 📋
+┆
+┆ Rimossi: *${removedCount}*
+└┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┘`,
       footer: 'Operazione completata',
       buttons: [{ buttonId: `.inattivi`, buttonText: { displayText: '🔄 Torna al Menu' }, type: 1 }],
       headerType: 1
@@ -155,7 +155,7 @@ ${sider.map(v => '┣➤ @' + v.split('@')[0]).join('\n')}
     return conn.sendMessage(m.chat, resultButton, { quoted: m })
   }
 
-  return conn.reply(m.chat, '❌ Opzione non valida.', m)
+  return conn.reply(m.chat, '✖️ Opzione non valida.', m)
 }
 
 handler.help = ['inattivi']

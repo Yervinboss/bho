@@ -1,4 +1,4 @@
-//Plugin by Zeno, Lucifero & 333 staff
+//Plugin by Zeno, Lucifero & zenobot staff
 
 
 import { createCanvas, loadImage } from 'canvas';
@@ -75,7 +75,7 @@ const getPlayerStats = (jid) => {
 
 const getVictoryMessage = (winner, loser) => {
     const messages = [
-        `${winner} 𝐡𝐚 𝐬𝐜𝐨𝐧𝐟𝐢𝐭𝐭𝐨 ${loser}, 𝐜𝐨𝐦𝐩𝐥𝐢𝐦𝐞𝐧𝐭𝐢! 🏆`,
+        `${winner} ʜᴀ ꜱᴄᴏɴꜰɪᴛᴛᴏ ${loser}, ᴄᴏᴍᴘʟɪᴍᴇɴᴛɪ! 🏆`,
     ];
     return messages[Math.floor(Math.random() * messages.length)];
 };
@@ -400,7 +400,7 @@ const sendGameMessage = async (conn, chat, game, status, isFirstMessage = false)
     const p2Pic = await conn.profilePictureUrl(game.p2, 'image').catch(() => null);
 
     const { buffer, buttons } = await renderBoard(
-        game.isFinished ? '𝐏𝐀𝐑𝐓𝐈𝐓𝐀 𝐓𝐄𝐑𝐌𝐈𝐍𝐀𝐓𝐀.' : '𝐏𝐀𝐑𝐓𝐈𝐓𝐀 𝐈𝐍 𝐂𝐎𝐑𝐒𝐎',
+        game.isFinished ? 'ᴘᴀʀᴛɪᴛᴀ ᴛᴇʀᴍɪɴᴀᴛᴀ.' : 'ᴘᴀʀᴛɪᴛᴀ ɪɴ ᴄᴏʀꜱᴏ',
         p1Name,
         p2Name,
         game,
@@ -412,23 +412,23 @@ const sendGameMessage = async (conn, chat, game, status, isFirstMessage = false)
 
     let movesGuide = '';
     if (isFirstMessage) {
-        movesGuide += `╭─────────╮\n │\`🎮 𝐏𝐀𝐑𝐓𝐈𝐓𝐀 𝐈𝐍𝐈𝐙𝐈𝐀𝐓𝐀!\`\n │🔢 𝐑𝐢𝐬𝐩𝐨𝐧𝐝𝐢 𝐜𝐨𝐧 𝐮𝐧 𝐧𝐮𝐦𝐞𝐫𝐨 𝐝𝐚 𝟏 𝐚 𝟗\n │\n`;
+        movesGuide += `┌┄┄┄┄┄┄┄┄┄┐\n ┆\`🎮 ᴘᴀʀᴛɪᴛᴀ ɪɴɪᴢɪᴀᴛᴀ!\`\n ┆🔢 ʀɪꜱᴘᴏɴᴅɪ ᴄᴏɴ ᴜɴ ɴᴜᴍᴇʀᴏ ᴅᴀ 𝟷 ᴀ 𝟿\n ┆\n`;
     }
 
     if (!game.isFinished) {
         const currentPlayerName = await getSafeName(conn, game.turn);
         const remainingMoves = countRemainingPositions(game.board);
-        movesGuide += ` │ 👤 𝐄̀ 𝐢𝐥 𝐭𝐮𝐫𝐧𝐨 𝐝𝐢: *${currentPlayerName}*\n`;
-        movesGuide += ` │ 🕹️ 𝐌𝐨𝐬𝐬𝐞 𝐫𝐢𝐦𝐚𝐧𝐞𝐧𝐭𝐢: *${remainingMoves}*\n │\n`;
+        movesGuide += ` ┆ 👤 ᴇ̀ ɪʟ ᴛᴜʀɴᴏ ᴅɪ: *${currentPlayerName}*\n`;
+        movesGuide += ` ┆ 🕹️ ᴍᴏꜱꜱᴇ ʀɪᴍᴀɴᴇɴᴛɪ: *${remainingMoves}*\n ┆\n`;
         if (buttons.length > 0) {
-            movesGuide += ` │ ⌨️ 𝐔𝐬𝐚 𝐢 𝐛𝐨𝐭𝐭𝐨𝐧𝐢 𝐬𝐨𝐭𝐭𝐨𝐬𝐭𝐚𝐧𝐭𝐢 𝐨 𝐫𝐢𝐬𝐩𝐨𝐧𝐝𝐢 𝐜𝐨𝐧 𝐮𝐧 𝐧𝐮𝐦𝐞𝐫𝐨!\n`;
+            movesGuide += ` ┆ ⌨️ ᴜꜱᴀ ɪ ʙᴏᴛᴛᴏɴɪ ꜱᴏᴛᴛᴏꜱᴛᴀɴᴛɪ ᴏ ʀɪꜱᴘᴏɴᴅɪ ᴄᴏɴ ᴜɴ ɴᴜᴍᴇʀᴏ!\n`;
         }
     }
 
-    movesGuide += ` │ 👥 𝐆𝐢𝐨𝐜𝐚𝐭𝐨𝐫𝐢:\n` +
-        ` │ *${p1Name}*: ❌ 𝐂𝐫𝐨𝐜𝐞\n` +
-        ` │ *${p2Name}*: ⭕ 𝐂𝐞𝐫𝐜𝐡𝐢𝐨:\n │\n` +
-        ` │ ⌛️ 𝟒𝟓 𝐬𝐞𝐜𝐨𝐧𝐝𝐢 𝐝𝐢𝐬𝐩𝐨𝐧𝐢𝐛𝐢𝐥𝐢 𝐩𝐞𝐫 𝐦𝐨𝐬𝐬𝐚\n╰─────────╯`;
+    movesGuide += ` ┆ 👥 ɢɪᴏᴄᴀᴛᴏʀɪ:\n` +
+        ` ┆ *${p1Name}*: ✖️ ᴄʀᴏᴄᴇ\n` +
+        ` ┆ *${p2Name}*: ⭕ ᴄᴇʀᴄʜɪᴏ:\n ┆\n` +
+        ` ┆ ⌛️ 𝟺𝟻 ꜱᴇᴄᴏɴᴅɪ ᴅɪꜱᴘᴏɴɪʙɪʟɪ ᴘᴇʀ ᴍᴏꜱꜱᴀ\n└┄┄┄┄┄┄┄┄┄┘`;
 
     if (buttons.length > 0) {
         const interactiveButtons = buttons.map(btn => ({
@@ -440,7 +440,7 @@ const sendGameMessage = async (conn, chat, game, status, isFirstMessage = false)
             image: buffer,
             caption: movesGuide,
             mentions: [game.p1, game.p2],
-            footer: '𝟥𝟥𝟥 𝔹𝕆𝕋',
+            footer: 'ᴢᴇɴᴏʙᴏᴛ',
             buttons: interactiveButtons,
             headerType: 4
         });
@@ -461,16 +461,16 @@ let handler = async (m, { conn }) => {
     } else if (quoted) {
         opponent = quoted.sender;
     } else {
-        return m.reply('𝐃𝐞𝐯𝐢 𝐭𝐚𝐠𝐠𝐚𝐫𝐞 𝐪𝐮𝐚𝐥𝐜𝐮𝐧𝐨 𝐩𝐞𝐫 𝐠𝐢𝐨𝐜𝐚𝐫𝐞!\n𝐄𝐬𝐞𝐦𝐩𝐢𝐨: .𝐭𝐫𝐢𝐬 @𝐮𝐬𝐞𝐫');
+        return m.reply('ᴅᴇᴠɪ ᴛᴀɢɢᴀʀᴇ ǫᴜᴀʟᴄᴜɴᴏ ᴘᴇʀ ɢɪᴏᴄᴀʀᴇ!\nᴇꜱᴇᴍᴘɪᴏ: .ᴛʀɪꜱ @ᴜꜱᴇʀ');
     }
 
-    if (opponent === sender) return m.reply('𝐒𝐩𝐢𝐞𝐠𝐚, 𝐜𝐨𝐦𝐞 𝐟𝐚𝐢 𝐚 𝐠𝐢𝐨𝐜𝐚𝐫𝐞 𝐝𝐚 𝐬𝐨𝐥𝐨/𝐚?😅');
-    if (opponent === conn.user.jid) return m.reply('𝐢𝐥 𝐠𝐢𝐨𝐫𝐧𝐨 𝐢𝐧 𝐜𝐮𝐢 𝐝𝐢𝐯𝐞𝐧𝐭𝐞𝐫𝐨̀ 𝐮𝐦𝐚𝐧𝐨 𝐠𝐢𝐨𝐜𝐡𝐞𝐫𝐞𝐦𝐨😅');
-    if (games.has(chat)) return m.reply('𝐂’𝐞̀ 𝐠𝐢𝐚̀ 𝐮𝐧𝐚 𝐩𝐚𝐫𝐭𝐢𝐭𝐚 𝐢𝐧 𝐜𝐨𝐫𝐬𝐨! 𝐀𝐭𝐭𝐞𝐧𝐝𝐢 𝐜𝐡𝐞 𝐟𝐢𝐧𝐢𝐬𝐜𝐚 𝐩𝐫𝐢𝐦𝐚 𝐝𝐢 𝐢𝐧𝐢𝐳𝐢𝐚𝐫𝐧𝐞 𝐮𝐧𝐚 𝐧𝐮𝐨𝐯𝐚.');
+    if (opponent === sender) return m.reply('ꜱᴘɪᴇɢᴀ, ᴄᴏᴍᴇ ꜰᴀɪ ᴀ ɢɪᴏᴄᴀʀᴇ ᴅᴀ ꜱᴏʟᴏ/ᴀ?😅');
+    if (opponent === conn.user.jid) return m.reply('ɪʟ ɢɪᴏʀɴᴏ ɪɴ ᴄᴜɪ ᴅɪᴠᴇɴᴛᴇʀᴏ̀ ᴜᴍᴀɴᴏ ɢɪᴏᴄʜᴇʀᴇᴍᴏ😅');
+    if (games.has(chat)) return m.reply('ᴄ’ᴇ̀ ɢɪᴀ̀ ᴜɴᴀ ᴘᴀʀᴛɪᴛᴀ ɪɴ ᴄᴏʀꜱᴏ! ᴀᴛᴛᴇɴᴅɪ ᴄʜᴇ ꜰɪɴɪꜱᴄᴀ ᴘʀɪᴍᴀ ᴅɪ ɪɴɪᴢɪᴀʀɴᴇ ᴜɴᴀ ɴᴜᴏᴠᴀ.');
 
     const game = new TrisGame(sender, opponent);
     games.set(chat, game);
-    await sendGameMessage(conn, chat, game, `╭─────────╮\n👤 𝐓𝐮𝐫𝐧𝐨 𝐝𝐢: ${await getSafeName(conn, sender)}`, true);
+    await sendGameMessage(conn, chat, game, `┌┄┄┄┄┄┄┄┄┄┐\n👤 ᴛᴜʀɴᴏ ᴅɪ: ${await getSafeName(conn, sender)}`, true);
 
     clearTimeout(timeoutMap.get(chat));
     timeoutMap.set(chat, setTimeout(async () => {
@@ -482,9 +482,9 @@ let handler = async (m, { conn }) => {
             updatePlayerStats(winner, true, true);
             games.delete(chat);
             conn.sendMessage(chat, {
-                text: `╭─────────╮\n │ ⏰ 𝐓𝐄𝐌𝐏𝐎 𝐒𝐂𝐀𝐃𝐔𝐓𝐎!\n │\n` +
-                    ` │ ⌛️${await getSafeName(conn, loser)} 𝐡𝐚 𝐬𝐮𝐩𝐞𝐫𝐚𝐭𝐨 𝟒𝟓 𝐬𝐞𝐜𝐨𝐧𝐝𝐢!\n` +
-                    ` │ 🏆 𝐕𝐢𝐧𝐜𝐢𝐭𝐨𝐫𝐞: ${await getSafeName(conn, winner)}! \n╰─────────╯`,
+                text: `┌┄┄┄┄┄┄┄┄┄┐\n ┆ ⏰ ᴛᴇᴍᴘᴏ ꜱᴄᴀᴅᴜᴛᴏ!\n ┆\n` +
+                    ` ┆ ⌛️${await getSafeName(conn, loser)} ʜᴀ ꜱᴜᴘᴇʀᴀᴛᴏ 𝟺𝟻 ꜱᴇᴄᴏɴᴅɪ!\n` +
+                    ` ┆ 🏆 ᴠɪɴᴄɪᴛᴏʀᴇ: ${await getSafeName(conn, winner)}! \n└┄┄┄┄┄┄┄┄┄┘`,
                 mentions: [loser, winner]
             });
         }
@@ -508,7 +508,7 @@ handler.before = async (m, { conn }) => {
         return;
     }
 
-    if (!game.move(pos)) return m.reply('𝐌𝐨𝐬𝐬𝐚 𝐞𝐫𝐫𝐚𝐭𝐚!\n𝐒𝐞𝐥𝐞𝐳𝐢𝐨𝐧𝐚 𝐬𝐨𝐥𝐨 𝐮𝐧 𝐧𝐮𝐦𝐞𝐫𝐨 𝐝𝐚 𝟏 𝐚 𝟗 𝐞 𝐥𝐞 𝐜𝐚𝐬𝐞𝐥𝐥𝐞 𝐥𝐢𝐛𝐞𝐫𝐞!');
+    if (!game.move(pos)) return m.reply('ᴍᴏꜱꜱᴀ ᴇʀʀᴀᴛᴀ!\nꜱᴇʟᴇᴢɪᴏɴᴀ ꜱᴏʟᴏ ᴜɴ ɴᴜᴍᴇʀᴏ ᴅᴀ 𝟷 ᴀ 𝟿 ᴇ ʟᴇ ᴄᴀꜱᴇʟʟᴇ ʟɪʙᴇʀᴇ!');
 
     let result = game.checkWin();
     let status = '';
@@ -516,7 +516,7 @@ handler.before = async (m, { conn }) => {
     if (result) {
         game.isFinished = true;
         if (result.winner === 'draw') {
-            status = '𝐏𝐚𝐫𝐞𝐠𝐠𝐢𝐨!\n𝐍𝐞𝐬𝐬𝐮𝐧𝐨 𝐡𝐚 𝐯𝐢𝐧𝐭𝐨, 𝐥𝐚 𝐩𝐚𝐫𝐭𝐢𝐭𝐚 𝐞̀ 𝐟𝐢𝐧𝐢𝐭𝐚 𝐢𝐧 𝐩𝐚𝐫𝐢𝐭𝐚̀.';
+            status = 'ᴘᴀʀᴇɢɢɪᴏ!\nɴᴇꜱꜱᴜɴᴏ ʜᴀ ᴠɪɴᴛᴏ, ʟᴀ ᴘᴀʀᴛɪᴛᴀ ᴇ̀ ꜰɪɴɪᴛᴀ ɪɴ ᴘᴀʀɪᴛᴀ̀.';
             updatePlayerStats(game.p1, false, true);
             updatePlayerStats(game.p2, false, true);
         } else {
@@ -532,7 +532,7 @@ handler.before = async (m, { conn }) => {
     } else {
         const currentPlayerName = await getSafeName(conn, game.turn);
         const remainingMoves = countRemainingPositions(game.board);
-        status = `╭─────────╮\n👤 𝐓𝐮𝐫𝐧𝐨 𝐝𝐢: ${currentPlayerName} - 𝐑𝐢𝐦𝐚𝐧𝐠𝐨𝐧𝐨 𝐚𝐧𝐜𝐨𝐫𝐚 ${remainingMoves} 𝐦𝐨𝐬𝐬𝐞`;
+        status = `┌┄┄┄┄┄┄┄┄┄┐\n👤 ᴛᴜʀɴᴏ ᴅɪ: ${currentPlayerName} - ʀɪᴍᴀɴɢᴏɴᴏ ᴀɴᴄᴏʀᴀ ${remainingMoves} ᴍᴏꜱꜱᴇ`;
     }
 
     await sendGameMessage(conn, chat, game, status);
@@ -547,12 +547,12 @@ handler.before = async (m, { conn }) => {
             const loserStats = getPlayerStats(loser);
             setTimeout(async () => {
                 await conn.sendMessage(chat, {
-                    text: `╭─────────╮\n │ 𝐏𝐀𝐑𝐓𝐈𝐓𝐀 𝐓𝐄𝐑𝐌𝐈𝐍𝐀𝐓𝐀! 🎮\n╰─────────╯\n` +
-                        `╭─────────╮\n │ 🏆 𝐕𝐢𝐧𝐜𝐢𝐭𝐨𝐫𝐞: *${await getSafeName(conn, winner)}*\n` +
-                        ` │ 🎖️ ${winnerStats.wins}/${winnerStats.games} 𝐯𝐢𝐭𝐭𝐨𝐫𝐢𝐞 (${Math.round((winnerStats.wins/winnerStats.games)*100)}%)\n` +
-                        ` │ 🥉 𝐒𝐜𝐨𝐧𝐟𝐢𝐭𝐭𝐨: *${await getSafeName(conn, loser)}*\n` +
-                        ` │ 🎖️ ${loserStats.wins}/${loserStats.games} 𝐯𝐢𝐭𝐭𝐨𝐫𝐢𝐞 (${Math.round((loserStats.wins/loserStats.games)*100)}%)\n╰─────────╯\n` +
-                        `𝐮𝐬𝐚 𝐢𝐥 𝐜𝐨𝐦𝐚𝐧𝐝𝐨 ’’.𝐭𝐫𝐢𝐬’’ 𝐩𝐞𝐫 𝐜𝐨𝐦𝐢𝐧𝐜𝐢𝐚𝐫𝐞 𝐮𝐧𝐚 𝐧𝐮𝐨𝐯𝐚 𝐩𝐚𝐫𝐭𝐢𝐭𝐚\n> 𝟥𝟥𝟥 𝔹𝕆𝕋`,
+                    text: `┌┄┄┄┄┄┄┄┄┄┐\n ┆ ᴘᴀʀᴛɪᴛᴀ ᴛᴇʀᴍɪɴᴀᴛᴀ! 🎮\n└┄┄┄┄┄┄┄┄┄┘\n` +
+                        `┌┄┄┄┄┄┄┄┄┄┐\n ┆ 🏆 ᴠɪɴᴄɪᴛᴏʀᴇ: *${await getSafeName(conn, winner)}*\n` +
+                        ` ┆ 🎖️ ${winnerStats.wins}/${winnerStats.games} ᴠɪᴛᴛᴏʀɪᴇ (${Math.round((winnerStats.wins/winnerStats.games)*100)}%)\n` +
+                        ` ┆ 🥉 ꜱᴄᴏɴꜰɪᴛᴛᴏ: *${await getSafeName(conn, loser)}*\n` +
+                        ` ┆ 🎖️ ${loserStats.wins}/${loserStats.games} ᴠɪᴛᴛᴏʀɪᴇ (${Math.round((loserStats.wins/loserStats.games)*100)}%)\n└┄┄┄┄┄┄┄┄┄┘\n` +
+                        `ᴜꜱᴀ ɪʟ ᴄᴏᴍᴀɴᴅᴏ ’’.ᴛʀɪꜱ’’ ᴘᴇʀ ᴄᴏᴍɪɴᴄɪᴀʀᴇ ᴜɴᴀ ɴᴜᴏᴠᴀ ᴘᴀʀᴛɪᴛᴀ\n> ᴢᴇɴᴏʙᴏᴛ`,
                     mentions: [winner, loser]
                 });
             }, 2000);
@@ -567,9 +567,9 @@ handler.before = async (m, { conn }) => {
                 updatePlayerStats(winner, true, true);
                 games.delete(chat);
                 conn.sendMessage(chat, {
-                text: `╭─────────╮\n │ ⏰ 𝐓𝐄𝐌𝐏𝐎 𝐒𝐂𝐀𝐃𝐔𝐓𝐎!\n │\n` +
-                    ` │ ⌛️${await getSafeName(conn, loser)} 𝐡𝐚 𝐬𝐮𝐩𝐞𝐫𝐚𝐭𝐨 𝟒𝟓 𝐬𝐞𝐜𝐨𝐧𝐝𝐢!\n` +
-                    ` │ 🏆 𝐕𝐢𝐧𝐜𝐢𝐭𝐨𝐫𝐞: ${await getSafeName(conn, winner)}! \n╰─────────╯`,
+                text: `┌┄┄┄┄┄┄┄┄┄┐\n ┆ ⏰ ᴛᴇᴍᴘᴏ ꜱᴄᴀᴅᴜᴛᴏ!\n ┆\n` +
+                    ` ┆ ⌛️${await getSafeName(conn, loser)} ʜᴀ ꜱᴜᴘᴇʀᴀᴛᴏ 𝟺𝟻 ꜱᴇᴄᴏɴᴅɪ!\n` +
+                    ` ┆ 🏆 ᴠɪɴᴄɪᴛᴏʀᴇ: ${await getSafeName(conn, winner)}! \n└┄┄┄┄┄┄┄┄┄┘`,
                 mentions: [loser, winner]
                 });
             }
@@ -578,7 +578,7 @@ handler.before = async (m, { conn }) => {
 };
 
 handler.command = ['tris'];
-handler.help = ['𝐭𝐫𝐢𝐬 @𝐭𝐚𝐠'];
+handler.help = ['ᴛʀɪꜱ @ᴛᴀɢ'];
 handler.tags = ['fun'];
 handler.group = true;
 

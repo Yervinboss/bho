@@ -1,4 +1,4 @@
-//Plugin by Zeno, Lucifero & 333 staff
+//Plugin by Zeno, Lucifero & zenobot staff
 
 const handler = async (m) => {
   const mention = m.mentionedJid[0] || (m.quoted ? m.quoted.sender : m.text)

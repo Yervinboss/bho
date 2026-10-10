@@ -1,4 +1,4 @@
-//Plugin by Zeno, Lucifero & 333 staff
+//Plugin by Zeno, Lucifero & zenobot staff
 
 const PROMOTE_STUB = 29
 const DEMOTE_STUB = 30

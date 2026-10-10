@@ -17,10 +17,10 @@ const checkAndInstallModules = () => {
   if (!existsSync(nodeModulesPath)) {
     console.clear();
     console.log('\n\n');
-    console.log('\x1b[31m' + '═'.repeat(70) + '\x1b[0m');
+    console.log('\x1b[31m' + '┄'.repeat(70) + '\x1b[0m');
     console.log('\x1b[33m\n   Bro e senza moduli come avvi il bot? \x1b[0m');
     console.log('\x1b[36m   Menomale che ci sono io! 😎\x1b[0m\n');
-    console.log('\x1b[31m' + '═'.repeat(70) + '\x1b[0m');
+    console.log('\x1b[31m' + '┄'.repeat(70) + '\x1b[0m');
     console.log('\n\x1b[35m⚡ Installazione moduli in corso...\x1b[0m\n');
     
     try {
@@ -58,7 +58,7 @@ const typeWriterBig = async (text, delay = 100) => {
     cfonts.say(current, {
       font: 'block',
       align: 'center',
-      gradient: ['red', 'magenta', 'cyan'],
+      gradient: ['#00f5d4', '#9b5de5', '#f15bb5'],
       transitionGradient: true,
     });
     await sleep(delay);
@@ -66,7 +66,7 @@ const typeWriterBig = async (text, delay = 100) => {
 };
 
 const loading = async (text, duration = 1000) => {
-  const frames = ['⠋', '⠙', '⠹', '⠸', '⠼', '⠴', '⠦', '⠧', '⠇', '⠏'];
+  const frames = ['◜', '◠', '◝', '◞', '◡', '◟'];
   const startTime = Date.now();
   let i = 0;
   
@@ -125,7 +125,7 @@ async function epicStartup() {
   
   await sleep(300);
   
-  await typeWriterBig('333\nBOT V10.3\n2026', 120);
+  await typeWriterBig('ZENO\nBOT V10.3\n2026', 120);
   
   await sleep(400);
   
@@ -133,10 +133,10 @@ async function epicStartup() {
   await typeWriter('                           Ultimo Aggiornamento: 13/09/2026', 40, '\x1b[33m');
   
   console.log('\n');
-  await typeWriter('                          Edit by Zeno, Lucifero & 333 Staff', 35, '\x1b[36m');
+  await typeWriter('                          Edit by Zeno, Lucifero & zenobot Staff', 35, '\x1b[36m');
   
   console.log('\n\n');
-  console.log('\x1b[90m' + '━'.repeat(70) + '\x1b[0m');
+  console.log('\x1b[90m' + '┄'.repeat(70) + '\x1b[0m');
   console.log('\n');
   
   await progressBar('Caricamento sistema', 1100);
@@ -147,14 +147,14 @@ async function epicStartup() {
   await progressBar('Finalizzazione', 900);
   
   console.log('\n');
-  console.log('\x1b[90m' + '━'.repeat(70) + '\x1b[0m');
+  console.log('\x1b[90m' + '┄'.repeat(70) + '\x1b[0m');
   console.log('\n');
   
   await sleep(200);
-  await pulse('                     #333NEVERDIES', 4);
+  await pulse('                     #ZENOBOT', 4);
   
   console.log('\n');
-  console.log('\x1b[90m' + '━'.repeat(70) + '\x1b[0m');
+  console.log('\x1b[90m' + '┄'.repeat(70) + '\x1b[0m');
   console.log('\n\n');
 }
 
@@ -209,4 +209,4 @@ async function start(file) {
 
 }
 
-start('333.js');
+start('zenobot.js');

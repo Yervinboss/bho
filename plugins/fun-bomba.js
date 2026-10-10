@@ -1,4 +1,4 @@
-//Plugin by Zeno, Lucifero & 333 staff
+//Plugin by Zeno, Lucifero & zenobot staff
 
 
 
@@ -34,16 +34,16 @@ let handler = async (m, { conn, text, command }) => {
         };
 
         let pName = `@${m.sender.split('@')[0]}`;
-        let startCaption = `╔════════════════════╗\n`;
-        startCaption += `║      *333 BOT - BOMBA*      ║\n`;
-        startCaption += `╚═══════════════════════╝\n\n`;
+        let startCaption = `┌┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┐\n`;
+        startCaption += `┆      *ZENOBOT - BOMBA*      ┆\n`;
+        startCaption += `└┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┘\n\n`;
         startCaption += `💣 *BOMBA ATTIVATA!*\n\n`;
         startCaption += `👤 Vittima: ${pName}\n`;
         startCaption += `⏳ Tempo restante: *${durata}s*\n`;
         startCaption += `🧨 Usa: *passa @utente* o rispondi con *passa*\n`;
-        startCaption += `❌ 333 BOT non può ricevere la bomba!`;
+        startCaption += `✖️ ZENOBOT non può ricevere la bomba!`;
 
-        return conn.sendMessage(chat, { text: startCaption, mentions: [m.sender], footer: '333 BOT' }, { quoted: m });
+        return conn.sendMessage(chat, { text: startCaption, mentions: [m.sender], footer: 'ZENOBOT' }, { quoted: m });
     }
 };
 
@@ -65,7 +65,7 @@ handler.before = async function (m, { conn }) {
     }
 
     if (!target || target === m.sender) return; 
-    if (target === conn.user.jid) return m.reply('❌ Il bot non accetta bombe.');
+    if (target === conn.user.jid) return m.reply('✖️ Il bot non accetta bombe.');
 
     clearTimeout(b.timer);
     let tempoRimanente = b.scadenza - Date.now();
@@ -99,12 +99,12 @@ async function esplosione(chatId, conn, m) {
     let saldoVittima = global.db.data.users[b.vittima].money || 0;
     global.db.data.users[b.vittima].money = Math.max(0, saldoVittima - penale);
 
-    let finale = `╔════════════════════╗\n`;
-    finale += `║      *BOOM*     ║\n`;
-    finale += `╚═══════════════════════╝\n\n`;
+    let finale = `┌┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┐\n`;
+    finale += `┆      *BOOM*     ┆\n`;
+    finale += `└┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┘\n\n`;
     finale += `💥 *ESPLOSIONE!*\n\n`;
     finale += `💀 La bomba è scoppiata in mano a ${vTag}!\n`;
-    finale += `💸 Hai perso: *-${penale} XP333*\n\n`;
+    finale += `💸 Hai perso: *-${penale} ZenoCoin*\n\n`;
 
     if (b.passaggi.length > 0) {
         finale += `🏆 *SOPRAVVISSUTI PREMIATI:*\n`;
@@ -116,7 +116,7 @@ async function esplosione(chatId, conn, m) {
             if (!global.db.data.users[jid]) global.db.data.users[jid] = { money: 0 };
             global.db.data.users[jid].money = (global.db.data.users[jid].money || 0) + premio;
 
-            finale += `• @${jid.split('@')[0]} +${premio} XP333\n`;
+            finale += `• @${jid.split('@')[0]} +${premio} ZenoCoin\n`;
         }
         finale += `\n`;
     }
@@ -124,7 +124,7 @@ async function esplosione(chatId, conn, m) {
     await conn.sendMessage(chatId, { 
         text: finale, 
         mentions: [b.vittima, ...b.passaggi],
-        footer: '*333 BOT*',
+        footer: '*ZENOBOT*',
         interactiveButtons: playAgainButtons()
     });
 

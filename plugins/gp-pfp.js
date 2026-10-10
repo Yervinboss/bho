@@ -1,4 +1,4 @@
-//Plugin by Zeno, Lucifero & 333 staff
+//Plugin by Zeno, Lucifero & zenobot staff
 
 
 let handler = async (m, { conn, text }) => {
@@ -22,7 +22,7 @@ let handler = async (m, { conn, text }) => {
     } catch (e) {
 
         await conn.sendMessage(m.chat, { 
-            text: `@${who.split('@')[0]} 𝐧𝐨𝐧 𝐡𝐚 𝐮𝐧𝐚 𝐟𝐨𝐭𝐨 𝐩𝐫𝐨𝐟𝐢𝐥𝐨 🚫`, 
+            text: `@${who.split('@')[0]} ɴᴏɴ ʜᴀ ᴜɴᴀ ꜰᴏᴛᴏ ᴘʀᴏꜰɪʟᴏ 🚫`, 
             mentions: [who] 
         }, { quoted: m });
     }
@@ -30,7 +30,7 @@ let handler = async (m, { conn, text }) => {
 
 handler.command = /^(pic)$/i;
 handler.tags = ['admin'];
-handler.help = ['𝐩𝐢𝐜'];
+handler.help = ['ᴘɪᴄ'];
 handler.group = true;
 handler.admin = true;
 export default handler;

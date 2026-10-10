@@ -42,7 +42,7 @@ handler.before = async (m, { conn }) => {
     const remaining = global.db.data.users[who][field]
 
     await conn.sendMessage(m.chat, {
-      text: `✅ Un warn ${categoryName} rimosso a @${who.split('@')[0]}\n\n${emoji} Warn ${categoryName}: ${remaining} / ${maxWarns}`,
+      text: `✔️ Un warn ${categoryName} rimosso a @${who.split('@')[0]}\n\n${emoji} Warn ${categoryName}: ${remaining} / ${maxWarns}`,
       mentions: [who]
     }, { quoted: m })
   } else {

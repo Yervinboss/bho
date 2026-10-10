@@ -1,4 +1,4 @@
-//Plugin by Zeno, Lucifero & 333 staff
+//Plugin by Zeno, Lucifero & zenobot staff
 
 const stopWords = new Set(["e","a","o","che","il","la","lo","gli","le","un","uno","una","con","per","da","di","del","della","dei","delle","nel","nella","nei","nelle","sul","sulla","sui","sulle","al","allo","ai","agli","allo","hai","ha","ho","sei","si","ci","mi","ti","ne","ma","se","anche","anche","come","dove","quando","quale","quali","questo","questa","questi","quelle","sono","era","stato","stata","stati","state","fatto","fare","farete","faremo","farei","può","puoi","potrei","deve","devo","dovrebbe","sono","sta","quello","quella","queste","ogni","più","meno","non","nel","nella"]);
 

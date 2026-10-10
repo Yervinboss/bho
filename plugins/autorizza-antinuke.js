@@ -1,4 +1,4 @@
-//Plugin by Zeno, Lucifero & 333 staff
+//Plugin by Zeno, Lucifero & zenobot staff
 
 function normalizeJid(jid) {
   if (!jid) return null
@@ -25,7 +25,7 @@ let handler = async (m, { conn, text, usedPrefix, command }) => {
   const isGroupOwner = m.sender === groupOwnerJid
 
   if (!isBotOwner && !isGroupOwner) {
-    return conn.reply(m.chat, '❌ Solo l’owner del bot o il proprietario del gruppo può gestire l’autorizzazione anti-nuke.', m)
+    return conn.reply(m.chat, '✖️ Solo l’owner del bot o il proprietario del gruppo può gestire l’autorizzazione anti-nuke.', m)
   }
 
   const listCommand = /^(autorizzati|listaautorizzati|listautorizzati)$/i.test(command)
@@ -52,7 +52,7 @@ let handler = async (m, { conn, text, usedPrefix, command }) => {
       return conn.reply(m.chat, '❗ Utente già autorizzato!', m, { mentions: [targetJid] })
     }
     chat.antinukeAuthorized[targetJid] = true
-    return conn.reply(m.chat, `✅ Utente autorizzato all’uso di anti-nuke: @${targetJid.split('@')[0]}\n\n> *Per visualizzare la lista degli utenti autorizzati*, usa il comando ${usedPrefix}listaautorizzati`, m, { mentions: [targetJid] })
+    return conn.reply(m.chat, `✔️ Utente autorizzato all’uso di anti-nuke: @${targetJid.split('@')[0]}\n\n> *Per visualizzare la lista degli utenti autorizzati*, usa il comando ${usedPrefix}listaautorizzati`, m, { mentions: [targetJid] })
   }
 
   if (!chat.antinukeAuthorized[targetJid]) {

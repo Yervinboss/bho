@@ -1,4 +1,4 @@
-//Plugin by Zeno, Lucifero & 333 staff
+//Plugin by Zeno, Lucifero & zenobot staff
 
 global.basket = global.basket || {}
 
@@ -15,13 +15,13 @@ let handler = async (m, { conn, command }) => {
 
     return conn.sendMessage(m.chat, {
       text:
-`╔═🏀 𝐁𝐀𝐒𝐊𝐄𝐓 ═╗
-┃ Scegli il tiro
-┃
-┃ 🟢 Leggero
-┃ 🟡 Medio 
-┃ 🔴 Forte
-╚══════════════╝`,
+`┌┄🏀 ʙᴀꜱᴋᴇᴛ ┄┐
+┆ Scegli il tiro
+┆
+┆ 🟢 Leggero
+┆ 🟡 Medio 
+┆ 🔴 Forte
+└┄┄┄┄┄┄┄┄┄┄┄┄┄┄┘`,
       buttons: [
         { buttonId: ".tiro facile", buttonText: { displayText: "🟢 Leggero" }, type: 1 },
         { buttonId: ".tiro medio", buttonText: { displayText: "🟡 Medio" }, type: 1 },
@@ -34,7 +34,7 @@ let handler = async (m, { conn, command }) => {
   if (command === "tiro") {
 
     if (!global.basket[m.sender])
-      return m.reply("❌ Usa prima .basket")
+      return m.reply("✖️ Usa prima .basket")
 
     let tipo = m.text.split(" ")[1]
     let rand = Math.random()
@@ -50,16 +50,16 @@ let handler = async (m, { conn, command }) => {
       user.basket.score += 1
 
       text =
-`╔═🏀 𝐂𝐀𝐍𝐄𝐒𝐓𝐑𝐎 ═╗
-┃ 🏀 SWISH!
-┃ Totale canestri: *${user.basket.score}*
-╚══════════════╝`
+`┌┄🏀 ᴄᴀɴᴇꜱᴛʀᴏ ┄┐
+┆ 🏀 SWISH!
+┆ Totale canestri: *${user.basket.score}*
+└┄┄┄┄┄┄┄┄┄┄┄┄┄┄┘`
     } else {
       text =
-`╔═🧱 𝐄𝐑𝐑𝐎𝐑𝐄 ═╗
-┃ 🧱 Ferro pieno
-┃ Riprova campione
-╚══════════════╝`
+`┌┄🧱 ᴇʀʀᴏʀᴇ ┄┐
+┆ 🧱 Ferro pieno
+┆ Riprova campione
+└┄┄┄┄┄┄┄┄┄┄┄┄┄┄┘`
     }
 
     delete global.basket[m.sender]
@@ -86,9 +86,9 @@ let handler = async (m, { conn, command }) => {
       .slice(0, 10)
 
     if (!users.length)
-      return m.reply("❌ Nessun canestro registrato")
+      return m.reply("✖️ Nessun canestro registrato")
 
-    let text = "🏆 𝐓𝐎𝐏 𝐁𝐀𝐒𝐊𝐄𝐓\n\n"
+    let text = "🏆 ᴛᴏᴘ ʙᴀꜱᴋᴇᴛ\n\n"
 
     users.forEach((u, i) => {
       text += `${i + 1}. @${u.jid.split("@")[0]} — *${u.score}*\n`

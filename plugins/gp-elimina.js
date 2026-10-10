@@ -1,4 +1,4 @@
-//Plugin by Zeno, Lucifero & 333 staff
+//Plugin by Zeno, Lucifero & zenobot staff
 
 let handler = async (m, { conn, usedPrefix, command }) => {
 
@@ -30,7 +30,7 @@ let handler = async (m, { conn, usedPrefix, command }) => {
   }
 };
 
-handler.help = ['𝐝𝐞𝐥'];
+handler.help = ['ᴅᴇʟ'];
 handler.tags = ['admin'];
 handler.command = /^del(ete)?$/i;
 handler.group = true; 

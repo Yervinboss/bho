@@ -1,4 +1,4 @@
-//Plugin by Zeno, Lucifero & 333 staff
+//Plugin by Zeno, Lucifero & zenobot staff
 
 let handler = async (m, { conn }) => {
 
@@ -20,12 +20,12 @@ let handler = async (m, { conn }) => {
         let seconds = Math.floor((remainingMs % 60000) / 1000)
 
         return conn.reply(m.chat,
-`╭━━━〔 ⏳ ASPETTA 〕━━━╮
-┃
-┃ 👤 ${userTag}
-┃ ⏱️ Riprova tra ${minutes}m ${seconds}s
-┃
-╰━━━━━━━━━━━━━━━━━━━━━━╯`,
+`┌┄┄┄〔 ⏳ ASPETTA 〕┄┄┄┐
+┆
+┆ 👤 ${userTag}
+┆ ⏱️ Riprova tra ${minutes}m ${seconds}s
+┆
+└┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┘`,
         m,
         { mentions: [m.sender] })
     }
@@ -52,14 +52,14 @@ let handler = async (m, { conn }) => {
         user.money += amount
 
         text =
-`╭━━━〔 💋 LAVORO NOTTURNO 〕━━━╮
-┃
-┃ 👤 ${userTag}
-┃ ${ev.testo}
-┃ 💰 Guadagno: +${amount} €
-┃ 💵 Totale: ${user.money} €
-┃
-╰━━━━━━━━━━━━━━━━━━━━━━╯`
+`┌┄┄┄〔 💋 LAVORO NOTTURNO 〕┄┄┄┐
+┆
+┆ 👤 ${userTag}
+┆ ${ev.testo}
+┆ 💰 Guadagno: +${amount} €
+┆ 💵 Totale: ${user.money} €
+┆
+└┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┘`
 
     } else {
 
@@ -67,14 +67,14 @@ let handler = async (m, { conn }) => {
         if (user.money < 0) user.money = 0
 
         text =
-`╭━━━〔 🤒 GIORNATA STORTA 〕━━━╮
-┃
-┃ 👤 ${userTag}
-┃ ${ev.testo}
-┃ 💸 Perdita: -${amount} €
-┃ 💵 Totale: ${user.money} €
-┃
-╰━━━━━━━━━━━━━━━━━━━━━━╯`
+`┌┄┄┄〔 🤒 GIORNATA STORTA 〕┄┄┄┐
+┆
+┆ 👤 ${userTag}
+┆ ${ev.testo}
+┆ 💸 Perdita: -${amount} €
+┆ 💵 Totale: ${user.money} €
+┆
+└┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┘`
     }
 
     conn.reply(m.chat, text, m, {

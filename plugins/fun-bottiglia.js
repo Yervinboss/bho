@@ -1,4 +1,4 @@
-//Plugin by Zeno, Lucifero & 333 staff
+//Plugin by Zeno, Lucifero & zenobot staff
 
 let user = a => '@' + a.split('@')[0]; // Per taggare l'utente
 
@@ -59,7 +59,7 @@ let handler = async (m, { conn, command, groupMetadata }) => {
 };
 
 handler.command = ['bottiglia']; 
-handler.help = ['𝐛𝐨𝐭𝐭𝐢𝐠𝐥𝐢𝐚'];
+handler.help = ['ʙᴏᴛᴛɪɢʟɪᴀ'];
 handler.tags = ['fun'];
 handler.group = true; // Solo nei gruppi
 export default handler;

@@ -1,4 +1,4 @@
-//Plugin by Zeno, Lucifero & 333 staff
+//Plugin by Zeno, Lucifero & zenobot staff
 
 
 const parole = [
@@ -54,7 +54,7 @@ const handler = async (m, { conn }) => {
   if (global.gameImpiccato[chatId]) {
     const oldGame = global.gameImpiccato[chatId]
     if (Date.now() > oldGame.endTime) delete global.gameImpiccato[chatId]
-    else throw "⚠️ 𝐂’𝐞̀ 𝐠𝐢𝐚̀ 𝐮𝐧𝐚 𝐩𝐚𝐫𝐭𝐢𝐭𝐚 𝐢𝐧 𝐜𝐨𝐫𝐬𝐨!"
+    else throw "⚠️ ᴄ’ᴇ̀ ɢɪᴀ̀ ᴜɴᴀ ᴘᴀʀᴛɪᴛᴀ ɪɴ ᴄᴏʀꜱᴏ!"
   }
 
   const parola = parole[Math.floor(Math.random() * parole.length)]
@@ -72,16 +72,16 @@ const handler = async (m, { conn }) => {
 
   await conn.sendMessage(chatId, {
     text:
-`🎮 𝐈𝐌𝐏𝐈𝐂𝐂𝐀𝐓𝐎 𝐀𝐕𝐕𝐈𝐀𝐓𝐎!
+`🎮 ɪᴍᴘɪᴄᴄᴀᴛᴏ ᴀᴠᴠɪᴀᴛᴏ!
 
 ${ascii(0)}
 
-🔤 𝐏𝐚𝐫𝐨𝐥𝐚 𝐝𝐚 𝐢𝐧𝐝𝐨𝐯𝐢𝐧𝐚𝐫𝐞:
+🔤 ᴘᴀʀᴏʟᴀ ᴅᴀ ɪɴᴅᴏᴠɪɴᴀʀᴇ:
 ${parolaFormattata}
 
-⏳ 𝐇𝐚𝐢 𝟑 𝐦𝐢𝐧𝐮𝐭𝐢 𝐝𝐢 𝐭𝐞𝐦𝐩𝐨!
+⏳ ʜᴀɪ 𝟹 ᴍɪɴᴜᴛɪ ᴅɪ ᴛᴇᴍᴘᴏ!
 
-𝐒𝐜𝐫𝐢𝐯𝐢 𝐮𝐧𝐚 𝐥𝐞𝐭𝐭𝐞𝐫𝐚 𝐩𝐞𝐫 𝐭𝐞𝐧𝐭𝐚𝐫𝐞!`
+ꜱᴄʀɪᴠɪ ᴜɴᴀ ʟᴇᴛᴛᴇʀᴀ ᴘᴇʀ ᴛᴇɴᴛᴀʀᴇ!`
   })
 
   setTimeout(() => {
@@ -98,13 +98,13 @@ ${parolaFormattata}
 
       conn.sendMessage(chatId, {
         text:
-`⏳ 𝐓𝐄𝐌𝐏𝐎 𝐒𝐂𝐀𝐃𝐔𝐓𝐎!
+`⏳ ᴛᴇᴍᴘᴏ ꜱᴄᴀᴅᴜᴛᴏ!
 
-𝐋𝐚 𝐩𝐚𝐫𝐨𝐥𝐚 𝐞𝐫𝐚: *${game.parola}*
+ʟᴀ ᴘᴀʀᴏʟᴀ ᴇʀᴀ: *${game.parola}*
 
-𝐇𝐚𝐢 𝐩𝐞𝐫𝐬𝐨 𝟓 𝐩𝐮𝐧𝐭𝐢.
-━━━━━━━━━━━━━━
-📊 𝐂𝐋𝐀𝐒𝐒𝐈𝐅𝐈𝐂𝐀 𝐆𝐑𝐔𝐏𝐏𝐎:
+ʜᴀɪ ᴘᴇʀꜱᴏ 𝟻 ᴘᴜɴᴛɪ.
+┄┄┄┄┄┄┄┄┄┄┄┄┄┄
+📊 ᴄʟᴀꜱꜱɪꜰɪᴄᴀ ɢʀᴜᴘᴘᴏ:
 ${scoreArr}`,
         mentions: Object.keys(global.gameImpiccatoScore[chatId])
       })
@@ -148,13 +148,13 @@ handler.before = async (m, { conn }) => {
 
     await conn.sendMessage(m.chat, {
       text:
-`🏆 𝐇𝐀𝐈 𝐕𝐈𝐍𝐓𝐎!
+`🏆 ʜᴀɪ ᴠɪɴᴛᴏ!
 
-𝐏𝐚𝐫𝐨𝐥𝐚: *${game.parola}*
+ᴘᴀʀᴏʟᴀ: *${game.parola}*
 
-𝐇𝐚𝐢 𝐠𝐮𝐚𝐝𝐚𝐠𝐧𝐚𝐭𝐨 𝟏𝟎 𝐩𝐮𝐧𝐭𝐢
-━━━━━━━━━━━━━━
-📊 𝐂𝐋𝐀𝐒𝐒𝐈𝐅𝐈𝐂𝐀 𝐆𝐑𝐔𝐏𝐏𝐎:
+ʜᴀɪ ɢᴜᴀᴅᴀɢɴᴀᴛᴏ 𝟷𝟶 ᴘᴜɴᴛɪ
+┄┄┄┄┄┄┄┄┄┄┄┄┄┄
+📊 ᴄʟᴀꜱꜱɪꜰɪᴄᴀ ɢʀᴜᴘᴘᴏ:
 ${scoreArr}`,
       mentions: Object.keys(global.gameImpiccatoScore[m.chat])
     })
@@ -173,13 +173,13 @@ ${scoreArr}`,
 
     await conn.sendMessage(m.chat, {
       text:
-`💀 𝐒𝐄𝐈 𝐒𝐓𝐀𝐓𝐎 𝐈𝐌𝐏𝐈𝐂𝐂𝐀𝐓𝐎!
+`💀 ꜱᴇɪ ꜱᴛᴀᴛᴏ ɪᴍᴘɪᴄᴄᴀᴛᴏ!
 
-𝐋𝐚 𝐩𝐚𝐫𝐨𝐥𝐚 𝐞𝐫𝐚: *${game.parola}*
+ʟᴀ ᴘᴀʀᴏʟᴀ ᴇʀᴀ: *${game.parola}*
 
-𝐇𝐚𝐢 𝐩𝐞𝐫𝐬𝐨 𝟓 𝐩𝐮𝐧𝐭𝐢.
-━━━━━━━━━━━━━━
-📊 𝐂𝐋𝐀𝐒𝐒𝐈𝐅𝐈𝐂𝐀 𝐆𝐑𝐔𝐏𝐏𝐎:
+ʜᴀɪ ᴘᴇʀꜱᴏ 𝟻 ᴘᴜɴᴛɪ.
+┄┄┄┄┄┄┄┄┄┄┄┄┄┄
+📊 ᴄʟᴀꜱꜱɪꜰɪᴄᴀ ɢʀᴜᴘᴘᴏ:
 ${scoreArr}`,
       mentions: Object.keys(global.gameImpiccatoScore[m.chat])
     })
@@ -189,20 +189,20 @@ ${scoreArr}`,
 
   await conn.sendMessage(m.chat, {
     text:
-`🎮 𝐈𝐌𝐏𝐈𝐂𝐂𝐀𝐓𝐎 ꙰  𝟥𝟥𝟥 𝔹𝕆𝕋  ꙰
+`🎮 ɪᴍᴘɪᴄᴄᴀᴛᴏ❖ ᴢᴇɴᴏʙᴏᴛ
 
 ${ascii(game.errori)}
 
-🔤 𝐏𝐚𝐫𝐨𝐥𝐚:
+🔤 ᴘᴀʀᴏʟᴀ:
  *${parolaFormattata}*
 
-✅ 𝐋𝐞𝐭𝐭𝐞𝐫𝐞 𝐢𝐧𝐝𝐨𝐯𝐢𝐧𝐚𝐭𝐞:
- *${indovinate.length ? indovinate.join(" ") : "𝐍𝐞𝐬𝐬𝐮𝐧𝐚"}*
+✔️ ʟᴇᴛᴛᴇʀᴇ ɪɴᴅᴏᴠɪɴᴀᴛᴇ:
+ *${indovinate.length ? indovinate.join(" ") : "ɴᴇꜱꜱᴜɴᴀ"}*
 
-❌ 𝐋𝐞𝐭𝐭𝐞𝐫𝐞 𝐬𝐛𝐚𝐠𝐥𝐢𝐚𝐭𝐞:
- *${sbagliate.length ? sbagliate.join(" ") : "𝐍𝐞𝐬𝐬𝐮𝐧𝐚"}*
+✖️ ʟᴇᴛᴛᴇʀᴇ ꜱʙᴀɢʟɪᴀᴛᴇ:
+ *${sbagliate.length ? sbagliate.join(" ") : "ɴᴇꜱꜱᴜɴᴀ"}*
 
-⏳ 𝐓𝐞𝐦𝐩𝐨 𝐫𝐢𝐦𝐚𝐧𝐞𝐧𝐭𝐞: *${tempoDisplay}*`
+⏳ ᴛᴇᴍᴘᴏ ʀɪᴍᴀɴᴇɴᴛᴇ: *${tempoDisplay}*`
   })
 }
 

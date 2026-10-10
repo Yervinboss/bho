@@ -1,4 +1,4 @@
-//Plugin by Zeno, Lucifero & 333 staff
+//Plugin by Zeno, Lucifero & zenobot staff
 
 
 const FOOTBALL_API_KEY = "a906e1a601624a628eb189ffe0b9a438"
@@ -38,7 +38,7 @@ async function fetchMatchesByDate(dateFrom, dateTo) {
 
 function getStatusEmoji(status) {
   if (status === "IN_PLAY" || status === "PAUSED") return "🔴 LIVE"
-  if (status === "FINISHED") return "✅ FINITA"
+  if (status === "FINISHED") return "✔️ FINITA"
   if (status === "TIMED" || status === "SCHEDULED") return "🕐"
   return "⚽"
 }
@@ -193,13 +193,13 @@ let handler = async (m, { conn, args }) => {
     byDay[day].push(match)
   }
 
-  let testo = `╭──────────────────╮\n┃ ⚽ ${range.label}\n┃━━━━━━━━━━━━━━━━━━\n`
+  let testo = `┌┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┐\n┆ ⚽ ${range.label}\n┆┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄\n`
 
   let globalIndex = 1
 
   for (let day of Object.keys(byDay).sort()) {
     const dayMatches = byDay[day]
-    testo += `┃\n┃ 📆 *${formatDay(day).toUpperCase()}*\n┃\n`
+    testo += `┆\n┆ 📆 *${formatDay(day).toUpperCase()}*\n┆\n`
 
     let currentComp = ""
 
@@ -207,7 +207,7 @@ let handler = async (m, { conn, args }) => {
       const comp = match.competition?.name || ""
       if (comp !== currentComp) {
         currentComp = comp
-        testo += `┃ 🏆 ${comp}\n`
+        testo += `┆ 🏆 ${comp}\n`
       }
 
       const home = match.homeTeam.shortName || match.homeTeam.name
@@ -223,14 +223,14 @@ let handler = async (m, { conn, args }) => {
         scoreStr = ` *${hg}-${ag}*`
       }
 
-      testo += `┃\n┃ *${globalIndex}.* *${home}* vs *${away}*${scoreStr}\n┃    ${status} 🕐 ${ora}\n┃    🏟 ${venue}\n`
+      testo += `┆\n┆ *${globalIndex}.* *${home}* vs *${away}*${scoreStr}\n┆    ${status} 🕐 ${ora}\n┆    🏟 ${venue}\n`
       globalIndex++
     }
 
-    testo += `┃\n┃━━━━━━━━━━━━━━━━━━\n`
+    testo += `┆\n┆┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄\n`
   }
 
-  testo += `┃ Usa *.scommessa NUMERO*\n┃ per scommettere!\n╰──────────────────╯`
+  testo += `┆ Usa *.scommessa NUMERO*\n┆ per scommettere!\n└┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┘`
 
   global.todayMatches = global.todayMatches || {}
   global.todayMatches[chat] = matches

@@ -1,4 +1,4 @@
-//Plugin by Zeno, Lucifero & 333 staff
+//Plugin by Zeno, Lucifero & zenobot staff
 
 import { performance } from "perf_hooks";
 
@@ -14,15 +14,15 @@ let handler = async (m, { conn }) => {
     } else if (m.mentionedJid && m.mentionedJid.length > 0) {
         destinatario = m.mentionedJid[0];
     } else {
-        return m.reply("𝐃𝐞𝐯𝐢 𝐭𝐚𝐠𝐠𝐚𝐫𝐞 𝐪𝐮𝐚𝐥𝐜𝐮𝐧𝐨 𝐩𝐞𝐫 𝐢𝐧𝐢𝐳𝐢𝐚𝐫𝐞 𝐮𝐧 𝐝𝐢𝐭𝐚𝐥𝐢𝐧𝐨!");
+        return m.reply("ᴅᴇᴠɪ ᴛᴀɢɢᴀʀᴇ ǫᴜᴀʟᴄᴜɴᴏ ᴘᴇʀ ɪɴɪᴢɪᴀʀᴇ ᴜɴ ᴅɪᴛᴀʟɪɴᴏ!");
     }
 
     let nomeDestinatario = `@${destinatario.split('@')[0]}`;
 
     let sequenza = [
-        "𝐈𝐧𝐢𝐳𝐢𝐚𝐦𝐨 𝐚 𝐦𝐮𝐨𝐯𝐞𝐫𝐞 𝐪𝐮𝐞𝐬𝐭𝐞 𝐛𝐞𝐥𝐥𝐞 𝐝𝐢𝐭𝐚😏",
-        "𝐌𝐡𝐡𝐡 𝐚𝐧𝐜𝐨𝐫𝐚",
-        "𝐎𝐡 𝐬𝐢𝐢𝐢 𝐬𝐭𝐨 𝐯𝐞𝐧𝐞𝐧𝐝𝐨𝐨𝐨"
+        "ɪɴɪᴢɪᴀᴍᴏ ᴀ ᴍᴜᴏᴠᴇʀᴇ ǫᴜᴇꜱᴛᴇ ʙᴇʟʟᴇ ᴅɪᴛᴀ😏",
+        "ᴍʜʜʜ ᴀɴᴄᴏʀᴀ",
+        "ᴏʜ ꜱɪɪɪ ꜱᴛᴏ ᴠᴇɴᴇɴᴅᴏᴏᴏ"
     ];
 
     for (let msg of sequenza) {
@@ -34,7 +34,7 @@ let handler = async (m, { conn }) => {
         await sleep(1500); 
     }
 
-    let resultMessage = `𝐒𝐭𝐚 𝐭𝐫𝐨𝐢𝐨𝐧𝐚 *${nomeDestinatario}* 𝐞̀ 𝐯𝐞𝐧𝐮𝐭𝐚, 𝐡𝐚 𝐬𝐜𝐡𝐢𝐳𝐳𝐚𝐭𝐨 𝐨𝐯𝐮𝐧𝐪𝐮𝐞 💦`;
+    let resultMessage = `ꜱᴛᴀ ᴛʀᴏɪᴏɴᴀ *${nomeDestinatario}* ᴇ̀ ᴠᴇɴᴜᴛᴀ, ʜᴀ ꜱᴄʜɪᴢᴢᴀᴛᴏ ᴏᴠᴜɴǫᴜᴇ 💦`;
 
     await sleep(1200);
 

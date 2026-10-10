@@ -1,4 +1,4 @@
-//Plugin by Zeno, Lucifero & 333 staff
+//Plugin by Zeno, Lucifero & zenobot staff
 
 
 const FOOTBALL_API_KEY = "a906e1a601624a628eb189ffe0b9a438"
@@ -19,7 +19,7 @@ async function fetchMatchScore(matchId) {
 
 function getStatusEmoji(status) {
   if (status === "IN_PLAY" || status === "PAUSED") return "🔴 LIVE"
-  if (status === "FINISHED") return "✅ FINITA"
+  if (status === "FINISHED") return "✔️ FINITA"
   if (status === "TIMED" || status === "SCHEDULED") return "🕐"
   return "⚽"
 }
@@ -37,7 +37,7 @@ let handler = async (m, { conn, args }) => {
     let points = global.scommessePoints[chat] || {}
     let ranking = Object.entries(points).sort((a, b) => b[1] - a[1]).slice(0, 10)
     if (!ranking.length) return m.reply("Nessun punteggio ancora!")
-    let text = "🏆 𝐂𝐋𝐀𝐒𝐒𝐈𝐅𝐈𝐂𝐀 𝐒𝐂𝐎𝐌𝐌𝐄𝐒𝐒𝐄\n\n"
+    let text = "🏆 ᴄʟᴀꜱꜱɪꜰɪᴄᴀ ꜱᴄᴏᴍᴍᴇꜱꜱᴇ\n\n"
     for (let i = 0; i < ranking.length; i++) {
       let name = await conn.getName(ranking[i][0])
       text += `${i + 1}. ${name} — ${ranking[i][1]} punti\n`
@@ -56,14 +56,14 @@ let handler = async (m, { conn, args }) => {
     const status = getStatusEmoji(matchData.status)
     const minute = matchData.minute ? `${matchData.minute}'` : ""
     return m.reply(
-`╭─────────────╮
-┃ ⚽ RISULTATO LIVE
-┃━━━━━━━━━━━━━━━
-┃ *${game.home} ${hg} - ${ag} ${game.away}*
-┃ ${status} ${minute}
-┃━━━━━━━━━━━━━━━
-┃ La tua scommessa: *${game.userBet[user] || "non hai scommesso"}*
-╰─────────────╯`
+`┌┄┄┄┄┄┄┄┄┄┄┄┄┄┐
+┆ ⚽ RISULTATO LIVE
+┆┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄
+┆ *${game.home} ${hg} - ${ag} ${game.away}*
+┆ ${status} ${minute}
+┆┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄
+┆ La tua scommessa: *${game.userBet[user] || "non hai scommesso"}*
+└┄┄┄┄┄┄┄┄┄┄┄┄┄┘`
     )
   }
 
@@ -73,7 +73,7 @@ let handler = async (m, { conn, args }) => {
     if (game.userBet[user]) return m.reply(`Hai già scommesso su: *${game.userBet[user]}*`)
     game.userBet[user] = args[0].toUpperCase()
     const name = await conn.getName(user)
-    return m.reply(`✅ Scommessa registrata!\n*${name}* punta su: *${args[0].toUpperCase()}*\n\nUsa *.scommessa live* per il risultato in tempo reale!`)
+    return m.reply(`✔️ Scommessa registrata!\n*${name}* punta su: *${args[0].toUpperCase()}*\n\nUsa *.scommessa live* per il risultato in tempo reale!`)
   }
 
   const numeroPartita = parseInt(args[0])
@@ -100,31 +100,31 @@ let handler = async (m, { conn, args }) => {
     }
 
     let scoreRow = (chosen.status === "IN_PLAY" || chosen.status === "PAUSED" || chosen.status === "FINISHED")
-      ? `┃ 📊 Punteggio attuale: *${home} ${homeScore} - ${awayScore} ${away}*\n`
+      ? `┆ 📊 Punteggio attuale: *${home} ${homeScore} - ${awayScore} ${away}*\n`
       : ""
 
     const testo =
-`╭──────────────────╮
-┃ ⚽ 𝐒𝐂𝐎𝐌𝐌𝐄𝐒𝐒𝐀 𝐋𝐈𝐕𝐄
-┃━━━━━━━━━━━━━━━━━━
-┃ 🏆 ${comp}
-┃ ${status}
-┃━━━━━━━━━━━━━━━━━━
-┃ 🏠 *${home}*
-┃         VS
-┃ ✈️  *${away}*
-┃━━━━━━━━━━━━━━━━━━
-${scoreRow}┃ 🕐 Orario: *${ora}*
-┃━━━━━━━━━━━━━━━━━━
-┃ Chi la spunta? Scommetti:
-┃
-┃ *.scommessa 1* → Vince ${home}
-┃ *.scommessa X* → Pareggio
-┃ *.scommessa 2* → Vince ${away}
-┃━━━━━━━━━━━━━━━━━━
-┃ *.scommessa live* → Score reale
-┃ *.scommessa classifica* → 🏆
-╰──────────────────╯`
+`┌┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┐
+┆ ⚽ ꜱᴄᴏᴍᴍᴇꜱꜱᴀ ʟɪᴠᴇ
+┆┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄
+┆ 🏆 ${comp}
+┆ ${status}
+┆┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄
+┆ 🏠 *${home}*
+┆         VS
+┆ ✈️  *${away}*
+┆┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄
+${scoreRow}┆ 🕐 Orario: *${ora}*
+┆┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄
+┆ Chi la spunta? Scommetti:
+┆
+┆ *.scommessa 1* → Vince ${home}
+┆ *.scommessa X* → Pareggio
+┆ *.scommessa 2* → Vince ${away}
+┆┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄
+┆ *.scommessa live* → Score reale
+┆ *.scommessa classifica* → 🏆
+└┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┘`
 
     await conn.sendMessage(chat, { text: testo }, { quoted: m })
 
@@ -152,12 +152,12 @@ ${scoreRow}┃ 🕐 Orario: *${ora}*
         : "😔 Nessuno ha indovinato questa volta!"
       conn.sendMessage(chat, {
         text:
-`🏁 𝐏𝐀𝐑𝐓𝐈𝐓𝐀 𝐅𝐈𝐍𝐈𝐓𝐀!
-━━━━━━━━━━━━━━
+`🏁 ᴘᴀʀᴛɪᴛᴀ ꜰɪɴɪᴛᴀ!
+┄┄┄┄┄┄┄┄┄┄┄┄┄┄
 ⚽ ${game.home} ${hg} - ${ag} ${game.away}
-━━━━━━━━━━━━━━
+┄┄┄┄┄┄┄┄┄┄┄┄┄┄
 ${winnerText}
-━━━━━━━━━━━━━━
+┄┄┄┄┄┄┄┄┄┄┄┄┄┄
 Usa *.scommessa classifica* per la 🏆`
       })
     }, 3 * 60 * 60 * 1000)

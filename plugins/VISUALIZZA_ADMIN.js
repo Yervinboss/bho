@@ -1,4 +1,4 @@
-//Plugin by Zeno, Lucifero & 333 staff
+//Plugin by Zeno, Lucifero & zenobot staff
 
 import fetch from 'node-fetch'
 
@@ -22,11 +22,11 @@ handler.all = async function (m) {
       key: {
         participants: '0@s.whatsapp.net',
         fromMe: false,
-        id: '333Promozione'
+        id: 'zenobotPromozione'
       },
       message: {
         locationMessage: {
-          name: '𝐏𝐫𝐨𝐦𝐨𝐳𝐢𝐨𝐧𝐞 𝐚𝐝𝐦𝐢𝐧 👑',
+          name: 'ᴘʀᴏᴍᴏᴢɪᴏɴᴇ ᴀᴅᴍɪɴ 👑',
           jpegThumbnail: ppBuffer.toString('base64'),
           vcard: 'BEGIN:VCARD\nVERSION:3.0\nN:;Admin;;;\nFN:Admin\nEND:VCARD'
         }
@@ -35,7 +35,7 @@ handler.all = async function (m) {
     }
 
     conn.sendMessage(m.chat, {
-      text: `@${m.sender.split('@')[0]} 𝐡𝐚 𝐝𝐚𝐭𝐨 𝐢 𝐩𝐨𝐭𝐞𝐫𝐢 𝐚 @${m.messageStubParameters[0].split('@')[0]}`,
+      text: `@${m.sender.split('@')[0]} ʜᴀ ᴅᴀᴛᴏ ɪ ᴘᴏᴛᴇʀɪ ᴀ @${m.messageStubParameters[0].split('@')[0]}`,
       mentions: [m.sender, m.messageStubParameters[0]]
     }, { quoted: fake })
   }
@@ -56,11 +56,11 @@ handler.all = async function (m) {
       key: {
         participants: '0@s.whatsapp.net',
         fromMe: false,
-        id: '333Retrocessione'
+        id: 'zenobotRetrocessione'
       },
       message: {
         locationMessage: {
-          name: '𝐑𝐞𝐭𝐫𝐨𝐜𝐞𝐬𝐬𝐢𝐨𝐧𝐞 𝐚𝐝𝐦𝐢𝐧 🙇🏻‍♂️',
+          name: 'ʀᴇᴛʀᴏᴄᴇꜱꜱɪᴏɴᴇ ᴀᴅᴍɪɴ 🙇🏻‍♂️',
           jpegThumbnail: ppBuffer.toString('base64'),
           vcard: 'BEGIN:VCARD\nVERSION:3.0\nN:;Admin;;;\nFN:Admin\nEND:VCARD'
         }
@@ -69,7 +69,7 @@ handler.all = async function (m) {
     }
 
     conn.sendMessage(m.chat, {
-      text: `@${m.sender.split('@')[0]} 𝐡𝐚 𝐥𝐞𝐯𝐚𝐭𝐨 𝐢 𝐩𝐨𝐭𝐞𝐫𝐢 𝐚 @${m.messageStubParameters[0].split('@')[0]}`,
+      text: `@${m.sender.split('@')[0]} ʜᴀ ʟᴇᴠᴀᴛᴏ ɪ ᴘᴏᴛᴇʀɪ ᴀ @${m.messageStubParameters[0].split('@')[0]}`,
       mentions: [m.sender, m.messageStubParameters[0]]
     }, { quoted: fake })
   }

@@ -1,49 +1,49 @@
-//Plugin by Zeno, Lucifero & 333 staff
+//Plugin by Zeno, Lucifero & zenobot staff
 
 let handler = async (m, { conn, text, usedPrefix, command }) => {
   let chat = global.db.data.chats[m.chat];
   
   if (!text) {
-    return m.reply(`ⓘ 𝐔𝐬𝐨 𝐝𝐞𝐥 𝐜𝐨𝐦𝐚𝐧𝐝𝐨:
+    return m.reply(`ⓘ ᴜꜱᴏ ᴅᴇʟ ᴄᴏᴍᴀɴᴅᴏ:
 
-*𝐕𝐚𝐫𝐢𝐚𝐛𝐢𝐥𝐢 𝐝𝐢𝐬𝐩𝐨𝐧𝐢𝐛𝐢𝐥𝐢:*
+*ᴠᴀʀɪᴀʙɪʟɪ ᴅɪꜱᴘᴏɴɪʙɪʟɪ:*
 • @user - Menziona l'utente
 • @group - Nome del gruppo
 • @count - Numero membri
 
-*𝐄𝐬𝐞𝐦𝐩𝐢:*
+*ᴇꜱᴇᴍᴘɪ:*
 ${usedPrefix}${command} Addio @user, ci mancherai!
 
-*𝐑𝐞𝐬𝐞𝐭:*
+*ʀᴇꜱᴇᴛ:*
 ${usedPrefix}${command} reset
 
-*𝐌𝐞𝐬𝐬𝐚𝐠𝐠𝐢𝐨 𝐚𝐭𝐭𝐮𝐚𝐥𝐞:*
-${chat.sBye || '@user 𝐡𝐚 𝐥𝐚𝐬𝐜𝐢𝐚𝐭𝐨 𝐢𝐥 𝐠𝐫𝐮𝐩𝐩𝐨 (predefinito)'}`);
+*ᴍᴇꜱꜱᴀɢɢɪᴏ ᴀᴛᴛᴜᴀʟᴇ:*
+${chat.sBye || '@user ʜᴀ ʟᴀꜱᴄɪᴀᴛᴏ ɪʟ ɢʀᴜᴘᴘᴏ (predefinito)'}`);
   }
   
   
   if (text.toLowerCase() === 'reset') {
     delete chat.sBye;
-    return m.reply(`✅ 𝐌𝐞𝐬𝐬𝐚𝐠𝐠𝐢𝐨 𝐫𝐢𝐩𝐫𝐢𝐬𝐭𝐢𝐧𝐚𝐭𝐨!
+    return m.reply(`✔️ ᴍᴇꜱꜱᴀɢɢɪᴏ ʀɪᴘʀɪꜱᴛɪɴᴀᴛᴏ!
 
-*𝐌𝐞𝐬𝐬𝐚𝐠𝐠𝐢𝐨 𝐩𝐫𝐞𝐝𝐞𝐟𝐢𝐧𝐢𝐭𝐨:*
-@user 𝐡𝐚 𝐥𝐚𝐬𝐜𝐢𝐚𝐭𝐨 𝐢𝐥 𝐠𝐫𝐮𝐩𝐩𝐨
+*ᴍᴇꜱꜱᴀɢɢɪᴏ ᴘʀᴇᴅᴇꜰɪɴɪᴛᴏ:*
+@user ʜᴀ ʟᴀꜱᴄɪᴀᴛᴏ ɪʟ ɢʀᴜᴘᴘᴏ
 
 ⓘ Usa ${usedPrefix}simula addio per testarlo`);
   }
   
   chat.sBye = text;
   
-  m.reply(`✅ 𝐌𝐞𝐬𝐬𝐚𝐠𝐠𝐢𝐨 𝐝𝐢 𝐚𝐝𝐝𝐢𝐨 𝐚𝐠𝐠𝐢𝐨𝐫𝐧𝐚𝐭𝐨!
+  m.reply(`✔️ ᴍᴇꜱꜱᴀɢɢɪᴏ ᴅɪ ᴀᴅᴅɪᴏ ᴀɢɢɪᴏʀɴᴀᴛᴏ!
 
-*𝐍𝐮𝐨𝐯𝐨 𝐦𝐞𝐬𝐬𝐚𝐠𝐠𝐢𝐨:*
+*ɴᴜᴏᴠᴏ ᴍᴇꜱꜱᴀɢɢɪᴏ:*
 ${text}
 
 ⓘ Usa ${usedPrefix}simula addio per testarlo
 ⓘ Usa ${usedPrefix}${command} reset per ripristinare`);
 };
 
-handler.help = ['𝐬𝐞𝐭𝐛𝐲𝐞'];
+handler.help = ['ꜱᴇᴛʙʏᴇ'];
 handler.tags = ['admin'];
 handler.command = /^setbye|setaddio$/i;
 handler.admin = true;

@@ -1,4 +1,4 @@
-//Plugin by Zeno, Lucifero & 333 staff
+//Plugin by Zeno, Lucifero & zenobot staff
 
 let duelli = {}
 
@@ -21,7 +21,7 @@ const handler = async (m, { conn, args }) => {
 
   let bet = parseInt(args[0])
   if (!bet || bet < 50)
-    return m.reply("💸 Puntata minima: 50 XP333\n> Uso: .duello (soldi) @user")
+    return m.reply("💸 Puntata minima: 50 ZenoCoin\n> Uso: .duello (soldi) @user")
 
   if (user1.money < bet) return m.reply("💸 Non hai abbastanza soldi")
   if (user2.money < bet) return m.reply("💸 L'altro utente non ha abbastanza soldi")
@@ -30,20 +30,20 @@ const handler = async (m, { conn, args }) => {
   duelli[m.chat] = true
 
   await conn.sendMessage(m.chat, {
-    text: `╔═⚔️ *DUELLO IN ARRIVO* ⚔️═╗
-║
-║ 👤 @${sender.split('@')[0]}
-║      ⚔️ *VS* ⚔️
-║ 🎯 @${target.split('@')[0]}
-║
-║ 💰 Puntata: *${bet} XP333*
-║
-║ ⚡ Scrivi *accetto*
-║ per combattere
-║
-║ ⏳ Tempo: 30 secondi
-║
-╚═════════╝`,
+    text: `┌┄⚔️ *DUELLO IN ARRIVO* ⚔️┄┐
+┆
+┆ 👤 @${sender.split('@')[0]}
+┆      ⚔️ *VS* ⚔️
+┆ 🎯 @${target.split('@')[0]}
+┆
+┆ 💰 Puntata: *${bet} ZenoCoin*
+┆
+┆ ⚡ Scrivi *accetto*
+┆ per combattere
+┆
+┆ ⏳ Tempo: 30 secondi
+┆
+└┄┄┄┄┄┄┄┄┄┘`,
     mentions: [sender, target]
   }, { quoted: m })
 
@@ -73,14 +73,14 @@ const handler = async (m, { conn, args }) => {
     delete duelli[m.chat]
 
     return conn.sendMessage(m.chat, {
-      text: `╔═⌛ *DUELLO ANNULLATO* ⌛═╗
-║
-║ @${target.split('@')[0]}
-║ non ha accettato
-║
-║ 🐔 Aveva paura
-║
-╚═════════╝`,
+      text: `┌┄⌛ *DUELLO ANNULLATO* ⌛┄┐
+┆
+┆ @${target.split('@')[0]}
+┆ non ha accettato
+┆
+┆ 🐔 Aveva paura
+┆
+└┄┄┄┄┄┄┄┄┄┘`,
       mentions: [target]
     }, { quoted: m })
   }
@@ -96,12 +96,12 @@ const handler = async (m, { conn, args }) => {
 
   if (answer !== "accetto") {
     delete duelli[m.chat]
-    return m.reply("❌ Duello rifiutato.")
+    return m.reply("✖️ Duello rifiutato.")
   }
 
   if (user1.money < bet || user2.money < bet) {
     delete duelli[m.chat]
-    return m.reply("❌ Uno dei due non ha più i soldi.")
+    return m.reply("✖️ Uno dei due non ha più i soldi.")
   }
 
   await conn.sendMessage(m.chat, { text: "⚔️ I combattenti si preparano..." })
@@ -121,20 +121,20 @@ const handler = async (m, { conn, args }) => {
   users[loser].money -= bet
 
   await conn.sendMessage(m.chat, {
-    text: `╔═🏆 *DUELLO TERMINATO* 🏆═╗
-║
-║ 🥇 Vincitore:
-║ ➤ @${winner.split('@')[0]}
-║
-║ 💀 Sconfitto:
-║ ➤ @${loser.split('@')[0]}
-║
-║ 💰 Guadagno:
-║ +${bet} XP333
-║
-║ 🔥 Che fight
-║
-╚═════════╝`,
+    text: `┌┄🏆 *DUELLO TERMINATO* 🏆┄┐
+┆
+┆ 🥇 Vincitore:
+┆ ➤ @${winner.split('@')[0]}
+┆
+┆ 💀 Sconfitto:
+┆ ➤ @${loser.split('@')[0]}
+┆
+┆ 💰 Guadagno:
+┆ +${bet} ZenoCoin
+┆
+┆ 🔥 Che fight
+┆
+└┄┄┄┄┄┄┄┄┄┘`,
     mentions: [winner, loser]
   })
 

@@ -1,4 +1,4 @@
-//Plugin by Zeno, Lucifero & 333 staff
+//Plugin by Zeno, Lucifero & zenobot staff
 
 import fetch from 'node-fetch';
 
@@ -41,11 +41,11 @@ let handler = async (m, { conn }) => {
 
     let fkontak = {
         key: { participants: "0@s.whatsapp.net", remoteJid: "status@broadcast", fromMe: false, id: "Halo" },
-        message: { contactMessage: { displayName: '𝐏𝐑𝐄𝐌𝐈𝐎 𝐓𝐎𝐏', vcard: `BEGIN:VCARD\nVERSION:3.0\nN:Sy;Bot;;;\nFN:y\nitem1.TEL;waid=${m.sender.split('@')[0]}:${m.sender.split('@')[0]}\nitem1.X-ABLabel:Ponsel\nEND:VCARD` } },
+        message: { contactMessage: { displayName: 'ᴘʀᴇᴍɪᴏ ᴛᴏᴘ', vcard: `BEGIN:VCARD\nVERSION:3.0\nN:Sy;Bot;;;\nFN:y\nitem1.TEL;waid=${m.sender.split('@')[0]}:${m.sender.split('@')[0]}\nitem1.X-ABLabel:Ponsel\nEND:VCARD` } },
         participant: "0@s.whatsapp.net"
     };
 
-    let text = `🏆 Complimenti @${m.sender.split('@')[0]}!\nHai riscattato il premio di *${premio} XP333* per essere il primo della classifica del gruppo oggi!`;
+    let text = `🏆 Complimenti @${m.sender.split('@')[0]}!\nHai riscattato il premio di *${premio} ZenoCoin* per essere il primo della classifica del gruppo oggi!`;
     await conn.reply(m.chat, text, fkontak, { mentions: [m.sender] });
 };
 

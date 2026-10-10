@@ -1,4 +1,4 @@
-//Plugin by Zeno, Lucifero & 333 staff
+//Plugin by Zeno, Lucifero & zenobot staff
 
 
 
@@ -8,7 +8,7 @@ const RUOLI_SPECIALI = ['developer', 'staff']
 let handler = async (m, { text, mentionedJid }) => {
   const args = text?.trim().split(/\s+/)
   if (!args || args.length < 2)
-    return m.reply('❌ Uso: *addperms @numero nome-plugin/ruolo*\n\nRuoli disponibili: *developer, staff*\n\nEsempio plugin: .addperms @user menu\n\n.addperms @user developer\n\n.addperms @user staff')
+    return m.reply('✖️ Uso: *addperms @numero nome-plugin/ruolo*\n\nRuoli disponibili: *developer, staff*\n\nEsempio plugin: .addperms @user menu\n\n.addperms @user developer\n\n.addperms @user staff')
 
   let rawNumber = ''
   if (mentionedJid && mentionedJid.length > 0) {
@@ -18,7 +18,7 @@ let handler = async (m, { text, mentionedJid }) => {
     args.shift()
   }
 
-  if (!rawNumber) return m.reply('❌ Numero non valido')
+  if (!rawNumber) return m.reply('✖️ Numero non valido')
 
   const permName = args
     .filter(a => !/^\d+$/.test(a) && !a.startsWith('@'))
@@ -26,7 +26,7 @@ let handler = async (m, { text, mentionedJid }) => {
     .toLowerCase()
     .trim()
 
-  if (!permName) return m.reply('❌ Nome plugin o ruolo non specificato')
+  if (!permName) return m.reply('✖️ Nome plugin o ruolo non specificato')
 
   const jid = rawNumber + '@s.whatsapp.net'
 
@@ -41,7 +41,7 @@ let handler = async (m, { text, mentionedJid }) => {
 
   if (permName === 'staff') {
     return m.reply(
-`✅ *${rawNumber}* è ora uno *Staff* 👮
+`✔️ *${rawNumber}* è ora uno *Staff* 👮
 
 Può:
 • Gestire comandi base
@@ -54,7 +54,7 @@ Può:
 
   if (permName === 'developer') {
     return m.reply(
-`✅ *${rawNumber}* è ora un *Developer* 🛠️
+`✔️ *${rawNumber}* è ora un *Developer* 🛠️
 
 Può usare:
 • .devsave
@@ -64,7 +64,7 @@ Può usare:
 ⚠️ Ogni azione richiede approvazione di un owner.`)
   }
 
-  m.reply(`✅ *${rawNumber}* può ora usare il plugin *${permName}*`)
+  m.reply(`✔️ *${rawNumber}* può ora usare il plugin *${permName}*`)
 }
 
 handler.command = /^addperms$/i

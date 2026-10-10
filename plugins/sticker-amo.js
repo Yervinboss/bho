@@ -44,13 +44,13 @@ while (ctx.measureText(nome).width > maxWidth && size > 10) {
 
 const handler = async (m, { conn, text, usedPrefix, command }) => {
   if (!text?.trim()) {
-    return m.reply(`❌ Scrivi un nome!
+    return m.reply(`✖️ Scrivi un nome!
 
 Esempio:
 ${usedPrefix}${command} sofia`)
   }
   const nome = text.trim()
-  if (nome.length > MAX_CHARS) return m.reply(`❌ Massimo ${MAX_CHARS} caratteri.`)
+  if (nome.length > MAX_CHARS) return m.reply(`✖️ Massimo ${MAX_CHARS} caratteri.`)
 
   try {
     const png = await makeAmoImage(nome)
@@ -58,7 +58,7 @@ ${usedPrefix}${command} sofia`)
     await conn.sendMessage(m.chat, { sticker: webp }, { quoted: m })
   } catch (error) {
     console.error('[AMO ERROR]', error)
-    await m.reply(`❌ Errore durante la creazione dello sticker.
+    await m.reply(`✖️ Errore durante la creazione dello sticker.
 
 ${error?.message || error}`)
   }

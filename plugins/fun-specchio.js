@@ -1,4 +1,4 @@
-//Plugin by Zeno, Lucifero & 333 staff
+//Plugin by Zeno, Lucifero & zenobot staff
 
 import jimp from 'jimp'
 
@@ -112,7 +112,7 @@ let handler = async (m, { conn }) => {
   let img = await conn.profilePictureUrl(who, 'image').catch(_ => null)
 
   if (!img)
-    return m.reply("❌ Nessuna foto trovata")
+    return m.reply("✖️ Nessuna foto trovata")
 
   let avatar = await jimp.read(img)
   avatar.resize(300, 300)
@@ -124,7 +124,7 @@ let handler = async (m, { conn }) => {
   await conn.sendMessage(m.chat, {
     image: buffer,
     caption:
-`🪞 𝐒𝐏𝐄𝐂𝐂𝐇𝐈𝐎 𝐃𝐄𝐋𝐋𝐀 𝐕𝐄𝐑𝐈𝐓À
+`🪞 ꜱᴘᴇᴄᴄʜɪᴏ ᴅᴇʟʟᴀ ᴠᴇʀɪᴛÀ
 
 @${who.split('@')[0]}
 

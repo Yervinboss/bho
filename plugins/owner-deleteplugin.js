@@ -1,4 +1,4 @@
-// Plugin by Zeno, Lucifero & 333 staff
+// Plugin by Zeno, Lucifero & zenobot staff
 
 import { join } from 'path';
 import { unlinkSync, existsSync } from 'fs';
@@ -19,7 +19,7 @@ const handler = async (m, { conn, args, text, __dirname }) => {
   }
 
   unlinkSync(pluginPath);
-  return conn.reply(m.chat, `✅ Il plugin "${pluginName}.js" è stato eliminato.`, m);
+  return conn.reply(m.chat, `✔️ Il plugin "${pluginName}.js" è stato eliminato.`, m);
 };
 
 handler.tags = ['owner'];

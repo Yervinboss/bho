@@ -1,4 +1,4 @@
-//Plugin by Zeno, Lucifero & 333 staff
+//Plugin by Zeno, Lucifero & zenobot staff
 
 const MAX_MESSAGES_PER_CHAT = 150;
 
@@ -46,9 +46,9 @@ initClearHistoryListener();
 let handler = async (m, { conn, args, text }) => {
   
   if (!text || isNaN(text)) {
-    return m.reply(`🧹 𝐂𝐎𝐌𝐀𝐍𝐃𝐎 𝐂𝐋𝐄𝐀𝐑
+    return m.reply(`🧹 ᴄᴏᴍᴀɴᴅᴏ ᴄʟᴇᴀʀ
 
-❌ Devi specificare il numero di messaggi da eliminare!
+✖️ Devi specificare il numero di messaggi da eliminare!
 
 📌 Utilizzo:
 • .clear 5
@@ -62,11 +62,11 @@ let handler = async (m, { conn, args, text }) => {
   let count = parseInt(text);
 
   if (count <= 0) {
-    return m.reply("❌ Il numero deve essere maggiore di 0!");
+    return m.reply("✖️ Il numero deve essere maggiore di 0!");
   }
 
   if (count > 30) {
-    return m.reply("❌ Il massimo è 30 messaggi per volta!");
+    return m.reply("✖️ Il massimo è 30 messaggi per volta!");
   }
 
   try {
@@ -84,13 +84,13 @@ let handler = async (m, { conn, args, text }) => {
     }
 
     if (!messages || messages.length === 0) {
-      return m.reply("❌ Non ci sono messaggi da eliminare nella memoria!");
+      return m.reply("✖️ Non ci sono messaggi da eliminare nella memoria!");
     }
 
     const recentMessages = messages.slice(-count);
 
     if (recentMessages.length === 0) {
-      return m.reply(`❌ Non ci sono abbastanza messaggi da eliminare! (Disponibili: ${messages.length})`);
+      return m.reply(`✖️ Non ci sono abbastanza messaggi da eliminare! (Disponibili: ${messages.length})`);
     }
 
     let deleted = 0;
@@ -109,15 +109,15 @@ let handler = async (m, { conn, args, text }) => {
 
     if (deleted > 0) {
       await conn.sendMessage(m.chat, { 
-        text: `✅ *MESSAGGI ELIMINATI*\n\n📊 Eliminati: *${deleted}/${count}* messaggi\n🧹 La chat è stata ripulita!`
+        text: `✔️ *MESSAGGI ELIMINATI*\n\n📊 Eliminati: *${deleted}/${count}* messaggi\n🧹 La chat è stata ripulita!`
       }, { quoted: m });
     } else {
-      m.reply("❌ Nessun messaggio è stato eliminato!");
+      m.reply("✖️ Nessun messaggio è stato eliminato!");
     }
 
   } catch (err) {
     console.error("Errore nel comando clear:", err);
-    m.reply("❌ Errore durante l'eliminazione dei messaggi!");
+    m.reply("✖️ Errore durante l'eliminazione dei messaggi!");
   }
 };
 

@@ -1,4 +1,4 @@
-//Plugin by Zeno, Lucifero & 333 staff
+//Plugin by Zeno, Lucifero & zenobot staff
 
 import { createCanvas } from 'canvas'
 
@@ -15,13 +15,13 @@ const coloriHex = {
 const gameButtons = () => [{
     name: 'quick_reply',
     buttonParamsJson: JSON.stringify({
-        display_text: '📥 𝐏𝐄𝐒𝐂𝐀',
+        display_text: '📥 ᴘᴇꜱᴄᴀ',
         id: 'pesca'
     })
 }, {
     name: 'quick_reply',
     buttonParamsJson: JSON.stringify({
-        display_text: '🛑 𝐀𝐁𝐁𝐀𝐍𝐃𝐎𝐍𝐀',
+        display_text: '🛑 ᴀʙʙᴀɴᴅᴏɴᴀ',
         id: 'enduno'
     })
 }]
@@ -40,7 +40,7 @@ async function generaGrafica(s) {
     ctx.fillStyle = 'rgba(255,255,255,0.10)'
     ctx.font = 'bold 90px Arial'
     ctx.textAlign = 'center'
-    ctx.fillText('333 BOT', 500, 320)
+    ctx.fillText('ZENOBOT', 500, 320)
 
     const drawCard = (x, y, label, color, hidden = false, scale = 1) => {
         const w = 80 * scale
@@ -64,7 +64,7 @@ async function generaGrafica(s) {
 
             ctx.fillStyle = '#fff'
             ctx.font = `bold ${16 * scale}px Arial`
-            ctx.fillText('333', x + (w / 2), y + (h / 2) + 6)
+            ctx.fillText('zenobot', x + (w / 2), y + (h / 2) + 6)
         } else {
             ctx.fillStyle = color
             ctx.beginPath()
@@ -164,7 +164,7 @@ function botTurno(s) {
             ? ['Rosso', 'Blu', 'Verde', 'Giallo'][Math.floor(Math.random() * 4)]
             : scelta.split(' ')[0]
 
-        let res = `\n🤖 333 BOT mette: *${scelta}*`
+        let res = `\n🤖 ZENOBOT mette: *${scelta}*`
 
         if (scelta.includes('+2')) {
             for (let i = 0; i < 2; i++) {
@@ -194,7 +194,7 @@ function botTurno(s) {
 
         s.botHand.push(s.mazzo.shift())
 
-        return `\n🤖 333 BOT pesca.`
+        return `\n🤖 ZENOBOT pesca.`
     }
 }
 
@@ -225,7 +225,7 @@ let handler = async (m, { conn }) => {
         mimetype: 'image/jpeg',
         fileName: 'uno.jpg',
         caption:
-`🃏 *UNO MATCH - 333 BOT*
+`🃏 *UNO MATCH - ZENOBOT*
 
 🎨 Colore attuale: *${unoSession[chat].currentColor}*`
     }, { quoted: m })
@@ -281,7 +281,7 @@ handler.before = async (m, { conn }) => {
         report = `📥 Hai pescato: ${p}`
 
         if (!puoGiocare(p, s.tableCard, s.currentColor)) {
-            report += `\n❌ Non giocabile.`
+            report += `\n✖️ Non giocabile.`
             report += botTurno(s)
         }
     }
@@ -298,7 +298,7 @@ handler.before = async (m, { conn }) => {
         let carta = s.playerHand[idx]
 
         if (!puoGiocare(carta, s.tableCard, s.currentColor)) {
-            return m.reply('❌ Carta non valida.')
+            return m.reply('✖️ Carta non valida.')
         }
 
         s.playerHand.splice(idx, 1)
@@ -309,7 +309,7 @@ handler.before = async (m, { conn }) => {
             ? s.currentColor
             : carta.split(' ')[0]
 
-        report = `✅ Hai giocato: ${carta}`
+        report = `✔️ Hai giocato: ${carta}`
 
         if (carta.includes('+2')) {
             for (let i = 0; i < 2; i++) {
@@ -339,7 +339,7 @@ handler.before = async (m, { conn }) => {
 
     if (s.botHand.length === 0) {
         delete unoSession[chat]
-        return m.reply('💀 333 BOT ha vinto!')
+        return m.reply('💀 ZENOBOT ha vinto!')
     }
 
     let img = await generaGrafica(s)

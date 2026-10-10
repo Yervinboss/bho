@@ -1,4 +1,4 @@
-//Plugin by Zeno, Lucifero & 333 staff
+//Plugin by Zeno, Lucifero & zenobot staff
 
 
 
@@ -17,10 +17,10 @@ let number = target.split("@")[0]
     let size = pickRandom(boobsSizes);
 
 
-    let boobs = `*🍒 𝐂𝐀𝐋𝐂𝐎𝐋𝐈𝐀𝐌𝐎 𝐋𝐄 𝐓𝐔𝐄 𝐁𝐎𝐎𝐁𝐒 🍒*\n
-━━━━━━━━━━━━━━━━
-*@${number}* 𝐡𝐚 𝐮𝐧𝐚 *${size}*
-━━━━━━━━━━━━━━━━\n> 𝟥𝟥𝟥 𝔹𝕆𝕋`.trim()
+    let boobs = `*🍒 ᴄᴀʟᴄᴏʟɪᴀᴍᴏ ʟᴇ ᴛᴜᴇ ʙᴏᴏʙꜱ 🍒*\n
+┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄
+*@${number}* ʜᴀ ᴜɴᴀ *${size}*
+┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄\n> ᴢᴇɴᴏʙᴏᴛ`.trim()
 
 
     m.reply(boobs, null, { mentions: conn.parseMention(boobs) })
@@ -31,7 +31,7 @@ function pickRandom(list) {
     return list[Math.floor(Math.random() * list.length)];
 }
 
-handler.help = ['𝐭𝐞𝐭𝐭𝐞 @𝐭𝐚𝐠']
+handler.help = ['ᴛᴇᴛᴛᴇ @ᴛᴀɢ']
 handler.tags = ['fun']
 handler.command = /^(tette)$/i
 

@@ -1,29 +1,29 @@
 const SECTIONS = [
-  { image: 'icone/333.jpg', title: '👥 STAFF', body: 'Scopri chi gestisce il bot', cmd: 'staff', label: '👥 Apri Staff' },
-  { image: 'icone/333.jpg', title: '⚙️ FUNZIONI', body: 'Sicurezza nel gruppo', cmd: 'funzioni', label: '⚙️ Apri Funzioni' },
-  { image: 'icone/333.jpg', title: '👑 ADMIN', body: 'Comandi di amministrazione gruppo', cmd: 'admin', label: '👑 Apri Admin' },
-  { image: 'icone/333.jpg', title: '🎮 GIOCHI', body: 'Minigiochi e sfide', cmd: 'giochi', label: '🎮 Apri Giochi' },
-  { image: 'icone/333.jpg', title: '🎰 RPG', body: 'Il mondo RPG di 333 BOT', cmd: 'rpg', label: '🎰 Apri RPG' },
-  { image: 'icone/333.jpg', title: '🔐 OWNER', body: 'Comandi riservati owner', cmd: 'owner', label: '🔐 Apri Owner' },
-  { image: 'icone/333.jpg', title: '🛠️ ASSISTENZA', body: 'Numeri, canale, supporto e sito', cmd: 'assistenza', label: '🛠️ Apri Assistenza' }
+  { image: 'icone/zenobot.jpg', title: '👥 STAFF', body: 'Scopri chi gestisce il bot', cmd: 'staff', label: '👥 Apri Staff' },
+  { image: 'icone/zenobot.jpg', title: '⚙️ FUNZIONI', body: 'Sicurezza nel gruppo', cmd: 'funzioni', label: '⚙️ Apri Funzioni' },
+  { image: 'icone/zenobot.jpg', title: '👑 ADMIN', body: 'Comandi di amministrazione gruppo', cmd: 'admin', label: '👑 Apri Admin' },
+  { image: 'icone/zenobot.jpg', title: '🎮 GIOCHI', body: 'Minigiochi e sfide', cmd: 'giochi', label: '🎮 Apri Giochi' },
+  { image: 'icone/zenobot.jpg', title: '🎰 RPG', body: 'Il mondo RPG di ZENOBOT', cmd: 'rpg', label: '🎰 Apri RPG' },
+  { image: 'icone/zenobot.jpg', title: '🔐 OWNER', body: 'Comandi riservati owner', cmd: 'owner', label: '🔐 Apri Owner' },
+  { image: 'icone/zenobot.jpg', title: '🛠️ ASSISTENZA', body: 'Numeri, canale, supporto e sito', cmd: 'assistenza', label: '🛠️ Apri Assistenza' }
 ];
 
 let handler = async (m, { conn, usedPrefix }) => {
   const senderName = await conn.getName(m.sender);
   const targetJid = m.mentionedJid?.[0] || m.quoted?.sender || m.sender;
 
-  const botName = global.db.data.nomedelbot || " ꙰ 𝟥𝟥𝟥 𝔹𝕆𝕋  ꙰";
-  const botVersion = global.db.data.version || "𝟏𝟎.𝟑";
+  const botName = global.db.data.nomedelbot || "❖ ᴢᴇɴᴏʙᴏᴛ";
+  const botVersion = global.db.data.version || "𝟷𝟶.𝟹";
 
   const fake = {
     key: {
       participants: '0@s.whatsapp.net',
       fromMe: false,
-      id: '333Menu'
+      id: 'zenobotMenu'
     },
     message: {
       contactMessage: {
-        displayName: `⚡️ 𝐌𝐞𝐧𝐮 𝐏𝐫𝐢𝐧𝐜𝐢𝐩𝐚𝐥𝐞`,
+        displayName: `⚡️ ᴍᴇɴᴜ ᴘʀɪɴᴄɪᴘᴀʟᴇ`,
         vcard: `BEGIN:VCARD\nVERSION:3.0\nN:Sy;Bot;;;\nFN:y\nitem1.TEL;waid=${targetJid.split('@')[0]}:${targetJid.split('@')[0]}\nitem1.X-ABLabel:Ponsel\nEND:VCARD`
       }
     },
@@ -31,10 +31,10 @@ let handler = async (m, { conn, usedPrefix }) => {
   }
 
   const cards = [{
-    image: { url: 'icone/333.jpg' },
+    image: { url: 'icone/zenobot.jpg' },
     title: '📚 Menu principale',
     body: `Seleziona una categoria per aprire il relativo submenu.\n\n🚀 ${botName} • v${botVersion}`,
-    footer: '333 bot',
+    footer: 'zenobot',
     buttons: [{
       name: 'single_select',
       buttonParamsJson: JSON.stringify({
@@ -52,8 +52,8 @@ let handler = async (m, { conn, usedPrefix }) => {
   }];
 
   await conn.sendMessage(m.chat, {
-    text: `⚡️ 𝐌𝐄𝐍Ù 𝐏𝐑𝐈𝐍𝐂𝐈𝐏𝐀𝐋𝐄 𝐃𝐈 ${botName}`,
-    footer: '333 bot',
+    text: `⚡️ ᴍᴇɴÙ ᴘʀɪɴᴄɪᴘᴀʟᴇ ᴅɪ ${botName}`,
+    footer: 'zenobot',
     cards,
     mentions: [targetJid]
   }, { quoted: fake });

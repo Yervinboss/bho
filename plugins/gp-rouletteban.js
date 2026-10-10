@@ -1,9 +1,9 @@
-//Plugin by Zeno, Lucifero & 333 staff
+//Plugin by Zeno, Lucifero & zenobot staff
 
 let handler = async (m, { conn, isAdmin, groupMetadata, participants }) => {
-  if (!m.isGroup) return m.reply('❌ Questo comando funziona solo nei gruppi.');
-  if (!isAdmin) return m.reply('❌ Solo gli admin del gruppo possono usare questo comando.');
-  if (!conn.user) return m.reply('❌ Non posso ottenere il mio id.');
+  if (!m.isGroup) return m.reply('✖️ Questo comando funziona solo nei gruppi.');
+  if (!isAdmin) return m.reply('✖️ Solo gli admin del gruppo possono usare questo comando.');
+  if (!conn.user) return m.reply('✖️ Non posso ottenere il mio id.');
 
   const decode = (jid) => (typeof conn.decodeJid === 'function' ? conn.decodeJid(jid || '') : jid || '');
   const botId = decode(conn.user.jid || conn.user.id || '');
@@ -24,7 +24,7 @@ let handler = async (m, { conn, isAdmin, groupMetadata, participants }) => {
     .filter(jid => !ownerJid(jid))
     .filter(jid => !adminIds.has(jid));
 
-  if (!members.length) return m.reply('❌ Non ci sono membri non admin rimuovibili.');
+  if (!members.length) return m.reply('✖️ Non ci sono membri non admin rimuovibili.');
 
   const suspense = await conn.sendMessage(m.chat, {
     text: `🎲 Roulette ban attivata...\n🕐 Preparati, tra 3 secondi verrà rimosso un membro a caso dal gruppo!`
@@ -39,7 +39,7 @@ let handler = async (m, { conn, isAdmin, groupMetadata, participants }) => {
   await new Promise(resolve => setTimeout(resolve, 1000));
 
   const target = members[Math.floor(Math.random() * members.length)];
-  if (!target) return m.reply('❌ Errore nel selezionare un membro.');
+  if (!target) return m.reply('✖️ Errore nel selezionare un membro.');
 
   try {
     await conn.groupParticipantsUpdate(m.chat, [target], 'remove');
@@ -51,7 +51,7 @@ let handler = async (m, { conn, isAdmin, groupMetadata, participants }) => {
     }, { quoted: suspense });
   } catch (error) {
     console.error(error);
-    return m.reply('❌ Non sono riuscito a rimuovere il membro. Assicurati che il bot sia admin.');
+    return m.reply('✖️ Non sono riuscito a rimuovere il membro. Assicurati che il bot sia admin.');
   }
 };
 

@@ -1,11 +1,11 @@
-//Plugin by Zeno, Lucifero & 333 staff
+//Plugin by Zeno, Lucifero & zenobot staff
 
 const frasiBacio = [
-    '𝐬𝐞𝐢 𝐬𝐭𝐚𝐭𝐨/𝐚 𝐥𝐢𝐦𝐨𝐧𝐚𝐭𝐨/𝐚',
-    '𝐬𝐞𝐢 𝐬𝐭𝐚𝐭𝐨/𝐚 𝐛𝐚𝐜𝐢𝐚𝐭𝐨/𝐚 𝐬𝐞𝐧𝐬𝐮𝐚𝐥𝐦𝐞𝐧𝐭𝐞',
-    '𝐬𝐞𝐢 𝐬𝐭𝐚𝐭𝐨/𝐚 𝐛𝐚𝐜𝐢𝐚𝐭𝐨/𝐚 𝐢𝐧 𝐦𝐨𝐝𝐨 𝐬𝐜𝐡𝐢𝐟𝐚𝐭𝐨',
-    '𝐬𝐞𝐢 𝐬𝐭𝐚𝐭𝐨/𝐚 𝐛𝐚𝐜𝐢𝐚𝐭𝐨/𝐚 𝐢𝐧 𝐦𝐨𝐝𝐨 𝐞𝐜𝐜𝐢𝐭𝐚𝐧𝐭𝐞',
-    '𝐬𝐞𝐢 𝐬𝐭𝐚𝐭𝐨/𝐚 𝐛𝐚𝐜𝐢𝐚𝐭𝐨/𝐚 𝐚 𝐬𝐭𝐚𝐦𝐩𝐨'
+    'ꜱᴇɪ ꜱᴛᴀᴛᴏ/ᴀ ʟɪᴍᴏɴᴀᴛᴏ/ᴀ',
+    'ꜱᴇɪ ꜱᴛᴀᴛᴏ/ᴀ ʙᴀᴄɪᴀᴛᴏ/ᴀ ꜱᴇɴꜱᴜᴀʟᴍᴇɴᴛᴇ',
+    'ꜱᴇɪ ꜱᴛᴀᴛᴏ/ᴀ ʙᴀᴄɪᴀᴛᴏ/ᴀ ɪɴ ᴍᴏᴅᴏ ꜱᴄʜɪꜰᴀᴛᴏ',
+    'ꜱᴇɪ ꜱᴛᴀᴛᴏ/ᴀ ʙᴀᴄɪᴀᴛᴏ/ᴀ ɪɴ ᴍᴏᴅᴏ ᴇᴄᴄɪᴛᴀɴᴛᴇ',
+    'ꜱᴇɪ ꜱᴛᴀᴛᴏ/ᴀ ʙᴀᴄɪᴀᴛᴏ/ᴀ ᴀ ꜱᴛᴀᴍᴘᴏ'
 ];
 
 let handler = async (m, { conn, usedPrefix, command, text }) => {
@@ -23,19 +23,19 @@ let handler = async (m, { conn, usedPrefix, command, text }) => {
     }
 
 
-    if (!who) return m.reply(`𝐦𝐞𝐧𝐳𝐢𝐨𝐧𝐚 𝐥𝐚 𝐩𝐞𝐫𝐬𝐨𝐧𝐚 𝐝𝐚 𝐛𝐚𝐜𝐢𝐚𝐫𝐞 💋`);
+    if (!who) return m.reply(`ᴍᴇɴᴢɪᴏɴᴀ ʟᴀ ᴘᴇʀꜱᴏɴᴀ ᴅᴀ ʙᴀᴄɪᴀʀᴇ 💋`);
 
 
     const thumbnailUrl = "https://telegra.ph/file/c38c74851520adb48b684.png"; // URL dell'immagine in miniatura
     const thumbnailBuffer = await (await fetch(thumbnailUrl)).buffer();
-    const thumbnailText = "𝐁𝐀𝐂𝐈𝐎"; // Testo miniatura compatibile
+    const thumbnailText = "ʙᴀᴄɪᴏ"; // Testo miniatura compatibile
     const fraseBacio = frasiBacio[Math.floor(Math.random() * frasiBacio.length)];
 
 
     let abrazo = await conn.sendMessage(m.chat, {
-        text: `══════•⊰✰⊱•══════
-@${who.split('@')[0]} ${fraseBacio} 𝐝𝐚 @${m.sender.split('@')[0]}
-══════•⊰✰⊱•══════`,
+        text: `┄┄┄┄┄┄•‹✧›•┄┄┄┄┄┄
+@${who.split('@')[0]} ${fraseBacio} ᴅᴀ @${m.sender.split('@')[0]}
+┄┄┄┄┄┄•‹✧›•┄┄┄┄┄┄`,
         mentions: [who, m.sender],
     }, {
         quoted: {
@@ -59,7 +59,7 @@ let handler = async (m, { conn, usedPrefix, command, text }) => {
 };
 
 handler.command = ['bacia'];
-handler.help = ['𝐛𝐚𝐜𝐢𝐚 @𝐭𝐚𝐠'];
+handler.help = ['ʙᴀᴄɪᴀ @ᴛᴀɢ'];
 handler.tags = ['fun'];
 
 export default handler;

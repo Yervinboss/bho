@@ -1,4 +1,4 @@
-//Plugin by Zeno, Lucifero & 333 staff
+//Plugin by Zeno, Lucifero & zenobot staff
 
 global.miniera = global.miniera || {}
 
@@ -34,17 +34,17 @@ let handler = async (m, { conn, args, command }) => {
 
     return conn.sendMessage(m.chat, {
       text:
-`╔═💎 𝐌𝐈𝐍𝐈𝐄𝐑𝐀 ═╗
-┃ 💰 Portafoglio: *${money} XP333*
-┃
-┃ Scegli la puntata
-╚══════╝`,
+`┌┄💎 ᴍɪɴɪᴇʀᴀ ┄┐
+┆ 💰 Portafoglio: *${money} ZenoCoin*
+┆
+┆ Scegli la puntata
+└┄┄┄┄┄┄┘`,
       buttons: [
-        { buttonId: bet(100), buttonText: { displayText: "100 XP333" }, type: 1 },
-        { buttonId: bet(200), buttonText: { displayText: "200 XP333" }, type: 1 },
-        { buttonId: bet(500), buttonText: { displayText: "500 XP333" }, type: 1 },
-        { buttonId: bet(1000), buttonText: { displayText: "1000 XP333" }, type: 1 },
-        { buttonId: bet(10000), buttonText: { displayText: "10000 XP333" }, type: 1 }
+        { buttonId: bet(100), buttonText: { displayText: "100 ZenoCoin" }, type: 1 },
+        { buttonId: bet(200), buttonText: { displayText: "200 ZenoCoin" }, type: 1 },
+        { buttonId: bet(500), buttonText: { displayText: "500 ZenoCoin" }, type: 1 },
+        { buttonId: bet(1000), buttonText: { displayText: "1000 ZenoCoin" }, type: 1 },
+        { buttonId: bet(10000), buttonText: { displayText: "10000 ZenoCoin" }, type: 1 }
       ],
       headerType: 1
     }, { quoted: m })
@@ -53,8 +53,8 @@ let handler = async (m, { conn, args, command }) => {
   if (command === "minieraplay") {
 
     let bet = parseInt(args[0])
-    if (!bet || bet < 50) return m.reply("💸 Puntata minima 50 XP333")
-    if (user.money < bet) return m.reply(`💸 Devi avere almeno ${bet} XP333 nel portafoglio per scommettere!`)
+    if (!bet || bet < 50) return m.reply("💸 Puntata minima 50 ZenoCoin")
+    if (user.money < bet) return m.reply(`💸 Devi avere almeno ${bet} ZenoCoin nel portafoglio per scommettere!`)
 
     let grid = Array(9).fill("💎")
     let bombs = []
@@ -80,7 +80,7 @@ let handler = async (m, { conn, args, command }) => {
   if (command === "minieraopen") {
 
     let game = global.miniera[m.sender]
-    if (!game) return m.reply("❌ Nessuna partita attiva")
+    if (!game) return m.reply("✖️ Nessuna partita attiva")
 
     let pos = parseInt(args[0]) - 1
     if (isNaN(pos) || pos < 0 || pos > 8) return
@@ -97,7 +97,7 @@ let handler = async (m, { conn, args, command }) => {
         text:
 `💣 BOOM!
 
-Hai perso *${game.bet} XP333*
+Hai perso *${game.bet} ZenoCoin*
 
 ${revealGrid(game)}`,
         buttons: [
@@ -114,7 +114,7 @@ ${revealGrid(game)}`,
   if (command === "minieracashout") {
 
     let game = global.miniera[m.sender]
-    if (!game) return m.reply("❌ Nessuna partita attiva")
+    if (!game) return m.reply("✖️ Nessuna partita attiva")
 
     let win = Math.floor(game.bet * game.multiplier)
     user.money += win
@@ -125,7 +125,7 @@ ${revealGrid(game)}`,
       text:
 `💰 HAI RITIRATO
 
-Vincita: *${win} XP333*`,
+Vincita: *${win} ZenoCoin*`,
       buttons: [
         { buttonId: ".miniera", buttonText: { displayText: "🔁 Gioca di nuovo" }, type: 1 }
       ],
@@ -139,12 +139,12 @@ function sendGrid(conn, m, sender) {
   let game = global.miniera[sender]
 
   let text =
-`╔═💎 𝐌𝐈𝐍𝐈𝐄𝐑𝐀 ═╗
-┃ 💰 Puntata: *${game.bet} XP333*
-┃ 📈 Moltiplicatore: *x${game.multiplier.toFixed(2)}*
-┃
-┃ Scegli una casella
-╚══════╝`
+`┌┄💎 ᴍɪɴɪᴇʀᴀ ┄┐
+┆ 💰 Puntata: *${game.bet} ZenoCoin*
+┆ 📈 Moltiplicatore: *x${game.multiplier.toFixed(2)}*
+┆
+┆ Scegli una casella
+└┄┄┄┄┄┄┘`
 
   let buttons = []
 

@@ -1,4 +1,4 @@
-//Plugin by Zeno, Lucifero & 333 staff
+//Plugin by Zeno, Lucifero & zenobot staff
 
 const handler = async (m, { conn, text, usedPrefix, command }) => {
   let who;
@@ -47,11 +47,11 @@ const handler = async (m, { conn, text, usedPrefix, command }) => {
       }
     }
 
-    m.reply(`✅ Operazione conclusa.\n\n🏆 Espulso da: ${successCount} gruppi.\n❌ Fallito (Bot non admin): ${failCount} gruppi.`);
+    m.reply(`✔️ Operazione conclusa.\n\n🏆 Espulso da: ${successCount} gruppi.\n✖️ Fallito (Bot non admin): ${failCount} gruppi.`);
 
   } catch (e) {
     console.error('Errore fatale recupero gruppi:', e);
-    m.reply('❌ Errore durante il recupero della lista gruppi.');
+    m.reply('✖️ Errore durante il recupero della lista gruppi.');
   }
 };
 

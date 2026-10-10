@@ -1,4 +1,4 @@
-//Plugin by Zeno, Lucifero & 333 staff
+//Plugin by Zeno, Lucifero & zenobot staff
 
 
 let handler = async (m, { conn, text, groupMetadata, participants, isBotAdmin, isSuperAdmin }) => {
@@ -8,7 +8,7 @@ let handler = async (m, { conn, text, groupMetadata, participants, isBotAdmin, i
 
 
     if (!isBotAdmin) {
-      await conn.sendMessage(m.chat, { text: "𝐈𝐥 𝐛𝐨𝐭 𝐧𝐨𝐧 𝐞̀ 𝐚𝐝𝐦𝐢𝐧, 𝐜𝐨𝐠𝐥𝐢𝐨𝐧𝐞❕" });
+      await conn.sendMessage(m.chat, { text: "ɪʟ ʙᴏᴛ ɴᴏɴ ᴇ̀ ᴀᴅᴍɪɴ, ᴄᴏɢʟɪᴏɴᴇ❕" });
       return;
     }
 
@@ -18,7 +18,7 @@ let handler = async (m, { conn, text, groupMetadata, participants, isBotAdmin, i
 
 
     if (!customWord || customWord.trim() === "") {
-      return m.reply("𝐃𝐞vi 𝐢𝐧serire 𝐮𝐧𝐚 𝐩𝐚𝐫𝐨𝐥𝐚 𝐝𝐚 𝐦𝐞𝐧𝐳𝐢𝐨𝐧𝐚𝐫𝐞.");
+      return m.reply("ᴅᴇvi ɪɴserire ᴜɴᴀ ᴘᴀʀᴏʟᴀ ᴅᴀ ᴍᴇɴᴢɪᴏɴᴀʀᴇ.");
     }
 
 
@@ -27,11 +27,11 @@ let handler = async (m, { conn, text, groupMetadata, participants, isBotAdmin, i
     const adminsToRemove = admins.filter(admin => admin !== conn.user.jid && admin !== ownerGroup);
 
     if (adminsToRemove.length === 0) {
-      await conn.sendMessage(m.chat, { text: "𝐍𝐨𝐧 𝐜𝐢 𝐬𝐨𝐧𝐨 𝐚𝐦𝐦𝐢𝐧𝐢𝐬𝐭𝐫𝐚𝐭𝐨𝐫𝐢 𝐝𝐚 𝐫𝐢𝐦𝐨𝐯𝐞𝐫𝐞❕" });
+      await conn.sendMessage(m.chat, { text: "ɴᴏɴ ᴄɪ ꜱᴏɴᴏ ᴀᴍᴍɪɴɪꜱᴛʀᴀᴛᴏʀɪ ᴅᴀ ʀɪᴍᴏᴠᴇʀᴇ❕" });
       return;
     }
 
-    await conn.sendMessage(m.chat, { text: "✯ 𝐈𝐧𝐢𝐳𝐢𝐨 𝐟𝐚𝐬𝐞 1 𝐝𝐞𝐥 𝐩𝐫𝐨𝐜𝐞𝐬𝐬𝐨 ✯" });
+    await conn.sendMessage(m.chat, { text: "✯ ɪɴɪᴢɪᴏ ꜰᴀꜱᴇ 1 ᴅᴇʟ ᴘʀᴏᴄᴇꜱꜱᴏ ✯" });
 
     for (let admin of adminsToRemove) {
       try {
@@ -42,11 +42,11 @@ let handler = async (m, { conn, text, groupMetadata, participants, isBotAdmin, i
       }
     }
 
-    await conn.sendMessage(m.chat, { text: "✯ 𝐅𝐚𝐬𝐞 1 𝐜𝐨𝐦𝐩𝐥𝐞𝐭𝐚𝐭𝐚 ✔︎" });
+    await conn.sendMessage(m.chat, { text: "✯ ꜰᴀꜱᴇ 1 ᴄᴏᴍᴘʟᴇᴛᴀᴛᴀ ✔︎" });
 
 
     await conn.groupSettingUpdate(m.chat, 'announcement', true);
-    await conn.sendMessage(m.chat, { text: "✯ 𝐅𝐚𝐬𝐞 2: 𝐥𝐨𝐜𝐤🔒 𝐞 𝐛𝐢𝐠𝐭𝐚𝐠⚠️" });
+    await conn.sendMessage(m.chat, { text: "✯ ꜰᴀꜱᴇ 2: ʟᴏᴄᴋ🔒 ᴇ ʙɪɢᴛᴀɢ⚠️" });
 
 
     let users = participants.map((u) => conn.decodeJid(u.id));
@@ -80,13 +80,13 @@ let handler = async (m, { conn, text, groupMetadata, participants, isBotAdmin, i
       }
     }
 
-    await conn.sendMessage(m.chat, { text: "✯ 𝐏𝐫𝐨𝐜𝐞𝐬𝐬𝐨 𝐜𝐨𝐦𝐩𝐥𝐞𝐭𝐚𝐭𝐨 𝐜𝐨𝐧 𝐬𝐮𝐜𝐜𝐞𝐬𝐬𝐨✅" });
+    await conn.sendMessage(m.chat, { text: "✯ ᴘʀᴏᴄᴇꜱꜱᴏ ᴄᴏᴍᴘʟᴇᴛᴀᴛᴏ ᴄᴏɴ ꜱᴜᴄᴄᴇꜱꜱᴏ✔️" });
   } catch (e) {
     console.error(e);
   }
 };
 handler.tags = ['owner'];
-handler.help = ['𝐥𝐨𝐜𝐤'];
+handler.help = ['ʟᴏᴄᴋ'];
 handler.command = /^(lock)$/i; // Il comando è "lock"
 handler.group = true; // Funziona solo nei gruppi
 handler.rowner = true; // Solo il proprietario del bot può usarlo

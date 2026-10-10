@@ -1,4 +1,4 @@
-//Plugin by Zeno, Lucifero & 333 staff
+//Plugin by Zeno, Lucifero & zenobot staff
 
 
 
@@ -9,17 +9,17 @@ let target = m.mentionedJid?.[0]
 
 let number = target.split("@")[0]
     let message = `
-*📏 𝐂𝐀𝐋𝐂𝐎𝐋𝐈𝐀𝐌𝐎 𝐈 𝐓𝐔𝐎𝐈 𝐂𝐄𝐍𝐓𝐈𝐌𝐄𝐓𝐑𝐈 📏*
+*📏 ᴄᴀʟᴄᴏʟɪᴀᴍᴏ ɪ ᴛᴜᴏɪ ᴄᴇɴᴛɪᴍᴇᴛʀɪ 📏*
 
-━━━━━━━━━━━━━━━━
-🔍 *@${number}* 𝐡𝐚 𝐮𝐧𝐚 𝐥𝐮𝐧𝐠𝐡𝐞𝐳𝐳𝐚 𝐬𝐭𝐢𝐦𝐚𝐭𝐚 𝐝𝐢: *${Math.floor(Math.random() * 101)}* 𝐜𝐦
-━━━━━━━━━━━━━━━━\n> 𝟥𝟥𝟥 𝔹𝕆𝕋
+┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄
+🔍 *@${number}* ʜᴀ ᴜɴᴀ ʟᴜɴɢʜᴇᴢᴢᴀ ꜱᴛɪᴍᴀᴛᴀ ᴅɪ: *${Math.floor(Math.random() * 101)}* ᴄᴍ
+┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄\n> ᴢᴇɴᴏʙᴏᴛ
 `.trim();
 
     m.reply(message, null, { mentions: conn.parseMention(message) });
 };
 
-handler.help = ['𝐩𝐞𝐧𝐞 @𝐭𝐚𝐠'];
+handler.help = ['ᴘᴇɴᴇ @ᴛᴀɢ'];
 handler.tags = ['fun'];
 handler.command = /^(pene)$/i;
 

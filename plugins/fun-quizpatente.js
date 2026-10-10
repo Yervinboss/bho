@@ -1,4 +1,4 @@
-//Plugin by Zeno, Lucifero & 333 staff
+//Plugin by Zeno, Lucifero & zenobot staff
 
 let activeQuiz = {}
 
@@ -81,7 +81,7 @@ function sendQuestion(m, conn) {
 ⏱️ 30 secondi.`,
     buttons: [
       { buttonId: ".ansvf true", buttonText: { displayText: "✔️ Vero" }, type: 1 },
-      { buttonId: ".ansvf false", buttonText: { displayText: "❌ Falso" }, type: 1 }
+      { buttonId: ".ansvf false", buttonText: { displayText: "✖️ Falso" }, type: 1 }
     ],
     headerType: 1
   }, { quoted: m })
@@ -106,7 +106,7 @@ handler.before = async (m, { conn }) => {
   } else {
     data.wrong.push({
       domanda: q.q,
-      corretta: q.c ? "✔️ Vero" : "❌ Falso"
+      corretta: q.c ? "✔️ Vero" : "✖️ Falso"
     })
   }
 

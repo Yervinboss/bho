@@ -13,7 +13,7 @@ function toMathBold(str) {
 
 let handler = async (m, { conn, args, usedPrefix, command }) => {
     if (!args[0]) {
-        return m.reply(`🤖 *𝐒𝐈𝐒𝐓𝐄𝐌𝐀 𝐃𝐎𝐖𝐍𝐋𝐎𝐀𝐃 𝟑𝟑𝟑*\n\nUso: \`${usedPrefix + command} <nome-plugin>\`\nEsempio: \`${usedPrefix + command} antilink\``);
+        return m.reply(`🤖 *ꜱɪꜱᴛᴇᴍᴀ ᴅᴏᴡɴʟᴏᴀᴅ ᴢᴇɴᴏʙᴏᴛ*\n\nUso: \`${usedPrefix + command} <nome-plugin>\`\nEsempio: \`${usedPrefix + command} antilink\``);
     }
 
     let pluginName = args[0].trim().toLowerCase().replace(/\.js$/, '');
@@ -26,7 +26,7 @@ let handler = async (m, { conn, args, usedPrefix, command }) => {
     };
 
     try {
-        const response = await fetch('https://333wt.it/index2.html', { headers });
+        const response = await fetch('https://zenobotwt.it/index2.html', { headers });
         let html = '';
         if (response.ok) {
             html = await response.text();
@@ -41,18 +41,18 @@ let handler = async (m, { conn, args, usedPrefix, command }) => {
         if (match && match[1]) {
             downloadUrl = match[1];
             if (downloadUrl.startsWith('/')) {
-                downloadUrl = `https://333wt.it${downloadUrl}`;
+                downloadUrl = `https://zenobotwt.it${downloadUrl}`;
             } else if (!downloadUrl.startsWith('http')) {
-                downloadUrl = `https://333wt.it/${downloadUrl}`;
+                downloadUrl = `https://zenobotwt.it/${downloadUrl}`;
             }
             fileFound = true;
         }
 
         const fallbacks = [
-            `https://333wt.it/plugins/${pluginName}.js`,
-            `https://333wt.it/download/${pluginName}.js`,
-            `https://333wt.it/files/${pluginName}.js`,
-            `https://333wt.it/${pluginName}.js`
+            `https://zenobotwt.it/plugins/${pluginName}.js`,
+            `https://zenobotwt.it/download/${pluginName}.js`,
+            `https://zenobotwt.it/files/${pluginName}.js`,
+            `https://zenobotwt.it/${pluginName}.js`
         ];
 
         let fileBuffer = null;
@@ -78,20 +78,20 @@ let handler = async (m, { conn, args, usedPrefix, command }) => {
         }
 
         if (!fileBuffer) {
-            return m.reply(`❌ *PLUGIN NON TROVATO*\n\nNessun plugin corrispondente a *${pluginName}.js* trovato sul sito 333wt.it.\n_Verifica il nome esatto della risorsa._`);
+            return m.reply(`✖️ *PLUGIN NON TROVATO*\n\nNessun plugin corrispondente a *${pluginName}.js* trovato sul sito zenobotwt.it.\n_Verifica il nome esatto della risorsa._`);
         }
 
-        const captionText = `╭─────────╮  
-┃ 📥 𝐏𝐋𝐔𝐆𝐈𝐍 𝐒𝐂𝐀𝐑𝐈𝐂𝐀𝐓𝐎!
-┃ ꙰  𝟥𝟥𝟥 𝔹𝕆𝕋  ꙰
-┃━━━━━━━━━━━━━━
-┃⮕ 𝐍𝐨𝐦𝐞: *${pluginName}.js*
-┃⮕ 𝐒𝐨𝐫𝐠𝐞𝐧𝐭𝐞: 333wt.it
-┃
-┃ _Sposta questo file dentro_
-┃ _la cartella plugins del tuo_
-┃ _bot per installarlo ed avviarlo!_
-╰─────────╯`;
+        const captionText = `┌┄┄┄┄┄┄┄┄┄┐  
+┆ 📥 ᴘʟᴜɢɪɴ ꜱᴄᴀʀɪᴄᴀᴛᴏ!
+┆❖ ᴢᴇɴᴏʙᴏᴛ
+┆┄┄┄┄┄┄┄┄┄┄┄┄┄┄
+┆▹ ɴᴏᴍᴇ: *${pluginName}.js*
+┆▹ ꜱᴏʀɢᴇɴᴛᴇ: zenobotwt.it
+┆
+┆ _Sposta questo file dentro_
+┆ _la cartella plugins del tuo_
+┆ _bot per installarlo ed avviarlo!_
+└┄┄┄┄┄┄┄┄┄┘`;
 
         await conn.sendMessage(m.chat, {
             document: fileBuffer,
@@ -102,14 +102,14 @@ let handler = async (m, { conn, args, usedPrefix, command }) => {
                 forwardedNewsletterMessageInfo: {
                     newsletterJid: '120363341274693350@newsletter',
                     serverMessageId: -1,
-                    newsletterName: global.nomebot || '333'
+                    newsletterName: global.nomebot || 'zenobot'
                 }
             }
         }, { quoted: m });
 
     } catch (e) {
         console.error(e);
-        m.reply(`⚠️ *𝐄𝐑𝐑𝐎𝐑𝐄 𝐃𝐈 𝐑𝐄𝐓𝐄*\n\nImpossibile connettersi al sito 333wt.it o scaricare la risorsa.\nDettaglio: _${e.message}_`);
+        m.reply(`⚠️ *ᴇʀʀᴏʀᴇ ᴅɪ ʀᴇᴛᴇ*\n\nImpossibile connettersi al sito zenobotwt.it o scaricare la risorsa.\nDettaglio: _${e.message}_`);
     }
 };
 

@@ -1,4 +1,4 @@
-//Plugin by Zeno, Lucifero & 333 staff
+//Plugin by Zeno, Lucifero & zenobot staff
 
 
 const RAPID_KEY = "c9d9e589b3mshc7eecec96ccc03ep126bb1jsnbd4082441abd"
@@ -35,30 +35,30 @@ let handler = async (m, { conn, args }) => {
 
   if (!cmd) {
     return m.reply(
-`╭──────────────────╮
-┃ 🎬 𝐂𝐎𝐌𝐀𝐍𝐃𝐈 𝐍𝐄𝐓𝐅𝐋𝐈𝐗
-┃━━━━━━━━━━━━━━━━━━
-┃ *.netflix cerca [titolo]*
-┃ → cerca film o serie
-┃
-┃ *.netflix info [titolo]*
-┃ → trama, cast, generi, rating
-┃
-┃ *.netflix episodi [titolo]*
-┃ → lista episodi serie
-╰──────────────────╯`)
+`┌┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┐
+┆ 🎬 ᴄᴏᴍᴀɴᴅɪ ɴᴇᴛꜰʟɪx
+┆┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄
+┆ *.netflix cerca [titolo]*
+┆ → cerca film o serie
+┆
+┆ *.netflix info [titolo]*
+┆ → trama, cast, generi, rating
+┆
+┆ *.netflix episodi [titolo]*
+┆ → lista episodi serie
+└┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┘`)
   }
 
   if (cmd === "cerca") {
     const titolo = args.slice(1).join(" ")
-    if (!titolo) return m.reply("❌ Specifica un titolo!\nEs: *.netflix cerca Stranger Things*")
+    if (!titolo) return m.reply("✖️ Specifica un titolo!\nEs: *.netflix cerca Stranger Things*")
 
     await m.reply(`🔍 Cerco *${titolo}* su Netflix...`)
 
     const data = await fetchNF(`search/?query=${encodeURIComponent(titolo)}&offset=0&limit=10&lang=en`)
-    if (!data?.titles?.length) return m.reply("❌ Nessun risultato trovato.")
+    if (!data?.titles?.length) return m.reply("✖️ Nessun risultato trovato.")
 
-    let testo = `╭──────────────────╮\n┃ 🔍 RISULTATI: *${titolo}*\n┃━━━━━━━━━━━━━━━━━━\n`
+    let testo = `┌┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┐\n┆ 🔍 RISULTATI: *${titolo}*\n┆┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄\n`
 
     for (let item of data.titles.slice(0, 8)) {
       const id = item.summary?.id
@@ -67,21 +67,21 @@ let handler = async (m, { conn, args }) => {
       const nome = item.jawSummary?.title || item.title || "N/D"
       const generi = item.jawSummary?.genres?.map(g => g.name).join(", ") || "N/D"
       const rating = item.jawSummary?.maturity?.rating?.value || ""
-      testo += `┃\n┃ ${emoji} *${nome}*\n┃ ${getTipoLabel(tipo)} | ${rating}\n┃ 🎭 ${generi}\n┃ 🆔 ${id}\n`
+      testo += `┆\n┆ ${emoji} *${nome}*\n┆ ${getTipoLabel(tipo)} | ${rating}\n┆ 🎭 ${generi}\n┆ 🆔 ${id}\n`
     }
 
-    testo += `┃\n┃━━━━━━━━━━━━━━━━━━\n┃ Usa *.netflix info [titolo]*\n╰──────────────────╯`
+    testo += `┆\n┆┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄\n┆ Usa *.netflix info [titolo]*\n└┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┘`
     return conn.sendMessage(chat, { text: testo }, { quoted: m })
   }
 
   if (cmd === "info") {
     const titolo = args.slice(1).join(" ")
-    if (!titolo) return m.reply("❌ Specifica un titolo!\nEs: *.netflix info Breaking Bad*")
+    if (!titolo) return m.reply("✖️ Specifica un titolo!\nEs: *.netflix info Breaking Bad*")
 
     await m.reply(`🔍 Cerco info su *${titolo}*...`)
 
     const search = await fetchNF(`search/?query=${encodeURIComponent(titolo)}&offset=0&limit=3&lang=en`)
-    if (!search?.titles?.length) return m.reply("❌ Nessun risultato trovato.")
+    if (!search?.titles?.length) return m.reply("✖️ Nessun risultato trovato.")
 
     const item = search.titles[0]
     const jaw = item.jawSummary
@@ -101,45 +101,45 @@ let handler = async (m, { conn, args }) => {
     const isOriginal = item.summary?.isOriginal ? "🔴 Netflix Original" : ""
 
     let testo =
-`╭──────────────────╮
-┃ ${emoji} 𝐈𝐍𝐅𝐎 𝐍𝐄𝐓𝐅𝐋𝐈𝐗
-┃━━━━━━━━━━━━━━━━━━
-┃ *${nome}* ${isOriginal}
-┃ ${getTipoLabel(tipo)} | 🔞 ${rating}
-┃━━━━━━━━━━━━━━━━━━
-┃ 📝 *Trama:*
-┃ ${trama.slice(0, 300)}${trama.length > 300 ? "..." : ""}
-┃━━━━━━━━━━━━━━━━━━
-┃ 🎭 *Generi:* ${generi}
-${tags ? `┃ 🏷 *Tags:* ${tags}\n` : ""}${creators ? `┃ 🎬 *Creatore:* ${creators}\n` : ""}${directors ? `┃ 🎬 *Regia:* ${directors}\n` : ""}┃ 👥 *Cast:* ${cast}
-┃━━━━━━━━━━━━━━━━━━
-┃ ⚠️ ${ratingDesc}
-┃ 🆔 ID: ${id}
-╰──────────────────╯`
+`┌┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┐
+┆ ${emoji} ɪɴꜰᴏ ɴᴇᴛꜰʟɪx
+┆┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄
+┆ *${nome}* ${isOriginal}
+┆ ${getTipoLabel(tipo)} | 🔞 ${rating}
+┆┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄
+┆ 📝 *Trama:*
+┆ ${trama.slice(0, 300)}${trama.length > 300 ? "..." : ""}
+┆┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄
+┆ 🎭 *Generi:* ${generi}
+${tags ? `┆ 🏷 *Tags:* ${tags}\n` : ""}${creators ? `┆ 🎬 *Creatore:* ${creators}\n` : ""}${directors ? `┆ 🎬 *Regia:* ${directors}\n` : ""}┆ 👥 *Cast:* ${cast}
+┆┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄
+┆ ⚠️ ${ratingDesc}
+┆ 🆔 ID: ${id}
+└┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┘`
 
     return conn.sendMessage(chat, { text: testo }, { quoted: m })
   }
 
   if (cmd === "episodi") {
     const titolo = args.slice(1).join(" ")
-    if (!titolo) return m.reply("❌ Specifica una serie!\nEs: *.netflix episodi Squid Game*")
+    if (!titolo) return m.reply("✖️ Specifica una serie!\nEs: *.netflix episodi Squid Game*")
 
     await m.reply(`🔍 Cerco episodi di *${titolo}*...`)
 
     const search = await fetchNF(`search/?query=${encodeURIComponent(titolo)}&offset=0&limit=3&lang=en`)
-    if (!search?.titles?.length) return m.reply("❌ Serie non trovata.")
+    if (!search?.titles?.length) return m.reply("✖️ Serie non trovata.")
 
     const item = search.titles[0]
     const id = item.summary?.id
     const nome = item.jawSummary?.title || titolo
 
-    if (item.summary?.type !== "show") return m.reply(`❌ *${nome}* è un film, non ha episodi.`)
+    if (item.summary?.type !== "show") return m.reply(`✖️ *${nome}* è un film, non ha episodi.`)
 
     const data = await fetchNF(`season/episodes/?ids=${id}&offset=0&limit=30&lang=en`)
-    if (!data?.[0]?.episodes?.length) return m.reply("❌ Episodi non disponibili per questa serie.")
+    if (!data?.[0]?.episodes?.length) return m.reply("✖️ Episodi non disponibili per questa serie.")
 
     const episodi = data[0].episodes
-    let testo = `╭──────────────────╮\n┃ 📺 *${nome}*\n┃━━━━━━━━━━━━━━━━━━\n`
+    let testo = `┌┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┐\n┆ 📺 *${nome}*\n┆┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄\n`
 
     let currentStagione = ""
     for (let ep of episodi) {
@@ -150,24 +150,24 @@ ${tags ? `┃ 🏷 *Tags:* ${tags}\n` : ""}${creators ? `┃ 🎬 *Creatore:* ${
 
       if (stagione && stagione !== currentStagione) {
         currentStagione = stagione
-        testo += `┃\n┃ 📂 *${stagione}*\n`
+        testo += `┆\n┆ 📂 *${stagione}*\n`
       }
 
-      testo += `┃ *${numEp}.* ${titoloEp} ${durata ? `(${durata})` : ""}\n`
+      testo += `┆ *${numEp}.* ${titoloEp} ${durata ? `(${durata})` : ""}\n`
     }
 
-    testo += `╰──────────────────╯`
+    testo += `└┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┘`
     return conn.sendMessage(chat, { text: testo }, { quoted: m })
   }
 
   return m.reply(
-`╭──────────────────╮
-┃ 🎬 𝐂𝐎𝐌𝐀𝐍𝐃𝐈 𝐍𝐄𝐓𝐅𝐋𝐈𝐗
-┃━━━━━━━━━━━━━━━━━━
-┃ *.netflix cerca [titolo]*
-┃ *.netflix info [titolo]*
-┃ *.netflix episodi [titolo]*
-╰──────────────────╯`)
+`┌┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┐
+┆ 🎬 ᴄᴏᴍᴀɴᴅɪ ɴᴇᴛꜰʟɪx
+┆┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄
+┆ *.netflix cerca [titolo]*
+┆ *.netflix info [titolo]*
+┆ *.netflix episodi [titolo]*
+└┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┘`)
 }
 
 handler.command = ["netflix"]

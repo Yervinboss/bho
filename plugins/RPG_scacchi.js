@@ -1,4 +1,4 @@
-//Plugin by Zeno, Lucifero & 333 staff
+//Plugin by Zeno, Lucifero & zenobot staff
 
 
 
@@ -261,7 +261,7 @@ function moveToStr(from, to) {
 
 const BTN_INGAME = [
   { buttonId: '.arrendi',        buttonText: { displayText: '🏳️ Arrendi'        }, type: 1 },
-  { buttonId: '.annullapartita', buttonText: { displayText: '❌ Annulla Partita' }, type: 1 }
+  { buttonId: '.annullapartita', buttonText: { displayText: '✖️ Annulla Partita' }, type: 1 }
 ]
 
 let handler = async (m, { conn, text, command }) => {
@@ -272,24 +272,24 @@ let handler = async (m, { conn, text, command }) => {
 
 
   if (cmd === 'annullapartita') {
-    if (!game || game.status !== 'active') return m.reply('❌ Nessuna partita in corso.')
+    if (!game || game.status !== 'active') return m.reply('✖️ Nessuna partita in corso.')
     delete games[m.sender]
     return m.reply('🗑️ Partita annullata.')
   }
 
 
   if (cmd === 'arrendi') {
-    if (!game || game.status !== 'active') return m.reply('❌ Nessuna partita in corso.')
+    if (!game || game.status !== 'active') return m.reply('✖️ Nessuna partita in corso.')
     delete games[m.sender]
     return await conn.sendMessage(m.chat, {
       text:
-`╔═ ♟️ 𝐒𝐂𝐀𝐂𝐂𝐇𝐈 𝟑𝟑𝟑 ═╗
-┃
-┃ 🏳️ *Hai reso i pezzi...*
-┃ 🤖 Il bot vince!
-┃ 🔢 Mosse giocate: *${game.moveCount}*
-┃
-╚══════════════╝`,
+`┌┄ ♟️ ꜱᴄᴀᴄᴄʜɪ ᴢᴇɴᴏʙᴏᴛ ┄┐
+┆
+┆ 🏳️ *Hai reso i pezzi...*
+┆ 🤖 Il bot vince!
+┆ 🔢 Mosse giocate: *${game.moveCount}*
+┆
+└┄┄┄┄┄┄┄┄┄┄┄┄┄┄┘`,
       buttons: [{ buttonId: '.scacchi', buttonText: { displayText: '🔄 Nuova Partita' }, type: 1 }],
       headerType: 1
     }, { quoted: m })
@@ -298,20 +298,20 @@ let handler = async (m, { conn, text, command }) => {
 
   if (cmd === 'mossa') {
     if (!game || game.status !== 'active')
-      return m.reply('❌ Nessuna partita in corso.\nUsa *.scacchi* per iniziare.')
+      return m.reply('✖️ Nessuna partita in corso.\nUsa *.scacchi* per iniziare.')
 
     const parsed = parseMove(text?.trim())
-    if (!parsed) return m.reply('❌ Formato non valido. Esempio: *.mossa e2e4*')
+    if (!parsed) return m.reply('✖️ Formato non valido. Esempio: *.mossa e2e4*')
 
     const { from, to } = parsed
     const piece = game.board[from[0]][from[1]]
 
-    if (!piece) return m.reply('❌ Nessun pezzo in quella casella.')
-    if (!isWhitePiece(piece)) return m.reply('❌ Quella non è una tua pedina! Sei i Bianchi ⚪')
+    if (!piece) return m.reply('✖️ Nessun pezzo in quella casella.')
+    if (!isWhitePiece(piece)) return m.reply('✖️ Quella non è una tua pedina! Sei i Bianchi ⚪')
 
     const legal = getLegalMoves(game.board, from[0], from[1], true)
     if (!legal.some(([tr,tc]) => tr === to[0] && tc === to[1]))
-      return m.reply('❌ Mossa non valida o illegale.')
+      return m.reply('✖️ Mossa non valida o illegale.')
 
     game.board = applyMove(game.board, from, to)
     game.moveCount++
@@ -362,7 +362,7 @@ let handler = async (m, { conn, text, command }) => {
     return await conn.sendMessage(m.chat, {
       image: img,
       caption:
-`♟️ *Scacchi 333* — Mossa ${game.moveCount}
+`♟️ *Scacchi zenobot* — Mossa ${game.moveCount}
 🎯 Difficoltà: ${game.difficulty === 'base' ? '🟢 Base' : '🔴 Difficile'}
 
 ⚪ La tua mossa: *${moveToStr(from, to)}*
@@ -394,20 +394,20 @@ ${inCheck ? '\n⚠️ *SEI SOTTO SCACCO!*' : ''}
 
     return await conn.sendMessage(m.chat, {
       text:
-`╔═ ♟️ 𝐒𝐂𝐀𝐂𝐂𝐇𝐈 𝟑𝟑𝟑 ═╗
-┃
-┃ 🤖 *Gioca contro il Bot*
-┃
-┃ ⚪ Tu → Bianchi (muovi per primo)
-┃ ⚫ Bot → Neri
-┃
-┃ 📝 Mosse con notazione algebrica
-┃ Esempio: *.mossa e2e4*
-┃
-┃ 🎯 Scegli la difficoltà:
-┃
-╚══════════════╝`,
-      footer: '𝟑𝟑𝟑 𝐂𝐀𝐒𝐈𝐍𝐎',
+`┌┄ ♟️ ꜱᴄᴀᴄᴄʜɪ ᴢᴇɴᴏʙᴏᴛ ┄┐
+┆
+┆ 🤖 *Gioca contro il Bot*
+┆
+┆ ⚪ Tu → Bianchi (muovi per primo)
+┆ ⚫ Bot → Neri
+┆
+┆ 📝 Mosse con notazione algebrica
+┆ Esempio: *.mossa e2e4*
+┆
+┆ 🎯 Scegli la difficoltà:
+┆
+└┄┄┄┄┄┄┄┄┄┄┄┄┄┄┘`,
+      footer: 'ᴢᴇɴᴏʙᴏᴛ ᴄᴀꜱɪɴᴏ',
       buttons: [
         { buttonId: '.scacchi base',      buttonText: { displayText: '🟢 Base'      }, type: 1 },
         { buttonId: '.scacchi difficile', buttonText: { displayText: '🔴 Difficile' }, type: 1 }

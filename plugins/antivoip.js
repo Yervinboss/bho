@@ -1,4 +1,4 @@
-//Plugin by Zeno, Lucifero & 333 staff
+//Plugin by Zeno, Lucifero & zenobot staff
 import PhoneNumber from 'awesome-phonenumber';
 
 let handler = m => m

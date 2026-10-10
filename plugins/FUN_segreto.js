@@ -1,4 +1,4 @@
-//Plugin by Zeno, Lucifero & 333 staff
+//Plugin by Zeno, Lucifero & zenobot staff
 
 let handler = async (m, {
 conn, groupMetadata
@@ -19,7 +19,7 @@ mentionedJid: [a]
 
 handler.customPrefix = /segreto/i
 handler.command = new RegExp
-handler.help = ['.𝐬𝐞𝐠𝐫𝐞𝐭𝐨']
+handler.help = ['.ꜱᴇɢʀᴇᴛᴏ']
 handler.tags = ['fun']
 export default handler
 function pickRandom(list) {

@@ -1,4 +1,4 @@
-//Plugin by Zeno, Lucifero & 333 staff
+//Plugin by Zeno, Lucifero & zenobot staff
 
 
 
@@ -119,13 +119,13 @@ const handler = async (m, { conn, command, args, isAdmin }) => {
     const chat = m.chat;
     
     if (command === 'skipalbum') {
-        if (!activeGames.has(chat)) return m.reply('❌ *Nessuna partita in corso!*');
-        if (!isAdmin && !m.fromMe) return m.reply('❌ *Comando disponibile solo per admin!*');
+        if (!activeGames.has(chat)) return m.reply('✖️ *Nessuna partita in corso!*');
+        if (!isAdmin && !m.fromMe) return m.reply('✖️ *Comando disponibile solo per admin!*');
         
         const game = activeGames.get(chat);
         clearTimeout(game.timeout);
         
-        const skipText = `╭─────────╮\n│ ⏩ 𝐏𝐀𝐑𝐓𝐈𝐓𝐀 𝐒𝐊𝐈𝐏𝐏𝐀𝐓𝐀\n━━━━━━━━━━━━━━\n✎ 𝐀𝐥𝐛𝐮𝐦: ${game.album.title}\n✎ 𝐀𝐫𝐭𝐢𝐬𝐭𝐚: ${game.album.artist}\n━━━━━━━━━━━━━━\n> 𝟥𝟥𝟥 𝔹𝕆𝕋 \n╰─────────╯`;
+        const skipText = `┌┄┄┄┄┄┄┄┄┄┐\n┆ ⏩ ᴘᴀʀᴛɪᴛᴀ ꜱᴋɪᴘᴘᴀᴛᴀ\n┄┄┄┄┄┄┄┄┄┄┄┄┄┄\n✎ ᴀʟʙᴜᴍ: ${game.album.title}\n✎ ᴀʀᴛɪꜱᴛᴀ: ${game.album.artist}\n┄┄┄┄┄┄┄┄┄┄┄┄┄┄\n> ᴢᴇɴᴏʙᴏᴛ \n└┄┄┄┄┄┄┄┄┄┘`;
         
         await conn.sendMessage(chat, { text: skipText }, { quoted: m });
         activeGames.delete(chat);
@@ -139,7 +139,7 @@ const handler = async (m, { conn, command, args, isAdmin }) => {
         
         if (!args.length) {
             return conn.sendMessage(chat, {
-                text: `╭─────────╮\n│ 🎮 𝐈𝐍𝐃𝐎𝐕𝐈𝐍𝐀 𝐋'𝐀𝐋𝐁𝐔𝐌\n━━━━━━━━━━━━━━\n✎ *Scegli una modalità:*\n━━━━━━━━━━━━━━\n> 𝟥𝟥𝟥 𝔹𝕆𝕋 \n╰─────────╯`,
+                text: `┌┄┄┄┄┄┄┄┄┄┐\n┆ 🎮 ɪɴᴅᴏᴠɪɴᴀ ʟ'ᴀʟʙᴜᴍ\n┄┄┄┄┄┄┄┄┄┄┄┄┄┄\n✎ *Scegli una modalità:*\n┄┄┄┄┄┄┄┄┄┄┄┄┄┄\n> ᴢᴇɴᴏʙᴏᴛ \n└┄┄┄┄┄┄┄┄┄┘`,
                 buttons: [
                     { buttonId: '.ica generale', buttonText: { displayText: '🎲 Generale' }, type: 1 },
                     { buttonId: '.ica specifico', buttonText: { displayText: '🎤 Artista specifico' }, type: 1 }
@@ -153,7 +153,7 @@ const handler = async (m, { conn, command, args, isAdmin }) => {
         if (firstArg === 'specifico') {
             if (args.length === 1) {
                 return conn.sendMessage(chat, {
-                    text: `╭─────────╮\n│ 🎤 𝐀𝐑𝐓𝐈𝐒𝐓𝐀 𝐒𝐏𝐄𝐂𝐈𝐅𝐈𝐂𝐎\n━━━━━━━━━━━━━━\n✎ *Esempio:* .ica thasup\n✎ *Artisti disponibili:*\n➥ thasup, geolier, lazza, shiva, simba la rue, baby gang, paky, massimo pericolo, madman, gemitaiz, ghali, marracash, guè, ernia, frah quintale, coez, sick luke, tedua, bresh\n━━━━━━━━━━━━━━\n> 𝟥𝟥𝟥 𝔹𝕆𝕋 \n╰─────────╯`
+                    text: `┌┄┄┄┄┄┄┄┄┄┐\n┆ 🎤 ᴀʀᴛɪꜱᴛᴀ ꜱᴘᴇᴄɪꜰɪᴄᴏ\n┄┄┄┄┄┄┄┄┄┄┄┄┄┄\n✎ *Esempio:* .ica thasup\n✎ *Artisti disponibili:*\n➥ thasup, geolier, lazza, shiva, simba la rue, baby gang, paky, massimo pericolo, madman, gemitaiz, ghali, marracash, guè, ernia, frah quintale, coez, sick luke, tedua, bresh\n┄┄┄┄┄┄┄┄┄┄┄┄┄┄\n> ᴢᴇɴᴏʙᴏᴛ \n└┄┄┄┄┄┄┄┄┄┘`
                 }, { quoted: m });
             }
             
@@ -185,7 +185,7 @@ const startGame = async (m, conn, chat, artist = null) => {
         
         const difficoltaEmoji = album.difficolta === 'facile' ? '🟢' : album.difficolta === 'medio' ? '🟡' : '🔴';
         
-        const caption = `╭─────────╮\n│ 🖼️ 𝐈𝐍𝐃𝐎𝐕𝐈𝐍𝐀 𝐋'𝐀𝐋𝐁𝐔𝐌\n━━━━━━━━━━━━━━\n✎ 𝐀𝐫𝐭𝐢𝐬𝐭𝐚: ${album.artist}\n✎ 𝐃𝐢𝐟𝐟𝐢𝐜𝐨𝐥𝐭à: ${difficoltaEmoji} ${album.difficolta}\n✎ 𝐏𝐫𝐞𝐦𝐢𝐨: ${album.premio}€\n━━━━━━━━━━━━━━\n> 𝐑𝐢𝐬𝐩𝐨𝐧𝐝𝐢 𝐚𝐥 𝐦𝐞𝐬𝐬𝐚𝐠𝐠𝐢𝐨!\n> 𝟥𝟥𝟥 𝔹𝕆𝕋 \n╰─────────╯`;
+        const caption = `┌┄┄┄┄┄┄┄┄┄┐\n┆ 🖼️ ɪɴᴅᴏᴠɪɴᴀ ʟ'ᴀʟʙᴜᴍ\n┄┄┄┄┄┄┄┄┄┄┄┄┄┄\n✎ ᴀʀᴛɪꜱᴛᴀ: ${album.artist}\n✎ ᴅɪꜰꜰɪᴄᴏʟᴛà: ${difficoltaEmoji} ${album.difficolta}\n✎ ᴘʀᴇᴍɪᴏ: ${album.premio}€\n┄┄┄┄┄┄┄┄┄┄┄┄┄┄\n> ʀɪꜱᴘᴏɴᴅɪ ᴀʟ ᴍᴇꜱꜱᴀɢɢɪᴏ!\n> ᴢᴇɴᴏʙᴏᴛ \n└┄┄┄┄┄┄┄┄┄┘`;
         
         const fullMessage = await conn.sendMessage(chat, { 
             image: fs.readFileSync(imagePath), 
@@ -207,7 +207,7 @@ const startGame = async (m, conn, chat, artist = null) => {
                 }
                 
                 await conn.sendMessage(chat, { 
-                    text: `╭─────────╮\n│ ⏰ 𝐓𝐄𝐌𝐏𝐎 𝐒𝐂𝐀𝐃𝐔𝐓𝐎\n━━━━━━━━━━━━━━\n✎ 𝐀𝐥𝐛𝐮𝐦: ${album.title}\n✎ 𝐀𝐫𝐭𝐢𝐬𝐭𝐚: ${album.artist}\n━━━━━━━━━━━━━━\n> 𝟥𝟥𝟥 𝔹𝕆𝕋 \n╰─────────╯`,
+                    text: `┌┄┄┄┄┄┄┄┄┄┐\n┆ ⏰ ᴛᴇᴍᴘᴏ ꜱᴄᴀᴅᴜᴛᴏ\n┄┄┄┄┄┄┄┄┄┄┄┄┄┄\n✎ ᴀʟʙᴜᴍ: ${album.title}\n✎ ᴀʀᴛɪꜱᴛᴀ: ${album.artist}\n┄┄┄┄┄┄┄┄┄┄┄┄┄┄\n> ᴢᴇɴᴏʙᴏᴛ \n└┄┄┄┄┄┄┄┄┄┘`,
                     buttons: buttons,
                     headerType: 1
                 }, { quoted: m });
@@ -218,7 +218,7 @@ const startGame = async (m, conn, chat, artist = null) => {
         
     } catch (error) {
         console.error('Errore:', error);
-        conn.sendMessage(chat, { text: '❌ *Errore! Riprova.*' }, { quoted: m });
+        conn.sendMessage(chat, { text: '✖️ *Errore! Riprova.*' }, { quoted: m });
         activeGames.delete(chat);
     }
 };
@@ -264,7 +264,7 @@ handler.before = async (m, { conn }) => {
         }
         
         await conn.sendMessage(chat, { 
-            text: `╭─────────╮\n│ ✅ 𝐕𝐈𝐓𝐓𝐎𝐑𝐈𝐀!\n━━━━━━━━━━━━━━\n✎ @${m.sender.split('@')[0]} ha indovinato!\n✎ 𝐀𝐥𝐛𝐮𝐦: ${game.album.title}\n✎ 𝐀𝐫𝐭𝐢𝐬𝐭𝐚: ${game.album.artist}\n✎ 𝐕𝐢𝐧𝐜𝐢𝐭𝐚: ${game.album.premio}€\n━━━━━━━━━━━━━━\n> 𝟥𝟥𝟥 𝔹𝕆𝕋 \n╰─────────╯`,
+            text: `┌┄┄┄┄┄┄┄┄┄┐\n┆ ✔️ ᴠɪᴛᴛᴏʀɪᴀ!\n┄┄┄┄┄┄┄┄┄┄┄┄┄┄\n✎ @${m.sender.split('@')[0]} ha indovinato!\n✎ ᴀʟʙᴜᴍ: ${game.album.title}\n✎ ᴀʀᴛɪꜱᴛᴀ: ${game.album.artist}\n✎ ᴠɪɴᴄɪᴛᴀ: ${game.album.premio}€\n┄┄┄┄┄┄┄┄┄┄┄┄┄┄\n> ᴢᴇɴᴏʙᴏᴛ \n└┄┄┄┄┄┄┄┄┄┘`,
             mentions: [m.sender],
             buttons: buttons,
             headerType: 1

@@ -1,4 +1,4 @@
-//Plugin by Zeno, Lucifero & 333 staff
+//Plugin by Zeno, Lucifero & zenobot staff
 
 
 
@@ -15,7 +15,7 @@ let handler = async (m, { conn, usedPrefix, command }) => {
             {
                 name: "cta_copy",
                 buttonParamsJson: JSON.stringify({
-                    display_text: "🔗 𝐂𝐎𝐏𝐈𝐀 𝐋𝐈𝐍𝐊",
+                    display_text: "🔗 ᴄᴏᴘɪᴀ ʟɪɴᴋ",
                     id: inviteLink,
                     copy_code: inviteLink
                 })
@@ -27,23 +27,23 @@ let handler = async (m, { conn, usedPrefix, command }) => {
                 message: {
                     interactiveMessage: {
                         header: {
-                            title: "⚡️ 𝟑𝟑𝟑𝐁𝐎𝐓 • 𝐋𝐈𝐍𝐊",
+                            title: "⚡️ ᴢᴇɴᴏʙᴏᴛʙᴏᴛ • ʟɪɴᴋ",
                             hasMediaAttachment: false
                         },
                         body: {
-                            text: `╭─────────╮  
-┃ 📢 𝐋𝐈𝐍𝐊 𝐔𝐅𝐅𝐈𝐂𝐈𝐀𝐋𝐄
-┃ ꙰  𝟥𝟥𝟥 𝔹𝕆𝕋  ꙰
-┃━━━━━━━━━━━━━━
-┃⮕ 𝐆𝐫𝐮𝐩𝐩𝐨: ${groupName}
-┃
-┃ 💡 𝐔𝐬𝐚 𝐢𝐥 𝐭𝐚𝐬𝐭𝐨 𝐪𝐮𝐢 𝐬𝐨𝐭𝐭𝐨
-┃ 𝐩𝐞𝐫 𝐜𝐨𝐩𝐢𝐚𝐫𝐞 𝐢𝐥 𝐥𝐢𝐧𝐤 
-┃ 𝐧𝐞𝐠𝐥𝐢 𝐚𝐩𝐩𝐮𝐧𝐭𝐢.
-╰─────────╯`
+                            text: `┌┄┄┄┄┄┄┄┄┄┐  
+┆ 📢 ʟɪɴᴋ ᴜꜰꜰɪᴄɪᴀʟᴇ
+┆❖ ᴢᴇɴᴏʙᴏᴛ
+┆┄┄┄┄┄┄┄┄┄┄┄┄┄┄
+┆▹ ɢʀᴜᴘᴘᴏ: ${groupName}
+┆
+┆ 💡 ᴜꜱᴀ ɪʟ ᴛᴀꜱᴛᴏ ǫᴜɪ ꜱᴏᴛᴛᴏ
+┆ ᴘᴇʀ ᴄᴏᴘɪᴀʀᴇ ɪʟ ʟɪɴᴋ 
+┆ ɴᴇɢʟɪ ᴀᴘᴘᴜɴᴛɪ.
+└┄┄┄┄┄┄┄┄┄┘`
                         },
                         footer: {
-                            text: "💡 𝟑𝟑𝟑𝐁𝐎𝐓"
+                            text: "💡 ᴢᴇɴᴏʙᴏᴛʙᴏᴛ"
                         },
                         nativeFlowMessage: {
                             buttons: interactiveButtons
@@ -57,7 +57,7 @@ let handler = async (m, { conn, usedPrefix, command }) => {
 
     } catch (e) {
         console.error(e);
-        m.reply("⚠️ 𝐄𝐑𝐑𝐎𝐑𝐄: Impossibile generare il link. Assicurati che il bot sia Amministratore.");
+        m.reply("⚠️ ᴇʀʀᴏʀᴇ: Impossibile generare il link. Assicurati che il bot sia Amministratore.");
     }
 };
 

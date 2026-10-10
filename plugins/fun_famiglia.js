@@ -1,4 +1,4 @@
-//Plugin by Zeno, Lucifero & 333 staff
+//Plugin by Zeno, Lucifero & zenobot staff
 
 import fetch from 'node-fetch'
 
@@ -44,11 +44,11 @@ const handler = async (m, { conn }) => {
     key: {
       participants: '0@s.whatsapp.net',
       fromMe: false,
-      id: '333Famiglia'
+      id: 'zenobotFamiglia'
     },
     message: {
       locationMessage: {
-        name: `『 𝐅𝐀𝐌𝐈𝐆𝐋𝐈𝐀 』 ${tag}`,
+        name: `『 ꜰᴀᴍɪɢʟɪᴀ 』 ${tag}`,
         jpegThumbnail: ppBuffer.toString('base64'),
         vcard: 'BEGIN:VCARD\nVERSION:3.0\nN:;Famiglia;;;\nFN:Famiglia\nEND:VCARD'
       }
@@ -57,22 +57,22 @@ const handler = async (m, { conn }) => {
   }
 
   await conn.sendMessage(m.chat, {
-    text: `ೋೋ══ • ══ೋೋ
-> 𝐅𝐀𝐌𝐈𝐆𝐋𝐈𝐀
-ೋೋ══ • ══ೋೋ
-𝐍𝐨𝐦𝐞: ${tag}
+    text: `ೋೋ┄┄ • ┄┄ೋೋ
+> ꜰᴀᴍɪɢʟɪᴀ
+ೋೋ┄┄ • ┄┄ೋೋ
+ɴᴏᴍᴇ: ${tag}
 
-𝐒𝐩𝐨𝐬𝐚𝐭𝐨/𝐚: ${user.sposato ? 'si' : 'no'}
-𝐂𝐨𝐧𝐢𝐮𝐠𝐞: ${user.coniuge ? '@' + user.coniuge.split('@')[0] : 'nessuno'}
-𝐓𝐞𝐬𝐭𝐢𝐦𝐨𝐧𝐞: ${user.testimone ? '@' + user.testimone.split('@')[0] : 'nessuno'}
+ꜱᴘᴏꜱᴀᴛᴏ/ᴀ: ${user.sposato ? 'si' : 'no'}
+ᴄᴏɴɪᴜɢᴇ: ${user.coniuge ? '@' + user.coniuge.split('@')[0] : 'nessuno'}
+ᴛᴇꜱᴛɪᴍᴏɴᴇ: ${user.testimone ? '@' + user.testimone.split('@')[0] : 'nessuno'}
 
-𝐄𝐱 𝐂𝐨𝐧𝐢𝐮𝐠𝐢: ${exList.length ? exList.join(', ') : 'Nessuno'}
+ᴇx ᴄᴏɴɪᴜɢɪ: ${exList.length ? exList.join(', ') : 'Nessuno'}
 
-𝐀𝐝𝐨𝐭𝐭𝐚𝐭𝐨 𝐝𝐚: ${adottatoDa ? '@' + adottatoDa.split('@')[0] : 'Nessuno'}
-𝐅𝐢𝐠𝐥𝐢 𝐚𝐝𝐨𝐭𝐭𝐚𝐭𝐢: ${adopList.length ? adopList.join(', ') : 'Nessuno'}
+ᴀᴅᴏᴛᴛᴀᴛᴏ ᴅᴀ: ${adottatoDa ? '@' + adottatoDa.split('@')[0] : 'Nessuno'}
+ꜰɪɢʟɪ ᴀᴅᴏᴛᴛᴀᴛɪ: ${adopList.length ? adopList.join(', ') : 'Nessuno'}
 
-𝐌𝐢𝐠𝐥𝐢𝐨𝐫𝐞 𝐚𝐦𝐢𝐜𝐨: ${user.miglioreamico ? '@' + user.miglioreamico.split('@')[0] : 'nessuno'}
-ೋೋ══ • ══ೋೋ`,
+ᴍɪɢʟɪᴏʀᴇ ᴀᴍɪᴄᴏ: ${user.miglioreamico ? '@' + user.miglioreamico.split('@')[0] : 'nessuno'}
+ೋೋ┄┄ • ┄┄ೋೋ`,
     mentions: [
       who,
       user.coniuge,

@@ -1,4 +1,4 @@
-//Plugin by Zeno, Lucifero & 333 staff
+//Plugin by Zeno, Lucifero & zenobot staff
 
 
 
@@ -7,7 +7,7 @@ const RUOLI_SPECIALI = ['developer']
 let handler = async (m, { text, mentionedJid }) => {
   const args = text?.trim().split(/\s+/)
   if (!args || args.length < 1)
-    return m.reply('❌ Uso: *removeperms @numero nome-plugin/ruolo*\nSenza specificare nulla, rimuove TUTTI i permessi')
+    return m.reply('✖️ Uso: *removeperms @numero nome-plugin/ruolo*\nSenza specificare nulla, rimuove TUTTI i permessi')
 
   let rawNumber = ''
   if (mentionedJid && mentionedJid.length > 0) {
@@ -17,7 +17,7 @@ let handler = async (m, { text, mentionedJid }) => {
     args.shift()
   }
 
-  if (!rawNumber) return m.reply('❌ Numero non valido')
+  if (!rawNumber) return m.reply('✖️ Numero non valido')
 
   const jid = rawNumber + '@s.whatsapp.net'
   const permName = args.filter(a => !/^\d+$/.test(a) && !a.startsWith('@')).join(' ').toLowerCase().trim()
@@ -27,7 +27,7 @@ let handler = async (m, { text, mentionedJid }) => {
 
   if (!permName) {
     delete global.db.data.pluginPerms[jid]
-    return m.reply(`✅ Rimossi *tutti* i permessi di *${rawNumber}*`)
+    return m.reply(`✔️ Rimossi *tutti* i permessi di *${rawNumber}*`)
   }
 
   const idx = global.db.data.pluginPerms[jid].indexOf(permName)
@@ -37,9 +37,9 @@ let handler = async (m, { text, mentionedJid }) => {
   if (global.db.data.pluginPerms[jid].length === 0) delete global.db.data.pluginPerms[jid]
 
   if (permName === 'developer')
-    return m.reply(`✅ Rimosso il ruolo *Developer* da *${rawNumber}*\n🚫 Non potrà più usare devsave, devedit, devdp.`)
+    return m.reply(`✔️ Rimosso il ruolo *Developer* da *${rawNumber}*\n🚫 Non potrà più usare devsave, devedit, devdp.`)
 
-  m.reply(`✅ Rimosso il permesso *${permName}* da *${rawNumber}*`)
+  m.reply(`✔️ Rimosso il permesso *${permName}* da *${rawNumber}*`)
 }
 
 handler.command = /^removeperms$/i

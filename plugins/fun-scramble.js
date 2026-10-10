@@ -1,4 +1,4 @@
-//Plugin by Zeno, Lucifero & 333 staff
+//Plugin by Zeno, Lucifero & zenobot staff
 
 
 const parole =
@@ -28,7 +28,7 @@ const handler = async (m, { conn, usedPrefix, args }) => {
   if (args.length === 0) {
     if (global.gameScramble[chatId]) {
       const oldGame = global.gameScramble[chatId];
-      if (Date.now() < oldGame.endTime) throw "⚠️ 𝐔𝐧𝐚 𝐩𝐚𝐫𝐭𝐢𝐭𝐚 𝐞̀ 𝐠𝐢𝐚 𝐢𝐧 𝐜𝐨𝐫𝐬𝐨!";
+      if (Date.now() < oldGame.endTime) throw "⚠️ ᴜɴᴀ ᴘᴀʀᴛɪᴛᴀ ᴇ̀ ɢɪᴀ ɪɴ ᴄᴏʀꜱᴏ!";
       else delete global.gameScramble[chatId];
     }
 
@@ -47,7 +47,7 @@ const handler = async (m, { conn, usedPrefix, args }) => {
     };
 
     await conn.sendMessage(chatId, {
-      text: `🎮 𝐒𝐂𝐑𝐀𝐌𝐁𝐋𝐄 𝐀𝐕𝐕𝐈𝐀𝐓𝐎!\n\n𝐏𝐚𝐫𝐨𝐥𝐚: *${scrambled}*\n\n𝐓𝐞𝐦𝐩𝐨: 𝟐 𝐦𝐢𝐧𝐮𝐭𝐢\n\n𝟓 𝐭𝐞𝐧𝐭𝐚𝐭𝐢𝐯𝐢 𝐚 𝐭𝐞𝐬𝐭𝐚.\n\n𝐒𝐜𝐫𝐢𝐯𝐢 .𝐬𝐜𝐫𝐚𝐦𝐛𝐥𝐞 <𝐩𝐚𝐫𝐨𝐥𝐚> 𝐩𝐞𝐫 𝐩𝐫𝐨𝐯𝐚𝐫𝐞!`
+      text: `🎮 ꜱᴄʀᴀᴍʙʟᴇ ᴀᴠᴠɪᴀᴛᴏ!\n\nᴘᴀʀᴏʟᴀ: *${scrambled}*\n\nᴛᴇᴍᴘᴏ: 𝟸 ᴍɪɴᴜᴛɪ\n\n𝟻 ᴛᴇɴᴛᴀᴛɪᴠɪ ᴀ ᴛᴇꜱᴛᴀ.\n\nꜱᴄʀɪᴠɪ .ꜱᴄʀᴀᴍʙʟᴇ <ᴘᴀʀᴏʟᴀ> ᴘᴇʀ ᴘʀᴏᴠᴀʀᴇ!`
     });
 
     const interval = setInterval(async () => {
@@ -59,7 +59,7 @@ const handler = async (m, { conn, usedPrefix, args }) => {
         global.scramblePoints[chatId][starter] = (global.scramblePoints[chatId][starter] || 0) - 5;
 
         await conn.sendMessage(chatId, {
-          text: `⏳ @${starter.split("@")[0]} 𝐓𝐞𝐦𝐩𝐨 𝐬𝐜𝐚𝐝𝐮𝐭𝐨! 𝐇𝐚𝐢 𝐩𝐞𝐫𝐬𝐨 𝟓 𝐩𝐮𝐧𝐭𝐢.\n𝐋𝐚 𝐩𝐚𝐫𝐨𝐥𝐚 𝐞𝐫𝐚: *${game.parola}* `,
+          text: `⏳ @${starter.split("@")[0]} ᴛᴇᴍᴘᴏ ꜱᴄᴀᴅᴜᴛᴏ! ʜᴀɪ ᴘᴇʀꜱᴏ 𝟻 ᴘᴜɴᴛɪ.\nʟᴀ ᴘᴀʀᴏʟᴀ ᴇʀᴀ: *${game.parola}* `,
           contextInfo: { mentionedJid: [starter] }
         });
         delete global.gameScramble[chatId];
@@ -71,7 +71,7 @@ const handler = async (m, { conn, usedPrefix, args }) => {
   }
 
   const game = global.gameScramble[chatId];
-  if (!game) return m.reply("❌ 𝐍𝐞𝐬𝐬𝐮𝐧𝐚 𝐩𝐚𝐫𝐭𝐢𝐭𝐚 𝐢𝐧 𝐜𝐨𝐫𝐬𝐨, 𝐮𝐬𝐚 ’’.𝐬𝐜𝐫𝐚𝐦𝐛𝐥𝐞’’ 𝐩𝐞𝐫 𝐚𝐯𝐯𝐢𝐚𝐫𝐧𝐞 𝐮𝐧𝐚!");
+  if (!game) return m.reply("✖️ ɴᴇꜱꜱᴜɴᴀ ᴘᴀʀᴛɪᴛᴀ ɪɴ ᴄᴏʀꜱᴏ, ᴜꜱᴀ ’’.ꜱᴄʀᴀᴍʙʟᴇ’’ ᴘᴇʀ ᴀᴠᴠɪᴀʀɴᴇ ᴜɴᴀ!");
   if (game.playerSolved) return;
   if (game.blocked.includes(player)) return; 
 
@@ -83,7 +83,7 @@ const handler = async (m, { conn, usedPrefix, args }) => {
     global.scramblePoints[chatId][player] = (global.scramblePoints[chatId][player] || 0) + 10;
 
     await conn.sendMessage(chatId, {
-      text: `🏆 @${player.split("@")[0]} 𝐇𝐚 𝐢𝐧𝐝𝐨𝐯𝐢𝐧𝐚𝐭𝐨!\n𝐋𝐚 𝐩𝐚𝐫𝐨𝐥𝐚 𝐞𝐫𝐚: *${game.parola}*\n𝐇𝐚𝐢 𝐠𝐮𝐚𝐝𝐚𝐠𝐧𝐚𝐭𝐨 𝟏𝟎 𝐩𝐮𝐧𝐭𝐢!\n> 𝐮𝐬𝐚 ’’.𝐭𝐨𝐩𝐬𝐜𝐫𝐚𝐦𝐛𝐥𝐞’’ 𝐩𝐞𝐫 𝐯𝐞𝐝𝐞𝐫𝐞 𝐥𝐚 𝐜𝐥𝐚𝐬𝐬𝐢𝐟𝐢𝐜𝐚.`,
+      text: `🏆 @${player.split("@")[0]} ʜᴀ ɪɴᴅᴏᴠɪɴᴀᴛᴏ!\nʟᴀ ᴘᴀʀᴏʟᴀ ᴇʀᴀ: *${game.parola}*\nʜᴀɪ ɢᴜᴀᴅᴀɢɴᴀᴛᴏ 𝟷𝟶 ᴘᴜɴᴛɪ!\n> ᴜꜱᴀ ’’.ᴛᴏᴘꜱᴄʀᴀᴍʙʟᴇ’’ ᴘᴇʀ ᴠᴇᴅᴇʀᴇ ʟᴀ ᴄʟᴀꜱꜱɪꜰɪᴄᴀ.`,
       contextInfo: { mentionedJid: [player] }
     });
 
@@ -104,17 +104,17 @@ const handler = async (m, { conn, usedPrefix, args }) => {
     game.blocked.push(player);
 
     await conn.sendMessage(chatId, {
-      text: `❌ @${player.split("@")[0]} 𝐓𝐞𝐧𝐭𝐚𝐭𝐢𝐯𝐢 𝐞𝐬𝐚𝐮𝐫𝐢𝐭𝐢, 𝐡𝐚𝐢 𝐩𝐞𝐫𝐬𝐨 𝟓 𝐩𝐮𝐧𝐭𝐢!\n𝐏𝐚𝐫𝐨𝐥𝐚: *${game.scrambled}*\n⏳ 𝐓𝐞𝐦𝐩𝐨 𝐫𝐢𝐦𝐚𝐧𝐞𝐧𝐭𝐞: *${tempoDisplay}* `,
+      text: `✖️ @${player.split("@")[0]} ᴛᴇɴᴛᴀᴛɪᴠɪ ᴇꜱᴀᴜʀɪᴛɪ, ʜᴀɪ ᴘᴇʀꜱᴏ 𝟻 ᴘᴜɴᴛɪ!\nᴘᴀʀᴏʟᴀ: *${game.scrambled}*\n⏳ ᴛᴇᴍᴘᴏ ʀɪᴍᴀɴᴇɴᴛᴇ: *${tempoDisplay}* `,
       contextInfo: { mentionedJid: [player] }
     });
   } else if (tentativiRimasti === 1) {
     await conn.sendMessage(chatId, {
-      text: `❌ @${player.split("@")[0]} 𝐏𝐚𝐫𝐨𝐥𝐚 𝐬𝐛𝐚𝐠𝐥𝐢𝐚𝐭𝐚! 𝐇𝐚𝐢 𝐚𝐧𝐜𝐨𝐫𝐚 𝐮𝐧 𝐮𝐥𝐭𝐢𝐦𝐨 𝐭𝐞𝐧𝐭𝐚𝐭𝐢𝐯𝐨.\n𝐏𝐚𝐫𝐨𝐥𝐚: *${game.scrambled}*\n⏳ 𝐓𝐞𝐦𝐩𝐨 𝐫𝐢𝐦𝐚𝐧𝐞𝐧𝐭𝐞: *${tempoDisplay}* `,
+      text: `✖️ @${player.split("@")[0]} ᴘᴀʀᴏʟᴀ ꜱʙᴀɢʟɪᴀᴛᴀ! ʜᴀɪ ᴀɴᴄᴏʀᴀ ᴜɴ ᴜʟᴛɪᴍᴏ ᴛᴇɴᴛᴀᴛɪᴠᴏ.\nᴘᴀʀᴏʟᴀ: *${game.scrambled}*\n⏳ ᴛᴇᴍᴘᴏ ʀɪᴍᴀɴᴇɴᴛᴇ: *${tempoDisplay}* `,
       contextInfo: { mentionedJid: [player] }
     });
   } else {
     await conn.sendMessage(chatId, {
-      text: `❌ @${player.split("@")[0]} 𝐏𝐚𝐫𝐨𝐥𝐚 𝐬𝐛𝐚𝐠𝐥𝐢𝐚𝐭𝐚! 𝐇𝐚𝐢 𝐚𝐧𝐜𝐨𝐫𝐚 *${tentativiRimasti}* 𝐭𝐞𝐧𝐭𝐚𝐭𝐢𝐯𝐢.\n𝐏𝐚𝐫𝐨𝐥𝐚: ${game.scrambled}\n⏳ 𝐓𝐞𝐦𝐩𝐨 𝐫𝐢𝐦𝐚𝐧𝐞𝐧𝐭𝐞: ${tempoDisplay}`,
+      text: `✖️ @${player.split("@")[0]} ᴘᴀʀᴏʟᴀ ꜱʙᴀɢʟɪᴀᴛᴀ! ʜᴀɪ ᴀɴᴄᴏʀᴀ *${tentativiRimasti}* ᴛᴇɴᴛᴀᴛɪᴠɪ.\nᴘᴀʀᴏʟᴀ: ${game.scrambled}\n⏳ ᴛᴇᴍᴘᴏ ʀɪᴍᴀɴᴇɴᴛᴇ: ${tempoDisplay}`,
       contextInfo: { mentionedJid: [player] }
     });
   }

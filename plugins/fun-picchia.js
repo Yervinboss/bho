@@ -1,4 +1,4 @@
-//Plugin by Zeno, Lucifero & 333 staff
+//Plugin by Zeno, Lucifero & zenobot staff
 
 let handler = async (m, { conn, usedPrefix, command, text }) => {
     let who;
@@ -13,16 +13,16 @@ let handler = async (m, { conn, usedPrefix, command, text }) => {
         who = text ? text.replace(/[^0-9]/g, '') + '@s.whatsapp.net' : m.chat;
     }
 
-    if (!who) return m.reply(`𝐦𝐞𝐧𝐳𝐢𝐨𝐧𝐚 𝐥𝐚 𝐩𝐞𝐫𝐬𝐨𝐧𝐚 𝐝𝐚 𝐩𝐢𝐜𝐜𝐡𝐢𝐚𝐫𝐞 👊🏻`);
+    if (!who) return m.reply(`ᴍᴇɴᴢɪᴏɴᴀ ʟᴀ ᴘᴇʀꜱᴏɴᴀ ᴅᴀ ᴘɪᴄᴄʜɪᴀʀᴇ 👊🏻`);
 
     const thumbnailUrl = "https://cdn.phototourl.com/free/2026-05-07-dc18e3f0-5cbf-4675-ad2b-0d953837d05e.jpg"; 
     const thumbnailBuffer = await (await fetch(thumbnailUrl)).buffer();
-    const thumbnailText = "𝐏𝐈𝐂𝐂𝐇𝐈𝐀"; 
+    const thumbnailText = "ᴘɪᴄᴄʜɪᴀ"; 
 
     let abrazo = await conn.sendMessage(m.chat, {
-        text: `══════•⊰✰⊱•══════
-@${who.split('@')[0]} 𝐡𝐚𝐢 𝐫𝐢𝐜𝐞𝐯𝐮𝐭𝐨 𝐮𝐧 𝐩𝐮𝐠𝐧𝐨 𝐢𝐧 𝐟𝐚𝐜𝐜𝐢𝐚 𝐝𝐚 @${m.sender.split('@')[0]} 
-══════•⊰✰⊱•══════`,
+        text: `┄┄┄┄┄┄•‹✧›•┄┄┄┄┄┄
+@${who.split('@')[0]} ʜᴀɪ ʀɪᴄᴇᴠᴜᴛᴏ ᴜɴ ᴘᴜɢɴᴏ ɪɴ ꜰᴀᴄᴄɪᴀ ᴅᴀ @${m.sender.split('@')[0]} 
+┄┄┄┄┄┄•‹✧›•┄┄┄┄┄┄`,
         mentions: [who, m.sender],
     }, {
         quoted: {
@@ -45,7 +45,7 @@ let handler = async (m, { conn, usedPrefix, command, text }) => {
 };
 
 handler.command = ['picchia'];
-handler.help = ['picchia @𝐭𝐚𝐠'];
+handler.help = ['picchia @ᴛᴀɢ'];
 handler.tags = ['fun'];
 
 export default handler;

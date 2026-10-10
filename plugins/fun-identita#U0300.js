@@ -1,4 +1,4 @@
-//Plugin by Zeno, Lucifero & 333 staff
+//Plugin by Zeno, Lucifero & zenobot staff
 
 let handler = async (m, { conn }) => {
 
@@ -96,44 +96,44 @@ let handler = async (m, { conn }) => {
   ]
 
   const text =
-`╔═🪪 𝐈𝐃𝐄𝐍𝐓𝐈𝐓𝐀̀ 𝐒𝐄𝐆𝐑𝐄𝐓𝐀 ═╗
-┃
-┃ 👤 𝐒𝐨𝐠𝐠𝐞𝐭𝐭𝐨: ${tag}
-┃
-┃ 💼 𝐋𝐚𝐯𝐨𝐫𝐨: ${rand(jobs)}
-┃
-┃ 🚨 𝐂𝐫𝐢𝐦𝐢𝐧𝐞:
-┃ ${rand(crimes)}
-┃
-┃ 📊 𝐒𝐭𝐚𝐭𝐢𝐬𝐭𝐢𝐜𝐡𝐞:
-┃ 🧠 𝐈𝐐: ${iq}
-┃ 🏆 𝐑𝐈𝐒𝐏𝐄𝐓𝐓𝐎: ${respect}%
-┃ 🍀 𝐅𝐎𝐑𝐓𝐔𝐍𝐀: ${luck}%
-┃ ⚠️ 𝐏𝐄𝐑𝐈𝐂𝐎𝐋𝐎𝐒𝐈𝐓𝐀̀: ${danger}%
-┃ 💬 𝐒𝐎𝐂𝐈𝐀𝐋: ${social}%
-┃
-┃ 🧠 𝐏𝐞𝐫𝐬𝐨𝐧𝐚𝐥𝐢𝐭𝐚̀:
-┃ ${rand(qualities)}
-┃
-┃ ⚠️ 𝐃𝐢𝐟𝐞𝐭𝐭𝐨:
-┃ ${rand(defects)}
-┃
-┃ 🤫 𝐒𝐞𝐠𝐫𝐞𝐭𝐨:
-┃ ${rand(secrets)}
-┃
-┃ 📱 𝐃𝐢𝐩𝐞𝐧𝐝𝐞𝐧𝐳𝐚:
-┃ ${rand(addictions)}
-┃
-┃ 😨 𝐏𝐚𝐮𝐫𝐚:
-┃ ${rand(fears)}
-┃
-┃ 🔮 𝐅𝐮𝐭𝐮𝐫𝐨:
-┃ ${rand(futures)}
-┃
-┃ 💀 𝐕𝐞𝐫𝐢𝐭𝐚̀:
-┃ "${rand(insults)}"
-┃
-╚══════════════╝`
+`┌┄🪪 ɪᴅᴇɴᴛɪᴛᴀ̀ ꜱᴇɢʀᴇᴛᴀ ┄┐
+┆
+┆ 👤 ꜱᴏɢɢᴇᴛᴛᴏ: ${tag}
+┆
+┆ 💼 ʟᴀᴠᴏʀᴏ: ${rand(jobs)}
+┆
+┆ 🚨 ᴄʀɪᴍɪɴᴇ:
+┆ ${rand(crimes)}
+┆
+┆ 📊 ꜱᴛᴀᴛɪꜱᴛɪᴄʜᴇ:
+┆ 🧠 ɪǫ: ${iq}
+┆ 🏆 ʀɪꜱᴘᴇᴛᴛᴏ: ${respect}%
+┆ 🍀 ꜰᴏʀᴛᴜɴᴀ: ${luck}%
+┆ ⚠️ ᴘᴇʀɪᴄᴏʟᴏꜱɪᴛᴀ̀: ${danger}%
+┆ 💬 ꜱᴏᴄɪᴀʟ: ${social}%
+┆
+┆ 🧠 ᴘᴇʀꜱᴏɴᴀʟɪᴛᴀ̀:
+┆ ${rand(qualities)}
+┆
+┆ ⚠️ ᴅɪꜰᴇᴛᴛᴏ:
+┆ ${rand(defects)}
+┆
+┆ 🤫 ꜱᴇɢʀᴇᴛᴏ:
+┆ ${rand(secrets)}
+┆
+┆ 📱 ᴅɪᴘᴇɴᴅᴇɴᴢᴀ:
+┆ ${rand(addictions)}
+┆
+┆ 😨 ᴘᴀᴜʀᴀ:
+┆ ${rand(fears)}
+┆
+┆ 🔮 ꜰᴜᴛᴜʀᴏ:
+┆ ${rand(futures)}
+┆
+┆ 💀 ᴠᴇʀɪᴛᴀ̀:
+┆ "${rand(insults)}"
+┆
+└┄┄┄┄┄┄┄┄┄┄┄┄┄┄┘`
 
   conn.sendMessage(m.chat, {
     text,

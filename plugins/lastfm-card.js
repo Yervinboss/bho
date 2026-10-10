@@ -1,4 +1,4 @@
-//Plugin by Zeno, Lucifero & 333 staff
+//Plugin by Zeno, Lucifero & zenobot staff
 
 /**
  * lastfm-card.js
@@ -180,7 +180,7 @@ async function renderWithCanvas(track, username) {
     ctx.drawImage(cover, 30, 30, 340, 340);
     ctx.restore();
   } catch {
-    ctx.fillStyle = '#333';
+    ctx.fillStyle = '#zenobot';
     ctx.fillRect(30, 30, 340, 340);
   }
 
@@ -200,7 +200,7 @@ async function renderWithCanvas(track, username) {
   ctx.font = '15px Arial';
   ctx.fillText(albumName.length > 40 ? albumName.slice(0, 40) + '…' : albumName, x, 195);
 
-  ctx.fillStyle = isPlaying ? '#1DB954' : '#333';
+  ctx.fillStyle = isPlaying ? '#1DB954' : '#zenobot';
   ctx.fillRect(x, 215, 40, 2);
 
   ctx.fillStyle = '#777777';
@@ -244,12 +244,12 @@ export async function sendImage(conn, m, buffer, caption = '', buttons = []) {
 
   const base = {
     caption,
-    footer: '333 BOT - Last.fm',
+    footer: 'ZENOBOT - Last.fm',
     contextInfo: {
       forwardedNewsletterMessageInfo: {
         newsletterJid: '120363341274693350@newsletter',
         serverMessageId: -1,
-        newsletterName: '333 BOT'
+        newsletterName: 'ZENOBOT'
       }
     }
   };

@@ -1,4 +1,4 @@
-//Plugin by Zeno, Lucifero & 333 staff
+//Plugin by Zeno, Lucifero & zenobot staff
 
 const handler = async (m, { conn, text }) => {
   if (!text)
@@ -32,7 +32,7 @@ const handler = async (m, { conn, text }) => {
     }
   }
 
-  m.reply('✅ Messaggio inviato in tutti i gruppi.');
+  m.reply('✔️ Messaggio inviato in tutti i gruppi.');
 };
 
 handler.help = ['tuttigp <messaggio>'];

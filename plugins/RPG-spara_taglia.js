@@ -1,4 +1,4 @@
-//Plugin by Zeno, Lucifero & 333 staff
+//Plugin by Zeno, Lucifero & zenobot staff
 
 import { loadBounty, saveBounty } from '../lib/bounty-store.js'
 
@@ -40,19 +40,19 @@ let handler = async (m, { conn, command }) => {
 
         text += `📊 Classifica di chi ha riscattato più taglie in questo gruppo.
 `
-        text += `━━━━━━━━━━━━━━━
+        text += `┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄
 `
 
         ranking.forEach((user, index) => {
             const medal = index === 0 ? '🥇' : index === 1 ? '🥈' : index === 2 ? '🥉' : '🎯'
             text += `${medal} ${index + 1}. @${user.jid.split('@')[0]}
    • Taglie: ${user.count}
-   • Guadagno: ${user.money} XP333
+   • Guadagno: ${user.money} ZenoCoin
 `
         })
 
         text += `
-━━━━━━━━━━━━━━━`
+┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄`
 
         return conn.reply(m.chat, text, m, { mentions: ranking.map(user => user.jid) })
     }
@@ -92,7 +92,7 @@ Aspetta la prossima 👀`,
         return conn.reply(m.chat,
 `💥 @${m.sender.split('@')[0]} ha sparato...
 
-❌ *MIRA DI MERDA, MANCATO!*
+✖️ *MIRA DI MERDA, MANCATO!*
 
 Sei fuori gioco per questa taglia.`,
         m,
@@ -118,7 +118,7 @@ Sei fuori gioco per questa taglia.`,
     await conn.reply(m.chat,
 `💥 COLPO PERFETTO!
 
-🏆 @${m.sender.split('@')[0]} ha preso ${reward} XP333!
+🏆 @${m.sender.split('@')[0]} ha preso ${reward} ZenoCoin!
 
 🎯 Taglia riscattata.\n\n> Digita ''.toptaglie'' per vedere la classifica.`,
     m,

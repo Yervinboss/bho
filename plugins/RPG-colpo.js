@@ -1,4 +1,4 @@
-//Plugin by Zeno, Lucifero & 333 staff
+//Plugin by Zeno, Lucifero & zenobot staff
 
 
 
@@ -28,7 +28,7 @@ let handler = async (m, { command, conn }) => {
     await conn.sendMessage(chat, {
       text: `💰 COLPO IN PREPARAZIONE!
 
-💸 Ingresso: ${ENTRY_FEE} XP333
+💸 Ingresso: ${ENTRY_FEE} ZenoCoin
 👥 Max: ${MAX_PLAYERS} persone
 
 Scrivi *.partecipa* per partecipare
@@ -42,7 +42,7 @@ Scrivi *.partecipa* per partecipare
 
       if (data.players.length < 2) {
         delete heists[chat]
-        return conn.sendMessage(chat, { text: "❌ Colpo annullato (pochi partecipanti)" })
+        return conn.sendMessage(chat, { text: "✖️ Colpo annullato (pochi partecipanti)" })
       }
 
       data.started = true
@@ -59,12 +59,12 @@ Scrivi *.partecipa* per partecipare
         if (rand < 0.4) {
           let win = Math.floor(Math.random() * 800) + 200
           user.money = (user.money || 0) + win
-          outcome = `💰 @${p.split('@')[0]} scappa con ${win} XP333`
+          outcome = `💰 @${p.split('@')[0]} scappa con ${win} ZenoCoin`
         } 
         else if (rand < 0.75) {
           let lose = Math.floor(Math.random() * 400) + 100
           user.money = Math.max(0, (user.money || 0) - lose)
-          outcome = `💸 @${p.split('@')[0]} perde ${lose} XP333`
+          outcome = `💸 @${p.split('@')[0]} perde ${lose} ZenoCoin`
         } 
         else {
           user.heistJail = Date.now() + (10 * 60 * 1000)
@@ -88,28 +88,28 @@ Scrivi *.partecipa* per partecipare
 
     let data = heists[chat]
     if (!data)
-      return m.reply("❌ Nessun colpo attivo")
+      return m.reply("✖️ Nessun colpo attivo")
 
     if (data.started)
       return m.reply("💀 Il colpo è già partito")
 
     if (data.players.length >= MAX_PLAYERS)
-      return m.reply("❌ Squadra piena")
+      return m.reply("✖️ Squadra piena")
 
     if (data.players.includes(sender))
-      return m.reply("❌ Sei già dentro")
+      return m.reply("✖️ Sei già dentro")
 
     if (user.heistJail && Date.now() < user.heistJail)
       return m.reply("🚔 Sei in prigione, aspetta")
 
     if ((user.money || 0) < ENTRY_FEE)
-      return m.reply(`💸 Ti servono almeno ${ENTRY_FEE} XP333 per partecipare`)
+      return m.reply(`💸 Ti servono almeno ${ENTRY_FEE} ZenoCoin per partecipare`)
 
     user.money -= ENTRY_FEE
 
     data.players.push(sender)
 
-    return m.reply(`✅ Entrato nel colpo (${data.players.length}/${MAX_PLAYERS})`)
+    return m.reply(`✔️ Entrato nel colpo (${data.players.length}/${MAX_PLAYERS})`)
   }
 
 }

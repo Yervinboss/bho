@@ -1,6 +1,6 @@
 //Codice di menu-funzioni.js
 
-//Plugin by Zeno, Lucifero & 333 staff
+//Plugin by Zeno, Lucifero & zenobot staff
 
 import fs from 'fs'
 
@@ -21,84 +21,84 @@ let handler = async (m, { conn, usedPrefix, isOwner, isROwner }) => {
 
   const { antiprivato, soloCreatore, read, anticall } = bot
 
-  const imgBuffer = fs.readFileSync('icone/333.jpg')
+  const imgBuffer = fs.readFileSync('icone/zenobot.jpg')
 
   const fake = {
     key: {
       participants: '0@s.whatsapp.net',
       fromMe: false,
-      id: '333Funzioni'
+      id: 'zenobotFunzioni'
     },
     message: {
       locationMessage: {
-        name: '⚙️ 𝐌𝐞𝐧𝐮 𝐅𝐮𝐧𝐳𝐢𝐨𝐧𝐢 𝟑𝟑𝟑 𝐁𝐨𝐭',
+        name: '⚙️ ᴍᴇɴᴜ ꜰᴜɴᴢɪᴏɴɪ ᴢᴇɴᴏʙᴏᴛ ʙᴏᴛ',
         jpegThumbnail: imgBuffer.toString('base64'),
-        vcard: 'BEGIN:VCARD\nVERSION:3.0\nN:;333;;;\nFN:333\nEND:VCARD'
+        vcard: 'BEGIN:VCARD\nVERSION:3.0\nN:;zenobot;;;\nFN:zenobot\nEND:VCARD'
       }
     },
     participant: '0@s.whatsapp.net'
   }
 
-  const s = (val) => val ? '✅' : '❌'
+  const s = (val) => val ? '✔️' : '✖️'
   const p = usedPrefix
   const tagliaEnabled = taglia !== false
   const parolaEnabled = parola !== false
 
-  const catalogsInfo = `┃━━━━━━━━━━━━━━
-┃ ℹ️  Per attivare/disattivare più funzioni insieme usa '&'
-┃  Esempio: ${p}attiva antilink & antispam & antitrava
-┃  Oppure: ${p}disabilita antilink & antispam
-┃━━━━━━━━━━━━━━`
+  const catalogsInfo = `┆┄┄┄┄┄┄┄┄┄┄┄┄┄┄
+┆ ℹ️  Per attivare/disattivare più funzioni insieme usa '&'
+┆  Esempio: ${p}attiva antilink & antispam & antitrava
+┆  Oppure: ${p}disabilita antilink & antispam
+┆┄┄┄┄┄┄┄┄┄┄┄┄┄┄`
 
   const ownerSection = (isOwner || isROwner) ? `
-┃━━━━━━━━━━━━━━
-┃ 👑 𝐅𝐔𝐍𝐙𝐈𝐎𝐍𝐈 𝐎𝐖𝐍𝐄𝐑
-┃━━━━━━━━━━━━━━
-┃${s(antiprivato)} ⮕ ${p}antiprivato
-┃${s(antiban)} ⮕ ${p}antiban
-┃${s(soloCreatore)} ⮕ ${p}solocreatore
-┃${s(read)} ⮕ ${p}lettura
-┃${s(anticall)} ⮕ ${p}anticall
-┃━━━━━━━━━━━━━━
-┃ 👤 Richiesto da: *${userName}*
-┃ 📱 Numero: *+${userNumber}*` : ''
+┆┄┄┄┄┄┄┄┄┄┄┄┄┄┄
+┆ 👑 ꜰᴜɴᴢɪᴏɴɪ ᴏᴡɴᴇʀ
+┆┄┄┄┄┄┄┄┄┄┄┄┄┄┄
+┆${s(antiprivato)} ▹ ${p}antiprivato
+┆${s(antiban)} ▹ ${p}antiban
+┆${s(soloCreatore)} ▹ ${p}solocreatore
+┆${s(read)} ▹ ${p}lettura
+┆${s(anticall)} ▹ ${p}anticall
+┆┄┄┄┄┄┄┄┄┄┄┄┄┄┄
+┆ 👤 Richiesto da: *${userName}*
+┆ 📱 Numero: *+${userNumber}*` : ''
 
   const menuFunzioniText =
-`╭─────────╮
-┃ ⚙️ 𝐌𝐄𝐍𝐔 𝐅𝐔𝐍𝐙𝐈𝐎𝐍𝐈 𝐃𝐈
-┃ ꙰  𝟥𝟥𝟥 𝔹𝕆𝕋  ꙰
-┃━━━━━━━━━━━━━━
-┃ 🔧 𝐅𝐔𝐍𝐙𝐈𝐎𝐍𝐈 𝐆𝐑𝐔𝐏𝐏𝐎
-┃━━━━━━━━━━━━━━
-┃${s(welcome)} ⮕ ${p}benvenuto
-┃${s(goodbye)} ⮕ ${p}addio
-┃${s(modoadmin)} ⮕ ${p}modoadmin
-┃${s(slowmode)} ⮕ ${p}slowmode
-┃${s(tagliaEnabled)} ⮕ ${p}taglia
-┃${s(parolaEnabled)} ⮕ ${p}parola
-┃${s(bestemmiometro)} ⮕ ${p}bestemmiometro
-┃━━━━━━━━━━━━━━
-┃ 🚫 𝐀𝐍𝐓𝐈
-┃━━━━━━━━━━━━━━
-┃${s(antispam)} ⮕ ${p}antispam
-┃${s(antitrava)} ⮕ ${p}antitrava
-┃${s(antiBot)} ⮕ ${p}antibot
-┃${s(antibusiness)} ⮕ ${p}antibusiness
-┃${s(antivoip)} ⮕ ${p}antivoip
-┃${s(antimedia)} ⮕ ${p}antimedia
-┃${s(antinuke)} ⮕ ${p}antinuke
-┃${s(antiLink)} ⮕ ${p}antilink
-┃${s(antilinkig)} ⮕ ${p}antlinkig
-┃${s(antilinktiktok)} ⮕ ${p}antilinktiktok
-┃${s(antilinktg)} ⮕ ${p}antilinktg
+`┌┄┄┄┄┄┄┄┄┄┐
+┆ ⚙️ ᴍᴇɴᴜ ꜰᴜɴᴢɪᴏɴɪ ᴅɪ
+┆❖ ᴢᴇɴᴏʙᴏᴛ
+┆┄┄┄┄┄┄┄┄┄┄┄┄┄┄
+┆ 🔧 ꜰᴜɴᴢɪᴏɴɪ ɢʀᴜᴘᴘᴏ
+┆┄┄┄┄┄┄┄┄┄┄┄┄┄┄
+┆${s(welcome)} ▹ ${p}benvenuto
+┆${s(goodbye)} ▹ ${p}addio
+┆${s(modoadmin)} ▹ ${p}modoadmin
+┆${s(slowmode)} ▹ ${p}slowmode
+┆${s(tagliaEnabled)} ▹ ${p}taglia
+┆${s(parolaEnabled)} ▹ ${p}parola
+┆${s(bestemmiometro)} ▹ ${p}bestemmiometro
+┆┄┄┄┄┄┄┄┄┄┄┄┄┄┄
+┆ 🚫 ᴀɴᴛɪ
+┆┄┄┄┄┄┄┄┄┄┄┄┄┄┄
+┆${s(antispam)} ▹ ${p}antispam
+┆${s(antitrava)} ▹ ${p}antitrava
+┆${s(antiBot)} ▹ ${p}antibot
+┆${s(antibusiness)} ▹ ${p}antibusiness
+┆${s(antivoip)} ▹ ${p}antivoip
+┆${s(antimedia)} ▹ ${p}antimedia
+┆${s(antinuke)} ▹ ${p}antinuke
+┆${s(antiLink)} ▹ ${p}antilink
+┆${s(antilinkig)} ▹ ${p}antlinkig
+┆${s(antilinktiktok)} ▹ ${p}antilinktiktok
+┆${s(antilinktg)} ▹ ${p}antilinktg
 ${catalogsInfo}${ownerSection}
-┃━━━━━━━━━━━━━━
-┃ ✅ = Attivo  ❌ = Disattivo
-┃━━━━━━━━━━━━━━
-┃ ℹ️ 𝐔𝐒𝐎
-┃ ${p}attiva antilink
-┃ ${p}disabilita antilink
-╰─────────╯`.trim()
+┆┄┄┄┄┄┄┄┄┄┄┄┄┄┄
+┆ ✔️ = Attivo  ✖️ = Disattivo
+┆┄┄┄┄┄┄┄┄┄┄┄┄┄┄
+┆ ℹ️ ᴜꜱᴏ
+┆ ${p}attiva antilink
+┆ ${p}disabilita antilink
+└┄┄┄┄┄┄┄┄┄┘`.trim()
 
   await conn.sendMessage(m.chat, {
     text: menuFunzioniText

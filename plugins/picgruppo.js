@@ -1,4 +1,4 @@
-//Plugin by Zeno, Lucifero & 333 staff
+//Plugin by Zeno, Lucifero & zenobot staff
 
 let handler = async (m, { conn, args, usedPrefix, command }) => {
     try {
@@ -44,7 +44,7 @@ let handler = async (m, { conn, args, usedPrefix, command }) => {
 
     } catch (e) {
         console.error('[ERRORE] picgruppo:', e)
-        m.reply(`${global.errore || '❌ Si è verificato un errore'}`)
+        m.reply(`${global.errore || '✖️ Si è verificato un errore'}`)
     }
 }
 

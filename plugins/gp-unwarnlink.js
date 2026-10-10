@@ -1,4 +1,4 @@
-//Plugin by Zeno, Lucifero & 333 staff
+//Plugin by Zeno, Lucifero & zenobot staff
 
 let handler = async (m, { conn }) => {
     const who = m.mentionedJid && m.mentionedJid[0] ? m.mentionedJid[0] : null;
@@ -29,7 +29,7 @@ let handler = async (m, { conn }) => {
 
     const buttonMessage = {
         text: infoText,
-        footer: '333 Bot',
+        footer: 'Zenobot',
         buttons: buttons,
         headerType: 1
     }

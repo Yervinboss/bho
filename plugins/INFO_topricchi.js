@@ -1,4 +1,4 @@
-//Plugin by Zeno, Lucifero & 333 staff
+//Plugin by Zeno, Lucifero & zenobot staff
 
 const handler = async (m, { conn, groupMetadata }) => {
   if (!m.isGroup) return await conn.sendMessage(m.chat, { text: 'Questo comando funziona solo nei gruppi.' })
@@ -46,13 +46,13 @@ const handler = async (m, { conn, groupMetadata }) => {
   values.sort((a, b) => b.total - a.total)
 
   const top = values.slice(0, 10)
-  const header = `💰 𝐓𝐎𝐏 𝟏𝟎 𝐑𝐈𝐂𝐂𝐇𝐈 𝐃𝐄𝐋 𝐆𝐑𝐔𝐏𝐏𝐎\n` +
+  const header = `💰 ᴛᴏᴘ 𝟷𝟶 ʀɪᴄᴄʜɪ ᴅᴇʟ ɢʀᴜᴘᴘᴏ\n` +
     `👥 Gruppo: ${groupMetadata.subject || m.chat.split('@')[0]}\n` +
-    `📌 Totale = Contanti + Banca (XP333)\n\n`
+    `📌 Totale = Contanti + Banca (ZenoCoin)\n\n`
 
   const lines = top.map((user, idx) => {
     const rank = ['🥇','🥈','🥉','4️⃣','5️⃣','6️⃣','7️⃣','8️⃣','9️⃣','🔟'][idx] || `${idx + 1}.`
-    return `${rank} @${user.jid.split('@')[0]} — ${user.total.toLocaleString('it-IT')} XP333`
+    return `${rank} @${user.jid.split('@')[0]} — ${user.total.toLocaleString('it-IT')} ZenoCoin`
   }).join('\n')
 
   await conn.sendMessage(m.chat, {

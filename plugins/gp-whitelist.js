@@ -1,4 +1,4 @@
-//Plugin by Zeno, Lucifero & 333 staff
+//Plugin by Zeno, Lucifero & zenobot staff
 
 const waitForButtonChoice = (conn, sender, timeout = 60000) => new Promise(resolve => {
   const listener = async ({ messages }) => {
@@ -57,10 +57,10 @@ let handler = async (m, { conn, args, usedPrefix }) => {
   const already = list.includes(jid)
   if (already) {
     list.splice(list.indexOf(jid), 1)
-    return conn.sendMessage(m.chat, { text: `✅ Ho rimosso dalla whitelist *${type}* @${jid.split('@')[0]}`, mentions: [jid] }, { quoted: m })
+    return conn.sendMessage(m.chat, { text: `✔️ Ho rimosso dalla whitelist *${type}* @${jid.split('@')[0]}`, mentions: [jid] }, { quoted: m })
   } else {
     list.push(jid)
-    return conn.sendMessage(m.chat, { text: `✅ Ho aggiunto alla whitelist *${type}* @${jid.split('@')[0]}`, mentions: [jid] }, { quoted: m })
+    return conn.sendMessage(m.chat, { text: `✔️ Ho aggiunto alla whitelist *${type}* @${jid.split('@')[0]}`, mentions: [jid] }, { quoted: m })
   }
 }
 

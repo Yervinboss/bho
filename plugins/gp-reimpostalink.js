@@ -1,4 +1,4 @@
-//Plugin by Zeno, Lucifero & 333 staff
+//Plugin by Zeno, Lucifero & zenobot staff
 
 let handler = async (m, { conn }) => {
 
@@ -7,7 +7,7 @@ let gruppo = m.chat
 conn.reply(m.sender, 'https://chat.whatsapp.com/' + await conn.groupInviteCode(gruppo), m, )
 
 }
-handler.help = ['𝐫𝐞𝐢𝐦𝐩𝐨𝐬𝐭𝐚']
+handler.help = ['ʀᴇɪᴍᴘᴏꜱᴛᴀ']
 handler.tags = ['admin']
 handler.command = ['reimposta', 'revoke','rlink']
 handler.group = true

@@ -1,4 +1,4 @@
-//Plugin by Zeno, Lucifero & 333 staff
+//Plugin by Zeno, Lucifero & zenobot staff
 
 let handler = async (m, { conn, text, usedPrefix, command, participants, isOwner, groupMetadata  }) => {
   const delay = (ms) => new Promise(resolve => setTimeout(resolve, ms));
@@ -38,7 +38,7 @@ let handler = async (m, { conn, text, usedPrefix, command, participants, isOwner
   }
 }
 
-handler.help = ['𝐣𝐨𝐢𝐧 <𝐥𝐢𝐧𝐤 𝐠𝐫𝐮𝐩𝐩𝐨>'];
+handler.help = ['ᴊᴏɪɴ <ʟɪɴᴋ ɢʀᴜᴘᴘᴏ>'];
 handler.tags = ['owner'];
 handler.command = ['join', 'entra']; 
 

@@ -1,6 +1,6 @@
 //Codice di ticket.js
 
-//Plugin by Zeno, Lucifero & 333 staff
+//Plugin by Zeno, Lucifero & zenobot staff
 
 import { generateWAMessageFromContent, proto } from '@chatunity/baileys'
 
@@ -23,10 +23,10 @@ let handler = async (m, { conn, text, command }) => {
 
   if (cmd === 'ticket') {
     if (!text || text.trim().length < 10)
-      return m.reply('❌ Scrivi un motivo di almeno *10 caratteri*.\nEsempio: .ticket non riesco ad accedere al gruppo')
+      return m.reply('✖️ Scrivi un motivo di almeno *10 caratteri*.\nEsempio: .ticket non riesco ad accedere al gruppo')
 
     const groupJid = await getGroupJid(conn)
-    if (!groupJid) return m.reply('❌ Errore nel trovare il gruppo di supporto.')
+    if (!groupJid) return m.reply('✖️ Errore nel trovare il gruppo di supporto.')
 
     const ticketId = `TKT-${Date.now()}`
     const numero = m.sender.split('@')[0]
@@ -76,7 +76,7 @@ let handler = async (m, { conn, text, command }) => {
     await conn.relayMessage(groupJid, staffMessage, {})
 
     await m.reply(
-`✅ *Ticket aperto con successo!*
+`✔️ *Ticket aperto con successo!*
 
 🎫 ID: *${ticketId}*
 📨 Il nostro staff ti risponderà il prima possibile.`)
@@ -86,13 +86,13 @@ let handler = async (m, { conn, text, command }) => {
   if (cmd === 'risposta') {
     const parts = text?.trim().split(' ')
     if (!parts || parts.length < 2)
-      return m.reply('❌ Uso: *.risposta TKT-123456 testo della risposta*')
+      return m.reply('✖️ Uso: *.risposta TKT-123456 testo della risposta*')
 
     const ticketId = parts[0].toUpperCase()
     const testo = parts.slice(1).join(' ')
 
     const ticket = global.db.data.tickets[ticketId]
-    if (!ticket) return m.reply(`❌ Ticket *${ticketId}* non trovato.`)
+    if (!ticket) return m.reply(`✖️ Ticket *${ticketId}* non trovato.`)
     if (ticket.status === 'closed') return m.reply(`⚠️ Ticket *${ticketId}* già chiuso.`)
 
     pendingFirma[m.sender] = { ticketId, testo }
@@ -103,7 +103,7 @@ let handler = async (m, { conn, text, command }) => {
 
 Scrivi il tuo *nome* per firmare la risposta al ticket *${ticketId}*:`,
       buttons: [
-        { buttonId: `.annullafirma`, buttonText: { displayText: '❌ Annulla' }, type: 1 }
+        { buttonId: `.annullafirma`, buttonText: { displayText: '✖️ Annulla' }, type: 1 }
       ],
       headerType: 1
     }, { quoted: m })
@@ -136,21 +136,21 @@ handler.all = async function (m) {
 
 ${testo}
 
-━━━━━━━━━━━━
+┄┄┄┄┄┄┄┄┄┄┄┄
 ✍️ Firmato: *${firma}*
-🏷️ 333 Staff`
+🏷️ zenobot Staff`
     })
 
     await this.sendMessage(m.chat, {
       text:
-`✅ Risposta inviata a *+${ticket.numero}*
+`✔️ Risposta inviata a *+${ticket.numero}*
 
 🎫 Ticket *${ticketId}* chiuso.
 ✍️ Firmato da: *${firma}*`
     })
   } catch (e) {
     await this.sendMessage(m.chat, {
-      text: `❌ Errore nell'invio: ${e.message}`
+      text: `✖️ Errore nell'invio: ${e.message}`
     })
   }
 }

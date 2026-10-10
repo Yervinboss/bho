@@ -1,4 +1,4 @@
-//Plugin by Zeno, Lucifero & 333 staff
+//Plugin by Zeno, Lucifero & zenobot staff
 
 import os, { cpus } from 'os';
 import { execSync } from 'child_process';
@@ -18,7 +18,7 @@ const getDiskSpace = () => {
         const [ , size, used, available, usePercent ] = stdout.split(/\s+/);
         return { size, used, available, usePercent };
     } catch (error) {
-        console.error('❌ Errore nel recupero dello spazio su disco:', error);
+        console.error('✖️ Errore nel recupero dello spazio su disco:', error);
         return null;
     }
 };
@@ -56,7 +56,7 @@ const handler = async (m, { conn }) => {
     const diskSpace = getDiskSpace();
     const cpuInfo = getCpuUsage();
 
-    const message = `✅ *STATO DEL SISTEMA*
+    const message = `✔️ *STATO DEL SISTEMA*
 
 🚩 *Host ⪼* ${hostname}
 🏆 *Sistema Operativo ⪼* ${platform}
@@ -83,13 +83,13 @@ ${diskSpace ? `
 → Totale: ${diskSpace.size}
 → Usato: ${diskSpace.used}
 → Disponibile: ${diskSpace.available}
-→ Percentuale di Uso: ${diskSpace.usePercent}` : '❌ Errore nel recupero dello spazio su disco.'}
+→ Percentuale di Uso: ${diskSpace.usePercent}` : '✖️ Errore nel recupero dello spazio su disco.'}
 `;
 
     await conn.reply(m.chat, message.trim(), m);
 };
 
-handler.help = ['𝐬𝐢𝐬𝐭𝐞𝐦𝐚'];
+handler.help = ['ꜱɪꜱᴛᴇᴍᴀ'];
 handler.tags = ['owner'];
 handler.owner = true;
 handler.command = ['system', 'sistema'];

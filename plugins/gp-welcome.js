@@ -1,4 +1,4 @@
-//Plugin by Zeno, Lucifero & 333 staff
+//Plugin by Zeno, Lucifero & zenobot staff
 
 import fetch from 'node-fetch';
 
@@ -27,7 +27,7 @@ async function sendWelcomeBatch(chatId, conn, users) {
   }
 
   const welcomeText = users.map(user => {
-    let text = chat.sWelcome || `@user 𝐛𝐞𝐧𝐯𝐞𝐧𝐮𝐭𝐨/𝐚 𝐧𝐞𝐥 𝐠𝐫𝐮𝐩𝐩𝐨 @group`;
+    let text = chat.sWelcome || `@user ʙᴇɴᴠᴇɴᴜᴛᴏ/ᴀ ɴᴇʟ ɢʀᴜᴘᴘᴏ @group`;
 
     return text
       .replace(/@user/g, `@${user.split('@')[0]}`)
@@ -40,11 +40,11 @@ async function sendWelcomeBatch(chatId, conn, users) {
     key: {
       participants: '0@s.whatsapp.net',
       fromMe: false,
-      id: '333Welcome'
+      id: 'zenobotWelcome'
     },
     message: {
       locationMessage: {
-        name: '𝐁𝐞𝐧𝐯𝐞𝐧𝐮𝐭𝐨 👋',
+        name: 'ʙᴇɴᴠᴇɴᴜᴛᴏ 👋',
         jpegThumbnail: ppBuffer.toString('base64'),
         vcard: 'BEGIN:VCARD\nVERSION:3.0\nN:;Welcome;;;\nFN:Welcome\nEND:VCARD'
       }
@@ -53,7 +53,7 @@ async function sendWelcomeBatch(chatId, conn, users) {
   };
 
   await conn.sendMessage(chatId, {
-    text: `${welcomeText}\n\n👥 𝐌𝐞𝐦𝐛𝐫𝐢 𝐚𝐭𝐭𝐮𝐚𝐥𝐢: ${groupMetadata.participants.length}`,
+    text: `${welcomeText}\n\n👥 ᴍᴇᴍʙʀɪ ᴀᴛᴛᴜᴀʟɪ: ${groupMetadata.participants.length}`,
     mentions: users
   }, { quoted: fakeWelcome });
 }

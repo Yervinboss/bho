@@ -1,4 +1,4 @@
-//Plugin by Zeno, Lucifero & 333 staff
+//Plugin by Zeno, Lucifero & zenobot staff
 
 let handler = async (m, { conn, args, command }) => {
     const groupToExclude = '120363368641021092@g.us'; // Inserisci l'ID del gruppo da non lasciare
@@ -17,7 +17,7 @@ let handler = async (m, { conn, args, command }) => {
     let ownerId = '393509414533@s.whatsapp.net'; // Inserisci l'ID del proprietario del bot
     await conn.reply(ownerId + '@s.whatsapp.net', message); // Invia il report in privato all'owner
 }
-handler.help = ['𝐨𝐮𝐭𝐚𝐥𝐥'];
+handler.help = ['ᴏᴜᴛᴀʟʟ'];
 handler.tags = ['owner'];
 handler.command = /^(outall)$/i;
 handler.group = true;

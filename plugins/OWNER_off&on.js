@@ -1,4 +1,4 @@
-//Plugin by Zeno, Lucifero & 333 staff
+//Plugin by Zeno, Lucifero & zenobot staff
 
 
 
@@ -7,7 +7,7 @@ let handler = async (m, { text, command }) => {
 
   if (!text?.trim())
     return m.reply(
-`❌ Uso:
+`✖️ Uso:
 *.disablepl nomeplugin* — disabilita un plugin
 *.enablepl nomeplugin* — riabilita un plugin
 
@@ -20,7 +20,7 @@ Esempio: *.disablepl fun-cur*`)
   })
 
   if (!match)
-    return m.reply(`❌ Plugin *${query}* non trovato.\nUsa *.pluginlist* per vedere tutti i plugin.`)
+    return m.reply(`✖️ Plugin *${query}* non trovato.\nUsa *.pluginlist* per vedere tutti i plugin.`)
 
   const short = match.replace(/^.*[\\/]/, '').replace('.js', '')
 
@@ -35,7 +35,7 @@ Esempio: *.disablepl fun-cur*`)
     if (!global.plugins[match].disabled)
       return m.reply(`⚠️ Il plugin *${short}* è già attivo.`)
     global.plugins[match].disabled = false
-    return m.reply(`✅ Plugin *${short}* riabilitato.`)
+    return m.reply(`✔️ Plugin *${short}* riabilitato.`)
   }
 }
 

@@ -1,4 +1,4 @@
-//Plugin by Zeno, Lucifero & 333 staff
+//Plugin by Zeno, Lucifero & zenobot staff
 
 const handler = async (m, { conn }) => {
 
@@ -9,12 +9,12 @@ const handler = async (m, { conn }) => {
     : null
 
   if (!mention) {
-    return conn.reply(m.chat, '❌ Tagga qualcuno o rispondi a un messaggio!', m)
+    return conn.reply(m.chat, '✖️ Tagga qualcuno o rispondi a un messaggio!', m)
   }
 
   const user = global.db.data.users[mention]
   if (!user) {
-    return conn.reply(m.chat, '❌ Utente non trovato!', m)
+    return conn.reply(m.chat, '✖️ Utente non trovato!', m)
   }
 
   user.money = 0

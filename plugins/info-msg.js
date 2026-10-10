@@ -1,4 +1,4 @@
-//Plugin by Zeno, Lucifero & 333 staff
+//Plugin by Zeno, Lucifero & zenobot staff
 
 import fetch from 'node-fetch';
 import { getRpgXpStatus } from '../lib/rpg-xp.js';
@@ -29,11 +29,11 @@ let handler = async (m, { conn }) => {
     key: {
       participants: '0@s.whatsapp.net',
       fromMe: false,
-      id: '333Info'
+      id: 'zenobotInfo'
     },
     message: {
       locationMessage: {
-        name: `𝐈𝐧𝐟𝐨 𝐝𝐢 ${nome}`,
+        name: `ɪɴꜰᴏ ᴅɪ ${nome}`,
         jpegThumbnail: ppBuffer.toString('base64'),
         vcard: 'BEGIN:VCARD\nVERSION:3.0\nN:;Info;;;\nFN:Info\nEND:VCARD'
       }
@@ -42,8 +42,8 @@ let handler = async (m, { conn }) => {
   }
 
   const insta = u.nomeinsta 
-    ? `🤳🏻 𝐈𝐧𝐬𝐭𝐚𝐠𝐫𝐚𝐦: @${u.nomeinsta}` 
-    : '🤳🏻 𝐈𝐧𝐬𝐭𝐚𝐠𝐫𝐚𝐦: 𝐍𝐨𝐧 𝐢𝐦𝐩𝐨𝐬𝐭𝐚𝐭𝐨';
+    ? `🤳🏻 ɪɴꜱᴛᴀɢʀᴀᴍ: @${u.nomeinsta}` 
+    : '🤳🏻 ɪɴꜱᴛᴀɢʀᴀᴍ: ɴᴏɴ ɪᴍᴘᴏꜱᴛᴀᴛᴏ';
 
   const warnEmoji = u.warn === 0 ? '👌' : u.warn === 1 ? '⚠️' : '‼️';
   const curse = u.blasphemy || 0;
@@ -51,27 +51,27 @@ let handler = async (m, { conn }) => {
   const rpgStatus = getRpgXpStatus(u);
 
   const regInfo = u.registered
-    ? `┃🧾 𝐍𝐨𝐦𝐞: ${u.nome}\n┃🎂 𝐄𝐭𝐚̀: ${u.eta}\n┃📍 𝐂𝐢𝐭𝐭𝐚̀: ${u.citta}`
-    : `┃🧾 𝐑𝐞𝐠𝐢𝐬𝐭𝐫𝐚𝐳𝐢𝐨𝐧𝐞: ❌ 𝐍𝐨𝐧 𝐞𝐟𝐟𝐞𝐭𝐭𝐮𝐚𝐭𝐚`;
+    ? `┆🧾 ɴᴏᴍᴇ: ${u.nome}\n┆🎂 ᴇᴛᴀ̀: ${u.eta}\n┆📍 ᴄɪᴛᴛᴀ̀: ${u.citta}`
+    : `┆🧾 ʀᴇɢɪꜱᴛʀᴀᴢɪᴏɴᴇ: ✖️ ɴᴏɴ ᴇꜰꜰᴇᴛᴛᴜᴀᴛᴀ`;
 
-  const messageText = `📌 𝐈𝐧𝐟𝐨 𝐔𝐭𝐞𝐧𝐭𝐞
-╭─────────╮
-┃👤 𝐔𝐭𝐞𝐧𝐭𝐞: ${tag}
-┃
+  const messageText = `📌 ɪɴꜰᴏ ᴜᴛᴇɴᴛᴇ
+┌┄┄┄┄┄┄┄┄┄┐
+┆👤 ᴜᴛᴇɴᴛᴇ: ${tag}
+┆
 ${regInfo}
-┃
-┃💬 𝐌𝐞𝐬𝐬𝐚𝐠𝐠𝐢: ${u.messaggi || 0}
-┃
-┃🏆 𝐋𝐢𝐯𝐞𝐥𝐥𝐨 𝐫𝐚𝐧𝐤: ${rankLevel}
-┃
-┃💰 𝐁𝐚𝐧𝐜𝐚: ${u.bank || 0} XP333
-┃
-┃${warnEmoji} 𝐖𝐚𝐫𝐧: ${u.warn || 0} / 3
-┃
-┃💢 𝐁𝐞𝐬𝐭𝐞𝐦𝐦𝐢𝐞: ${curse}
-┃
-┃${insta}
-╰─────────╯`;
+┆
+┆💬 ᴍᴇꜱꜱᴀɢɢɪ: ${u.messaggi || 0}
+┆
+┆🏆 ʟɪᴠᴇʟʟᴏ ʀᴀɴᴋ: ${rankLevel}
+┆
+┆💰 ʙᴀɴᴄᴀ: ${u.bank || 0} ZenoCoin
+┆
+┆${warnEmoji} ᴡᴀʀɴ: ${u.warn || 0} / 3
+┆
+┆💢 ʙᴇꜱᴛᴇᴍᴍɪᴇ: ${curse}
+┆
+┆${insta}
+└┄┄┄┄┄┄┄┄┄┘`;
 
   await conn.sendMessage(m.chat, {
     text: messageText,

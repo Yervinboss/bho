@@ -1,4 +1,4 @@
-//Plugin by Zeno, Lucifero & 333 staff
+//Plugin by Zeno, Lucifero & zenobot staff
 
 global.estrazione = global.estrazione || {
   players: {},
@@ -34,7 +34,7 @@ let handler = async (m, { conn, args, command }) => {
     }
 
     if (global.estrazione.active)
-      return m.reply("⏳ 𝐂'𝐞̀ 𝐠𝐢𝐚̀ 𝐮𝐧'𝐞𝐬𝐭𝐫𝐚𝐳𝐢𝐨𝐧𝐞 𝐢𝐧 𝐜𝐨𝐫𝐬𝐨")
+      return m.reply("⏳ ᴄ'ᴇ̀ ɢɪᴀ̀ ᴜɴ'ᴇꜱᴛʀᴀᴢɪᴏɴᴇ ɪɴ ᴄᴏʀꜱᴏ")
 
     global.estrazione = {
       players: {},
@@ -47,19 +47,19 @@ let handler = async (m, { conn, args, command }) => {
 
     await conn.sendMessage(m.chat, {
       text:
-`╔═══🎯 𝐄𝐒𝐓𝐑𝐀𝐙𝐈𝐎𝐍𝐄 𝐋𝐈𝐕𝐄 ═══╗
-┃ 💰 𝐏𝐨𝐫𝐭𝐚𝐟𝐨𝐠𝐥𝐢𝐨: *${money} XP333*
-┃
-┃ ⏳ Tempo: *60 secondi*
-┃ 🎲 Scegli *1 numero (1–100)*
-┃ 🏆 3 numeri vincenti
-╚════════════════════╝`,
+`┌┄┄┄🎯 ᴇꜱᴛʀᴀᴢɪᴏɴᴇ ʟɪᴠᴇ ┄┄┄┐
+┆ 💰 ᴘᴏʀᴛᴀꜰᴏɢʟɪᴏ: *${money} ZenoCoin*
+┆
+┆ ⏳ Tempo: *60 secondi*
+┆ 🎲 Scegli *1 numero (1–100)*
+┆ 🏆 3 numeri vincenti
+└┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┘`,
       buttons: [
-        { buttonId: bet(100), buttonText: { displayText: "💵 100 XP333" }, type: 1 },
-        { buttonId: bet(200), buttonText: { displayText: "💵 200 XP333" }, type: 1 },
-        { buttonId: bet(500), buttonText: { displayText: "💰 500 XP333" }, type: 1 },
-        { buttonId: bet(1000), buttonText: { displayText: "💰 1000 XP333" }, type: 1 },
-        { buttonId: bet(10000), buttonText: { displayText: "💎 10000 XP333" }, type: 1 }
+        { buttonId: bet(100), buttonText: { displayText: "💵 100 ZenoCoin" }, type: 1 },
+        { buttonId: bet(200), buttonText: { displayText: "💵 200 ZenoCoin" }, type: 1 },
+        { buttonId: bet(500), buttonText: { displayText: "💰 500 ZenoCoin" }, type: 1 },
+        { buttonId: bet(1000), buttonText: { displayText: "💰 1000 ZenoCoin" }, type: 1 },
+        { buttonId: bet(10000), buttonText: { displayText: "💎 10000 ZenoCoin" }, type: 1 }
       ],
       headerType: 1
     }, { quoted: m })
@@ -73,11 +73,11 @@ let handler = async (m, { conn, args, command }) => {
         global.estrazione.active = false
         return conn.sendMessage(m.chat, {
           text:
-`╔═💀 𝐄𝐒𝐓𝐑𝐀𝐙𝐈𝐎𝐍𝐄 𝐀𝐍𝐍𝐔𝐋𝐋𝐀𝐓𝐀 ═╗
-┃ Nessuno ha partecipato...
-┃
-┃ Che tristezza 😐
-╚═══════════════════╝`
+`┌┄💀 ᴇꜱᴛʀᴀᴢɪᴏɴᴇ ᴀɴɴᴜʟʟᴀᴛᴀ ┄┐
+┆ Nessuno ha partecipato...
+┆
+┆ Che tristezza 😐
+└┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┘`
         })
       }
 
@@ -97,13 +97,13 @@ let handler = async (m, { conn, args, command }) => {
       let pool = list.reduce((acc, [_, v]) => acc + v.bet, 0)
 
       let text =
-`╔═══🎯 𝐑𝐈𝐒𝐔𝐋𝐓𝐀𝐓𝐎 ═══╗
-┃ 🎲 Numeri usciti:
-┃ ➤ ${winNumbers.join(" • ")}
-┃
-┃ 💰 Montepremi:
-┃ ➤ *${pool} XP333*
-╚═══════════════════╝\n\n`
+`┌┄┄┄🎯 ʀɪꜱᴜʟᴛᴀᴛᴏ ┄┄┄┐
+┆ 🎲 Numeri usciti:
+┆ ➤ ${winNumbers.join(" • ")}
+┆
+┆ 💰 Montepremi:
+┆ ➤ *${pool} ZenoCoin*
+└┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┘\n\n`
 
       if (winners.length) {
 
@@ -113,12 +113,12 @@ let handler = async (m, { conn, args, command }) => {
           global.db.data.users[jid].money += prize
         })
 
-        text += `🏆 𝐕𝐈𝐍𝐂𝐈𝐓𝐎𝐑𝐈\n`
+        text += `🏆 ᴠɪɴᴄɪᴛᴏʀɪ\n`
         winners.forEach(([jid]) => {
           text += `➤ @${jid.split("@")[0]}\n`
         })
 
-        text += `\n💎 Premio: *${prize} XP333* ciascuno`
+        text += `\n💎 Premio: *${prize} ZenoCoin* ciascuno`
 
       } else {
         text += `💀 Nessun vincitore...\n\nRiprova, magari oggi sei meno sfortunato 😈`
@@ -145,11 +145,11 @@ let handler = async (m, { conn, args, command }) => {
   if (command === "estrazionegioca") {
 
     if (!global.estrazione.active)
-      return m.reply("❌ Nessuna estrazione attiva")
+      return m.reply("✖️ Nessuna estrazione attiva")
 
     let bet = parseInt(args[0])
-    if (!bet || bet < 50) return m.reply("💸 Puntata minima 50 XP333")
-    if (user.money < bet) return m.reply(`💸 Devi avere almeno ${bet} XP333`)
+    if (!bet || bet < 50) return m.reply("💸 Puntata minima 50 ZenoCoin")
+    if (user.money < bet) return m.reply(`💸 Devi avere almeno ${bet} ZenoCoin`)
 
     global.estrazione.players[m.sender] = {
       bet,
@@ -159,27 +159,27 @@ let handler = async (m, { conn, args, command }) => {
     user.money -= bet
 
     return m.reply(
-`╔═🎯 𝐏𝐀𝐑𝐓𝐄𝐂𝐈𝐏𝐀𝐙𝐈𝐎𝐍𝐄 ═╗
-┃ 💰 Puntata: *${bet} XP333*
-┃
-┃ ✍️ Scrivi:
-┃ *.scegli numero*
-┃
-┃ Esempio:
-┃ *.scegli 77*
-╚══════════════════╝`)
+`┌┄🎯 ᴘᴀʀᴛᴇᴄɪᴘᴀᴢɪᴏɴᴇ ┄┐
+┆ 💰 Puntata: *${bet} ZenoCoin*
+┆
+┆ ✍️ Scrivi:
+┆ *.scegli numero*
+┆
+┆ Esempio:
+┆ *.scegli 77*
+└┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┘`)
   }
 
   if (command === "scegli") {
 
     if (!global.estrazione.active)
-      return m.reply("❌ Nessuna estrazione attiva")
+      return m.reply("✖️ Nessuna estrazione attiva")
 
     let game = global.estrazione.players[m.sender]
-    if (!game) return m.reply("❌ Non stai partecipando")
+    if (!game) return m.reply("✖️ Non stai partecipando")
 
     if (game.number !== null)
-      return m.reply("❌ Hai già scelto un numero")
+      return m.reply("✖️ Hai già scelto un numero")
 
     let num = parseInt(args[0])
     if (!num || num < 1 || num > 100)
@@ -189,16 +189,16 @@ let handler = async (m, { conn, args, command }) => {
       .find(p => p.number === num)
 
     if (already)
-      return m.reply("❌ Numero già preso")
+      return m.reply("✖️ Numero già preso")
 
     game.number = num
 
     return m.reply(
-`╔═✅ 𝐍𝐔𝐌𝐄𝐑𝐎 𝐒𝐂𝐄𝐋𝐓𝐎 ═╗
-┃ 🎯 Numero: *${num}*
-┃
-┃ ⏳ Attendi l’estrazione...
-╚════════════════════╝`)
+`┌┄✔️ ɴᴜᴍᴇʀᴏ ꜱᴄᴇʟᴛᴏ ┄┐
+┆ 🎯 Numero: *${num}*
+┆
+┆ ⏳ Attendi l’estrazione...
+└┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┘`)
   }
 }
 

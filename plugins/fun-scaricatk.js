@@ -1,4 +1,4 @@
-//Plugin by Zeno, Lucifero & 333 staff
+//Plugin by Zeno, Lucifero & zenobot staff
 
 import fetch from 'node-fetch'
 
@@ -29,20 +29,20 @@ const getTikTokVideoId = async (url) => {
 let handler = async (m, { conn, text }) => {
 
   if (!text) {
-    return m.reply('❌ Inserisci un link TikTok')
+    return m.reply('✖️ Inserisci un link TikTok')
   }
 
   if (
     !text.includes('tiktok.com') &&
     !text.includes('vm.tiktok.com')
   ) {
-    return m.reply('❌ Link TikTok non valido')
+    return m.reply('✖️ Link TikTok non valido')
   }
 
   await m.reply(
-`⏳ 𝐒𝐜𝐚𝐫𝐢𝐜𝐨 𝐢𝐥 𝐯𝐢𝐝𝐞𝐨...
+`⏳ ꜱᴄᴀʀɪᴄᴏ ɪʟ ᴠɪᴅᴇᴏ...
 
-> 𝟥𝟥𝟥 𝔹𝕆𝕋 𝐝𝐨𝐰𝐧𝐥𝐨𝐚𝐝𝐞𝐫`
+> ᴢᴇɴᴏʙᴏᴛ ᴅᴏᴡɴʟᴏᴀᴅᴇʀ`
   )
 
   try {
@@ -113,11 +113,11 @@ let handler = async (m, { conn, text }) => {
       video: mediaBuffer,
       mimetype: 'video/mp4',
       caption:
-`🎬 𝐕𝐢𝐝𝐞𝐨 𝐬𝐜𝐚𝐫𝐢𝐜𝐚𝐭𝐨
+`🎬 ᴠɪᴅᴇᴏ ꜱᴄᴀʀɪᴄᴀᴛᴏ
 
     🎵 ${video.desc || 'TikTok Video'}
 
-> 𝟥𝟥𝟥 𝔹𝕆𝕋 𝐝𝐨𝐰𝐧𝐥𝐨𝐚𝐝𝐞𝐫`
+> ᴢᴇɴᴏʙᴏᴛ ᴅᴏᴡɴʟᴏᴀᴅᴇʀ`
     }, { quoted: m })
 
   } catch (e) {
@@ -129,7 +129,7 @@ let handler = async (m, { conn, text }) => {
     ].filter(Boolean).join('\n')
 
     console.error('[fun-scarica] Errore download TikTok:', details)
-    m.reply(`❌ Errore download TikTok:\n\n${details}`)
+    m.reply(`✖️ Errore download TikTok:\n\n${details}`)
   }
 }
 

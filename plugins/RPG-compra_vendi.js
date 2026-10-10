@@ -1,4 +1,4 @@
-//Plugin by Zeno, Lucifero & 333 staff
+//Plugin by Zeno, Lucifero & zenobot staff
 
 const confirmation = {}
 
@@ -45,7 +45,7 @@ async function handler(m, { conn, command }) {
       return m.reply("⏳ Hai finito gli acquisti disponibili, torna tra poco!")
 
     if (user.money < 5000)
-      return m.reply("❌ Servono almeno 5000 XP333")
+      return m.reply("✖️ Servono almeno 5000 ZenoCoin")
 
     user.money -= 5000
 
@@ -61,19 +61,19 @@ async function handler(m, { conn, command }) {
 `📦 Acquisto completato
 
 🧾 ${quantità}x ${item.nome}
-💰 valore unitario: ${valore} XP333`
+💰 valore unitario: ${valore} ZenoCoin`
     }, { quoted: m })
   }
 
   if (command === 'vendi') {
     if (user.magazzino.length === 0)
-      return m.reply("❌ Magazzino vuoto")
+      return m.reply("✖️ Magazzino vuoto")
 
     if (user.sellHistory.length >= MAX_SELLS)
       return m.reply("⏳ Limite vendite raggiunto, torna tra poco!")
 
     if (confirmation[m.sender])
-      return m.reply("❌ Hai già una vendita attiva")
+      return m.reply("✖️ Hai già una vendita attiva")
 
     confirmation[m.sender] = {
       sender: m.sender,
@@ -134,7 +134,7 @@ handler.before = async function (m, { conn }) {
 
   if (buttonId === '.rifiuta') {
     return conn.sendMessage(m.chat, {
-      text: "❌ Vendita annullata"
+      text: "✖️ Vendita annullata"
     }, { quoted: m })
   }
 
@@ -163,7 +163,7 @@ handler.before = async function (m, { conn }) {
 `🚨 POLIZIA!
 
 Ti hanno sgamato.
-💸 Multa: ${multa} XP333
+💸 Multa: ${multa} ZenoCoin
 📦 Magazzino confiscato`
     }, { quoted: m })
   }
@@ -176,7 +176,7 @@ Ti hanno sgamato.
     text:
 `💰 Vendita completata!
 
-Guadagno totale: ${totale} XP333`
+Guadagno totale: ${totale} ZenoCoin`
   }, { quoted: m })
 }
 

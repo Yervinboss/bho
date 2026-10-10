@@ -1,4 +1,4 @@
-//Plugin by Zeno, Lucifero & 333 staff
+//Plugin by Zeno, Lucifero & zenobot staff
 
 import { addRpgXp, getRpgWinMultiplier, ensureRpgXp } from '../lib/rpg-xp.js';
 
@@ -9,7 +9,7 @@ let handler = async (m, { conn, command }) => {
   ensureRpgXp(user);
 
   if (user.money < 100) {
-    return conn.reply(m.chat, `💸 𝐒𝐨𝐥𝐨 𝐜𝐡𝐢 𝐡𝐚 𝐮𝐧 𝐬𝐚𝐥𝐝𝐨 𝐝𝐢 𝐚𝐥𝐦𝐞𝐧𝐨 𝟏𝟎𝟎 XP333 𝐩𝐮𝐨 𝐠𝐢𝐨𝐜𝐚𝐫𝐞 𝐚𝐥 𝐪𝐮𝐢𝐳! 𝐀𝐭𝐭𝐮𝐚𝐥𝐞: *${user.money} XP333*`, m);
+    return conn.reply(m.chat, `💸 ꜱᴏʟᴏ ᴄʜɪ ʜᴀ ᴜɴ ꜱᴀʟᴅᴏ ᴅɪ ᴀʟᴍᴇɴᴏ 𝟷𝟶𝟶 ZenoCoin ᴘᴜᴏ ɢɪᴏᴄᴀʀᴇ ᴀʟ ǫᴜɪᴢ! ᴀᴛᴛᴜᴀʟᴇ: *${user.money} ZenoCoin*`, m);
   }
 
   const categories = ['facile', 'media', 'difficile', 'impossibile'];
@@ -77,22 +77,22 @@ let handler = async (m, { conn, command }) => {
   setTimeout(() => {
     if (global.quizSession[m.sender]) {
       delete global.quizSession[m.sender];
-      conn.reply(m.chat, `⏰ 𝐓𝐞𝐦𝐩𝐨 𝐬𝐜𝐚𝐝𝐮𝐭𝐨!`, m);
+      conn.reply(m.chat, `⏰ ᴛᴇᴍᴘᴏ ꜱᴄᴀᴅᴜᴛᴏ!`, m);
     }
   }, 20000);
 
   return conn.sendMessage(m.chat, {
     text:
-`╭─────────╮
-┃ 𝐐𝐔𝐈𝐙 𝐃𝐈
-┃ ꙰  𝟥𝟥𝟥 𝔹𝕆𝕋  ꙰
-┃ 🎓 𝐂𝐀𝐓𝐄𝐆𝐎𝐑𝐈𝐀: *${category}*
-┃━━━━━━━━━━━━━━
-┃ 𝐃𝐨𝐦𝐚𝐧𝐝𝐚:
-┃ *${question.q}*
-┃━━━━━━━━━━━━━━
-┃ ⏳ 20 secondi
-╰─────────╯`,
+`┌┄┄┄┄┄┄┄┄┄┐
+┆ ǫᴜɪᴢ ᴅɪ
+┆❖ ᴢᴇɴᴏʙᴏᴛ
+┆ 🎓 ᴄᴀᴛᴇɢᴏʀɪᴀ: *${category}*
+┆┄┄┄┄┄┄┄┄┄┄┄┄┄┄
+┆ ᴅᴏᴍᴀɴᴅᴀ:
+┆ *${question.q}*
+┆┄┄┄┄┄┄┄┄┄┄┄┄┄┄
+┆ ⏳ 20 secondi
+└┄┄┄┄┄┄┄┄┄┘`,
     buttons: [
       { buttonId: '.quizans A', buttonText: { displayText: question.choices[0] }, type: 1 },
       { buttonId: '.quizans B', buttonText: { displayText: question.choices[1] }, type: 1 },
@@ -121,10 +121,10 @@ handler.before = async (m, { conn }) => {
     addRpgXp(user, xpReward);
     user.money += reward;
     return conn.reply(m.chat,
-`✅ 𝐂𝐨𝐫𝐫𝐞𝐭𝐭𝐨!
-💰 +${reward} XP333
-⚡ +${xpReward} XP333
-Saldo: ${user.money} XP333`,
+`✔️ ᴄᴏʀʀᴇᴛᴛᴏ!
+💰 +${reward} ZenoCoin
+⚡ +${xpReward} ZenoCoin
+Saldo: ${user.money} ZenoCoin`,
     m);
   } else {
     const xpPenalty = Math.max(5, Math.floor(session.amount / 2));
@@ -133,10 +133,10 @@ Saldo: ${user.money} XP333`,
     if (user.money < 0) user.money = 0;
 
     return conn.reply(m.chat,
-`❌ 𝐒𝐛𝐚𝐠𝐥𝐢𝐚𝐭𝐨!
-💸 -${session.amount} XP333
-⚡ -${xpPenalty} XP333
-Saldo: ${user.money} XP333`,
+`✖️ ꜱʙᴀɢʟɪᴀᴛᴏ!
+💸 -${session.amount} ZenoCoin
+⚡ -${xpPenalty} ZenoCoin
+Saldo: ${user.money} ZenoCoin`,
     m);
   }
 };

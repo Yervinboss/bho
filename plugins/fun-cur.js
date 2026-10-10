@@ -1,4 +1,4 @@
-//Plugin by Zeno, Lucifero & 333 staff
+//Plugin by Zeno, Lucifero & zenobot staff
 
 
 
@@ -62,12 +62,12 @@ const handler = async (m, { conn, args, usedPrefix, text, command, groupMetadata
   if (command === 'setuser') {
     const username = text.trim();
     if (!username) {
-      await conn.sendMessage(m.chat, { text: '❌ Usa il comando così: `.setuser <username>`' });
+      await conn.sendMessage(m.chat, { text: '✖️ Usa il comando così: `.setuser <username>`' });
       return;
     }
     db[m.sender] = username;
     saveDB();
-    await conn.sendMessage(m.chat, { text: `✅ Username Last.fm impostato su *${username}*` });
+    await conn.sendMessage(m.chat, { text: `✔️ Username Last.fm impostato su *${username}*` });
     return;
   }
 
@@ -83,7 +83,7 @@ const handler = async (m, { conn, args, usedPrefix, text, command, groupMetadata
   if (command === 'profilo' || command === 'cur') {
     const track = await getRecentTrack(user);
     if (!track) {
-      return conn.sendMessage(m.chat, { text: '❌ Nessun brano trovato.' });
+      return conn.sendMessage(m.chat, { text: '✖️ Nessun brano trovato.' });
     }
 
     let imageBuffer;
@@ -91,7 +91,7 @@ const handler = async (m, { conn, args, usedPrefix, text, command, groupMetadata
       imageBuffer = await makeCard(track, user);
     } catch (e) {
       console.error('[cur] makeCard error:', e.message);
-      return conn.sendMessage(m.chat, { text: '❌ Errore nella generazione della card.' });
+      return conn.sendMessage(m.chat, { text: '✖️ Errore nella generazione della card.' });
     }
 
     const songTitle  = track.name;
@@ -107,12 +107,12 @@ const handler = async (m, { conn, args, usedPrefix, text, command, groupMetadata
       },
       {
         buttonId: `.salva ${searchQuery}`,
-        buttonText: { displayText: '💾 𝐒𝐚𝐥𝐯𝐚' },
+        buttonText: { displayText: '💾 ꜱᴀʟᴠᴀ' },
         type: 1
       },
       {
         buttonId: `.fuoco ${m.sender}`, 
-        buttonText: { displayText: '🔥 𝐌𝐞𝐭𝐭𝐢 𝐚 𝐟𝐮𝐨𝐜𝐨' },
+        buttonText: { displayText: '🔥 ᴍᴇᴛᴛɪ ᴀ ꜰᴜᴏᴄᴏ' },
         type: 1
       }
     ];
@@ -131,7 +131,7 @@ const handler = async (m, { conn, args, usedPrefix, text, command, groupMetadata
   if (command === 'top') {
     const artists = await getTopArtists(user);
     if (!artists?.length) {
-      return conn.sendMessage(m.chat, { text: '❌ Nessun dato trovato.' });
+      return conn.sendMessage(m.chat, { text: '✖️ Nessun dato trovato.' });
     }
 
     const medals  = ['🥇', '🥈', '🥉'];
@@ -172,7 +172,7 @@ const handler = async (m, { conn, args, usedPrefix, text, command, groupMetadata
 
     invalidateRecentCache(targetUsername)
     const track = await getRecentTrack(targetUsername)
-    if (!track) return conn.sendMessage(m.chat, { text: '❌ Nessuna traccia trovata.' })
+    if (!track) return conn.sendMessage(m.chat, { text: '✖️ Nessuna traccia trovata.' })
 
     const artist = track.artist?.['#text'] || 'unknown'
     const songName = track.name || 'unknown'
@@ -181,7 +181,7 @@ const handler = async (m, { conn, args, usedPrefix, text, command, groupMetadata
     const result = addSongLike(songId, m.sender)
 
     if (result.alreadyLiked) {
-      return conn.sendMessage(m.chat, { text: `❌ Hai già messo fuoco a "${songName}" di ${targetUsername}!` })
+      return conn.sendMessage(m.chat, { text: `✖️ Hai già messo fuoco a "${songName}" di ${targetUsername}!` })
     }
 
     const targetName = getUsernameFromId(targetUserId) || targetUsername
@@ -190,7 +190,7 @@ const handler = async (m, { conn, args, usedPrefix, text, command, groupMetadata
 };
 
 handler.command = ['setuser', 'profilo', 'cur', 'stats', 'fuoco', 'like'];
-handler.help    = ['𝐜𝐮𝐫/𝐭𝐨𝐩', '𝐟𝐮𝐨𝐜𝐨/𝐥𝐢𝐤𝐞'];
+handler.help    = ['ᴄᴜʀ/ᴛᴏᴘ', 'ꜰᴜᴏᴄᴏ/ʟɪᴋᴇ'];
 handler.tags    = ['fun'];
 handler.group   = true;
 

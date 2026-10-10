@@ -1,4 +1,4 @@
-//Plugin by Zeno, Lucifero & 333 staff
+//Plugin by Zeno, Lucifero & zenobot staff
 
 global.casinoRateLimit = global.casinoRateLimit || {}
 
@@ -29,7 +29,7 @@ let handler = async (m, { conn, text, command, usedPrefix, args }) => {
       m.chat,
       `⚽ *Scommesse sul Calcio* ⚽\n\n` +
       `📌 *Uso corretto:*\n${usedPrefix}calcio Squadra1 - Squadra2 <scommessa>\n` +
-      `✅ *Esempio:*\n${usedPrefix}calcio Juventus - Milan 150\n\n` +
+      `✔️ *Esempio:*\n${usedPrefix}calcio Juventus - Milan 150\n\n` +
       `💡 *Scommetti sulla tua squadra e prova a vincere!*`,
       m
     );
@@ -43,7 +43,7 @@ let handler = async (m, { conn, text, command, usedPrefix, args }) => {
   if (dash !== '-') {
     return await conn.reply(
       m.chat,
-      `❌ *Errore! Devi usare il trattino "-" tra le squadre.*\n` +
+      `✖️ *Errore! Devi usare il trattino "-" tra le squadre.*\n` +
       `Esempio: ${usedPrefix}calcio Juventus - Milan 150`,
       m
     );
@@ -61,8 +61,8 @@ let handler = async (m, { conn, text, command, usedPrefix, args }) => {
   if (bet > users.money) {
     return await conn.reply(
       m.chat,
-      `❌ *Non hai abbastanza denaro!*\n` +
-      `Ti mancano *${bet - users.money} XP333*.`,
+      `✖️ *Non hai abbastanza denaro!*\n` +
+      `Ti mancano *${bet - users.money} ZenoCoin*.`,
       m
     );
   }
@@ -79,13 +79,13 @@ let handler = async (m, { conn, text, command, usedPrefix, args }) => {
     let winAmount = bet * 2;
     users.money += winAmount;
     resultMessage += `🎉 *Hai vinto!* La tua squadra *${team1}* ha trionfato! 🎊\n` +
-                     `💰 Guadagni *${winAmount} XP333*!\n` +
-                     `💳 Saldo attuale: *${users.money} XP333*`;
+                     `💰 Guadagni *${winAmount} ZenoCoin*!\n` +
+                     `💳 Saldo attuale: *${users.money} ZenoCoin*`;
   } else {
     users.money -= bet;
     resultMessage += `😢 *Hai perso...* La tua squadra *${team1}* ha subito la sconfitta. 💔\n` +
-                     `💸 Perdi *${bet} XP333*.\n` +
-                     `💳 Saldo attuale: *${users.money} XP333*`;
+                     `💸 Perdi *${bet} ZenoCoin*.\n` +
+                     `💳 Saldo attuale: *${users.money} ZenoCoin*`;
   }
 
   return m.reply(resultMessage);

@@ -1,4 +1,4 @@
-//Plugin by Zeno, Lucifero & 333 staff
+//Plugin by Zeno, Lucifero & zenobot staff
 
 let handler = async (m, { conn, command }) => {
 
@@ -45,7 +45,7 @@ let handler = async (m, { conn, command }) => {
 
     if (!["up","down","left","right"].includes(scelta)) return
 
-    if (m.sender !== user) return m.reply("❌ Questo labirinto non è tuo.")
+    if (m.sender !== user) return m.reply("✖️ Questo labirinto non è tuo.")
 
     let corretta = game.path[game.step]
 

@@ -1,4 +1,4 @@
-//Plugin by Zeno, Lucifero & 333 staff
+//Plugin by Zeno, Lucifero & zenobot staff
 
 let handler = async (m, { conn, command, text }) => {
 let target = m.mentionedJid?.[0] 
@@ -10,16 +10,16 @@ let number = target.split("@")[0]
 
 
     let finalPhrase = width >= 30
-        ?"𝐇𝐞𝐲 𝐚𝐛𝐛𝐢𝐚𝐦𝐨 𝐮𝐧 𝐜𝐢𝐨𝐜𝐜𝐨𝐥𝐚𝐭𝐢𝐧𝐨 𝐪𝐮𝐢!\n━━━━━━━━━━━━━━━━━━\n> 𝟥𝟥𝟥 𝔹𝕆𝕋"
-        : "𝐒𝐞𝐢 𝐛𝐢𝐚𝐧𝐜𝐨/𝐚 𝐦𝐨𝐳𝐳𝐚𝐫𝐞𝐥𝐥𝐚!\n━━━━━━━━━━━━━━━━━━\n> 𝟥𝟥𝟥 𝔹𝕆𝕋";
+        ?"ʜᴇʏ ᴀʙʙɪᴀᴍᴏ ᴜɴ ᴄɪᴏᴄᴄᴏʟᴀᴛɪɴᴏ ǫᴜɪ!\n┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄\n> ᴢᴇɴᴏʙᴏᴛ"
+        : "ꜱᴇɪ ʙɪᴀɴᴄᴏ/ᴀ ᴍᴏᴢᴢᴀʀᴇʟʟᴀ!\n┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄\n> ᴢᴇɴᴏʙᴏᴛ";
 
 
     let message = `
-━━━━━━━━━━━━━━━━━━
-𝐕𝐄𝐃𝐈𝐀𝐌𝐎 𝐐𝐔𝐀𝐍𝐓𝐎 𝐒𝐄𝐈 𝐍𝐄𝐆𝐑𝐎/𝐀 ⚫️
-━━━━━━━━━━━━━━━━━━
-@${number} 𝐞̀ 𝐧𝐞𝐠𝐫𝐨 𝐚𝐥 *${width}%🚨!* 
-━━━━━━━━━━━━━━━━━━
+┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄
+ᴠᴇᴅɪᴀᴍᴏ ǫᴜᴀɴᴛᴏ ꜱᴇɪ ɴᴇɢʀᴏ/ᴀ ⚫️
+┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄
+@${number} ᴇ̀ ɴᴇɢʀᴏ ᴀʟ *${width}%🚨!* 
+┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄
 ${finalPhrase}
 `.trim();
 
@@ -27,7 +27,7 @@ ${finalPhrase}
 };
 
 handler.command = /^(negro)$/i;
-handler.help = ['negro @𝐭𝐚𝐠'];
+handler.help = ['negro @ᴛᴀɢ'];
 handler.tags = ['fun'];
 
 export default handler;

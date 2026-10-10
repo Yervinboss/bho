@@ -1,4 +1,4 @@
-//Plugin by Zeno, Lucifero & 333 staff
+//Plugin by Zeno, Lucifero & zenobot staff
 
 import fs from 'fs'
 import path from 'path'
@@ -85,7 +85,7 @@ let handler = async (m, { conn, text }) => {
                 }
             }
         }
-        diagnosticReport = `*[RISULTATO DIAGNOSI  ꙰  𝟥𝟥𝟥 𝔹𝕆𝕋  ꙰ ]*\n\n`
+        diagnosticReport = `*[RISULTATO DIAGNOSI❖ ᴢᴇɴᴏʙᴏᴛ ]*\n\n`
         
         if (errors.length > 0) {
             diagnosticReport += `Trovati ${errors.length} file con potenziali problemi:\n\n`
@@ -97,7 +97,7 @@ let handler = async (m, { conn, text }) => {
                 diagnosticReport += '\n'
             })
         } else {
-            diagnosticReport += `✅ Nessun problema rilevato nei plugin!\n`
+            diagnosticReport += `✔️ Nessun problema rilevato nei plugin!\n`
         }
         diagnosticReport += `\n*📊 Statistiche:*\n`
         diagnosticReport += `• File analizzati: ${files.length}\n`
@@ -128,7 +128,7 @@ let handler = async (m, { conn, text }) => {
         } catch (e) {
             console.error('Errore invio a global.sam:', e)
         }
-        let chatReport = `*[RISULTATO DIAGNOSI  ꙰  𝟥𝟥𝟥 𝔹𝕆𝕋  ꙰ ]*\n\n`
+        let chatReport = `*[RISULTATO DIAGNOSI❖ ᴢᴇɴᴏʙᴏᴛ ]*\n\n`
         if (errors.length > 0) {
             chatReport += `⚠️ *ho trovato ${errors.length} file con problemi:*\n\n`
             errors.forEach(({ file, errors }) => {
@@ -137,7 +137,7 @@ let handler = async (m, { conn, text }) => {
                 chatReport += '\n'
             })
         } else {
-            chatReport += `✅ *nessun problema rilevato, che bot perfetto!*\n`
+            chatReport += `✔️ *nessun problema rilevato, che bot perfetto!*\n`
         }
         
         chatReport += `\n*ricapitoliamo:*\n`
@@ -165,7 +165,7 @@ let handler = async (m, { conn, text }) => {
     }
 }
 
-handler.help = ['𝐝𝐢𝐚𝐠𝐧𝐨𝐬𝐢']
+handler.help = ['ᴅɪᴀɢɴᴏꜱɪ']
 handler.tags = ['owner']
 handler.command = ['diagnosi']
 export default handler

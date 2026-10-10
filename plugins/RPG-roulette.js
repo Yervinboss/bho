@@ -1,4 +1,4 @@
-//Plugin by Zeno, Lucifero & 333 staff
+//Plugin by Zeno, Lucifero & zenobot staff
 
 global.casinoRateLimit = global.casinoRateLimit || {}
 
@@ -22,15 +22,15 @@ let handler = async (m, { conn, args }) => {
 
   let user = global.db.data.users[m.sender]
 
-  if (!bet || bet < 50) return m.reply("💸 Puntata minima 50 XP333")
-  if (user.money < bet) return m.reply(`💸 Devi avere almeno ${bet} XP333`)
+  if (!bet || bet < 50) return m.reply("💸 Puntata minima 50 ZenoCoin")
+  if (user.money < bet) return m.reply(`💸 Devi avere almeno ${bet} ZenoCoin`)
 
   if (!choice) {
     return conn.sendMessage(m.chat, {
       text:
 `🎰 *ROULETTE*
 
-💰 Puntata: ${bet} XP333
+💰 Puntata: ${bet} ZenoCoin
 
 Scegli dove puntare:`,
       buttons: [
@@ -51,25 +51,25 @@ Scegli dove puntare:`,
   if (win) {
     user.money += bet
     text =
-`╔═🎰 𝐑𝐎𝐔𝐋𝐄𝐓𝐓𝐄 ═╗
-┃ 🎯 Risultato: *${result.toUpperCase()}*
-┃ 🟢 Hai vinto!
-┃ 💰 Guadagno: +${bet} XP333
-┃
-┃ 💼 Saldo: ${user.money} XP333
-╚══════╝`
+`┌┄🎰 ʀᴏᴜʟᴇᴛᴛᴇ ┄┐
+┆ 🎯 Risultato: *${result.toUpperCase()}*
+┆ 🟢 Hai vinto!
+┆ 💰 Guadagno: +${bet} ZenoCoin
+┆
+┆ 💼 Saldo: ${user.money} ZenoCoin
+└┄┄┄┄┄┄┘`
   } else {
     user.money -= bet
     if (user.money < 0) user.money = 0
 
     text =
-`╔═🎰 𝐑𝐎𝐔𝐋𝐄𝐓𝐓𝐄 ═╗
-┃ 🎯 Risultato: *${result.toUpperCase()}*
-┃ 🔴 Hai perso!
-┃ 💸 Perso: -${bet} XP333
-┃
-┃ 💼 Saldo: ${user.money} XP333
-╚══════╝`
+`┌┄🎰 ʀᴏᴜʟᴇᴛᴛᴇ ┄┐
+┆ 🎯 Risultato: *${result.toUpperCase()}*
+┆ 🔴 Hai perso!
+┆ 💸 Perso: -${bet} ZenoCoin
+┆
+┆ 💼 Saldo: ${user.money} ZenoCoin
+└┄┄┄┄┄┄┘`
   }
 
   await conn.sendMessage(m.chat, {

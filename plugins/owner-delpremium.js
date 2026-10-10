@@ -1,4 +1,4 @@
-//Plugin by Zeno, Lucifero & 333 staff
+//Plugin by Zeno, Lucifero & zenobot staff
 
 
 const handler = async (m, {conn, text, usedPrefix, command}) => {
@@ -18,7 +18,7 @@ const handler = async (m, {conn, text, usedPrefix, command}) => {
   const textdelprem = `*l' utente @${who.split`@`[0]} non è più premium 👑*`;
   m.reply(textdelprem, null, {mentions: conn.parseMention(textdelprem)});
 };
-handler.help = ['𝐝𝐞𝐥𝐩𝐫𝐞𝐦 @𝐮𝐬𝐞𝐫'];
+handler.help = ['ᴅᴇʟᴘʀᴇᴍ @ᴜꜱᴇʀ'];
 handler.tags = ['owner'];
 handler.command = /^(remove|-|del)premium$/i;
 handler.group = true;

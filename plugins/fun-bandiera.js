@@ -1,4 +1,4 @@
-//Plugin by Zeno, Lucifero & 333 staff
+//Plugin by Zeno, Lucifero & zenobot staff
 
 const bandieraCooldownTime = 60000;
 
@@ -9,41 +9,41 @@ const setBandieraCooldown = (chat) => {
 
 let handler = async (m, { conn, args, participants, isAdmin, isBotAdmin, usedPrefix, command }) => {
     let frasi = [
-        `𝐈𝐍𝐃𝐎𝐕𝐈𝐍𝐀 𝐋𝐀 𝐁𝐀𝐍𝐃𝐈𝐄𝐑𝐀!`,
-        `𝐈𝐍𝐃𝐎𝐕𝐈𝐍𝐀 𝐋𝐀 𝐍𝐀𝐙𝐈𝐎𝐍𝐄 𝐑𝐀𝐏𝐏𝐑𝐄𝐒𝐄𝐍𝐓𝐀𝐓𝐀 𝐃𝐀 𝐐𝐔𝐄𝐒𝐓𝐀 𝐁𝐀𝐍𝐃𝐈𝐄𝐑𝐀!`,
-        `𝐕𝐄𝐃𝐈𝐀𝐌𝐎 𝐐𝐔𝐀𝐍𝐓𝐎 𝐒𝐄𝐈 𝐁𝐑𝐀𝐕𝐎/𝐀 𝐈𝐍 𝐆𝐄𝐎𝐆𝐑𝐀𝐅𝐈𝐀!`,
-        `𝐒𝐈𝐈 𝐈𝐋 𝐏𝐑𝐈𝐌𝐎/𝐀 𝐀𝐃 𝐈𝐍𝐃𝐎𝐕𝐈𝐍𝐀𝐑𝐄 𝐋𝐀 𝐁𝐀𝐍𝐃𝐈𝐄𝐑𝐀!`,
-        `𝐐𝐔𝐈𝐙 𝐒𝐔𝐋𝐋𝐄 𝐁𝐀𝐍𝐃𝐈𝐄𝐑𝐄, 𝐒𝐀𝐈 𝐃𝐈𝐑𝐌𝐈 𝐂𝐇𝐄 𝐏𝐀𝐄𝐒𝐄 𝐑𝐀𝐏𝐏𝐑𝐄𝐒𝐄𝐍𝐓𝐀?`,
-        `𝐒𝐂𝐎𝐏𝐑𝐈𝐀𝐌𝐎 𝐂𝐇𝐄 𝐕𝐎𝐓𝐎 𝐀𝐕𝐄𝐕𝐈 𝐈𝐍 𝐆𝐄𝐎𝐆𝐑𝐀𝐅𝐈𝐀, 𝐈𝐍𝐃𝐎𝐕𝐈𝐍𝐀 𝐋𝐀 𝐁𝐀𝐍𝐃𝐈𝐄𝐑𝐀!`,
-        `𝐏𝐄𝐍𝐒𝐀 𝐀𝐓𝐓𝐄𝐍𝐓𝐀𝐌𝐄𝐍𝐓𝐄 𝐄 𝐈𝐍𝐃𝐎𝐕𝐈𝐍𝐀 𝐋𝐀 𝐁𝐀𝐍𝐃𝐈𝐄𝐑𝐀!`,
+        `ɪɴᴅᴏᴠɪɴᴀ ʟᴀ ʙᴀɴᴅɪᴇʀᴀ!`,
+        `ɪɴᴅᴏᴠɪɴᴀ ʟᴀ ɴᴀᴢɪᴏɴᴇ ʀᴀᴘᴘʀᴇꜱᴇɴᴛᴀᴛᴀ ᴅᴀ ǫᴜᴇꜱᴛᴀ ʙᴀɴᴅɪᴇʀᴀ!`,
+        `ᴠᴇᴅɪᴀᴍᴏ ǫᴜᴀɴᴛᴏ ꜱᴇɪ ʙʀᴀᴠᴏ/ᴀ ɪɴ ɢᴇᴏɢʀᴀꜰɪᴀ!`,
+        `ꜱɪɪ ɪʟ ᴘʀɪᴍᴏ/ᴀ ᴀᴅ ɪɴᴅᴏᴠɪɴᴀʀᴇ ʟᴀ ʙᴀɴᴅɪᴇʀᴀ!`,
+        `ǫᴜɪᴢ ꜱᴜʟʟᴇ ʙᴀɴᴅɪᴇʀᴇ, ꜱᴀɪ ᴅɪʀᴍɪ ᴄʜᴇ ᴘᴀᴇꜱᴇ ʀᴀᴘᴘʀᴇꜱᴇɴᴛᴀ?`,
+        `ꜱᴄᴏᴘʀɪᴀᴍᴏ ᴄʜᴇ ᴠᴏᴛᴏ ᴀᴠᴇᴠɪ ɪɴ ɢᴇᴏɢʀᴀꜰɪᴀ, ɪɴᴅᴏᴠɪɴᴀ ʟᴀ ʙᴀɴᴅɪᴇʀᴀ!`,
+        `ᴘᴇɴꜱᴀ ᴀᴛᴛᴇɴᴛᴀᴍᴇɴᴛᴇ ᴇ ɪɴᴅᴏᴠɪɴᴀ ʟᴀ ʙᴀɴᴅɪᴇʀᴀ!`,
     ];
 
     if (m.text?.toLowerCase() === '.skipbandiera') {
-        if (!m.isGroup) return m.reply('𝐪𝐮𝐞𝐬𝐭𝐨 𝐜𝐨𝐦𝐚𝐧𝐝𝐨 𝐞̀ 𝐮𝐭𝐢𝐥𝐢𝐳𝐳𝐚𝐛𝐢𝐥𝐞 𝐬𝐨𝐥𝐨 𝐧𝐞𝐢 𝐠𝐫𝐮𝐩𝐩𝐢.⚠️');
-        if (!global.bandieraGame?.[m.chat]) return m.reply('𝐧𝐞𝐬𝐬𝐮𝐧𝐚 𝐩𝐚𝐫𝐭𝐢𝐭𝐚 𝐚𝐭𝐭𝐢𝐯𝐚 𝐚𝐥 𝐦𝐨𝐦𝐞𝐧𝐭𝐨.');
+        if (!m.isGroup) return m.reply('ǫᴜᴇꜱᴛᴏ ᴄᴏᴍᴀɴᴅᴏ ᴇ̀ ᴜᴛɪʟɪᴢᴢᴀʙɪʟᴇ ꜱᴏʟᴏ ɴᴇɪ ɢʀᴜᴘᴘɪ.⚠️');
+        if (!global.bandieraGame?.[m.chat]) return m.reply('ɴᴇꜱꜱᴜɴᴀ ᴘᴀʀᴛɪᴛᴀ ᴀᴛᴛɪᴠᴀ ᴀʟ ᴍᴏᴍᴇɴᴛᴏ.');
 
         if (!isAdmin && !m.fromMe) {
-            return m.reply('𝐜𝐨𝐦𝐚𝐧𝐝𝐨 𝐝𝐢𝐬𝐩𝐨𝐧𝐢𝐛𝐢𝐥𝐞 𝐬𝐨𝐥𝐨 𝐩𝐞𝐫 𝐚𝐝𝐦𝐢𝐧!');
+            return m.reply('ᴄᴏᴍᴀɴᴅᴏ ᴅɪꜱᴘᴏɴɪʙɪʟᴇ ꜱᴏʟᴏ ᴘᴇʀ ᴀᴅᴍɪɴ!');
         }
 
         clearTimeout(global.bandieraGame[m.chat].timeout);
         setBandieraCooldown(m.chat);
         
-        let skipText = `𝐏𝐀𝐑𝐓𝐈𝐓𝐀 𝐈𝐍𝐓𝐄𝐑𝐑𝐎𝐓𝐓𝐀 𝐃𝐀 𝐔𝐍 𝐀𝐃𝐌𝐈𝐍!\n\n`;
-        skipText += `╭─────────╮\n`
-        skipText += `│ 🏳️ 𝐥𝐚 𝐛𝐚𝐧𝐝𝐢𝐞𝐫𝐚 𝐞𝐫𝐚: \n│ ‼️  *\`${global.bandieraGame[m.chat].rispostaOriginale}\`*\n`;
-        skipText += `╰─────────╯`;
+        let skipText = `ᴘᴀʀᴛɪᴛᴀ ɪɴᴛᴇʀʀᴏᴛᴛᴀ ᴅᴀ ᴜɴ ᴀᴅᴍɪɴ!\n\n`;
+        skipText += `┌┄┄┄┄┄┄┄┄┄┐\n`
+        skipText += `┆ 🏳️ ʟᴀ ʙᴀɴᴅɪᴇʀᴀ ᴇʀᴀ: \n┆ ‼️  *\`${global.bandieraGame[m.chat].rispostaOriginale}\`*\n`;
+        skipText += `└┄┄┄┄┄┄┄┄┄┘`;
 
         await conn.sendMessage(m.chat, {
             text: skipText,
-            footer: '𝟥𝟥𝟥 𝔹𝕆𝕋'
+            footer: 'ᴢᴇɴᴏʙᴏᴛ'
         }, { quoted: m });
         delete global.bandieraGame[m.chat];
         return;
     }
     
     if (global.bandieraGame?.[m.chat]) {
-        return m.reply('𝐜’𝐞̀ 𝐠𝐢𝐚̀ 𝐮𝐧𝐚 𝐩𝐚𝐫𝐭𝐢𝐭𝐚 𝐢𝐧 𝐜𝐨𝐫𝐬𝐨, 𝐬𝐛𝐫𝐢𝐠𝐚𝐭𝐢 𝐩𝐫𝐢𝐦𝐚 𝐜𝐡𝐞 𝐬𝐜𝐚𝐝𝐚 𝐢𝐥 𝐭𝐞𝐦𝐩𝐨!');
+        return m.reply('ᴄ’ᴇ̀ ɢɪᴀ̀ ᴜɴᴀ ᴘᴀʀᴛɪᴛᴀ ɪɴ ᴄᴏʀꜱᴏ, ꜱʙʀɪɢᴀᴛɪ ᴘʀɪᴍᴀ ᴄʜᴇ ꜱᴄᴀᴅᴀ ɪʟ ᴛᴇᴍᴘᴏ!');
     }
 
     const cooldownKey = `bandiera_${m.chat}`;
@@ -53,7 +53,7 @@ let handler = async (m, { conn, args, participants, isAdmin, isBotAdmin, usedPre
 
     if (now - lastGame < cooldownTime) {
         const remainingTime = Math.ceil((cooldownTime - (now - lastGame)) / 1000);
-        return m.reply(`𝐝𝐞𝐯𝐢 𝐚𝐬𝐩𝐞𝐭𝐭𝐚𝐫𝐞 𝐚𝐧𝐜𝐨𝐫𝐚 ${remainingTime} 𝐬𝐞𝐜𝐨𝐧𝐝𝐢 𝐩𝐫𝐢𝐦𝐚 𝐝𝐢 𝐢𝐧𝐢𝐳𝐢𝐚𝐫𝐞 𝐮𝐧𝐚 𝐧𝐮𝐨𝐯𝐚 𝐩𝐚𝐫𝐭𝐢𝐭𝐚. ⏳`);
+        return m.reply(`ᴅᴇᴠɪ ᴀꜱᴘᴇᴛᴛᴀʀᴇ ᴀɴᴄᴏʀᴀ ${remainingTime} ꜱᴇᴄᴏɴᴅɪ ᴘʀɪᴍᴀ ᴅɪ ɪɴɪᴢɪᴀʀᴇ ᴜɴᴀ ɴᴜᴏᴠᴀ ᴘᴀʀᴛɪᴛᴀ. ⏳`);
     }
 
     let bandiere = [
@@ -136,14 +136,14 @@ let handler = async (m, { conn, args, participants, isAdmin, isBotAdmin, usedPre
 
     try {
         let startCaption =`\`${frase}\`\n\n`;
-        startCaption += `🏳️ 𝐫𝐢𝐬𝐩𝐨𝐧𝐝𝐢 𝐜𝐨𝐧 𝐢𝐥 𝐧𝐨𝐦𝐞 𝐝𝐞𝐥𝐥𝐚 𝐧𝐚𝐳𝐢𝐨𝐧𝐞!\n`;
-        startCaption += `⏱️ 𝐭𝐞𝐦𝐩𝐨 𝐝𝐢𝐬𝐩𝐨𝐧𝐢𝐛𝐢𝐥𝐞: 𝟑𝟎 𝐬𝐞𝐜𝐨𝐧𝐝𝐢\n\n`;
-        startCaption += `> 𝐚𝐭𝐭𝐞𝐧𝐳𝐢𝐨𝐧𝐞! 𝐩𝐞𝐫 𝐟𝐚𝐫 𝐥𝐞𝐠𝐠𝐞𝐫𝐞 𝐥𝐚 𝐫𝐢𝐬𝐩𝐨𝐬𝐭𝐚 𝐚𝐥 𝐛𝐨𝐭 𝐫𝐢𝐬𝐩𝐨𝐧𝐝𝐢 𝐚 𝐪𝐮𝐞𝐬𝐭𝐨 𝐦𝐞𝐬𝐬𝐚𝐠𝐠𝐢𝐨, 𝐚𝐥𝐭𝐫𝐢𝐦𝐞𝐧𝐭𝐢 𝐧𝐨𝐧 𝐥𝐚 𝐥𝐞𝐠𝐠𝐞𝐫𝐚̀!`;
+        startCaption += `🏳️ ʀɪꜱᴘᴏɴᴅɪ ᴄᴏɴ ɪʟ ɴᴏᴍᴇ ᴅᴇʟʟᴀ ɴᴀᴢɪᴏɴᴇ!\n`;
+        startCaption += `⏱️ ᴛᴇᴍᴘᴏ ᴅɪꜱᴘᴏɴɪʙɪʟᴇ: 𝟹𝟶 ꜱᴇᴄᴏɴᴅɪ\n\n`;
+        startCaption += `> ᴀᴛᴛᴇɴᴢɪᴏɴᴇ! ᴘᴇʀ ꜰᴀʀ ʟᴇɢɢᴇʀᴇ ʟᴀ ʀɪꜱᴘᴏꜱᴛᴀ ᴀʟ ʙᴏᴛ ʀɪꜱᴘᴏɴᴅɪ ᴀ ǫᴜᴇꜱᴛᴏ ᴍᴇꜱꜱᴀɢɢɪᴏ, ᴀʟᴛʀɪᴍᴇɴᴛɪ ɴᴏɴ ʟᴀ ʟᴇɢɢᴇʀᴀ̀!`;
 
         let msg = await conn.sendMessage(m.chat, {
             image: { url: scelta.url },
             caption: startCaption,
-            footer: '𝟥𝟥𝟥 𝔹𝕆𝕋'
+            footer: 'ᴢᴇɴᴏʙᴏᴛ'
         }, { quoted: m });
         
         global.bandieraGame = global.bandieraGame || {};
@@ -156,15 +156,15 @@ let handler = async (m, { conn, args, participants, isAdmin, isBotAdmin, usedPre
             startTime: Date.now(),
             timeout: setTimeout(async () => {
                 if (global.bandieraGame?.[m.chat]) {
-                    let timeoutText = `                 𝐓𝐄𝐌𝐏𝐎 𝐒𝐂𝐀𝐃𝐔𝐓𝐎!\n`;
-                    timeoutText += `╭─────────╮\n`
-                    timeoutText += `│ ✅ 𝐫𝐢𝐬𝐩𝐨𝐬𝐭𝐚 𝐞𝐬𝐚𝐭𝐭𝐚:\n│ ‼️  *\`${scelta.nome}\`*\n`;
-                    timeoutText += `│ 💡 𝐧𝐨𝐧 𝐚𝐛𝐛𝐚𝐭𝐭𝐞𝐫𝐭𝐢, 𝐫𝐢𝐭𝐞𝐧𝐭𝐚!\n`;
-                    timeoutText += `╰─────────╯`;
+                    let timeoutText = `                 ᴛᴇᴍᴘᴏ ꜱᴄᴀᴅᴜᴛᴏ!\n`;
+                    timeoutText += `┌┄┄┄┄┄┄┄┄┄┐\n`
+                    timeoutText += `┆ ✔️ ʀɪꜱᴘᴏꜱᴛᴀ ᴇꜱᴀᴛᴛᴀ:\n┆ ‼️  *\`${scelta.nome}\`*\n`;
+                    timeoutText += `┆ 💡 ɴᴏɴ ᴀʙʙᴀᴛᴛᴇʀᴛɪ, ʀɪᴛᴇɴᴛᴀ!\n`;
+                    timeoutText += `└┄┄┄┄┄┄┄┄┄┘`;
                     
                     await conn.sendMessage(m.chat, {
                         text: timeoutText,
-                        footer: '𝟥𝟥𝟥 𝔹𝕆𝕋'
+                        footer: 'ᴢᴇɴᴏʙᴏᴛ'
                     }, { quoted: msg });
                     setBandieraCooldown(m.chat);
                     delete global.bandieraGame[m.chat];
@@ -173,7 +173,7 @@ let handler = async (m, { conn, args, participants, isAdmin, isBotAdmin, usedPre
         };
     } catch (error) {
         console.error('Errore nel gioco bandiere:', error);
-        m.reply('❌ 𝐞𝐫𝐫𝐨𝐫𝐞 𝐢𝐧𝐚𝐭𝐭𝐞𝐬𝐨 𝐝𝐮𝐫𝐚𝐧𝐭𝐞 𝐥’𝐚𝐯𝐯𝐢𝐨 𝐝𝐞𝐥𝐥𝐚 𝐩𝐚𝐫𝐭𝐢𝐭𝐚, 𝐫𝐢𝐩𝐫𝐨𝐯𝐚 𝐭𝐫𝐚 𝐩𝐨𝐜𝐨.');
+        m.reply('✖️ ᴇʀʀᴏʀᴇ ɪɴᴀᴛᴛᴇꜱᴏ ᴅᴜʀᴀɴᴛᴇ ʟ’ᴀᴠᴠɪᴏ ᴅᴇʟʟᴀ ᴘᴀʀᴛɪᴛᴀ, ʀɪᴘʀᴏᴠᴀ ᴛʀᴀ ᴘᴏᴄᴏ.');
     }
 };
 
@@ -238,15 +238,15 @@ handler.before = async (m, { conn }) => {
 
         if (!global.db.data.users[m.sender]) global.db.data.users[m.sender] = {};
 
-        let congratsMessage =    `𝐂𝐎𝐌𝐏𝐋𝐈𝐌𝐄𝐍𝐓𝐈, 𝐑𝐈𝐒𝐏𝐎𝐒𝐓𝐀 𝐄𝐒𝐀𝐓𝐓𝐀!\n\n`;
-        congratsMessage += `╭─────────╮\n`
-        congratsMessage += `│ ✅  𝐧𝐚𝐳𝐢𝐨𝐧𝐞: *\`${game.rispostaOriginale}\`*\n`;
-        congratsMessage += `│ ⏳  𝐭𝐞𝐦𝐩𝐨 𝐢𝐦𝐩𝐢𝐞𝐠𝐚𝐭𝐨: *${timeTaken}s*\n`;
-        congratsMessage += `╰─────────╯`;
+        let congratsMessage =    `ᴄᴏᴍᴘʟɪᴍᴇɴᴛɪ, ʀɪꜱᴘᴏꜱᴛᴀ ᴇꜱᴀᴛᴛᴀ!\n\n`;
+        congratsMessage += `┌┄┄┄┄┄┄┄┄┄┐\n`
+        congratsMessage += `┆ ✔️  ɴᴀᴢɪᴏɴᴇ: *\`${game.rispostaOriginale}\`*\n`;
+        congratsMessage += `┆ ⏳  ᴛᴇᴍᴘᴏ ɪᴍᴘɪᴇɢᴀᴛᴏ: *${timeTaken}s*\n`;
+        congratsMessage += `└┄┄┄┄┄┄┄┄┄┘`;
         
         await conn.sendMessage(chat, {
             text: congratsMessage,
-            footer: '𝟥𝟥𝟥 𝔹𝕆𝕋'
+            footer: 'ᴢᴇɴᴏʙᴏᴛ'
         }, { quoted: m });
         setBandieraCooldown(chat);
         delete global.bandieraGame[chat];
@@ -256,15 +256,15 @@ handler.before = async (m, { conn }) => {
         await conn.reply(chat, '👀 *Ci sei quasi!*', m);
         
     } else if ((game.tentativi[m.sender] || 0) >= 2) {
-        let failText = `      𝐇𝐀𝐈 𝐄𝐒𝐀𝐔𝐑𝐈𝐓𝐎 𝐈 𝐓𝐄𝐍𝐓𝐀𝐓𝐈𝐕𝐈!\n\n`;
-        failText += `╭─────────╮\n`
-        failText += `│ ❌  𝐇𝐚𝐢 𝐝𝐚𝐭𝐨 𝟑 𝐫𝐢𝐬𝐩𝐨𝐬𝐭𝐞 𝐞𝐫𝐫𝐚𝐭𝐞\n`;
-        failText += `│  ⏳ 𝐀𝐭𝐭𝐞𝐧𝐝𝐢 𝐥𝐚 𝐟𝐢𝐧𝐞 𝐝𝐞𝐥 𝐫𝐨𝐮𝐧𝐝!\n`;
-        failText += `╰─────────╯`;
+        let failText = `      ʜᴀɪ ᴇꜱᴀᴜʀɪᴛᴏ ɪ ᴛᴇɴᴛᴀᴛɪᴠɪ!\n\n`;
+        failText += `┌┄┄┄┄┄┄┄┄┄┐\n`
+        failText += `┆ ✖️  ʜᴀɪ ᴅᴀᴛᴏ 𝟹 ʀɪꜱᴘᴏꜱᴛᴇ ᴇʀʀᴀᴛᴇ\n`;
+        failText += `┆  ⏳ ᴀᴛᴛᴇɴᴅɪ ʟᴀ ꜰɪɴᴇ ᴅᴇʟ ʀᴏᴜɴᴅ!\n`;
+        failText += `└┄┄┄┄┄┄┄┄┄┘`;
         
         await conn.sendMessage(chat, {
             text: failText,
-            footer: '𝟥𝟥𝟥 𝔹𝕆𝕋'
+            footer: 'ᴢᴇɴᴏʙᴏᴛ'
         }, { quoted: m });
         setBandieraCooldown(chat);
         delete global.bandieraGame[chat];
@@ -276,25 +276,25 @@ handler.before = async (m, { conn }) => {
         if (tentativiRimasti === 1) {
             const primaLettera = game.rispostaOriginale[0].toUpperCase();
             const numeroLettere = game.rispostaOriginale.length;
-            await conn.reply(chat, `❌ 𝐑𝐢𝐬𝐩𝐨𝐬𝐭𝐚 𝐬𝐛𝐚𝐠𝐥𝐢𝐚𝐭𝐚!
+            await conn.reply(chat, `✖️ ʀɪꜱᴘᴏꜱᴛᴀ ꜱʙᴀɢʟɪᴀᴛᴀ!
 
-💡 𝐏𝐢𝐜𝐜𝐨𝐥𝐨 𝐬𝐮𝐠𝐠𝐞𝐫𝐢𝐦𝐞𝐧𝐭𝐨:
-  • 𝐈𝐧𝐢𝐳𝐢𝐚 𝐜𝐨𝐧 𝐥𝐚 𝐥𝐞𝐭𝐭𝐞𝐫𝐚 *"${primaLettera}"*
-  • 𝐄𝐝 𝐞̀ 𝐜𝐨𝐦𝐩𝐨𝐬𝐭𝐚 𝐝𝐚 *${numeroLettere}* 𝐋𝐞𝐭𝐭𝐞𝐫𝐞`, m);
+💡 ᴘɪᴄᴄᴏʟᴏ ꜱᴜɢɢᴇʀɪᴍᴇɴᴛᴏ:
+  • ɪɴɪᴢɪᴀ ᴄᴏɴ ʟᴀ ʟᴇᴛᴛᴇʀᴀ *"${primaLettera}"*
+  • ᴇᴅ ᴇ̀ ᴄᴏᴍᴘᴏꜱᴛᴀ ᴅᴀ *${numeroLettere}* ʟᴇᴛᴛᴇʀᴇ`, m);
         } else if (tentativiRimasti === 2) {
-            await conn.reply(chat, `❌ 𝐑𝐢𝐬𝐩𝐨𝐬𝐭𝐚 𝐬𝐛𝐚𝐠𝐥𝐢𝐚𝐭𝐚!
+            await conn.reply(chat, `✖️ ʀɪꜱᴘᴏꜱᴛᴀ ꜱʙᴀɢʟɪᴀᴛᴀ!
 
-📝 𝐇𝐚𝐢 𝐚𝐧𝐜𝐨𝐫𝐚 ${tentativiRimasti} 𝐓𝐞𝐧𝐭𝐚𝐭𝐢𝐯𝐢
-🤔 𝐍𝐨𝐧 𝐝𝐞𝐦𝐨𝐫𝐚𝐥𝐢𝐳𝐳𝐚𝐫𝐭𝐢, 𝐩𝐞𝐧𝐬𝐚 𝐛𝐞𝐧𝐞!`, m);
+📝 ʜᴀɪ ᴀɴᴄᴏʀᴀ ${tentativiRimasti} ᴛᴇɴᴛᴀᴛɪᴠɪ
+🤔 ɴᴏɴ ᴅᴇᴍᴏʀᴀʟɪᴢᴢᴀʀᴛɪ, ᴘᴇɴꜱᴀ ʙᴇɴᴇ!`, m);
         } else {
-            await conn.reply(chat, `❌ 𝐑𝐢𝐬𝐩𝐨𝐬𝐭𝐚 𝐬𝐛𝐚𝐠𝐥𝐢𝐚𝐭𝐚!
+            await conn.reply(chat, `✖️ ʀɪꜱᴘᴏꜱᴛᴀ ꜱʙᴀɢʟɪᴀᴛᴀ!
 
-📝 𝐓𝐢 𝐫𝐢𝐦𝐚𝐧𝐞 𝐮𝐧 𝐮  𝐭𝐢𝐦𝐨 𝐭𝐞𝐧𝐭𝐚𝐭𝐢𝐯𝐨, 𝐬𝐟𝐫𝐮𝐭𝐭𝐚𝐥𝐨 𝐚𝐥 𝐦𝐞𝐠𝐥𝐢𝐨!`, m);
+📝 ᴛɪ ʀɪᴍᴀɴᴇ ᴜɴ ᴜ  ᴛɪᴍᴏ ᴛᴇɴᴛᴀᴛɪᴠᴏ, ꜱꜰʀᴜᴛᴛᴀʟᴏ ᴀʟ ᴍᴇɢʟɪᴏ!`, m);
         }
     }
 };
 
-handler.help = ['𝐛𝐚𝐧𝐝𝐢𝐞𝐫𝐚'];
+handler.help = ['ʙᴀɴᴅɪᴇʀᴀ'];
 handler.tags = ['fun'];
 handler.command = /^(bandiera|skipbandiera)$/i;
 handler.group = true;

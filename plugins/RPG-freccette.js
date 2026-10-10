@@ -1,4 +1,4 @@
-//Plugin by Zeno, Lucifero & 333 staff
+//Plugin by Zeno, Lucifero & zenobot staff
 
 global.casinoRateLimit = global.casinoRateLimit || {}
 
@@ -32,18 +32,18 @@ let handler = async (m, { conn, args, command }) => {
 
     return conn.sendMessage(m.chat, {
       text:
-`╔═🎯 𝐅𝐑𝐄𝐂𝐂𝐄𝐓𝐓𝐄 ═╗
-┃ 💰 Portafoglio: *${money} XP333*
-┃
-┃ 🎯 Colpisci il bersaglio!
-┃ Più punti fai, più vinci
-╚══════════════╝`,
+`┌┄🎯 ꜰʀᴇᴄᴄᴇᴛᴛᴇ ┄┐
+┆ 💰 Portafoglio: *${money} ZenoCoin*
+┆
+┆ 🎯 Colpisci il bersaglio!
+┆ Più punti fai, più vinci
+└┄┄┄┄┄┄┄┄┄┄┄┄┄┄┘`,
       buttons: [
-        { buttonId: bet(100), buttonText: { displayText: "💵 100 XP333" }, type: 1 },
-        { buttonId: bet(200), buttonText: { displayText: "💵 200 XP333" }, type: 1 },
-        { buttonId: bet(500), buttonText: { displayText: "💰 500 XP333" }, type: 1 },
-        { buttonId: bet(1000), buttonText: { displayText: "💰 1000 XP333" }, type: 1 },
-        { buttonId: bet(10000), buttonText: { displayText: "💎 10000 XP333" }, type: 1 }
+        { buttonId: bet(100), buttonText: { displayText: "💵 100 ZenoCoin" }, type: 1 },
+        { buttonId: bet(200), buttonText: { displayText: "💵 200 ZenoCoin" }, type: 1 },
+        { buttonId: bet(500), buttonText: { displayText: "💰 500 ZenoCoin" }, type: 1 },
+        { buttonId: bet(1000), buttonText: { displayText: "💰 1000 ZenoCoin" }, type: 1 },
+        { buttonId: bet(10000), buttonText: { displayText: "💎 10000 ZenoCoin" }, type: 1 }
       ],
       headerType: 1
     }, { quoted: m })
@@ -54,8 +54,8 @@ let handler = async (m, { conn, args, command }) => {
     let bet = parseInt(args[0])
     let money = user.money || 0
 
-    if (!bet || bet < 50) return m.reply("💸 Puntata minima 50 XP333")
-    if (money < bet) return m.reply(`💸 Devi avere almeno ${bet} XP333`)
+    if (!bet || bet < 50) return m.reply("💸 Puntata minima 50 ZenoCoin")
+    if (money < bet) return m.reply(`💸 Devi avere almeno ${bet} ZenoCoin`)
 
     user.money -= bet
 
@@ -68,20 +68,20 @@ let handler = async (m, { conn, args, command }) => {
     let score = Math.floor(Math.random() * 61)
 
     let text =
-`╔═🎯 𝐅𝐑𝐄𝐂𝐂𝐄𝐓𝐓𝐀 ═╗
-┃ 🎯 Punteggio: *${score}*
-╚══════════════╝\n\n`
+`┌┄🎯 ꜰʀᴇᴄᴄᴇᴛᴛᴀ ┄┐
+┆ 🎯 Punteggio: *${score}*
+└┄┄┄┄┄┄┄┄┄┄┄┄┄┄┘\n\n`
 
     let win = 0
 
     if (score >= 50) {
       win = bet * 2
-      text += `🎯 BULLSEYE!\n💰 Vinci *${win} XP333*`
+      text += `🎯 BULLSEYE!\n💰 Vinci *${win} ZenoCoin*`
     } else if (score >= 30) {
       win = Math.floor(bet * 1.5)
-      text += `🙂 Buon tiro\n💰 Vinci *${win} XP333*`
+      text += `🙂 Buon tiro\n💰 Vinci *${win} ZenoCoin*`
     } else {
-      text += `💀 Hai fatto schifo\nHai perso *${bet} XP333*`
+      text += `💀 Hai fatto schifo\nHai perso *${bet} ZenoCoin*`
     }
 
     user.money += win

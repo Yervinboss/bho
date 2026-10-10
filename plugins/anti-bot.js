@@ -1,4 +1,4 @@
-//Plugin by Zeno, Lucifero & 333 staff
+//Plugin by Zeno, Lucifero & zenobot staff
 
 let puliti = [];
 
@@ -32,11 +32,11 @@ export async function before(m, { conn, isAdmin, isOwner }) {
 
   await conn.groupParticipantsUpdate(m.chat, [m.sender], 'remove');
   await conn.sendMessage(m.chat, {
-    text: `╭─⟪ 🚫 Anti-Bot ⟫─╮
-│ 👤 Utente: ${mentionUtente}
-│ 🛑 Azione: Rimosso dal gruppo
-│ 📱 Dispositivo: ${device.toUpperCase()}
-╰─⟪ 𝟑𝟑𝟑 𝐁Ꮻ𝐓 ⟫─╯`,
+    text: `┌┄⟪ 🚫 Anti-Bot ⟫┄┐
+┆ 👤 Utente: ${mentionUtente}
+┆ 🛑 Azione: Rimosso dal gruppo
+┆ 📱 Dispositivo: ${device.toUpperCase()}
+└┄⟪ ᴢᴇɴᴏʙᴏᴛ ʙᏫᴛ ⟫┄┘`,
     contextInfo: {
       mentionedJid: [m.sender]
     }

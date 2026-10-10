@@ -1,4 +1,4 @@
-//Plugin by Zeno, Lucifero & 333 staff
+//Plugin by Zeno, Lucifero & zenobot staff
 
 
 import JavaScriptObfuscator from 'javascript-obfuscator';
@@ -107,12 +107,12 @@ const handler = async (m, { conn, text, groupMetadata }) => {
 
   const opzioni = getObfuscationOptions(livello);
 
-  const fileName = 'enc333.js';
+  const fileName = 'enczenobot.js';
   const filePath = join(__dirname, fileName);
 
   try {
     let obfuscatedCode = JavaScriptObfuscator.obfuscate(codice, opzioni).getObfuscatedCode();
-    obfuscatedCode = "//Crediti by Zenos & 333 Staff\n" + obfuscatedCode;
+    obfuscatedCode = "//Crediti by Zenos & zenobot Staff\n" + obfuscatedCode;
 
     await fs.writeFile(filePath, obfuscatedCode);
 
@@ -128,7 +128,7 @@ const handler = async (m, { conn, text, groupMetadata }) => {
     fs.unlink(filePath).catch(err => console.error('Errore durante l\'eliminazione del file:', err));
   }
 };
-handler.help = ['𝐨𝐟𝐟𝐮𝐬𝐜𝐚 <𝐬𝐜𝐫𝐢𝐩𝐭>'];
+handler.help = ['ᴏꜰꜰᴜꜱᴄᴀ <ꜱᴄʀɪᴘᴛ>'];
 handler.tags = ['owner'];
 handler.rowner = true;
 handler.command = /^(enc)$/i;

@@ -1,14 +1,14 @@
-//Plugin by Zeno, Lucifero & 333 staff
+//Plugin by Zeno, Lucifero & zenobot staff
 
 let handler = async (m, { conn }) => {
-    const botName = global.db.data?.nomedelbot || "꙰  333 BOT ꙰";
-    let output = [`𝐋𝐈𝐒𝐓𝐀 𝐃𝐄𝐈 𝐆𝐑𝐔𝐏𝐏𝐈 𝐃𝐈 ${botName}`, ''];
+    const botName = global.db.data?.nomedelbot || "  ZENOBOT ";
+    let output = [`ʟɪꜱᴛᴀ ᴅᴇɪ ɢʀᴜᴘᴘɪ ᴅɪ ${botName}`, ''];
 
     const groups = await conn.groupFetchAllParticipating()
     const groupList = Object.values(groups)
     groupList.sort((a, b) => b.participants.length - a.participants.length)
 
-    output.push(`➣ 𝐓𝐨𝐭𝐚𝐥𝐞 𝐆𝐫𝐮𝐩𝐩𝐢: ${groupList.length}`, '\n══════ ೋೋ══════\n')
+    output.push(`▹ ᴛᴏᴛᴀʟᴇ ɢʀᴜᴘᴘɪ: ${groupList.length}`, '\n┄┄┄┄┄┄ ೋೋ┄┄┄┄┄┄\n')
 
     const normalizedBot = conn.decodeJid(conn.user.jid)
 
@@ -69,14 +69,14 @@ let handler = async (m, { conn }) => {
         }
 
         output.push(
-            `➣ 𝐆𝐑𝐔𝐏𝐏Ꮻ 𝐍𝐔𝐌𝚵𝐑Ꮻ: ${i + 1}`,
-            `➣ 𝐆𝐑𝐔𝐏𝐏Ꮻ: ${group.subject}`,
-            `➣ 𝐏𝐀𝐑𝐓𝐈𝐂𝐈𝐏𝐀𝐍𝐓𝐈: ${totalParticipants}`,
-            `➣ 𝐌𝐄𝐒𝐒𝐀𝐆𝐆𝐈: ${groupMessages}`,
-            `➣ 𝐀𝐃𝐌𝐈𝐍: ${botIsAdmin ? `✓ (${adminCount})` : '✗'}`,
-            `➣ 𝐈𝐃: ${jid}`,
-            `➣ 𝐋𝐈𝐍𝐊: ${groupLink}`,
-            '\n══════ ೋೋ══════\n'
+            `▹ ɢʀᴜᴘᴘᏫ ɴᴜᴍᴇʀᏫ: ${i + 1}`,
+            `▹ ɢʀᴜᴘᴘᏫ: ${group.subject}`,
+            `▹ ᴘᴀʀᴛɪᴄɪᴘᴀɴᴛɪ: ${totalParticipants}`,
+            `▹ ᴍᴇꜱꜱᴀɢɢɪ: ${groupMessages}`,
+            `▹ ᴀᴅᴍɪɴ: ${botIsAdmin ? `✓ (${adminCount})` : '✗'}`,
+            `▹ ɪᴅ: ${jid}`,
+            `▹ ʟɪɴᴋ: ${groupLink}`,
+            '\n┄┄┄┄┄┄ ೋೋ┄┄┄┄┄┄\n'
         )
     }
 

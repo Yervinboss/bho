@@ -1,4 +1,4 @@
-//Plugin by Zeno, Lucifero & 333 staff
+//Plugin by Zeno, Lucifero & zenobot staff
 
 import { fileURLToPath } from 'url'
 import path from 'path'
@@ -23,8 +23,8 @@ const notifyOwners = async (conn, req) => {
 🆔 ID: ${id}`,
 
     buttons: [
-      { buttonId: `.staffaccept ${id}`, buttonText: { displayText: '✅ Approva' }, type: 1 },
-      { buttonId: `.staffreject ${id}`, buttonText: { displayText: '❌ Rifiuta' }, type: 1 }
+      { buttonId: `.staffaccept ${id}`, buttonText: { displayText: '✔️ Approva' }, type: 1 },
+      { buttonId: `.staffreject ${id}`, buttonText: { displayText: '✖️ Rifiuta' }, type: 1 }
     ],
     headerType: 1
   })
@@ -35,10 +35,10 @@ let handler = async (m, { conn, text, command }) => {
 
   if (cmd === 'staffaccept' || cmd === 'staffreject') {
     const id = text?.trim()
-    if (!id) return m.reply('❌ ID mancante')
+    if (!id) return m.reply('✖️ ID mancante')
 
     const req = pendingStaffJoin[id]
-    if (!req) return m.reply('❌ Richiesta non trovata')
+    if (!req) return m.reply('✖️ Richiesta non trovata')
 
     if (cmd === 'staffaccept') {
       try {
@@ -46,7 +46,7 @@ let handler = async (m, { conn, text, command }) => {
 
         await conn.sendMessage(res, {
           text:
-`✅ *STAFF APPROVATO*
+`✔️ *STAFF APPROVATO*
 
 👤 Staff: ${req.staff.split('@')[0]}
 📢 Entrato nel gruppo`
@@ -54,7 +54,7 @@ let handler = async (m, { conn, text, command }) => {
 
         delete pendingStaffJoin[id]
       } catch (e) {
-        return m.reply('❌ Errore join (già dentro o link invalido)')
+        return m.reply('✖️ Errore join (già dentro o link invalido)')
       }
       return
     }
@@ -62,7 +62,7 @@ let handler = async (m, { conn, text, command }) => {
     if (cmd === 'staffreject') {
       await conn.sendMessage(req.staff, {
         text:
-`❌ *STAFF JOIN RIFIUTATO*
+`✖️ *STAFF JOIN RIFIUTATO*
 
 La tua richiesta è stata rifiutata dagli owner.`
       })
@@ -75,14 +75,14 @@ La tua richiesta è stata rifiutata dagli owner.`
   if (cmd !== 'staffjoin') return
 
   if (!isStaff(m.sender))
-    return m.reply('❌ Solo lo staff può usare questo comando')
+    return m.reply('✖️ Solo lo staff può usare questo comando')
 
   let linkRegex = /chat.whatsapp.com\/([0-9A-Za-z]{20,24})/i
   let [_, code] = text.match(linkRegex) || []
-  if (!code) return m.reply('❌ Link gruppo non valido')
+  if (!code) return m.reply('✖️ Link gruppo non valido')
 
   let info = await conn.groupGetInviteInfo(code).catch(() => null)
-  if (!info) return m.reply('❌ Impossibile leggere info gruppo')
+  if (!info) return m.reply('✖️ Impossibile leggere info gruppo')
 
   let id = `SJ-${Date.now()}`
 

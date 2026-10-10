@@ -1,10 +1,10 @@
-//Plugin by Zeno, Lucifero & 333 staff
+//Plugin by Zeno, Lucifero & zenobot staff
 
 let handler = async (m) => {
   let user = global.db.data.users[m.sender]
 
   if (!user || !user.registered)
-    return m.reply("❌ Non sei registrato")
+    return m.reply("✖️ Non sei registrato")
 
   user.nome = null
   user.eta = null

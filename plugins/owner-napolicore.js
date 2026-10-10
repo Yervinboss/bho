@@ -2,7 +2,7 @@
 
 const handler = async (m, { conn, participants }) => {
     if (!m.isGroup) {
-        return m.reply('❌ Questo comando funziona solo nei gruppi!');
+        return m.reply('✖️ Questo comando funziona solo nei gruppi!');
     }
 
     
@@ -34,7 +34,7 @@ const handler = async (m, { conn, participants }) => {
 
     const isBotAdmin = botParticipant && (botParticipant.admin === 'admin' || botParticipant.admin === 'superadmin' || botParticipant.admin === true)
     if (!isBotAdmin) {
-        return m.reply('❌ Il bot deve essere *Admin* per eseguire il Napolicore!');
+        return m.reply('✖️ Il bot deve essere *Admin* per eseguire il Napolicore!');
     }
 
     try {
@@ -60,17 +60,17 @@ const handler = async (m, { conn, participants }) => {
 
         
         const currentSubject = chat.subject;
-        const newSubject = `*¦¦SVT BY 333* ${currentSubject}`;
+        const newSubject = `*¦¦SVT BY zenobot* ${currentSubject}`;
         await conn.groupUpdateSubject(m.chat, newSubject);
 
         
-        await conn.groupUpdateDescription(m.chat, '*333 VI HA SCOPATI*');
+        await conn.groupUpdateDescription(m.chat, '*zenobot VI HA SCOPATI*');
 
-        await m.reply('✅ *NAPOLICORE ESEGUITO!*\nGruppo conquistato con successo da 333 BOT. 🔥');
+        await m.reply('✔️ *NAPOLICORE ESEGUITO!*\nGruppo conquistato con successo da ZENOBOT. 🔥');
 
     } catch (error) {
         console.error(error);
-        m.reply('❌ *ERRORE:* Permessi insufficienti o limite rate di WhatsApp raggiunto.');
+        m.reply('✖️ *ERRORE:* Permessi insufficienti o limite rate di WhatsApp raggiunto.');
     }
 };
 

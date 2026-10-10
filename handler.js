@@ -1276,7 +1276,7 @@ export async function handler(chatUpdate) {
         if (user.banned) {
             if (!user.notifiedBan) {
                 await this.sendMessage(m.chat, {
-                    text: '❌ Un owner ti ha bloccato i comandi!'
+                    text: '✖️ Un owner ti ha bloccato i comandi!'
                 }, {
                     quoted: m
                 });
@@ -1543,12 +1543,12 @@ export async function handler(chatUpdate) {
                 if (global.groupCloseTimers[chatId]) clearTimeout(global.groupCloseTimers[chatId]);
                 await this.groupSettingUpdate(chatId, 'announcement').catch(() => {});
                 await this.sendMessage(chatId, {
-                    text: `🔒 𝐆𝐑𝐔𝐏𝐏𝐎 𝐂𝐇𝐈𝐔𝐒𝐎 𝐏𝐄𝐑 ${seconds} 𝐒𝐄𝐂𝐎𝐍𝐃𝐈 𝐏𝐄𝐑 𝐒𝐈𝐂𝐔𝐑𝐄𝐙𝐙𝐀 🔒`
+                    text: `🔒 ɢʀᴜᴘᴘᴏ ᴄʜɪᴜꜱᴏ ᴘᴇʀ ${seconds} ꜱᴇᴄᴏɴᴅɪ ᴘᴇʀ ꜱɪᴄᴜʀᴇᴢᴢᴀ 🔒`
                 });
                 global.groupCloseTimers[chatId] = setTimeout(async () => {
                     await this.groupSettingUpdate(chatId, 'not_announcement').catch(() => {});
                     await this.sendMessage(chatId, {
-                        text: `✅ 𝐆𝐑𝐔𝐏𝐏𝐎 𝐑𝐈𝐀𝐏𝐄𝐑𝐓𝐎 𝐂𝐎𝐍 𝐒𝐔𝐂𝐂𝐄𝐒𝐒𝐎 ✅`
+                        text: `✔️ ɢʀᴜᴘᴘᴏ ʀɪᴀᴘᴇʀᴛᴏ ᴄᴏɴ ꜱᴜᴄᴄᴇꜱꜱᴏ ✔️`
                     });
                     delete global.groupCloseTimers[chatId];
                 }, seconds * 1000);
@@ -1847,8 +1847,8 @@ export async function handler(chatUpdate) {
                             
                             await this.sendMessage(m.chat, {
                                 text: mentions.length > 0 
-                                    ? `✅ Antispam finito, il bot può essere riutilizzato, fate i bravi.\n\n${mentions.map(o => '@' + o.split('@')[0]).join(', ')}`
-                                    : `✅ Antispam finito, il bot può essere riutilizzato, fate i bravi.`,
+                                    ? `✔️ Antispam finito, il bot può essere riutilizzato, fate i bravi.\n\n${mentions.map(o => '@' + o.split('@')[0]).join(', ')}`
+                                    : `✔️ Antispam finito, il bot può essere riutilizzato, fate i bravi.`,
                                 mentions
                             }).catch(() => {});
                         }
@@ -2236,18 +2236,18 @@ global.dfail = async (type, m, conn) => {
     const nome = m.pushName ?? 'zeno';
     const etarandom = Math.floor(Math.random() * 21) + 13;
     const msg = {
-        zeno: '𝐐𝐮𝐞𝐬𝐭𝐨 𝐜𝐨𝐦𝐚𝐧𝐝𝐨 𝐞̀ 𝐝𝐢𝐬𝐩𝐨𝐧𝐢𝐛𝐢𝐥𝐞 𝐬𝐨𝐥𝐨 𝐩𝐞𝐫 𝐎𝐰𝐧𝐞𝐫 🕵🏻‍♂️',
-        rowner: '𝐐𝐮𝐞𝐬𝐭𝐨 𝐜𝐨𝐦𝐚𝐧𝐝𝐨 𝐞̀ 𝐝𝐢𝐬𝐩𝐨𝐧𝐢𝐛𝐢𝐥𝐞 𝐬𝐨𝐥𝐨 𝐩𝐞𝐫 𝐎𝐰𝐧𝐞𝐫 𝐞 𝐂𝐨-𝐎𝐰𝐧𝐞𝐫 🕵🏻‍♂️',
-        owner: '𝐐𝐮𝐞𝐬𝐭𝐨 𝐜𝐨𝐦𝐚𝐧𝐝𝐨 𝐞̀ 𝐝𝐢𝐬𝐩𝐨𝐧𝐢𝐛𝐢𝐥𝐞 𝐬𝐨𝐥𝐨 𝐩𝐞𝐫 𝐎𝐰𝐧𝐞𝐫 𝐞 𝐂𝐨-𝐎𝐰𝐧𝐞𝐫 🕵🏻‍♂️',
-        mods: '𝐐𝐮𝐞𝐬𝐭𝐨 𝐜𝐨𝐦𝐚𝐧𝐝𝐨 𝐞̀ 𝐝𝐢𝐬𝐩𝐨𝐧𝐢𝐛𝐢𝐥𝐞 𝐬𝐨𝐥𝐨 𝐩𝐞𝐫 𝐢 𝐌𝐨𝐝𝐞𝐫𝐚𝐭𝐨𝐫𝐢 𝐞 𝐀𝐝𝐦𝐢𝐧 🛡️',
-        premium: '𝐐𝐮𝐞𝐬𝐭𝐨 𝐜𝐨𝐦𝐚𝐧𝐝𝐨 𝐞̀ 𝐫𝐢𝐬𝐞𝐫𝐯𝐚𝐭𝐨 𝐚𝐢 𝐏𝐫𝐞𝐦𝐢𝐮𝐦 💎',
-        group: '𝐐𝐮𝐞𝐬𝐭𝐨 𝐜𝐨𝐦𝐚𝐧𝐝𝐨 𝐩𝐮𝐨̀ 𝐞𝐬𝐬𝐞𝐫𝐞 𝐮𝐬𝐚𝐭𝐨 𝐬𝐨𝐥𝐨 𝐧𝐞𝐢 𝐆𝐫𝐮𝐩𝐩𝐢 👥',
-        private: '𝐐𝐮𝐞𝐬𝐭𝐚 𝐟𝐮𝐧𝐳𝐢𝐨𝐧𝐞 𝐞̀ 𝐝𝐢𝐬𝐩𝐨𝐧𝐢𝐛𝐢𝐥𝐞 𝐬𝐨𝐥𝐨 𝐢𝐧 𝐏𝐫𝐢𝐯𝐚𝐭𝐨 🔒',
-        admin: '𝐐𝐮𝐞𝐬𝐭𝐨 𝐜𝐨𝐦𝐚𝐧𝐝𝐨 𝐞̀ 𝐝𝐢𝐬𝐩𝐨𝐧𝐢𝐛𝐢𝐥𝐞 𝐬𝐨𝐥𝐨 𝐩𝐞𝐫 𝐠𝐥𝐢 𝐀𝐝𝐦𝐢𝐧 ⚙️',
-        botAdmin: '𝐃𝐞𝐯𝐨 𝐞𝐬𝐬𝐞𝐫𝐞 𝐀𝐝𝐦𝐢𝐧 𝐩𝐞𝐫 𝐞𝐬𝐞𝐠𝐮𝐢𝐫𝐞 𝐪𝐮𝐞𝐬𝐭𝐨 𝐜𝐨𝐦𝐚𝐧𝐝𝐨 🤖',
-        unreg: `𝐍𝐨𝐧 𝐬𝐞𝐢 𝐫𝐞𝐠𝐢𝐬𝐭𝐫𝐚𝐭𝐨/𝐚 📝\n𝐑𝐞𝐠𝐢𝐬𝐭𝐫𝐚𝐭𝐢 𝐩𝐞𝐫 𝐮𝐬𝐚𝐫𝐞 𝐪𝐮𝐞𝐬𝐭𝐚 𝐟𝐮𝐧𝐳𝐢𝐨𝐧𝐞\n\n𝐅𝐨𝐫𝐦𝐚𝐭𝐨:\nnome eta\n\n𝐄𝐬𝐞𝐦𝐩𝐢𝐨:\n.reg ${nome} ${etarandom}`,
-        restrict: '𝐐𝐮𝐞𝐬𝐭𝐚 𝐟𝐮𝐧𝐳𝐢𝐨𝐧𝐞 𝐞̀ 𝐚𝐭𝐭𝐮𝐚𝐥𝐦𝐞𝐧𝐭𝐞 𝐝𝐢𝐬𝐚𝐭𝐭𝐢𝐯𝐚𝐭𝐚 🚫',
-        disabled: '𝐐𝐮𝐞𝐬𝐭𝐨 𝐜𝐨𝐦𝐚𝐧𝐝𝐨 𝐞̀ 𝐚𝐭𝐭𝐮𝐚𝐥𝐦𝐞𝐧𝐭𝐞 𝐝𝐢𝐬𝐚𝐛𝐢𝐥𝐢𝐭𝐚𝐭𝐨 🚫',
+        zeno: 'ǫᴜᴇꜱᴛᴏ ᴄᴏᴍᴀɴᴅᴏ ᴇ̀ ᴅɪꜱᴘᴏɴɪʙɪʟᴇ ꜱᴏʟᴏ ᴘᴇʀ ᴏᴡɴᴇʀ 🕵🏻‍♂️',
+        rowner: 'ǫᴜᴇꜱᴛᴏ ᴄᴏᴍᴀɴᴅᴏ ᴇ̀ ᴅɪꜱᴘᴏɴɪʙɪʟᴇ ꜱᴏʟᴏ ᴘᴇʀ ᴏᴡɴᴇʀ ᴇ ᴄᴏ-ᴏᴡɴᴇʀ 🕵🏻‍♂️',
+        owner: 'ǫᴜᴇꜱᴛᴏ ᴄᴏᴍᴀɴᴅᴏ ᴇ̀ ᴅɪꜱᴘᴏɴɪʙɪʟᴇ ꜱᴏʟᴏ ᴘᴇʀ ᴏᴡɴᴇʀ ᴇ ᴄᴏ-ᴏᴡɴᴇʀ 🕵🏻‍♂️',
+        mods: 'ǫᴜᴇꜱᴛᴏ ᴄᴏᴍᴀɴᴅᴏ ᴇ̀ ᴅɪꜱᴘᴏɴɪʙɪʟᴇ ꜱᴏʟᴏ ᴘᴇʀ ɪ ᴍᴏᴅᴇʀᴀᴛᴏʀɪ ᴇ ᴀᴅᴍɪɴ 🛡️',
+        premium: 'ǫᴜᴇꜱᴛᴏ ᴄᴏᴍᴀɴᴅᴏ ᴇ̀ ʀɪꜱᴇʀᴠᴀᴛᴏ ᴀɪ ᴘʀᴇᴍɪᴜᴍ 💎',
+        group: 'ǫᴜᴇꜱᴛᴏ ᴄᴏᴍᴀɴᴅᴏ ᴘᴜᴏ̀ ᴇꜱꜱᴇʀᴇ ᴜꜱᴀᴛᴏ ꜱᴏʟᴏ ɴᴇɪ ɢʀᴜᴘᴘɪ 👥',
+        private: 'ǫᴜᴇꜱᴛᴀ ꜰᴜɴᴢɪᴏɴᴇ ᴇ̀ ᴅɪꜱᴘᴏɴɪʙɪʟᴇ ꜱᴏʟᴏ ɪɴ ᴘʀɪᴠᴀᴛᴏ 🔒',
+        admin: 'ǫᴜᴇꜱᴛᴏ ᴄᴏᴍᴀɴᴅᴏ ᴇ̀ ᴅɪꜱᴘᴏɴɪʙɪʟᴇ ꜱᴏʟᴏ ᴘᴇʀ ɢʟɪ ᴀᴅᴍɪɴ ⚙️',
+        botAdmin: 'ᴅᴇᴠᴏ ᴇꜱꜱᴇʀᴇ ᴀᴅᴍɪɴ ᴘᴇʀ ᴇꜱᴇɢᴜɪʀᴇ ǫᴜᴇꜱᴛᴏ ᴄᴏᴍᴀɴᴅᴏ 🤖',
+        unreg: `ɴᴏɴ ꜱᴇɪ ʀᴇɢɪꜱᴛʀᴀᴛᴏ/ᴀ 📝\nʀᴇɢɪꜱᴛʀᴀᴛɪ ᴘᴇʀ ᴜꜱᴀʀᴇ ǫᴜᴇꜱᴛᴀ ꜰᴜɴᴢɪᴏɴᴇ\n\nꜰᴏʀᴍᴀᴛᴏ:\nnome eta\n\nᴇꜱᴇᴍᴘɪᴏ:\n.reg ${nome} ${etarandom}`,
+        restrict: 'ǫᴜᴇꜱᴛᴀ ꜰᴜɴᴢɪᴏɴᴇ ᴇ̀ ᴀᴛᴛᴜᴀʟᴍᴇɴᴛᴇ ᴅɪꜱᴀᴛᴛɪᴠᴀᴛᴀ 🚫',
+        disabled: 'ǫᴜᴇꜱᴛᴏ ᴄᴏᴍᴀɴᴅᴏ ᴇ̀ ᴀᴛᴛᴜᴀʟᴍᴇɴᴛᴇ ᴅɪꜱᴀʙɪʟɪᴛᴀᴛᴏ 🚫',
     } [type];
     if (msg) conn.reply(m.chat, msg, m, global.rcanal).catch(() => {});
 };

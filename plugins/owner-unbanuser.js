@@ -1,4 +1,4 @@
-//Plugin by Zeno, Lucifero & 333 staff
+//Plugin by Zeno, Lucifero & zenobot staff
 
 let handler = async (m, { conn, text }) => {
 
@@ -12,7 +12,7 @@ let handler = async (m, { conn, text }) => {
     who = text.replace(/[^0-9]/g, '') + '@s.whatsapp.net'
   }
 
-  if (!who) return m.reply('❌ Tagga, rispondi o scrivi un numero')
+  if (!who) return m.reply('✖️ Tagga, rispondi o scrivi un numero')
 
   global.db.data.users = global.db.data.users || {}
   global.db.data.users[who] = global.db.data.users[who] || {}
@@ -26,11 +26,11 @@ let handler = async (m, { conn, text }) => {
     key: {
       participants: '0@s.whatsapp.net',
       fromMe: false,
-      id: '333UnbanUser'
+      id: 'zenobotUnbanUser'
     },
     message: {
       contactMessage: {
-        displayName: `✅ 𝐒𝐛𝐚𝐧 𝐔𝐭𝐞𝐧𝐭𝐞`,
+        displayName: `✔️ ꜱʙᴀɴ ᴜᴛᴇɴᴛᴇ`,
         vcard: `BEGIN:VCARD\nVERSION:3.0\nN:Sy;Bot;;;\nFN:y\nitem1.TEL;waid=${number}:${number}\nitem1.X-ABLabel:Ponsel\nEND:VCARD`
       }
     },
@@ -38,7 +38,7 @@ let handler = async (m, { conn, text }) => {
   }
 
   await conn.sendMessage(m.chat, {
-    text: `✅ *𝐔𝐓𝐄𝐍𝐓𝐄 𝐒𝐁𝐀𝐍𝐍𝐀𝐓𝐎*\n\n👤 ${tag}\n📞 wa.me/${number}`,
+    text: `✔️ *ᴜᴛᴇɴᴛᴇ ꜱʙᴀɴɴᴀᴛᴏ*\n\n👤 ${tag}\n📞 wa.me/${number}`,
     mentions: [who]
   }, { quoted: fake })
 }

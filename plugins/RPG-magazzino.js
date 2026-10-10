@@ -1,4 +1,4 @@
-//Plugin by Zeno, Lucifero & 333 staff
+//Plugin by Zeno, Lucifero & zenobot staff
 
 async function handler(m, { conn }) {
   const users = global.db.data.users;
@@ -9,30 +9,30 @@ async function handler(m, { conn }) {
 
   if (user.magazzino.length === 0) {
     return conn.sendMessage(m.chat, { 
-      text: '📦 𝐈𝐥 𝐦𝐚𝐠𝐚𝐳𝐳𝐢𝐧𝐨 𝐞̀ 𝐯𝐮𝐨𝐭𝐨!' 
+      text: '📦 ɪʟ ᴍᴀɢᴀᴢᴢɪɴᴏ ᴇ̀ ᴠᴜᴏᴛᴏ!' 
     }, { quoted: m });
   }
 
-  let testo = `╭───────────╮
-│ 📦 𝐌𝐀𝐆𝐀𝐙𝐙𝐈𝐍𝐎
-│─────────────`;
+  let testo = `┌┄┄┄┄┄┄┄┄┄┄┄┐
+┆ 📦 ᴍᴀɢᴀᴢᴢɪɴᴏ
+┆┄┄┄┄┄┄┄┄┄┄┄┄┄`;
 
   user.magazzino.forEach((item, index) => {
     testo += `
-│
-│ *${index + 1}. ${item.nome} x${item.quantità}*
-│ 𝐕𝐚𝐥𝐨𝐫𝐞 𝐦𝐞𝐫𝐜𝐞: *${item.valore} XP333*
-│`;
+┆
+┆ *${index + 1}. ${item.nome} x${item.quantità}*
+┆ ᴠᴀʟᴏʀᴇ ᴍᴇʀᴄᴇ: *${item.valore} ZenoCoin*
+┆`;
 
     if (index !== user.magazzino.length - 1) {
-      testo += `─────────────`;
+      testo += `┄┄┄┄┄┄┄┄┄┄┄┄┄`;
     }
   });
 
   testo += `
-│
-> 𝐔𝐬𝐚 𝐢𝐥 𝐜𝐨𝐦𝐚𝐧𝐝𝐨 ’’.𝐯𝐞𝐧𝐝𝐢’’\n> 𝐩𝐞𝐫 𝐯𝐞𝐧𝐝𝐞𝐫𝐞 𝐭𝐮𝐭𝐭𝐚 𝐥𝐚 𝐦𝐞𝐫𝐜𝐞
-╰───────────╯`;
+┆
+> ᴜꜱᴀ ɪʟ ᴄᴏᴍᴀɴᴅᴏ ’’.ᴠᴇɴᴅɪ’’\n> ᴘᴇʀ ᴠᴇɴᴅᴇʀᴇ ᴛᴜᴛᴛᴀ ʟᴀ ᴍᴇʀᴄᴇ
+└┄┄┄┄┄┄┄┄┄┄┄┘`;
 
   conn.sendMessage(m.chat, { text: testo }, { quoted: m });
 }

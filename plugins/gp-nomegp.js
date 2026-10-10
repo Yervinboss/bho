@@ -1,4 +1,4 @@
-//Plugin by Zeno, Lucifero & 333 staff
+//Plugin by Zeno, Lucifero & zenobot staff
 
 const handler = async (m, { conn, args }) => {
   if (!args[0]) return conn.reply(m.chat, 'Che nome gli metto?', m)
@@ -8,10 +8,10 @@ const handler = async (m, { conn, args }) => {
     return conn.reply(m.chat, 'Il nome del gruppo non può superare i 100 caratteri.', m)
 
   await conn.groupUpdateSubject(m.chat, nuovoNome)
-  await conn.reply(m.chat, `✅ Nome del gruppo cambiato:\n> *${nuovoNome}*`, m)
+  await conn.reply(m.chat, `✔️ Nome del gruppo cambiato:\n> *${nuovoNome}*`, m)
 }
 
-handler.help = ['𝐧𝐨𝐦𝐞𝐠𝐩 <𝐧𝐨𝐦𝐞>']
+handler.help = ['ɴᴏᴍᴇɢᴘ <ɴᴏᴍᴇ>']
 handler.tags = ['admin']
 handler.command = /^(nomegp|setnomegp)$/i
 handler.group = true

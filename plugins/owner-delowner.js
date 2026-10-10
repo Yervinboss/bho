@@ -1,4 +1,4 @@
-//Plugin by Zeno, Lucifero & 333 staff
+//Plugin by Zeno, Lucifero & zenobot staff
 
 let handler = async (m, { text }) => {
   let number
@@ -23,7 +23,7 @@ let handler = async (m, { text }) => {
     global.db.data.owners = global.db.data.owners.filter(v => v !== number)
   }
 
-  m.reply(`❌ *${clean}* rimosso da rowner`)
+  m.reply(`✖️ *${clean}* rimosso da rowner`)
 }
 
 handler.command = /^delowner$/i

@@ -1,4 +1,4 @@
-// Plugin by Lucifero & 333 Staff
+// Plugin by Lucifero & zenobot Staff
 import { spawn } from 'child_process'
 import fs from 'fs'
 import path from 'path'

@@ -1,4 +1,4 @@
-//Plugin by Zeno, Lucifero & 333 staff
+//Plugin by Zeno, Lucifero & zenobot staff
 
 import fetch from "node-fetch";
 
@@ -38,7 +38,7 @@ let handler = async (m, { conn, text }) => {
     ? await (await fetch(profilePic)).buffer()
     : await (await fetch('https://telegra.ph/file/17e7701f8b0a63806e312.png')).buffer()
 
-  const messageText = `✅ 𝐈𝐧𝐬𝐭𝐚𝐠𝐫𝐚𝐦 𝐢𝐦𝐩𝐨𝐬𝐭𝐚𝐭𝐨
+  const messageText = `✔️ ɪɴꜱᴛᴀɢʀᴀᴍ ɪᴍᴘᴏꜱᴛᴀᴛᴏ
 
 Usa ''.rimuoviig'' per rimuoverlo
 
@@ -51,11 +51,11 @@ Usa ''.rimuoviig'' per rimuoverlo
       forwardedNewsletterMessageInfo: {
         newsletterJid: '120363341274693350@newsletter',
         serverMessageId: '',
-        newsletterName: global.nomebot || '333'
+        newsletterName: global.nomebot || 'zenobot'
       },
       externalAdReply: {
-        title: 'Instagram configurato ✅',
-        body: 'Vai al canale 333',
+        title: 'Instagram configurato ✔️',
+        body: 'Vai al canale zenobot',
         mediaType: 1,
         thumbnail: thumb,
         renderLargerThumbnail: false,

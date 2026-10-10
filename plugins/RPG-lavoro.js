@@ -1,4 +1,4 @@
-//Plugin by Zeno, Lucifero & 333 staff
+//Plugin by Zeno, Lucifero & zenobot staff
 
 
 
@@ -50,19 +50,19 @@ let handler = async (m, { conn }) => {
   let evento = pickRandom(success ? lavori : fallimenti)
   let amount = Math.floor(Math.random() * 2000) + 1
 
-  let text = `╭━━━ 💼 *LAVORO* ━━━╮\n\n`
+  let text = `┌┄┄┄ 💼 *LAVORO* ┄┄┄┐\n\n`
 
   if (success) {
     user.money += amount
-    text += `✨ ${evento}\n\n💰 Guadagno: +${amount} XP333`
+    text += `✨ ${evento}\n\n💰 Guadagno: +${amount} ZenoCoin`
   } else {
     user.money -= amount
     if (user.money < 0) user.money = 0
-    text += `💀 ${evento}\n\n💸 Perdita: -${amount} XP333`
+    text += `💀 ${evento}\n\n💸 Perdita: -${amount} ZenoCoin`
   }
 
-  text += `\n\n💼 Saldo: ${user.money} XP333`
-  text += `\n╰━━━━━━━━━━━━━━╯`
+  text += `\n\n💼 Saldo: ${user.money} ZenoCoin`
+  text += `\n└┄┄┄┄┄┄┄┄┄┄┄┄┄┄┘`
 
   return conn.sendMessage(m.chat, {
     text

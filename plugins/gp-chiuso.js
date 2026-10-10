@@ -1,4 +1,4 @@
-//Plugin by Zeno, Lucifero & 333 staff
+//Plugin by Zeno, Lucifero & zenobot staff
 
 global.groupStatusTimeouts = global.groupStatusTimeouts || {}
 
@@ -123,13 +123,13 @@ let handler = async (m, { conn, args }) => {
     if (!timeInput) return m.reply('⏳ Tempo scaduto.')
     
     const timeParts = timeInput.split(':')
-    if (timeParts.length !== 2) return m.reply('❌ Formato non valido. Usa HH:mm (esempio: 22:30)')
+    if (timeParts.length !== 2) return m.reply('✖️ Formato non valido. Usa HH:mm (esempio: 22:30)')
     
     const hours = parseInt(timeParts[0])
     const minutes = parseInt(timeParts[1])
     
     if (isNaN(hours) || isNaN(minutes) || hours < 0 || hours > 23 || minutes < 0 || minutes > 59) {
-      return m.reply('❌ Orario non valido. Usa un orario tra 00:00 e 23:59')
+      return m.reply('✖️ Orario non valido. Usa un orario tra 00:00 e 23:59')
     }
     
     durationMs = getMillisUntilTime(hours, minutes)
@@ -138,7 +138,7 @@ let handler = async (m, { conn, args }) => {
     durationText = `, verrà riaperto alle ${String(targetTime.getHours()).padStart(2, '0')}:${String(targetTime.getMinutes()).padStart(2, '0')}`
   } else {
     const selectedDuration = durationOptions.find(option => `chiuso_duration_${option.id}` === selected)
-    if (!selectedDuration) return m.reply('❌ Scelta non valida.')
+    if (!selectedDuration) return m.reply('✖️ Scelta non valida.')
     durationMs = selectedDuration.ms
     durationText = `per ${selectedDuration.label}`
   }
@@ -158,10 +158,10 @@ let handler = async (m, { conn, args }) => {
   }
   global.db.data.chats[m.chat] = chat
   
-  conn.reply(m.chat, `𝐡𝐨 𝐜𝐡𝐢𝐮𝐬𝐨 𝐢𝐥 𝐠𝐫𝐮𝐩𝐩𝐨 𝐜𝐨𝐧 𝐬𝐮𝐜𝐜𝐞𝐬𝐬𝐨 ${durationText}! 𝐜𝐡𝐚𝐭 𝐚𝐩𝐞𝐫𝐭𝐚 𝐬𝐨𝐥𝐨 𝐩𝐞𝐫 𝐚𝐝𝐦𝐢𝐧\n\n> 𝐝𝐢𝐠𝐢𝐭𝐚 ''.𝐚𝐩𝐫𝐢'' 𝐩𝐞𝐫 𝐚𝐩𝐫𝐢𝐫𝐞 𝐥𝐚 𝐜𝐡𝐚𝐭 𝐚𝐢 𝐦𝐞𝐦𝐛𝐫𝐢.`)
+  conn.reply(m.chat, `ʜᴏ ᴄʜɪᴜꜱᴏ ɪʟ ɢʀᴜᴘᴘᴏ ᴄᴏɴ ꜱᴜᴄᴄᴇꜱꜱᴏ ${durationText}! ᴄʜᴀᴛ ᴀᴘᴇʀᴛᴀ ꜱᴏʟᴏ ᴘᴇʀ ᴀᴅᴍɪɴ\n\n> ᴅɪɢɪᴛᴀ ''.ᴀᴘʀɪ'' ᴘᴇʀ ᴀᴘʀɪʀᴇ ʟᴀ ᴄʜᴀᴛ ᴀɪ ᴍᴇᴍʙʀɪ.`)
 }
 
-handler.help = ["𝐜𝐡𝐢𝐮𝐝𝐢/𝐜𝐡𝐢𝐮𝐬𝐨"]
+handler.help = ["ᴄʜɪᴜᴅɪ/ᴄʜɪᴜꜱᴏ"]
 handler.tags = ["admin"]
 handler.command = /^(chiuso|chiudi)$/i
 handler.group = true

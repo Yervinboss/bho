@@ -1,4 +1,4 @@
-//Plugin by Zeno, Lucifero & 333 staff
+//Plugin by Zeno, Lucifero & zenobot staff
 
 const handler = async (m) => {
   const mention = m.mentionedJid[0] || (m.quoted ? m.quoted.sender : m.text)
@@ -18,7 +18,7 @@ const handler = async (m) => {
 }
 
 handler.command = /^(addmoney)$/i
-handler.help = ['𝐚𝐝𝐝𝐦𝐨𝐧𝐞𝐲 @𝐭𝐚𝐠'];
+handler.help = ['ᴀᴅᴅᴍᴏɴᴇʏ @ᴛᴀɢ'];
 handler.tags = ['owner']
 handler.rowner = true
 export default handler

@@ -1,4 +1,4 @@
-//Plugin by Zeno, Lucifero & 333 staff
+//Plugin by Zeno, Lucifero & zenobot staff
 
 import fetch from 'node-fetch'
 
@@ -30,11 +30,11 @@ handler.all = async function (m) {
           key: {
             participants: '0@s.whatsapp.net',
             fromMe: false,
-            id: '333BotAttivo'
+            id: 'ZenobotAttivo'
           },
           message: {
             locationMessage: {
-              name: '𝐁𝐎𝐓 𝐀𝐓𝐓𝐈𝐕𝐎 ✅',
+              name: 'ʙᴏᴛ ᴀᴛᴛɪᴠᴏ ✔️',
               jpegThumbnail: ppBuffer.toString('base64'),
               vcard: 'BEGIN:VCARD\nVERSION:3.0\nN:;Admin;;;\nFN:Admin\nEND:VCARD'
             }
@@ -43,7 +43,7 @@ handler.all = async function (m) {
         }
 
         this.sendMessage(m.chat, {
-          text: `*👋 Ciao a tutti membri di ${groupName}*\n\n*🤖 Sono 333 bot* — un bot italiano sviluppato da *Zeno* e *Lucifero*, con oltre *300 comandi*.\n\n*✅ Ora sono operativo in questo gruppo.*\n\n*👉 Per iniziare:* digita *'.menu'* per visualizzare la lista completa dei comandi.\n\n*🔗 Il nostro canale per aggiornamenti:* https://whatsapp.com/channel/0029VauhQviCsU9Ibrwlkb0h\n\n*🛠️ Supporto:* per qualsiasi problema o info potete entrare nel gruppo supporto: https://chat.whatsapp.com/L7Hz1iQpctTDfOoU4LARWL`
+          text: `*👋 Ciao a tutti membri di ${groupName}*\n\n*🤖 Sono zenobot* — un bot italiano sviluppato da *Zeno* e *Lucifero*, con oltre *300 comandi*.\n\n*✔️ Ora sono operativo in questo gruppo.*\n\n*👉 Per iniziare:* digita *'.menu'* per visualizzare la lista completa dei comandi.\n\n*🔗 Il nostro canale per aggiornamenti:* https://whatsapp.com/channel/0029VauhQviCsU9Ibrwlkb0h\n\n*🛠️ Supporto:* per qualsiasi problema o info potete entrare nel gruppo supporto: https://chat.whatsapp.com/L7Hz1iQpctTDfOoU4LARWL`
         }, { quoted: fake })
       } catch (e) {
         console.error('[welcome] Error:', e)

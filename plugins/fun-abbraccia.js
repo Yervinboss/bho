@@ -1,4 +1,4 @@
-//Plugin by Zeno, Lucifero & 333 staff
+//Plugin by Zeno, Lucifero & zenobot staff
 
 let handler = async (m, { conn, usedPrefix, command, text }) => {
     let who;
@@ -15,18 +15,18 @@ let handler = async (m, { conn, usedPrefix, command, text }) => {
     }
 
 
-    if (!who) return m.reply(`𝐦𝐞𝐧𝐳𝐢𝐨𝐧𝐚 𝐥𝐚 𝐩𝐞𝐫𝐬𝐨𝐧𝐚 𝐝𝐚 𝐚𝐛𝐛𝐫𝐚𝐜𝐜𝐢𝐚𝐫𝐞 🫂`);
+    if (!who) return m.reply(`ᴍᴇɴᴢɪᴏɴᴀ ʟᴀ ᴘᴇʀꜱᴏɴᴀ ᴅᴀ ᴀʙʙʀᴀᴄᴄɪᴀʀᴇ 🫂`);
 
 
     const thumbnailUrl = "https://files.catbox.moe/gg4nzm.png"; // URL dell'immagine in miniatura
     const thumbnailBuffer = await (await fetch(thumbnailUrl)).buffer();
-    const thumbnailText = "𝐀𝐁𝐁𝐑𝐀𝐂𝐂𝐈𝐎"; // Testo miniatura compatibile
+    const thumbnailText = "ᴀʙʙʀᴀᴄᴄɪᴏ"; // Testo miniatura compatibile
 
 
     let abrazo = await conn.sendMessage(m.chat, {
-        text: `══════•⊰✰⊱•══════
-@${who.split('@')[0]} 𝐬𝐞𝐢 𝐬𝐭𝐚𝐭𝐨/𝐚 𝐚𝐛𝐛𝐫𝐚𝐜𝐜𝐢𝐚𝐭𝐨/𝐚 𝐝𝐚 @${m.sender.split('@')[0]}
-══════•⊰✰⊱•══════`,
+        text: `┄┄┄┄┄┄•‹✧›•┄┄┄┄┄┄
+@${who.split('@')[0]} ꜱᴇɪ ꜱᴛᴀᴛᴏ/ᴀ ᴀʙʙʀᴀᴄᴄɪᴀᴛᴏ/ᴀ ᴅᴀ @${m.sender.split('@')[0]}
+┄┄┄┄┄┄•‹✧›•┄┄┄┄┄┄`,
         mentions: [who, m.sender],
     }, {
         quoted: {
@@ -50,7 +50,7 @@ let handler = async (m, { conn, usedPrefix, command, text }) => {
 };
 
 handler.command = ['abbraccia'];
-handler.help = ['𝐚𝐛𝐛𝐫𝐚𝐜𝐜𝐢𝐚 @𝐭𝐚𝐠'];
+handler.help = ['ᴀʙʙʀᴀᴄᴄɪᴀ @ᴛᴀɢ'];
 handler.tags = ['fun'];
 
 export default handler;

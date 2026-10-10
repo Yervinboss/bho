@@ -1,4 +1,4 @@
-//Plugin by Zeno, Lucifero & 333 staff
+//Plugin by Zeno, Lucifero & zenobot staff
 
 let balIconBuffer;
 async function loadBalIcon() {
@@ -19,7 +19,7 @@ let handler = async function (m) {
     key: { participants: '0@s.whatsapp.net', fromMe: false, id: 'Halo' },
     message: {
       locationMessage: {
-        name: 'Ꮻ𝐖𝐍𝚵𝐑    ꙰ 𝟥𝟥𝟥 𝔹𝕆𝕋  ꙰',
+        name: 'Ꮻᴡɴᴇʀ❖ ᴢᴇɴᴏʙᴏᴛ',
         jpegThumbnail: await loadBalIcon(),
         vcard: `BEGIN:VCARD\nVERSION:3.0\nN:Sy;Bot;;;\nFN:y\nitem1.TEL;waid=${m.sender.split('@')[0]}:${m.sender.split('@')[0]}\nitem1.X-ABLabel:Ponsel\nEND:VCARD`
       }

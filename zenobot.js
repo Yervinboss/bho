@@ -60,9 +60,9 @@ import readline from 'readline';
 import NodeCache from 'node-cache';
 
 
-const authFolder = global.authFile || '333BotSession';
+const authFolder = global.authFile || 'ZenobotSession';
 global.authFile = authFolder;
-global.authFileJB = global.authFileJB || '333bot-sub';
+global.authFileJB = global.authFileJB || 'zenobot-sub';
 global.rcanal = '120363341274693350@newsletter';
 
 let channelJoinAttempted = false;
@@ -103,9 +103,9 @@ async function joinConfiguredChannel() {
                 }
             ]
         }, 15000);
-        console.log(`[333] Canale configurato raggiunto: ${jid}`);
+        console.log(`[zenobot] Canale configurato raggiunto: ${jid}`);
     } catch (error) {
-        console.error('[333] Impossibile entrare nel canale configurato:', error);
+        console.error('[zenobot] Impossibile entrare nel canale configurato:', error);
     }
 }
 
@@ -316,8 +316,8 @@ global.loadDatabase = async function loadDatabase() {
         if (!user || typeof user !== 'object') continue;
         user.money = Math.max(0, Number(user.money) || 0);
         user.bank = Math.max(0, Number(user.bank) || 0);
-        if (user.rpgCurrency !== 'XP333') {
-            user.rpgCurrency = 'XP333';
+        if (user.rpgCurrency !== 'ZenoCoin') {
+            user.rpgCurrency = 'ZenoCoin';
             currencyMigrated = true;
         }
     }
@@ -510,8 +510,8 @@ global.connectionMessagesPrinted = {};
 
 
 function logSystem(message, color = 'cyanBright') {
-    (chalk[color] || chalk.cyanBright)(`〔 333 BOT 〕 ${message}`);
-    console.log((chalk[color] || chalk.cyanBright)(`〔 333 BOT 〕 ${message}`));
+    (chalk[color] || chalk.cyanBright)(`〔 ZENOBOT 〕 ${message}`);
+    console.log((chalk[color] || chalk.cyanBright)(`〔 ZENOBOT 〕 ${message}`));
 }
 
 function normalizePhoneNumberInput(value = '') {
@@ -638,10 +638,10 @@ async function requestPairingCodeFlow() {
 
 if (!pairingMode && !hasExistingSession) {
     const menu = `
-${chalk.bgBlue.white('┏━━━━━━━━━━━━━━━━━━━━━━━┓')}
-${chalk.bgBlue.white('┃     333 BOT 2026      ┃')}
-${chalk.bgBlue.white('┃       V10.3           ┃')}
-${chalk.bgBlue.white('┗━━━━━━━━━━━━━━━━━━━━━━━┛')}
+${chalk.bgHex('#9b5de5').white('┌┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┐')}
+${chalk.bgHex('#9b5de5').white('┆     ZENOBOT 2026      ┆')}
+${chalk.bgHex('#9b5de5').white('┆       V10.3           ┆')}
+${chalk.bgHex('#9b5de5').white('└┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┘')}
 
 ${chalk.yellow('Seleziona come collegarti:')}
 
@@ -651,7 +651,7 @@ ${chalk.gray('    → Scansiona con la fotocamera')}
 ${chalk.green('[2] 🔐 CODICE (8 caratteri)')}
 ${chalk.gray('    → Codice da inserire su WhatsApp')}
 
-${chalk.gray('────────────────────────')}
+${chalk.gray('┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄')}
 
 ${chalk.cyan('Scegli solo 1 o 2 ↓')}
 `;
@@ -693,7 +693,7 @@ async function resetGroupSenderDistribution(groupJid) {
     }
     
     try {
-        const authDir = path.join(process.cwd(), global.authFile || '333BotSession');
+        const authDir = path.join(process.cwd(), global.authFile || 'ZenobotSession');
         if (existsSync(authDir)) {
             const prefix = 'sender-key-';
             const g = String(groupJid).replace(/[@.]/g, '_');
@@ -821,12 +821,12 @@ const connectionOptions = {
 global.conn = makeWASocket(connectionOptions);
 global.store.bind(global.conn);
 
-const _origSendMessage333 = global.conn.sendMessage.bind(global.conn);
+const _origSendMessageZenobot = global.conn.sendMessage.bind(global.conn);
 global.conn.sendMessage = async (jid, content, options) => {
     const timerId = global.metrics.startTimer('sendMessage');
     try {
         const result = await global.rateLimiter.add(
-            () => _origSendMessage333(jid, content, options),
+            () => _origSendMessageZenobot(jid, content, options),
             { priority: 1, timeout: 30000 }
         );
         global.antiBan.reportSuccess();
@@ -836,7 +836,7 @@ global.conn.sendMessage = async (jid, content, options) => {
         global.antiBan.reportError(error, { context: 'message_send' });
         const handled = await global.errorHandler.handleError(error, { maxRetries: 3 }).catch(() => null);
         if (handled?.recovered) {
-            const retried = await _origSendMessage333(jid, content, options);
+            const retried = await _origSendMessageZenobot(jid, content, options);
             global.metrics.recordMessageSent();
             return retried;
         }
@@ -903,13 +903,13 @@ async function connectionUpdate(update) {
         logConnectionState('Connessione a WhatsApp in corso...', 'whiteBright');
 
     if (qr && pairingMode === 'qr' && !global.qrGenerated) {
-        console.log(chalk.bold.hex('#8b5cf6')(`
-       333 BOT — CONNESSIONE QR
+        console.log(chalk.bold.hex('#00f5d4')(`
+       ZENOBOT — CONNESSIONE QR
 
 📲 Scansiona il QR qui sotto
 ⏳ Valido ~45 secondi
 
-───────────────
+┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄
 `));
         logSystem('WhatsApp › Dispositivi collegati › Collega un dispositivo → scansiona il QR.', 'whiteBright');
         global.qrGenerated = true;
@@ -972,23 +972,23 @@ global.conn.ev.on('creds.update', saveCreds);
 
 let isInit = true;
 let handler = await import('./handler.js').catch(e => {
-    console.error('❌ ERRORE IMPORT HANDLER:', e);
+    console.error('✖️ ERRORE IMPORT HANDLER:', e);
     process.exit(1);
 });
 
 global.reloadHandler = async function(restatConn = false) {
     try {
         const Handler = await import(`./handler.js?update=${Date.now()}`).catch(e => {
-            console.error('❌ ERRORE IMPORT HANDLER.JS:', e);
+            console.error('✖️ ERRORE IMPORT HANDLER.JS:', e);
             return null;
         });
         if (!Handler?.handler) {
-            console.error('❌ handler.js non ha esportato handler. Keys:', Object.keys(Handler ?? {}));
+            console.error('✖️ handler.js non ha esportato handler. Keys:', Object.keys(Handler ?? {}));
             return false;
         }
         handler = Handler;
     } catch (e) {
-        console.error('❌ ERRORE reloadHandler:', e);
+        console.error('✖️ ERRORE reloadHandler:', e);
         return false;
     }
 
@@ -1044,19 +1044,19 @@ global.reloadHandler = async function(restatConn = false) {
                                 if (pn) {
                                     const pnDigits = String(pn).split('@')[0].replace(/\D/g, '');
                                     if (global.__ownBotDigits.has(pnDigits)) {
-                                        console.warn('[sbarramento333] participantPn corrotto (= bot) per lid utente, neutralizzato:', lidNorm, '->', pn);
+                                        console.warn('[sbarramentozenobot] participantPn corrotto (= bot) per lid utente, neutralizzato:', lidNorm, '->', pn);
                                         delete msgGrezzo.key.participantPn;
                                     }
                                 }
                             }
                         } catch (e) {
-                            console.error('Errore sbarramento participantPn 333.js:', e);
+                            console.error('Errore sbarramento participantPn zenobot.js:', e);
                         }
                     }
                 }
             }
         } catch (e) {
-            console.error('Errore sbarramento principale 333.js:', e);
+            console.error('Errore sbarramento principale zenobot.js:', e);
         }
         return handler.handler.call(global.conn, chatUpdate);
     };
@@ -1123,7 +1123,7 @@ global.reload = async (_ev, filename) => {
 
     if (key in global.plugins) {
         if (fileExists) {
-            global.conn?.logger?.info(chalk.green(`✅ PLUGIN AGGIORNATO — '${key}'`));
+            global.conn?.logger?.info(chalk.green(`✔️ PLUGIN AGGIORNATO — '${key}'`));
         } else {
             global.conn?.logger?.warn(chalk.yellow(`⚠️ PLUGIN RIMOSSO: '${key}'`));
             delete global.plugins[key];
@@ -1142,7 +1142,7 @@ global.reload = async (_ev, filename) => {
         allowAwaitOutsideFunction: true
     });
     if (err) {
-        global.conn?.logger?.error(chalk.red(`❌ ERRORE SINTASSI '${key}'\n${format(err)}`));
+        global.conn?.logger?.error(chalk.red(`✖️ ERRORE SINTASSI '${key}'\n${format(err)}`));
         return;
     }
     try {
@@ -1165,9 +1165,9 @@ await global.reloadHandler();
 
 
 
-const { restoreAllSubbots, migrateLegacySessions } = await import('./333Subbot/manager.js');
+const { restoreAllSubbots, migrateLegacySessions } = await import('./zenobotSubbot/manager.js');
 migrateLegacySessions();
-restoreAllSubbots().catch((e) => console.error('❌ ERRORE restoreAllSubbots:', e));
+restoreAllSubbots().catch((e) => console.error('✖️ ERRORE restoreAllSubbots:', e));
 
 
 function clearDirectory(dirPath) {

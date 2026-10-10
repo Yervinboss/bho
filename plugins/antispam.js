@@ -133,7 +133,7 @@ export async function before(m, { conn, isAdmin, isBotAdmin }) {
         delete chat.mutedUsers[userId]
 
         await conn.sendMessage(chatId, {
-          text: `✅ @${userId.split('@')[0]} può tornare a scrivere`,
+          text: `✔️ @${userId.split('@')[0]} può tornare a scrivere`,
           mentions: [userId]
         })
       }

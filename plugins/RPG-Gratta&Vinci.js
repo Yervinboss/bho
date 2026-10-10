@@ -1,4 +1,4 @@
-//Plugin by Zeno, Lucifero & 333 staff
+//Plugin by Zeno, Lucifero & zenobot staff
 
 const COOLDOWN = 2 * 60 * 1000; // 2 minuti
 
@@ -13,13 +13,13 @@ let handler = async (m, { conn }) => {
   if (timePassed < COOLDOWN) {
     const remaining = msToTime(COOLDOWN - timePassed);
     return conn.sendMessage(m.chat, {
-      text: `⏳ 𝐃𝐞𝐯𝐢 𝐚𝐬𝐩𝐞𝐭𝐭𝐚𝐫𝐞 *${remaining}* 𝐏𝐫𝐢𝐦𝐚 𝐝𝐢 𝐠𝐫𝐚𝐭𝐭𝐚𝐫𝐞 𝐝𝐢 𝐧𝐮𝐨𝐯𝐨.`
+      text: `⏳ ᴅᴇᴠɪ ᴀꜱᴘᴇᴛᴛᴀʀᴇ *${remaining}* ᴘʀɪᴍᴀ ᴅɪ ɢʀᴀᴛᴛᴀʀᴇ ᴅɪ ɴᴜᴏᴠᴏ.`
     }, { quoted: m });
   }
 
   if (user.money < 500) {
     return conn.sendMessage(m.chat, {
-      text: "❌ 𝐓𝐢 𝐬𝐞𝐫𝐯𝐨𝐧𝐨 𝟓𝟎𝟎 XP333 𝐩𝐞𝐫 𝐜𝐨𝐦𝐩𝐫𝐚𝐫𝐞 𝐮𝐧 𝐠𝐫𝐚𝐭𝐭𝐚 & 𝐯𝐢𝐧𝐜𝐢."
+      text: "✖️ ᴛɪ ꜱᴇʀᴠᴏɴᴏ 𝟻𝟶𝟶 ZenoCoin ᴘᴇʀ ᴄᴏᴍᴘʀᴀʀᴇ ᴜɴ ɢʀᴀᴛᴛᴀ & ᴠɪɴᴄɪ."
     }, { quoted: m });
   }
 
@@ -43,36 +43,36 @@ let handler = async (m, { conn }) => {
     griglia[1] = "🩸";
     griglia[2] = "🩸";
     premio = 15000;
-    risultato = "𝐉𝐀𝐂𝐊𝐏𝐎𝐓 𝟑𝟑𝟑!! 𝐇𝐀𝐈 𝐕𝐈𝐍𝐓𝐎 𝟏𝟓𝟎𝟎𝟎 XP333";
+    risultato = "ᴊᴀᴄᴋᴘᴏᴛ ᴢᴇɴᴏʙᴏᴛ!! ʜᴀɪ ᴠɪɴᴛᴏ 𝟷𝟻𝟶𝟶𝟶 ZenoCoin";
     user.money += premio;
   }
  
     else if (griglia.includes("💣")) {
-    risultato = "💥 𝐁𝐎𝐌𝐁𝐀! 𝐇𝐚𝐢 𝐩𝐞𝐫𝐬𝐨 𝟐𝟎𝟎𝟎 XP333!";
+    risultato = "💥 ʙᴏᴍʙᴀ! ʜᴀɪ ᴘᴇʀꜱᴏ 𝟸𝟶𝟶𝟶 ZenoCoin!";
     user.bank = Math.max(0, user.bank - 2000);
   }
 
   else if (griglia[0] === griglia[1] && griglia[1] === griglia[2]) {
     premio = 2000;
-    risultato = "✨ 𝐓𝐫𝐢𝐩𝐥𝐚 𝐜𝐨𝐦𝐛𝐢𝐧𝐚𝐳𝐢𝐨𝐧𝐞! 𝐇𝐚𝐢 𝐯𝐢𝐧𝐭𝐨 𝟐𝟎𝟎𝟎 XP333";
+    risultato = "✨ ᴛʀɪᴘʟᴀ ᴄᴏᴍʙɪɴᴀᴢɪᴏɴᴇ! ʜᴀɪ ᴠɪɴᴛᴏ 𝟸𝟶𝟶𝟶 ZenoCoin";
     user.money += premio;
   }
 
   else {
-    risultato = "❌ 𝐍𝐞𝐬𝐬𝐮𝐧𝐚 𝐯𝐢𝐧𝐜𝐢𝐭𝐚";
+    risultato = "✖️ ɴᴇꜱꜱᴜɴᴀ ᴠɪɴᴄɪᴛᴀ";
   }
 
   let messaggio = `
-╔══『 ꙰  𝟥𝟥𝟥 𝔹𝕆𝕋  ꙰ 』══╗
-┃
-┃   ${griglia[0]}  │  ${griglia[1]}  │  ${griglia[2]}
-┃━━━━━━━━━━━━━━
-┃ 🎟️ 𝐂𝐨𝐬𝐭𝐨: 500 XP333
-┃ 🧾 𝐑𝐢𝐬𝐮𝐥𝐭𝐚𝐭𝐨: ${risultato}
-┃ 💵 𝐂𝐨𝐧𝐭𝐚𝐧𝐭𝐢: ${user.money} XP333
-┃ 🏦 𝐁𝐚𝐧𝐜𝐚: ${user.bank} XP333
-┃
-╚═════════╝
+┌┄┄『❖ ᴢᴇɴᴏʙᴏᴛ 』┄┄┐
+┆
+┆   ${griglia[0]}  ┆  ${griglia[1]}  ┆  ${griglia[2]}
+┆┄┄┄┄┄┄┄┄┄┄┄┄┄┄
+┆ 🎟️ ᴄᴏꜱᴛᴏ: 500 ZenoCoin
+┆ 🧾 ʀɪꜱᴜʟᴛᴀᴛᴏ: ${risultato}
+┆ 💵 ᴄᴏɴᴛᴀɴᴛɪ: ${user.money} ZenoCoin
+┆ 🏦 ʙᴀɴᴄᴀ: ${user.bank} ZenoCoin
+┆
+└┄┄┄┄┄┄┄┄┄┘
 `.trim();
 
   conn.sendMessage(m.chat, { text: messaggio }, { quoted: m });

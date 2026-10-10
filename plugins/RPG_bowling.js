@@ -1,4 +1,4 @@
-//Plugin by Zeno, Lucifero & 333 staff
+//Plugin by Zeno, Lucifero & zenobot staff
 
 global.casinoRateLimit = global.casinoRateLimit || {}
 
@@ -47,7 +47,7 @@ function pinAbbattuti(n) {
 
   return righe.map(riga =>
     riga.map(p => abbattuti.has(p) ? '💨' : '🎳').join(' ')
-  ).join('\n┃ ')
+  ).join('\n┆ ')
 }
 
 function risultatoTiro(n) {
@@ -65,39 +65,39 @@ let handler = async (m, { conn, text }) => {
   }
 
   const user = global.db.data.users[m.sender]
-  if (!user) return m.reply('❌ Non sei registrato')
+  if (!user) return m.reply('✖️ Non sei registrato')
 
   const puntata = parseInt(text?.trim())
   if (!puntata || puntata <= 0) {
     return await conn.sendMessage(m.chat, {
       text:
-`╔═ 🎳 𝐁𝐎𝐖𝐋𝐈𝐍𝐆 𝟑𝟑𝟑 ═╗
-┃
-┃ 🎳 *Lancia la palla!*
-┃
-┃ 💼 *Tuoi soldi:* ${user.money || 0} XP333
-┃
-┃ 📊 *Pagamenti:*
-┃ ⚡ Strike (10)   → x4
-┃ 😮 8-9 pin       → x2
-┃ 👍 5-7 pin       → x1
-┃ 😬 1-4 pin       → perdi metà
-┃ 😭 Gutter (0)    → perdi tutto
-┃
-╚══════════════╝`,
-      footer: "𝟑𝟑𝟑 𝐂𝐀𝐒𝐈𝐍𝐎",
+`┌┄ 🎳 ʙᴏᴡʟɪɴɢ ᴢᴇɴᴏʙᴏᴛ ┄┐
+┆
+┆ 🎳 *Lancia la palla!*
+┆
+┆ 💼 *Tuoi soldi:* ${user.money || 0} ZenoCoin
+┆
+┆ 📊 *Pagamenti:*
+┆ ⚡ Strike (10)   → x4
+┆ 😮 8-9 pin       → x2
+┆ 👍 5-7 pin       → x1
+┆ 😬 1-4 pin       → perdi metà
+┆ 😭 Gutter (0)    → perdi tutto
+┆
+└┄┄┄┄┄┄┄┄┄┄┄┄┄┄┘`,
+      footer: "ᴢᴇɴᴏʙᴏᴛ ᴄᴀꜱɪɴᴏ",
       buttons: [
-        { buttonId: ".bowling 10",  buttonText: { displayText: "💸 Punta 10 XP333"  }, type: 1 },
-        { buttonId: ".bowling 50",  buttonText: { displayText: "💰 Punta 50 XP333"  }, type: 1 },
-        { buttonId: ".bowling 100", buttonText: { displayText: "🤑 Punta 100 XP333" }, type: 1 },
+        { buttonId: ".bowling 10",  buttonText: { displayText: "💸 Punta 10 ZenoCoin"  }, type: 1 },
+        { buttonId: ".bowling 50",  buttonText: { displayText: "💰 Punta 50 ZenoCoin"  }, type: 1 },
+        { buttonId: ".bowling 100", buttonText: { displayText: "🤑 Punta 100 ZenoCoin" }, type: 1 },
         { buttonId: ".casino",      buttonText: { displayText: "🔙 Torna al Casino" }, type: 1 }
       ],
       headerType: 1
     }, { quoted: m })
   }
 
-  if (puntata < 10) return m.reply('❌ Puntata minima: *10 XP333*')
-  if ((user.money || 0) < puntata) return m.reply(`❌ Non hai abbastanza soldi! Hai *${user.money || 0} XP333*`)
+  if (puntata < 10) return m.reply('✖️ Puntata minima: *10 ZenoCoin*')
+  if ((user.money || 0) < puntata) return m.reply(`✖️ Non hai abbastanza soldi! Hai *${user.money || 0} ZenoCoin*`)
 
   const pin = tiro()
   const pins = pinAbbattuti(pin)
@@ -109,41 +109,41 @@ let handler = async (m, { conn, text }) => {
   if (pin === 10) {
     moneyMod = puntata * 4
     user.money += moneyMod
-    esito = `✅ *Hai vinto ${moneyMod} XP333!*`
+    esito = `✔️ *Hai vinto ${moneyMod} ZenoCoin!*`
   } else if (pin >= 8) {
     moneyMod = puntata * 2
     user.money += moneyMod
-    esito = `✅ *Hai vinto ${moneyMod} XP333!*`
+    esito = `✔️ *Hai vinto ${moneyMod} ZenoCoin!*`
   } else if (pin >= 5) {
     moneyMod = puntata
     user.money += moneyMod
-    esito = `✅ *Hai vinto ${moneyMod} XP333!*`
+    esito = `✔️ *Hai vinto ${moneyMod} ZenoCoin!*`
   } else if (pin >= 1) {
     moneyMod = Math.floor(puntata / 2)
     user.money -= moneyMod
-    esito = `❌ *Hai perso ${moneyMod} XP333!*`
+    esito = `✖️ *Hai perso ${moneyMod} ZenoCoin!*`
   } else {
     moneyMod = puntata
     user.money -= moneyMod
-    esito = `❌ *Hai perso ${puntata} XP333!*`
+    esito = `✖️ *Hai perso ${puntata} ZenoCoin!*`
   }
 
   await conn.sendMessage(m.chat, {
     text:
-`╔═ 🎳 𝐁𝐎𝐖𝐋𝐈𝐍𝐆 𝟑𝟑𝟑 ═╗
-┃
-┃ 🎳 *Hai lanciato...*
-┃
-┃ ${pins}
-┃
-┃ 🏅 *${risultato}*
-┃ 💵 Puntata: ${puntata} XP333
-┃ ${esito}
-┃
-┃ 💼 Saldo: *${user.money} XP333*
-┃
-╚══════════════╝`,
-    footer: "𝟑𝟑𝟑 𝐂𝐀𝐒𝐈𝐍𝐎",
+`┌┄ 🎳 ʙᴏᴡʟɪɴɢ ᴢᴇɴᴏʙᴏᴛ ┄┐
+┆
+┆ 🎳 *Hai lanciato...*
+┆
+┆ ${pins}
+┆
+┆ 🏅 *${risultato}*
+┆ 💵 Puntata: ${puntata} ZenoCoin
+┆ ${esito}
+┆
+┆ 💼 Saldo: *${user.money} ZenoCoin*
+┆
+└┄┄┄┄┄┄┄┄┄┄┄┄┄┄┘`,
+    footer: "ᴢᴇɴᴏʙᴏᴛ ᴄᴀꜱɪɴᴏ",
     buttons: [
       { buttonId: `.bowling ${puntata}`, buttonText: { displayText: "🔄 Lancia ancora" }, type: 1 },
       { buttonId: ".casino",             buttonText: { displayText: "🔙 Torna al Casino" }, type: 1 }

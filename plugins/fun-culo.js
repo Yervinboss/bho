@@ -1,4 +1,4 @@
-//Plugin by Zeno, Lucifero & 333 staff
+//Plugin by Zeno, Lucifero & zenobot staff
 
 let handler = async (m, { conn, command, text }) => {
 let target = m.mentionedJid?.[0] 
@@ -13,10 +13,10 @@ let number = target.split("@")[0]
     let size = pickRandom(boobsSizes);
 
 
-    let boobs = `*🍑 𝐂𝐀𝐋𝐂𝐎𝐋𝐈𝐀𝐌𝐎 𝐈𝐋 𝐓𝐔𝐎 𝐂𝐔𝐋𝐄𝐓𝐓𝐎 🍑*\n
-━━━━━━━━━━━━━━━━
-*@${number}* 𝐡𝐚 𝐢𝐥 𝐜𝐮𝐥𝐨 *${size}*
-━━━━━━━━━━━━━━━━\n> 𝟥𝟥𝟥 𝔹𝕆𝕋`.trim()
+    let boobs = `*🍑 ᴄᴀʟᴄᴏʟɪᴀᴍᴏ ɪʟ ᴛᴜᴏ ᴄᴜʟᴇᴛᴛᴏ 🍑*\n
+┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄
+*@${number}* ʜᴀ ɪʟ ᴄᴜʟᴏ *${size}*
+┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄\n> ᴢᴇɴᴏʙᴏᴛ`.trim()
 
 
     m.reply(boobs, null, { mentions: conn.parseMention(boobs) })
@@ -27,7 +27,7 @@ function pickRandom(list) {
     return list[Math.floor(Math.random() * list.length)];
 }
 
-handler.help = ['𝐜𝐮𝐥𝐨 @𝐭𝐚𝐠']
+handler.help = ['ᴄᴜʟᴏ @ᴛᴀɢ']
 handler.tags = ['fun']
 handler.command = /^(culo)$/i
 

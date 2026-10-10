@@ -1,10 +1,10 @@
-//Plugin by Zeno, Lucifero & 333 staff
+//Plugin by Zeno, Lucifero & zenobot staff
 
 import fetch from "node-fetch";
 
 async function handler(m, { conn, args }) {
   const city = args.join(" ");
-  if (!city) return conn.sendMessage(m.chat, { text: "❗ 𝐒𝐜𝐫𝐢𝐯𝐢 𝐚𝐧𝐜𝐡𝐞 𝐥𝐚 𝐜𝐢𝐭𝐭𝐚̀!, 𝐄𝐬𝐞𝐦𝐩𝐢𝐨: `.𝐜𝐚𝐥𝐞𝐧𝐝𝐚𝐫𝐢𝐨 𝐑𝐨𝐦𝐚`" }, { quoted: m });
+  if (!city) return conn.sendMessage(m.chat, { text: "❗ ꜱᴄʀɪᴠɪ ᴀɴᴄʜᴇ ʟᴀ ᴄɪᴛᴛᴀ̀!, ᴇꜱᴇᴍᴘɪᴏ: `.ᴄᴀʟᴇɴᴅᴀʀɪᴏ ʀᴏᴍᴀ`" }, { quoted: m });
 
   const API_KEY = "060a6bcfa19809c2cd4d97a212b19273";
 
@@ -15,7 +15,7 @@ async function handler(m, { conn, args }) {
     meteoData = await resp.json();
     if (!meteoData || meteoData.cod !== 200) throw new Error();
   } catch {
-    return conn.sendMessage(m.chat, { text: "❌ Impossibile ottenere il meteo per quella città." }, { quoted: m });
+    return conn.sendMessage(m.chat, { text: "✖️ Impossibile ottenere il meteo per quella città." }, { quoted: m });
   }
 
   const { weather, main } = meteoData;
@@ -97,18 +97,18 @@ async function handler(m, { conn, args }) {
   }
 
   const text = `
-╔════════════╗
-║ 📅 𝐂𝐀𝐋𝐄𝐍𝐃𝐀𝐑𝐈𝐎 𝟑𝟑𝟑
-╠════════════╣
-║ 🗓 𝐆𝐢𝐨𝐫𝐧𝐨: *${giornoSettimana}*
-║ 📆 𝐃𝐚𝐭𝐚: *${giorno} ${mese} ${anno}*
-║ 🕒 𝐎𝐫𝐚: *${ora}:${minuto}:${secondo}*
-║ 🎉 𝐅𝐞𝐬𝐭𝐢𝐯𝐢𝐭𝐚̀: *${festivita}*
-╠════════════╣
-║ ☁️ 𝐌𝐞𝐭𝐞𝐨 𝐝𝐢 *${meteoData.name}:*
-║ 🌡 𝐓𝐞𝐦𝐩𝐞𝐫𝐚𝐭𝐮𝐫𝐚: *${temp}*
-║ 🧭 𝐂𝐨𝐧𝐝𝐢𝐳𝐢𝐨𝐧𝐢: *${desc}*
-╚════════════╝
+┌┄┄┄┄┄┄┄┄┄┄┄┄┐
+┆ 📅 ᴄᴀʟᴇɴᴅᴀʀɪᴏ ᴢᴇɴᴏʙᴏᴛ
+╠┄┄┄┄┄┄┄┄┄┄┄┄╣
+┆ 🗓 ɢɪᴏʀɴᴏ: *${giornoSettimana}*
+┆ 📆 ᴅᴀᴛᴀ: *${giorno} ${mese} ${anno}*
+┆ 🕒 ᴏʀᴀ: *${ora}:${minuto}:${secondo}*
+┆ 🎉 ꜰᴇꜱᴛɪᴠɪᴛᴀ̀: *${festivita}*
+╠┄┄┄┄┄┄┄┄┄┄┄┄╣
+┆ ☁️ ᴍᴇᴛᴇᴏ ᴅɪ *${meteoData.name}:*
+┆ 🌡 ᴛᴇᴍᴘᴇʀᴀᴛᴜʀᴀ: *${temp}*
+┆ 🧭 ᴄᴏɴᴅɪᴢɪᴏɴɪ: *${desc}*
+└┄┄┄┄┄┄┄┄┄┄┄┄┘
   `.trim();
 
   conn.sendMessage(m.chat, { text }, { quoted: m });

@@ -1,6 +1,6 @@
 //Codice di fun-sticker.js
 
-//Plugin by Zeno, Lucifero & 333 staff
+//Plugin by Zeno, Lucifero & zenobot staff
 
 import { sticker } from '../lib/sticker.js'
 import uploadFile from '../lib/uploadFile.js'
@@ -82,10 +82,10 @@ let handler = async (m, { conn, args }) => {
 
         const senderName = m.pushName || m.sender.split('@')[0] || 'Utente'
         const packname = `${senderName}`
-        const author = `333 bot`
+        const author = `zenobot`
 
         if (args[0] && global.screenStickerMap && global.screenStickerMap[args[0]]) {
-            m.reply('ⓘ 𝐂𝐫𝐞𝐨 𝐬𝐭𝐢𝐜𝐤𝐞𝐫...')
+            m.reply('ⓘ ᴄʀᴇᴏ ꜱᴛɪᴄᴋᴇʀ...')
             try {
                 const img = global.screenStickerMap[args[0]]
                 delete global.screenStickerMap[args[0]]
@@ -96,7 +96,7 @@ let handler = async (m, { conn, args }) => {
         } else if (/webp|image|video/g.test(mime)) {
             if (/video/g.test(mime) && (q.msg || q).seconds > 9) return
 
-            m.reply('ⓘ 𝐂𝐚𝐫𝐢𝐜𝐚𝐦𝐞𝐧𝐭𝐨 ...')
+            m.reply('ⓘ ᴄᴀʀɪᴄᴀᴍᴇɴᴛᴏ ...')
             let img = await q.download?.()
             if (!img) return
 
@@ -115,7 +115,7 @@ let handler = async (m, { conn, args }) => {
             }
         } else if (text && !mime) {
             // Testo normale - crea immagine da testo
-            m.reply('ⓘ 𝐂𝐫𝐞𝐨 𝐬𝐭𝐢𝐜𝐤𝐞𝐫 𝐝𝐚 𝐭𝐞𝐬𝐭𝐨...')
+            m.reply('ⓘ ᴄʀᴇᴏ ꜱᴛɪᴄᴋᴇʀ ᴅᴀ ᴛᴇꜱᴛᴏ...')
             try {
                 const textImage = await createTextImage(text, packname, author)
                 if (textImage) {

@@ -1,4 +1,4 @@
-//Plugin by Zeno, Lucifero & 333 staff
+//Plugin by Zeno, Lucifero & zenobot staff
 
 let handler = async (m, { text }) => {
   let number
@@ -23,7 +23,7 @@ let handler = async (m, { text }) => {
   if (!global.db.data.owners) global.db.data.owners = []
   if (!global.db.data.owners.includes(number)) global.db.data.owners.push(number)
 
-  m.reply(`✅ *${clean}* aggiunto come rowner`)
+  m.reply(`✔️ *${clean}* aggiunto come rowner`)
 }
 
 handler.command = /^addowner$/i

@@ -1,4 +1,4 @@
-//Plugin by Zeno, Lucifero & 333 staff
+//Plugin by Zeno, Lucifero & zenobot staff
 
 let handler = async (m, { conn, text, command }) => {
   let users = global.db.data.users
@@ -12,7 +12,7 @@ let handler = async (m, { conn, text, command }) => {
 
     user.note.push(text)
 
-    return m.reply(`✅ Nota salvata\n📌 Totale note: ${user.note.length}`)
+    return m.reply(`✔️ Nota salvata\n📌 Totale note: ${user.note.length}`)
   }
 
   if (command === "note") {
@@ -77,8 +77,8 @@ let handler = async (m, { conn, text, command }) => {
   if (command === "delnota") {
     let index = parseInt(text) - 1
 
-    if (isNaN(index)) return m.reply("❌ Numero non valido")
-    if (!user.note[index]) return m.reply("❌ Nota inesistente")
+    if (isNaN(index)) return m.reply("✖️ Numero non valido")
+    if (!user.note[index]) return m.reply("✖️ Nota inesistente")
 
     let rimossa = user.note.splice(index, 1)
 

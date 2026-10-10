@@ -1,4 +1,4 @@
-//Plugin by Zeno, Lucifero & 333 staff
+//Plugin by Zeno, Lucifero & zenobot staff
 
 const ringOptions = [
   { id: 'ring_1', name: '🪨 Anello di plastica', price: 100, vibe: 'Economico' },
@@ -40,8 +40,8 @@ let handler = async (m, { conn, command }) => {
   const user = users[sender]
 
   if (command === 'sposa') {
-    if (!target) return m.reply('❌ Tagga qualcuno per fare la proposta.')
-    if (target === sender) return m.reply('❌ Non puoi sposare te stesso, dai.')
+    if (!target) return m.reply('✖️ Tagga qualcuno per fare la proposta.')
+    if (target === sender) return m.reply('✖️ Non puoi sposare te stesso, dai.')
 
     if (!users[target]) users[target] = {}
     const partner = users[target]
@@ -54,20 +54,20 @@ let handler = async (m, { conn, command }) => {
     }
 
     if (partner.sposato) {
-      return m.reply('❌ Questa persona è già sposata. Non fare il disgraziato.')
+      return m.reply('✖️ Questa persona è già sposata. Non fare il disgraziato.')
     }
 
     await conn.sendMessage(m.chat, {
-      text: `╭─── 💍 *PROPOSTA DI MATRIMONIO* ───╮
-│
-│ @${target.split('@')[0]}
-│ hai ricevuto una proposta da
-│ @${sender.split('@')[0]}
-│
-│ 💌 Vuoi accettare?
-│
-│ ⏳ Hai 60 secondi per decidere
-╰──────────────────────────────╯`,
+      text: `┌┄┄┄ 💍 *PROPOSTA DI MATRIMONIO* ┄┄┄┐
+┆
+┆ @${target.split('@')[0]}
+┆ hai ricevuto una proposta da
+┆ @${sender.split('@')[0]}
+┆
+┆ 💌 Vuoi accettare?
+┆
+┆ ⏳ Hai 60 secondi per decidere
+└┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┘`,
       mentions: [sender, target],
       buttons: [
         { buttonId: `accetta_${sender}`, buttonText: { displayText: '💖 Accetta' }, type: 1 },
@@ -134,7 +134,7 @@ let handler = async (m, { conn, command }) => {
         selectedRing = ringOptions.find(ring => ring.id === ringChoice)
         if (!selectedRing) {
           await conn.sendMessage(m.chat, {
-            text: `❌ Scelta dell'anello non valida. Prova ancora.`
+            text: `✖️ Scelta dell'anello non valida. Prova ancora.`
           })
           continue
         }
@@ -180,7 +180,7 @@ let handler = async (m, { conn, command }) => {
 
       if (!witnessTag || witnessTag === sender || witnessTag === target) {
         return conn.sendMessage(m.chat, {
-          text: `❌ Testimone non valido. Seleziona una persona diversa.`
+          text: `✖️ Testimone non valido. Seleziona una persona diversa.`
         })
       }
 
@@ -197,21 +197,21 @@ let handler = async (m, { conn, command }) => {
       partner.testimone = witnessTag
 
       await conn.sendMessage(m.chat, {
-        text: `╭─── 💖 *MATRIMONIO* 💖 ───╮
-│
-│ @${sender.split('@')[0]}
-│   🤍
-│ @${target.split('@')[0]}
-│
-│ 💍 Anello: ${selectedRing.name}
-│ 💸 Prezzo: ${selectedRing.price}€
-│ 🕯️ Testimone: @${witnessTag.split('@')[0]}
-│
-│ ✨ *SI SONO SPOSATI* ✨
-│
-│  💫 La cerimonia è stata celebrata.
-│  🕒 Vi lascerete dopo 5 minuti.
-╰────────────────────────────╯`,
+        text: `┌┄┄┄ 💖 *MATRIMONIO* 💖 ┄┄┄┐
+┆
+┆ @${sender.split('@')[0]}
+┆   🤍
+┆ @${target.split('@')[0]}
+┆
+┆ 💍 Anello: ${selectedRing.name}
+┆ 💸 Prezzo: ${selectedRing.price}€
+┆ 🕯️ Testimone: @${witnessTag.split('@')[0]}
+┆
+┆ ✨ *SI SONO SPOSATI* ✨
+┆
+┆  💫 La cerimonia è stata celebrata.
+┆  🕒 Vi lascerete dopo 5 minuti.
+└┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┘`,
         mentions: [sender, target, witnessTag]
       })
     } else {
@@ -224,7 +224,7 @@ let handler = async (m, { conn, command }) => {
 
   if (command === 'divorzia') {
     if (!user.sposato || !user.coniuge)
-      return m.reply('❌ Non sei sposato.')
+      return m.reply('✖️ Non sei sposato.')
 
     const ex = user.coniuge
     if (!users[ex]) users[ex] = {}
@@ -247,14 +247,14 @@ let handler = async (m, { conn, command }) => {
     delete exUser.testimone
 
     await conn.sendMessage(m.chat, {
-      text: `╭─── 💔 *DIVORZIO* 💔 ───╮
-│
-│ @${sender.split('@')[0]}
-│   💔
-│ @${ex.split('@')[0]}
-│
-│  *Tanto eravate una coppia di merda.*
-╰──────────────────────╯`,
+      text: `┌┄┄┄ 💔 *DIVORZIO* 💔 ┄┄┄┐
+┆
+┆ @${sender.split('@')[0]}
+┆   💔
+┆ @${ex.split('@')[0]}
+┆
+┆  *Tanto eravate una coppia di merda.*
+└┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┘`,
       mentions: [sender, ex]
     })
   }

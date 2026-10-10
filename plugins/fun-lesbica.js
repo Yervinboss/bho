@@ -1,4 +1,4 @@
-//Plugin by Zeno, Lucifero & 333 staff
+//Plugin by Zeno, Lucifero & zenobot staff
 
 let handler = async (m, { conn, command, text }) => {
 let target = m.mentionedJid?.[0] 
@@ -10,16 +10,16 @@ let number = target.split("@")[0]
 
 
     let finalPhrase = width >= 30 
-        ?"𝐜𝐨𝐦𝐢𝐧𝐠 𝐨𝐮𝐭 𝐢𝐧𝐚𝐬𝐩𝐞𝐭𝐭𝐚𝐭𝐨!\n━━━━━━━━━━━━━━━━━━\n> 𝟥𝟥𝟥 𝔹𝕆𝕋"
-        : "𝐥𝐚 𝐬𝐢𝐠𝐧𝐨𝐫𝐢𝐧𝐚 𝐚𝐦𝐚 𝐩𝐫𝐞𝐧𝐝𝐞𝐫𝐥𝐨!\n━━━━━━━━━━━━━━━━━━\n> 𝟥𝟥𝟥 𝔹𝕆𝕋";
+        ?"ᴄᴏᴍɪɴɢ ᴏᴜᴛ ɪɴᴀꜱᴘᴇᴛᴛᴀᴛᴏ!\n┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄\n> ᴢᴇɴᴏʙᴏᴛ"
+        : "ʟᴀ ꜱɪɢɴᴏʀɪɴᴀ ᴀᴍᴀ ᴘʀᴇɴᴅᴇʀʟᴏ!\n┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄\n> ᴢᴇɴᴏʙᴏᴛ";
 
 
     let message = `
-━━━━━━━━━━━━━━━━━━
-𝐌𝐎𝐌𝐄𝐍𝐓𝐎 𝐋𝐄𝐒𝐁𝐎 🏳️‍🌈
-━━━━━━━━━━━━━━━━━━
-@${number} 𝐞̀ 𝐥𝐞𝐬𝐛𝐢𝐜𝐚 𝐚𝐥 *${width}%🏳️‍🌈!* 
-━━━━━━━━━━━━━━━━━━
+┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄
+ᴍᴏᴍᴇɴᴛᴏ ʟᴇꜱʙᴏ 🏳️‍🌈
+┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄
+@${number} ᴇ̀ ʟᴇꜱʙɪᴄᴀ ᴀʟ *${width}%🏳️‍🌈!* 
+┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄
 ${finalPhrase}
 `.trim();
 
@@ -27,7 +27,7 @@ ${finalPhrase}
 };
 
 handler.command = /^(lesbica)$/i;
-handler.help = ['lesbica @𝐭𝐚𝐠'];
+handler.help = ['lesbica @ᴛᴀɢ'];
 handler.tags = ['fun'];
 
 export default handler;

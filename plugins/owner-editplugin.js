@@ -52,7 +52,7 @@ async function cercaFileSimili(query, dir, top = 5) {
 }
 
 let handler = async (message, { text, usedPrefix, command, __dirname }) => {
-  if (!text) throw '𝐈𝐧𝐬𝐞𝐫𝐢𝐬𝐢 𝐢𝐥 𝐧𝐨𝐦𝐞 𝐝𝐞𝐥 𝐩𝐥𝐮𝐠𝐢𝐧 𝐝𝐚 𝐞𝐝𝐢𝐭𝐚𝐫𝐞'
+  if (!text) throw 'ɪɴꜱᴇʀɪꜱɪ ɪʟ ɴᴏᴍᴇ ᴅᴇʟ ᴘʟᴜɢɪɴ ᴅᴀ ᴇᴅɪᴛᴀʀᴇ'
 
   const cacheKey = `${message.chat}_${message.sender}`
   let codiceDaInserire = ''
@@ -63,7 +63,7 @@ let handler = async (message, { text, usedPrefix, command, __dirname }) => {
   } else if (global.editPluginCache[cacheKey]) {
     codiceDaInserire = global.editPluginCache[cacheKey]
   } else {
-    throw '𝐑𝐢𝐬𝐩𝐨𝐧𝐝𝐢 𝐚𝐥 𝐦𝐞𝐬𝐬𝐚𝐠𝐢𝐨 𝐜𝐡𝐞 𝐜𝐨𝐧𝐭𝐢𝐞𝐧𝐞 𝐢𝐥 𝐧𝐮𝐨𝐯𝐨 𝐜𝐨𝐝𝐢𝐜𝐞 𝐝𝐚 𝐢𝐧𝐬𝐞𝐫𝐢𝐫𝐞'
+    throw 'ʀɪꜱᴘᴏɴᴅɪ ᴀʟ ᴍᴇꜱꜱᴀɢɪᴏ ᴄʜᴇ ᴄᴏɴᴛɪᴇɴᴇ ɪʟ ɴᴜᴏᴠᴏ ᴄᴏᴅɪᴄᴇ ᴅᴀ ɪɴꜱᴇʀɪʀᴇ'
   }
 
   const targetDir = __dirname || './plugins'
@@ -85,21 +85,21 @@ let handler = async (message, { text, usedPrefix, command, __dirname }) => {
     if (simili.length === 0) {
       delete global.editPluginCache[cacheKey]
       return message.reply(
-`╔═ ❌ 𝐅𝐈𝐋𝐄 𝐍𝐎𝐍 𝐓𝐑𝐎𝐕𝐀𝐓𝐎 ═╗
-┃
-┃ 📂 Plugin cercato:
-┃ *${filename}*
-┃
-┃ 😕 Nessun file simile trovato.
-┃
-╚══════════════╝`
+`┌┄ ✖️ ꜰɪʟᴇ ɴᴏɴ ᴛʀᴏᴠᴀᴛᴏ ┄┐
+┆
+┆ 📂 Plugin cercato:
+┆ *${filename}*
+┆
+┆ 😕 Nessun file simile trovato.
+┆
+└┄┄┄┄┄┄┄┄┄┄┄┄┄┄┘`
       )
     }
 
     const barre = simili.map((x, i) => {
       const filled = Math.round(x.score / 10)
       const bar    = '█'.repeat(filled) + '░'.repeat(10 - filled)
-      return `┃ ${i + 1}. [${bar}] ${x.score}%\n┃    ${x.file}`
+      return `┆ ${i + 1}. [${bar}] ${x.score}%\n┆    ${x.file}`
     }).join('\n')
 
     const buttons = simili.map(x => [
@@ -108,17 +108,17 @@ let handler = async (message, { text, usedPrefix, command, __dirname }) => {
     ])
 
     return await conn.sendButton(message.chat,
-`╔═ 🔍 𝐅𝐈𝐋𝐄 𝐍𝐎𝐍 𝐓𝐑𝐎𝐕𝐀𝐓𝐎 ═╗
-┃
-┃ ❓ Cercavi: *${filename}*
-┃
-┃ 🎯 *Plugin simili trovati:*
-┃
+`┌┄ 🔍 ꜰɪʟᴇ ɴᴏɴ ᴛʀᴏᴠᴀᴛᴏ ┄┐
+┆
+┆ ❓ Cercavi: *${filename}*
+┆
+┆ 🎯 *Plugin simili trovati:*
+┆
 ${barre}
-┃
-┃ 👆 Tocca un bottone per correggere e modificare subito!
-╚══════════════╝`,
-    '333 File Manager', null, buttons, message)
+┆
+┆ 👆 Tocca un bottone per correggere e modificare subito!
+└┄┄┄┄┄┄┄┄┄┄┄┄┄┄┘`,
+    'zenobot File Manager', null, buttons, message)
   }
 
   await _fs.writeFile(pluginPath, codiceDaInserire, 'utf8')
@@ -140,7 +140,7 @@ ${barre}
     participant: '0@s.whatsapp.net'
   }
 
-  conn.reply(message.chat, `𝐈𝐥 𝐩𝐥𝐮𝐠𝐢𝐧 "${filename}" 𝐞̀ 𝐬𝐭𝐚𝐭𝐨 𝐞𝐝𝐢𝐭𝐚𝐭𝐨 𝐜𝐨𝐧 𝐬𝐮𝐜𝐜𝐞𝐬𝐬𝐨`, responseMessage)
+  conn.reply(message.chat, `ɪʟ ᴘʟᴜɢɪɴ "${filename}" ᴇ̀ ꜱᴛᴀᴛᴏ ᴇᴅɪᴛᴀᴛᴏ ᴄᴏɴ ꜱᴜᴄᴄᴇꜱꜱᴏ`, responseMessage)
 }
 
 handler.tags = ['owner']

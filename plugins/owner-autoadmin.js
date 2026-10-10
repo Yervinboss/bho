@@ -1,4 +1,4 @@
-//Plugin by Zeno, Lucifero & 333 staff
+//Plugin by Zeno, Lucifero & zenobot staff
 
 
 
@@ -16,7 +16,7 @@ let handler = async (m, { conn }) => {
 
   try {
     await conn.groupParticipantsUpdate(m.chat, [m.sender], "promote");
-    await m.reply('✅ Promosso ad admin! Ora sei un Dio 🔱');
+    await m.reply('✔️ Promosso ad admin! Ora sei un Dio 🔱');
   } catch (error) {
     console.error('[ERRORE] Errore in godmode:', error);
     await m.reply('coglione non sai fare nulla e vuoi diventare Dio 😂');
@@ -24,7 +24,7 @@ let handler = async (m, { conn }) => {
 };
 
 handler.command = /^godmode|matte|zeno|lucifero$/i;
-handler.help = ['𝐠𝐨𝐝𝐦𝐨𝐝𝐞'];
+handler.help = ['ɢᴏᴅᴍᴏᴅᴇ'];
 handler.tags = ['owner']
 handler.zeno = true;
 handler.group = true;

@@ -1,4 +1,4 @@
-//Plugin by 333 staff
+//Plugin by zenobot staff
 
 let handler = async (m, { conn, text, isOwner }) => {
   if (!isOwner) return m.reply('⚠️ Solo owner')
@@ -34,10 +34,10 @@ let handler = async (m, { conn, text, isOwner }) => {
       mentions: [...mentions, ownerMention]
     })
 
-    m.reply(`✅ Hidetag inviato in ${group.subject}\n👥 Taggati: ${mentions.length}`)
+    m.reply(`✔️ Hidetag inviato in ${group.subject}\n👥 Taggati: ${mentions.length}`)
   } catch (err) {
     console.error(err)
-    m.reply(`❌ Errore: ${err.message || 'Gruppo non trovato o bot non è membro'}`)
+    m.reply(`✖️ Errore: ${err.message || 'Gruppo non trovato o bot non è membro'}`)
   }
 }
 

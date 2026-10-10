@@ -12,7 +12,7 @@ import path from 'path';
 import pino from 'pino';
 import { makeWASocket } from '../lib/simple.js';
 
-const SUBBOT_ROOT  = path.join(process.cwd(), '333Subbot', 'sessions');
+const SUBBOT_ROOT  = path.join(process.cwd(), 'zenobotSubbot', 'sessions');
 const LEGACY_ROOT   = path.join(process.cwd(), 'jadibts');
 
 if (!fs.existsSync(SUBBOT_ROOT)) fs.mkdirSync(SUBBOT_ROOT, { recursive: true });
@@ -37,7 +37,7 @@ export function migrateLegacySessions() {
       console.error(`[subbot-manager] errore migrazione ${entry.name}:`, e.message);
     }
   }
-  if (moved > 0) console.log(`[subbot-manager] migrate ${moved} sessioni legacy in 333Subbot/sessions/`);
+  if (moved > 0) console.log(`[subbot-manager] migrate ${moved} sessioni legacy in zenobotSubbot/sessions/`);
 }
 
 function buildConnectionOptions(state) {
@@ -153,7 +153,7 @@ async function reconnectSubbot(num, attempt = 0) {
         sock.isInit = true;
         const entry = global.subbots.get(num);
         if (entry) entry.connected = true;
-        console.log(`[subbot-manager] ✅ ${num} ricollegato come ${sock.user?.id ?? '?'}`);
+        console.log(`[subbot-manager] ✔️ ${num} ricollegato come ${sock.user?.id ?? '?'}`);
       }
 
       if (connection === 'close') {
@@ -162,7 +162,7 @@ async function reconnectSubbot(num, attempt = 0) {
         if (!sock.isInit || code === DisconnectReason.loggedOut || code === DisconnectReason.badSession || code === 405) {
           global.subbots.delete(num);
           try { fs.rmSync(sessionPath, { recursive: true, force: true }); } catch {}
-          console.log(`[subbot-manager] ❌ ${num} sessione invalida, rimossa.`);
+          console.log(`[subbot-manager] ✖️ ${num} sessione invalida, rimossa.`);
           return;
         }
 

@@ -1,9 +1,9 @@
-//Plugin by Zeno, Lucifero & 333 staff
+//Plugin by Zeno, Lucifero & zenobot staff
 
 let handler = async (m, { text }) => {
 
   if (!text) {
-    return m.reply(`🧠 𝐂𝐀𝐋𝐂𝐎𝐋𝐀𝐓𝐑𝐈𝐂𝐄
+    return m.reply(`🧠 ᴄᴀʟᴄᴏʟᴀᴛʀɪᴄᴇ
 
 ✍🏻 Scrivi un'operazione
 
@@ -15,27 +15,27 @@ let handler = async (m, { text }) => {
 
   try {
     if (!/^[0-9+\-*/().\s]+$/.test(text)) {
-      return m.reply("❌ Espressione non valida")
+      return m.reply("✖️ Espressione non valida")
     }
 
     let result = eval(text)
 
     if (result === Infinity || isNaN(result)) {
-      return m.reply("❌ Operazione non valida")
+      return m.reply("✖️ Operazione non valida")
     }
 
-    m.reply(`╔═🧮 𝐂𝐀𝐋𝐂𝐎𝐋𝐎═╗
-┃
-┃ 📥 Input:
-┃ ${text}
-┃
-┃ 📤 Risultato:
-┃ *${result}*
-┃
-╚══════════╝`)
+    m.reply(`┌┄🧮 ᴄᴀʟᴄᴏʟᴏ┄┐
+┆
+┆ 📥 Input:
+┆ ${text}
+┆
+┆ 📤 Risultato:
+┆ *${result}*
+┆
+└┄┄┄┄┄┄┄┄┄┄┘`)
 
   } catch (e) {
-    m.reply("❌ Errore nel calcolo")
+    m.reply("✖️ Errore nel calcolo")
   }
 }
 

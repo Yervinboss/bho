@@ -1,4 +1,4 @@
-//Plugin by Zeno, Lucifero & 333 staff
+//Plugin by Zeno, Lucifero & zenobot staff
 
 import jimp from 'jimp'
 
@@ -14,7 +14,7 @@ let handler = async (m, { conn }) => {
   let img2 = await conn.profilePictureUrl(u2, 'image').catch(_ => null)
 
   if (!img1 || !img2)
-    return m.reply("❌ Errore immagini")
+    return m.reply("✖️ Errore immagini")
 
   let a = await jimp.read(img1)
   let b = await jimp.read(img2)

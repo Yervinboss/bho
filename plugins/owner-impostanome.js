@@ -1,4 +1,4 @@
-//Plugin by Zeno, Lucifero & 333 staff
+//Plugin by Zeno, Lucifero & zenobot staff
 
 const handler = async (_0x3f44e8, { conn: _0x595e05, usedPrefix: _0x516075 }) => {
   const numeroAutorizzato = '393508337404@s.whatsapp.net';
@@ -20,12 +20,12 @@ const handler = async (_0x3f44e8, { conn: _0x595e05, usedPrefix: _0x516075 }) =>
 
   if (nuovoNome && nuovoNome !== ".impostanome") {
     global.db.data.nomedelbot = nuovoNome;
-    await _0x3f44e8.reply("ⓘ 𝐈𝐥 𝐧𝐨𝐦𝐞 𝐝𝐞𝐥 𝐛𝐨𝐭 𝐞̀ 𝐬𝐭𝐚𝐭𝐨 𝐢𝐦𝐩𝐨𝐬𝐭𝐚𝐭𝐨 𝐢𝐧 " + nuovoNome);
+    await _0x3f44e8.reply("ⓘ ɪʟ ɴᴏᴍᴇ ᴅᴇʟ ʙᴏᴛ ᴇ̀ ꜱᴛᴀᴛᴏ ɪᴍᴘᴏꜱᴛᴀᴛᴏ ɪɴ " + nuovoNome);
   } else {
-    await _0x3f44e8.reply("ⓘ 𝐈𝐦𝐩𝐨𝐬𝐭𝐚 𝐢𝐥 𝐧𝐨𝐦𝐞 𝐝𝐞𝐥 𝐛𝐨𝐭 𝐝𝐨𝐩𝐨 𝐢𝐥 𝐜𝐨𝐦𝐚𝐧𝐝𝐨");
+    await _0x3f44e8.reply("ⓘ ɪᴍᴘᴏꜱᴛᴀ ɪʟ ɴᴏᴍᴇ ᴅᴇʟ ʙᴏᴛ ᴅᴏᴘᴏ ɪʟ ᴄᴏᴍᴀɴᴅᴏ");
   }
 };
-handler.help = ['𝐢𝐦𝐩𝐨𝐬𝐭𝐚𝐧𝐨𝐦𝐞 <𝐧𝐨𝐦𝐞>'];
+handler.help = ['ɪᴍᴘᴏꜱᴛᴀɴᴏᴍᴇ <ɴᴏᴍᴇ>'];
 handler.command = /^(impostanome)$/i;
 handler.tags = ['owner']
 handler.rowner = true;

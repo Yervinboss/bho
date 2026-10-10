@@ -1,4 +1,4 @@
-//Plugin by Zeno, Lucifero & 333 staff
+//Plugin by Zeno, Lucifero & zenobot staff
 
 let handler = async (m, { conn, usedPrefix, command, text }) => {
     let who;
@@ -13,16 +13,16 @@ let handler = async (m, { conn, usedPrefix, command, text }) => {
         who = text ? text.replace(/[^0-9]/g, '') + '@s.whatsapp.net' : m.chat;
     }
 
-    if (!who) return m.reply(`𝐦𝐞𝐧𝐳𝐢𝐨𝐧𝐚 𝐥𝐚 𝐩𝐞𝐫𝐬𝐨𝐧𝐚 𝐝𝐚 𝐬𝐩𝐚𝐫𝐚𝐫𝐞 🔫`);
+    if (!who) return m.reply(`ᴍᴇɴᴢɪᴏɴᴀ ʟᴀ ᴘᴇʀꜱᴏɴᴀ ᴅᴀ ꜱᴘᴀʀᴀʀᴇ 🔫`);
 
     const thumbnailUrl = "https://cdn.phototourl.com/free/2026-05-07-6bcb47a5-00d2-485b-9507-47b4536e15c5.jpg"; 
     const thumbnailBuffer = await (await fetch(thumbnailUrl)).buffer();
-    const thumbnailText = "𝐒𝐏𝐀𝐑𝐀"; 
+    const thumbnailText = "ꜱᴘᴀʀᴀ"; 
 
     let abrazo = await conn.sendMessage(m.chat, {
-        text: `══════•⊰✰⊱•══════
-@${who.split('@')[0]} 𝐬𝐞𝐢 𝐬𝐭𝐚𝐭𝐨/𝐚 𝐬𝐩𝐚𝐫𝐚𝐭𝐨/𝐚 𝐝𝐚 @${m.sender.split('@')[0]} (𝐡𝐚 𝐮𝐧𝐚 𝐦𝐢𝐫𝐚 𝐝𝐢 𝐦𝐞𝐫𝐝𝐚)
-══════•⊰✰⊱•══════`,
+        text: `┄┄┄┄┄┄•‹✧›•┄┄┄┄┄┄
+@${who.split('@')[0]} ꜱᴇɪ ꜱᴛᴀᴛᴏ/ᴀ ꜱᴘᴀʀᴀᴛᴏ/ᴀ ᴅᴀ @${m.sender.split('@')[0]} (ʜᴀ ᴜɴᴀ ᴍɪʀᴀ ᴅɪ ᴍᴇʀᴅᴀ)
+┄┄┄┄┄┄•‹✧›•┄┄┄┄┄┄`,
         mentions: [who, m.sender],
     }, {
         quoted: {
@@ -45,7 +45,7 @@ let handler = async (m, { conn, usedPrefix, command, text }) => {
 };
 
 handler.command = ['shot'];
-handler.help = ['shot @𝐭𝐚𝐠'];
+handler.help = ['shot @ᴛᴀɢ'];
 handler.tags = ['fun'];
 
 export default handler;

@@ -1,6 +1,6 @@
 //Codice di fun-stickeranimato.js
 
-//Plugin by Zeno, Lucifero & 333 staff
+//Plugin by Zeno, Lucifero & zenobot staff
 
 import { sticker } from '../lib/sticker.js'
 import { createCanvas } from '@napi-rs/canvas'
@@ -86,7 +86,7 @@ let handler = async (m, { conn, args }) => {
 
     const senderName = m.pushName || m.sender.split('@')[0] || 'Utente'
     const packname = `${senderName}`
-    const author = `333 bot`
+    const author = `zenobot`
 
     const text = args.join(' ')
     let parts = text.includes('|')
@@ -95,7 +95,7 @@ let handler = async (m, { conn, args }) => {
 
     if (!parts.length) parts = [text]
 
-    m.reply('ⓘ 𝐂𝐫𝐞𝐨 𝐬𝐭𝐢𝐜𝐤𝐞𝐫 𝐚𝐧𝐢𝐦𝐚𝐭𝐨...')
+    m.reply('ⓘ ᴄʀᴇᴏ ꜱᴛɪᴄᴋᴇʀ ᴀɴɪᴍᴀᴛᴏ...')
 
     let stiker = false
     try {

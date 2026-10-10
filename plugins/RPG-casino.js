@@ -1,49 +1,49 @@
 //Codice di RPG-casino.js
 
-// Plugin fatto da Zenos & 333 Staff
+// Plugin fatto da Zenos & zenobot Staff
 //Codice di RPG-casino.js
 
 let handler = async (m, { conn }) => {
 
   await conn.sendMessage(m.chat, {
     text:
-`╔═ 🎰 𝐂𝐀𝐒𝐈𝐍𝐎 𝟑𝟑𝟑 ═╗
-┃
-┃ 💸 *Benvenuto nel paradiso*
-┃ *della rovina economica*
-┃
-┃ 🎯 𝐑𝐨𝐮𝐥𝐞𝐭𝐭𝐞
-┃ 🎲 𝐃𝐚𝐝𝐢
-┃ 🎰 𝐒𝐥𝐨𝐭
-┃ 🃏 𝐁𝐥𝐚𝐜𝐤𝐣𝐚𝐜𝐤
-┃ 🐎 𝐂𝐚𝐯𝐚𝐥𝐥𝐢
-┃ 💎 𝐌𝐢𝐧𝐢𝐞𝐫𝐚
-┃ ❓ 𝐄𝐬𝐭𝐫𝐚𝐳𝐢𝐨𝐧𝐞
-┃ 🎯 𝐅𝐫𝐞𝐜𝐜𝐞𝐭𝐭𝐞
-┃ ♠️ 𝐏𝐨𝐤𝐞𝐫
-┃ 🎳 𝐁𝐨𝐰𝐥𝐢𝐧𝐠
-┃ 🎡 𝐑𝐮𝐨𝐭𝐚
-┃ 🎟️ 𝐆𝐫𝐚𝐭𝐭𝐚 𝐞 𝐕𝐢𝐧𝐜𝐢
-┃ 🏟️ 𝐂𝐚𝐥𝐜𝐢𝐨 𝐬𝐜𝐨𝐦𝐦𝐞𝐬𝐬𝐞
-┃
-╚══════════════╝
+`┌┄ 🎰 ᴄᴀꜱɪɴᴏ ᴢᴇɴᴏʙᴏᴛ ┄┐
+┆
+┆ 💸 *Benvenuto nel paradiso*
+┆ *della rovina economica*
+┆
+┆ 🎯 ʀᴏᴜʟᴇᴛᴛᴇ
+┆ 🎲 ᴅᴀᴅɪ
+┆ 🎰 ꜱʟᴏᴛ
+┆ 🃏 ʙʟᴀᴄᴋᴊᴀᴄᴋ
+┆ 🐎 ᴄᴀᴠᴀʟʟɪ
+┆ 💎 ᴍɪɴɪᴇʀᴀ
+┆ ❓ ᴇꜱᴛʀᴀᴢɪᴏɴᴇ
+┆ 🎯 ꜰʀᴇᴄᴄᴇᴛᴛᴇ
+┆ ♠️ ᴘᴏᴋᴇʀ
+┆ 🎳 ʙᴏᴡʟɪɴɢ
+┆ 🎡 ʀᴜᴏᴛᴀ
+┆ 🎟️ ɢʀᴀᴛᴛᴀ ᴇ ᴠɪɴᴄɪ
+┆ 🏟️ ᴄᴀʟᴄɪᴏ ꜱᴄᴏᴍᴍᴇꜱꜱᴇ
+┆
+└┄┄┄┄┄┄┄┄┄┄┄┄┄┄┘
 
-👇 𝐒𝐜𝐞𝐠𝐥𝐢 𝐢𝐥 𝐠𝐢𝐨𝐜𝐨 𝐚 𝐜𝐮𝐢 𝐠𝐢𝐨𝐜𝐚𝐫𝐞`,
-    footer: "𝟑𝟑𝟑 𝐂𝐀𝐒𝐈𝐍𝐎",
+👇 ꜱᴄᴇɢʟɪ ɪʟ ɢɪᴏᴄᴏ ᴀ ᴄᴜɪ ɢɪᴏᴄᴀʀᴇ`,
+    footer: "ᴢᴇɴᴏʙᴏᴛ ᴄᴀꜱɪɴᴏ",
     buttons: [
-      { buttonId: ".roulette", buttonText: { displayText: "🎯 𝐑𝐨𝐮𝐥𝐞𝐭𝐭𝐞" }, type: 1 },
-      { buttonId: ".dadi", buttonText: { displayText: "🎲 𝐃𝐚𝐝𝐢" }, type: 1 },
-      { buttonId: ".slot", buttonText: { displayText: "🎰 𝐒𝐥𝐨𝐭" }, type: 1 },
-      { buttonId: ".blackjack", buttonText: { displayText: "🃏 𝐁𝐥𝐚𝐜𝐤𝐣𝐚𝐜𝐤" }, type: 1 },
-      { buttonId: ".cavalli", buttonText: { displayText: "🐎 𝐂𝐚𝐯𝐚𝐥𝐥𝐢" }, type: 1 },
-      { buttonId: ".miniera", buttonText: { displayText: "💎 𝐌𝐢𝐧𝐢𝐞𝐫𝐚" }, type: 1 },
-      { buttonId: ".estrazione", buttonText: { displayText: "❓ 𝐄𝐬𝐭𝐫𝐚𝐳𝐢𝐨𝐧𝐞" }, type: 1 },
-      { buttonId: ".freccette", buttonText: { displayText: "🎯 𝐅𝐫𝐞𝐜𝐜𝐞𝐭𝐭𝐞" }, type: 1 },
-      { buttonId: ".poker", buttonText: { displayText: "♠️ 𝐏𝐨𝐤𝐞𝐫" }, type: 1 },
-      { buttonId: ".bowling", buttonText: { displayText: "🎳 𝐁𝐨𝐰𝐥𝐢𝐧𝐠" }, type: 1 },
-      { buttonId: ".ruota", buttonText: { displayText: "🎡 𝐑𝐮𝐨𝐭𝐚" }, type: 1 },
-      { buttonId: ".gratta", buttonText: { displayText: "🎟️ 𝐆𝐫𝐚𝐭𝐭𝐚 𝐞 𝐕𝐢𝐧𝐜𝐢" }, type: 1 },
-      { buttonId: ".calcioscommesse", buttonText: { displayText: "🏟️ 𝐂𝐚𝐥𝐜𝐢𝐨 𝐬𝐜𝐨𝐦𝐦𝐞𝐬𝐬𝐞" }, type: 1 },
+      { buttonId: ".roulette", buttonText: { displayText: "🎯 ʀᴏᴜʟᴇᴛᴛᴇ" }, type: 1 },
+      { buttonId: ".dadi", buttonText: { displayText: "🎲 ᴅᴀᴅɪ" }, type: 1 },
+      { buttonId: ".slot", buttonText: { displayText: "🎰 ꜱʟᴏᴛ" }, type: 1 },
+      { buttonId: ".blackjack", buttonText: { displayText: "🃏 ʙʟᴀᴄᴋᴊᴀᴄᴋ" }, type: 1 },
+      { buttonId: ".cavalli", buttonText: { displayText: "🐎 ᴄᴀᴠᴀʟʟɪ" }, type: 1 },
+      { buttonId: ".miniera", buttonText: { displayText: "💎 ᴍɪɴɪᴇʀᴀ" }, type: 1 },
+      { buttonId: ".estrazione", buttonText: { displayText: "❓ ᴇꜱᴛʀᴀᴢɪᴏɴᴇ" }, type: 1 },
+      { buttonId: ".freccette", buttonText: { displayText: "🎯 ꜰʀᴇᴄᴄᴇᴛᴛᴇ" }, type: 1 },
+      { buttonId: ".poker", buttonText: { displayText: "♠️ ᴘᴏᴋᴇʀ" }, type: 1 },
+      { buttonId: ".bowling", buttonText: { displayText: "🎳 ʙᴏᴡʟɪɴɢ" }, type: 1 },
+      { buttonId: ".ruota", buttonText: { displayText: "🎡 ʀᴜᴏᴛᴀ" }, type: 1 },
+      { buttonId: ".gratta", buttonText: { displayText: "🎟️ ɢʀᴀᴛᴛᴀ ᴇ ᴠɪɴᴄɪ" }, type: 1 },
+      { buttonId: ".calcioscommesse", buttonText: { displayText: "🏟️ ᴄᴀʟᴄɪᴏ ꜱᴄᴏᴍᴍᴇꜱꜱᴇ" }, type: 1 },
 
     ],
     headerType: 1

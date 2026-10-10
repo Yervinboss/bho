@@ -1,4 +1,4 @@
-//Plugin by Zeno, Lucifero & 333 staff
+//Plugin by Zeno, Lucifero & zenobot staff
 
  
 let handler = async (m, { conn, command, text }) => {
@@ -13,7 +13,7 @@ let handler = async (m, { conn, command, text }) => {
   }
 
   if (!text || (text.toLowerCase() !== 'on' && text.toLowerCase() !== 'off')) {
-    const status = chat.antiLink ? 'attivo ✅' : 'disattivo ❌';
+    const status = chat.antiLink ? 'attivo ✔️' : 'disattivo ✖️';
     return conn.reply(m.chat, `『 ℹ️ 』 *AntiLink è attualmente:* ${status}\n\n*Uso:*\n.antilink on\n.antilink off`, m);
   }
 
@@ -33,7 +33,7 @@ let handler = async (m, { conn, command, text }) => {
       profilePic = null;
     }
 
-    const messageText = `✅ 𝐀𝐧𝐭𝐢𝐋𝐢𝐧𝐤 𝐚𝐭𝐭𝐢𝐯𝐚𝐭𝐨
+    const messageText = `✔️ ᴀɴᴛɪʟɪɴᴋ ᴀᴛᴛɪᴠᴀᴛᴏ
 
 Tutti i link verranno eliminati automaticamente.`;
 
@@ -44,11 +44,11 @@ Tutti i link verranno eliminati automaticamente.`;
         forwardedNewsletterMessageInfo: {
           newsletterJid: '120363341274693350@newsletter',
           serverMessageId: -1,
-          newsletterName: global.nomebot || '333'
+          newsletterName: global.nomebot || 'zenobot'
         },
         externalAdReply: {
-          title: '『 𝐀𝐍𝐓𝐈 - 𝐋𝐈𝐍𝐊 』 𝐎𝐍',
-          body: 'Vai al canale 333',
+          title: '『 ᴀɴᴛɪ - ʟɪɴᴋ 』 ᴏɴ',
+          body: 'Vai al canale zenobot',
           mediaType: 1,
           thumbnail: profilePic 
             ? await (await fetch(profilePic)).buffer() 
@@ -73,7 +73,7 @@ Tutti i link verranno eliminati automaticamente.`;
       profilePic = null;
     }
 
-    const messageText = `❌ 𝐀𝐧𝐭𝐢𝐋𝐢𝐧𝐤 𝐝𝐢𝐬𝐚𝐭𝐭𝐢𝐯𝐚𝐭𝐨
+    const messageText = `✖️ ᴀɴᴛɪʟɪɴᴋ ᴅɪꜱᴀᴛᴛɪᴠᴀᴛᴏ
 
 I link sono ora consentiti nel gruppo.`;
 
@@ -84,11 +84,11 @@ I link sono ora consentiti nel gruppo.`;
         forwardedNewsletterMessageInfo: {
           newsletterJid: '120363341274693350@newsletter',
           serverMessageId: -1,
-          newsletterName: global.nomebot || '333'
+          newsletterName: global.nomebot || 'zenobot'
         },
         externalAdReply: {
-          title: '『 𝐀𝐍𝐓𝐈 - 𝐋𝐈𝐍𝐊 』 𝐎𝐅𝐅',
-          body: 'Vai al canale 333',
+          title: '『 ᴀɴᴛɪ - ʟɪɴᴋ 』 ᴏꜰꜰ',
+          body: 'Vai al canale zenobot',
           mediaType: 1,
           thumbnail: profilePic 
             ? await (await fetch(profilePic)).buffer() 

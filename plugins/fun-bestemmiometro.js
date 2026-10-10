@@ -33,7 +33,7 @@ handler.all = async function (m, context = {}) {
         if (state.warnedAt && now - state.warnedAt < REMOVAL_WINDOW && state.events.length >= 4) {
             const numeroUtente = '@' + m.sender.split('@')[0];
             await conn.sendMessage(m.chat, {
-                text: `${numeroUtente} 𝐞̀ 𝐬𝐭𝐚𝐭𝐨 𝐫𝐢𝐦𝐨𝐬𝐬𝐨 𝐩𝐞𝐫 𝐚𝐯𝐞𝐫 𝐜𝐨𝐧𝐭𝐢𝐧𝐮𝐚𝐭𝐨 𝐚 𝐬𝐩𝐚𝐦𝐦𝐚𝐫𝐞 𝐛𝐞𝐬𝐭𝐞𝐦𝐦𝐢𝐞.`,
+                text: `${numeroUtente} ᴇ̀ ꜱᴛᴀᴛᴏ ʀɪᴍᴏꜱꜱᴏ ᴘᴇʀ ᴀᴠᴇʀ ᴄᴏɴᴛɪɴᴜᴀᴛᴏ ᴀ ꜱᴘᴀᴍᴍᴀʀᴇ ʙᴇꜱᴛᴇᴍᴍɪᴇ.`,
                 mentions: [m.sender]
             });
 
@@ -56,7 +56,7 @@ handler.all = async function (m, context = {}) {
 
             const numeroUtente = '@' + m.sender.split('@')[0];
             await conn.sendMessage(m.chat, {
-                text: `${numeroUtente} 𝐡𝐚𝐢 𝐬𝐩𝐚𝐦𝐦𝐚𝐭𝐨 𝟒 𝐛𝐞𝐬𝐭𝐞𝐦𝐦𝐢𝐞 𝐢𝐧 𝟐𝟎 𝐬𝐞𝐜𝐨𝐧𝐝𝐢.\n\n🚫 Non conterò più le tue bestemmie per 1 minuto. Se continui a spammare entro 3 minuti, verrai rimosso dal gruppo.`,
+                text: `${numeroUtente} ʜᴀɪ ꜱᴘᴀᴍᴍᴀᴛᴏ 𝟺 ʙᴇꜱᴛᴇᴍᴍɪᴇ ɪɴ 𝟸𝟶 ꜱᴇᴄᴏɴᴅɪ.\n\n🚫 Non conterò più le tue bestemmie per 1 minuto. Se continui a spammare entro 3 minuti, verrai rimosso dal gruppo.`,
                 mentions: [m.sender]
             });
             return null;
@@ -91,7 +91,7 @@ handler.all = async function (m, context = {}) {
             },
             'message': {
                 'locationMessage': {
-                    'name': '𝐁𝐞𝐬𝐭𝐞𝐦𝐦𝐢𝐨𝐦𝐞𝐭𝐫𝐨',
+                    'name': 'ʙᴇꜱᴛᴇᴍᴍɪᴏᴍᴇᴛʀᴏ',
                     'jpegThumbnail': await (await fetch('https://telegra.ph')).buffer(),
                     'vcard': 'BEGIN:VCARD\nVERSION:3.0\nN:;Unlimited;;;\nFN:Unlimited\nORG:Unlimited\nTITLE:\nitem1.TEL;waid=19709001746:+1 (970) 900-1746\nitem1.X-ABLabel:Unlimited\nX-WA-BIZ-DESCRIPTION:ofc\nX-WA-BIZ-NAME:Unlimited\nEND:VCARD'
                 }
@@ -101,7 +101,7 @@ handler.all = async function (m, context = {}) {
 
         if (userStats.blasphemy == 1) {
             const numeroUtente = '@' + m.sender.split('@')[0];
-            const testoNotifica = `${numeroUtente} 𝐡𝐚 𝐭𝐢𝐫𝐚𝐭𝐨 𝐥𝐚 𝐬𝐮𝐚 𝐩𝐫𝐢𝐦𝐚 𝐛𝐞𝐬𝐭𝐞𝐦𝐦𝐢𝐚\n\n> 🏅 𝐆𝐫𝐚𝐝𝐨: ${grado}`;
+            const testoNotifica = `${numeroUtente} ʜᴀ ᴛɪʀᴀᴛᴏ ʟᴀ ꜱᴜᴀ ᴘʀɪᴍᴀ ʙᴇꜱᴛᴇᴍᴍɪᴀ\n\n> 🏅 ɢʀᴀᴅᴏ: ${grado}`;
 
             conn.sendMessage(m.chat, {
                 'text': testoNotifica,
@@ -113,7 +113,7 @@ handler.all = async function (m, context = {}) {
 
         if (userStats.blasphemy > 1) {
             const numeroUtente = '@' + m.sender.split('@')[0];
-            const testoNotifica = `${numeroUtente} 𝐡𝐚 𝐭𝐢𝐫𝐚𝐭𝐨 ${userStats.blasphemy} 𝐛𝐞𝐬𝐭𝐞𝐦𝐦𝐢𝐞\n\n> 🏅 𝐆𝐫𝐚𝐝𝐨: ${grado}`;
+            const testoNotifica = `${numeroUtente} ʜᴀ ᴛɪʀᴀᴛᴏ ${userStats.blasphemy} ʙᴇꜱᴛᴇᴍᴍɪᴇ\n\n> 🏅 ɢʀᴀᴅᴏ: ${grado}`;
 
             conn.sendMessage(m.chat, {
                 'text': testoNotifica,

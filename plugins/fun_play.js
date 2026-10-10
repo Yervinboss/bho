@@ -1,4 +1,4 @@
-//Plugin by Zeno, Lucifero & 333 staff
+//Plugin by Zeno, Lucifero & zenobot staff
 
 
 
@@ -12,7 +12,7 @@ let pendingLyrics = {}
 global.playChoice = global.playChoice || {}
 global.playSelection = global.playSelection || {}
 
-const getThumbnail = (video) => video?.thumbnail || video?.image || video?.images?.[0] || 'icone/333.jpg'
+const getThumbnail = (video) => video?.thumbnail || video?.image || video?.images?.[0] || 'icone/zenobot.jpg'
 
 const execPromise = (cmd) => new Promise((resolve, reject) => {
   exec(cmd, { maxBuffer: 1024 * 1024 * 10 }, (err, stdout, stderr) => {
@@ -27,12 +27,12 @@ let handler = async (m, { conn, text, usedPrefix, command }) => {
 
   if (command === "play") {
 
-    if (!text) return m.reply("🎧 𝐒𝐜𝐫𝐢𝐯𝐢 𝐢𝐥 𝐭𝐢𝐭𝐨𝐥𝐨!")
+    if (!text) return m.reply("🎧 ꜱᴄʀɪᴠɪ ɪʟ ᴛɪᴛᴏʟᴏ!")
 
     let search = await yts(text)
     let results = search.videos.slice(0, 5)
 
-    if (!results.length) return m.reply("❌ Nessun risultato")
+    if (!results.length) return m.reply("✖️ Nessun risultato")
 
     global.playSelection[m.sender] = results
 
@@ -40,7 +40,7 @@ let handler = async (m, { conn, text, usedPrefix, command }) => {
       image: { url: getThumbnail(video) },
       title: `🎵 ${video.title.substring(0, 60)}${video.title.length > 60 ? '…' : ''}`,
       body: `🎵 *${video.title}*\n\n📺 ${video.author?.name || 'Sconosciuto'}\n⏱️ ${video.timestamp || '—'}\n👁️ ${video.views?.toLocaleString() || '—'}`,
-      footer: '333 BOT',
+      footer: 'ZENOBOT',
       buttons: [{
         name: 'quick_reply',
         buttonParamsJson: JSON.stringify({
@@ -51,8 +51,8 @@ let handler = async (m, { conn, text, usedPrefix, command }) => {
     }))
 
     return conn.sendMessage(m.chat, {
-      text: `🔎 𝐓𝐫𝐨𝐯𝐚𝐭𝐢 ${results.length} 𝐫𝐢𝐬𝐮𝐥𝐭𝐚𝐭𝐢 per "*${text}*".\n\nScrolla e scegli la canzone adatta alla tua richiesta.`,
-      footer: '333 BOT',
+      text: `🔎 ᴛʀᴏᴠᴀᴛɪ ${results.length} ʀɪꜱᴜʟᴛᴀᴛɪ per "*${text}*".\n\nScrolla e scegli la canzone adatta alla tua richiesta.`,
+      footer: 'ZENOBOT',
       cards: selectionCards
     }, { quoted: m })
   }
@@ -61,13 +61,13 @@ let handler = async (m, { conn, text, usedPrefix, command }) => {
     const index = Number((text || '').trim())
     const results = global.playSelection[m.sender]
 
-    if (!results?.length) return m.reply("❌ Nessuna selezione attiva")
+    if (!results?.length) return m.reply("✖️ Nessuna selezione attiva")
     if (!Number.isInteger(index) || index < 1 || index > results.length) {
-      return m.reply("❌ Seleziona un numero valido tra i risultati mostrati")
+      return m.reply("✖️ Seleziona un numero valido tra i risultati mostrati")
     }
 
     const video = results[index - 1]
-    if (!video) return m.reply("❌ Risultato non valido")
+    if (!video) return m.reply("✖️ Risultato non valido")
 
     global.playChoice[m.sender] = video
     delete global.playSelection[m.sender]
@@ -79,7 +79,7 @@ let handler = async (m, { conn, text, usedPrefix, command }) => {
     await conn.sendMessage(m.chat, {
       image: { url: thumbnail },
       caption: `${actionText}\n\n🎧 Scegli un'azione per questo brano:`,
-      footer: '333 BOT',
+      footer: 'ZENOBOT',
       buttons: [
         {
           buttonId: '.play_audio',
@@ -104,18 +104,18 @@ let handler = async (m, { conn, text, usedPrefix, command }) => {
   }
 
   let video = global.playChoice[m.sender]
-  if (!video) return m.reply("❌ Nessuna richiesta attiva")
+  if (!video) return m.reply("✖️ Nessuna richiesta attiva")
 
   if (command === "play_audio") {
 
     let infoMsg = `
-ℹ️ 𝐑𝐢𝐬𝐮𝐥𝐭𝐚𝐭𝐨:
+ℹ️ ʀɪꜱᴜʟᴛᴀᴛᴏ:
 
 *${video.title}*
 
-⌛️ 𝐒𝐜𝐚𝐫𝐢𝐜𝐨 𝐥’𝐚𝐮𝐝𝐢𝐨...
+⌛️ ꜱᴄᴀʀɪᴄᴏ ʟ’ᴀᴜᴅɪᴏ...
 
-> 𝟥𝟥𝟥 𝔹𝕆𝕋 𝐝𝐨𝐰𝐧𝐥𝐨𝐚𝐝𝐞𝐫
+> ᴢᴇɴᴏʙᴏᴛ ᴅᴏᴡɴʟᴏᴀᴅᴇʀ
 `
     await m.reply(infoMsg)
 
@@ -132,7 +132,7 @@ let handler = async (m, { conn, text, usedPrefix, command }) => {
         ].filter(Boolean).join('\n')
 
         console.error('Errore download audio:', details)
-        return m.reply(`❌ Errore audio:\n\n${details}`)
+        return m.reply(`✖️ Errore audio:\n\n${details}`)
       }
 
       await conn.sendMessage(m.chat, {
@@ -152,7 +152,7 @@ let handler = async (m, { conn, text, usedPrefix, command }) => {
       }, 15000)
 
       const pulsanti = [
-        ['✅ 𝐒𝐢', `${usedPrefix}lyrics_yes`]
+        ['✔️ ꜱɪ', `${usedPrefix}lyrics_yes`]
       ];
 
       await conn.sendButton(
@@ -170,9 +170,9 @@ let handler = async (m, { conn, text, usedPrefix, command }) => {
 
   if (command === "play_video") {
     if (video.seconds > 480)
-      return m.reply("❌ Max 8 minuti")
+      return m.reply("✖️ Max 8 minuti")
 
-    await m.reply("🎬 𝐒𝐜𝐚𝐫𝐢𝐜𝐨 𝐯𝐢𝐝𝐞𝐨...\n> 𝟥𝟥𝟥 𝔹𝕆𝕋 𝐝𝐨𝐰𝐧𝐥𝐨𝐚𝐝𝐞𝐫")
+    await m.reply("🎬 ꜱᴄᴀʀɪᴄᴏ ᴠɪᴅᴇᴏ...\n> ᴢᴇɴᴏʙᴏᴛ ᴅᴏᴡɴʟᴏᴀᴅᴇʀ")
 
     const ts  = Date.now()
     const raw = path.join(os.tmpdir(), `vid_raw_${ts}.mp4`)
@@ -200,7 +200,7 @@ let handler = async (m, { conn, text, usedPrefix, command }) => {
       const sizeMB = fs.statSync(out).size / (1024 * 1024)
       if (sizeMB > 64) {
         fs.unlinkSync(out)
-        return m.reply("❌ Video troppo pesante")
+        return m.reply("✖️ Video troppo pesante")
       }
 
       await conn.sendMessage(m.chat, {
@@ -214,7 +214,7 @@ let handler = async (m, { conn, text, usedPrefix, command }) => {
 
     } catch (e) {
       console.log(e)
-      m.reply("❌ Errore video")
+      m.reply("✖️ Errore video")
     }
   }
 }

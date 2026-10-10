@@ -1,4 +1,4 @@
-//Plugin by Zeno, Lucifero & 333 staff
+//Plugin by Zeno, Lucifero & zenobot staff
 
 let handler = async (m, { conn, command, text }) => {
 let target = m.mentionedJid?.[0] 
@@ -8,15 +8,15 @@ let target = m.mentionedJid?.[0]
 let number = target.split("@")[0]
     let width = Math.floor(Math.random() * 101);
     let finalPhrase = width >= 8 
-        ? "🔥 𝐜𝐨𝐦𝐩𝐥𝐢𝐦𝐞𝐧𝐭𝐢, 𝐬𝐢𝐚𝐦𝐨 𝐬𝐮 𝐥𝐢𝐯𝐞𝐥𝐥𝐢 𝐢𝐦𝐩𝐫𝐞𝐬𝐬𝐢𝐨𝐧𝐚𝐧𝐭𝐢!\n━━━━━━━━━━━━━━━━━━\n> 𝟥𝟥𝟥 𝔹𝕆𝕋"
-        : "😅 𝐮𝐧 𝐫𝐢𝐬𝐮𝐥𝐭𝐚𝐭𝐨 𝐝𝐢𝐬𝐜𝐫𝐞𝐭𝐨, 𝐜’𝐞̀ 𝐬𝐞𝐦𝐩𝐫𝐞 𝐦𝐚𝐫𝐠𝐢𝐧𝐞 𝐝𝐢 𝐦𝐢𝐠𝐥𝐢𝐨𝐫𝐚𝐦𝐞𝐧𝐭𝐨\n━━━━━━━━━━━━━━━━━━\n> 𝟥𝟥𝟥 𝔹𝕆𝕋";
+        ? "🔥 ᴄᴏᴍᴘʟɪᴍᴇɴᴛɪ, ꜱɪᴀᴍᴏ ꜱᴜ ʟɪᴠᴇʟʟɪ ɪᴍᴘʀᴇꜱꜱɪᴏɴᴀɴᴛɪ!\n┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄\n> ᴢᴇɴᴏʙᴏᴛ"
+        : "😅 ᴜɴ ʀɪꜱᴜʟᴛᴀᴛᴏ ᴅɪꜱᴄʀᴇᴛᴏ, ᴄ’ᴇ̀ ꜱᴇᴍᴘʀᴇ ᴍᴀʀɢɪɴᴇ ᴅɪ ᴍɪɢʟɪᴏʀᴀᴍᴇɴᴛᴏ\n┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄\n> ᴢᴇɴᴏʙᴏᴛ";
 
     let message = `
-━━━━━━━━━━━━━━━━━━
-📏 𝐕𝐄𝐃𝐈𝐀𝐌𝐎 𝐐𝐔𝐀𝐍𝐓𝐎 𝐂’𝐄̀ 𝐋’𝐇𝐀𝐈 𝐋𝐀𝐑𝐆𝐀 📏
-━━━━━━━━━━━━━━━━━━
-🔍 *@${number}* 𝐡𝐚 𝐮𝐧’𝐚𝐩𝐞𝐫𝐭𝐮𝐫𝐚 𝐬𝐭𝐢𝐦𝐚𝐭𝐚 𝐝𝐢: *${width}* 𝐜𝐦!  
-━━━━━━━━━━━━━━━━━━
+┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄
+📏 ᴠᴇᴅɪᴀᴍᴏ ǫᴜᴀɴᴛᴏ ᴄ’ᴇ̀ ʟ’ʜᴀɪ ʟᴀʀɢᴀ 📏
+┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄
+🔍 *@${number}* ʜᴀ ᴜɴ’ᴀᴘᴇʀᴛᴜʀᴀ ꜱᴛɪᴍᴀᴛᴀ ᴅɪ: *${width}* ᴄᴍ!  
+┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄
 ${finalPhrase}
 `.trim();
 
@@ -24,6 +24,6 @@ ${finalPhrase}
 };
 
 handler.command = /^(figa)$/i;
-handler.help = ['𝐟𝐢𝐠𝐚 @𝐭𝐚𝐠'];
+handler.help = ['ꜰɪɢᴀ @ᴛᴀɢ'];
 handler.tags = ['fun'];
 export default handler;

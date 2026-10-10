@@ -1,18 +1,18 @@
-//Plugin by Zeno, Lucifero & 333 staff
+//Plugin by Zeno, Lucifero & zenobot staff
 
 const handler = async (m, { conn, args }) => {
 
   if (args.length < 2) {
     return conn.reply(m.chat,
-`╔═🔔 𝐏𝐑𝐎𝐌𝐄𝐌𝐎𝐑𝐈𝐀═╗
-┃ Uso:
-┃ .promemoria <tempo> [@user] <messaggio>
-┃
-┃ Esempi:
-┃ • .promemoria 18:30 Studiare
-┃ • .promemoria @user 10m Bere acqua
-┃ • .promemoria 1h Allenamento
-╚═════════════╝`, m)
+`┌┄🔔 ᴘʀᴏᴍᴇᴍᴏʀɪᴀ┄┐
+┆ Uso:
+┆ .promemoria <tempo> [@user] <messaggio>
+┆
+┆ Esempi:
+┆ • .promemoria 18:30 Studiare
+┆ • .promemoria @user 10m Bere acqua
+┆ • .promemoria 1h Allenamento
+└┄┄┄┄┄┄┄┄┄┄┄┄┄┘`, m)
   }
 
   const isValidTimeInput = (str) => {
@@ -44,12 +44,12 @@ const handler = async (m, { conn, args }) => {
       timeInput = args[1]
       reminderMessage = args.slice(2).join(" ")
     } else {
-      return conn.reply(m.chat, "❌ Formato non valido.", m)
+      return conn.reply(m.chat, "✖️ Formato non valido.", m)
     }
   }
 
   if (!reminderMessage) {
-    return conn.reply(m.chat, "❌ Inserisci il messaggio.", m)
+    return conn.reply(m.chat, "✖️ Inserisci il messaggio.", m)
   }
 
   const now = new Date()
@@ -75,7 +75,7 @@ const handler = async (m, { conn, args }) => {
     const minutes = Number(mStr)
 
     if (hours > 23 || minutes > 59) {
-      return conn.reply(m.chat, "❌ Orario non valido.", m)
+      return conn.reply(m.chat, "✖️ Orario non valido.", m)
     }
 
     let targetTime = new Date(nowIT)
@@ -93,7 +93,7 @@ const handler = async (m, { conn, args }) => {
     const value = parseInt(timeInput.slice(0, -1))
 
     if (isNaN(value)) {
-      return conn.reply(m.chat, "❌ Tempo non valido.", m)
+      return conn.reply(m.chat, "✖️ Tempo non valido.", m)
     }
 
     if (unit === "s") delay = value * 1000
@@ -105,20 +105,20 @@ const handler = async (m, { conn, args }) => {
 
   await conn.sendMessage(m.chat, {
     text:
-`╔═🔔 𝐏𝐑𝐎𝐌𝐄𝐌𝐎𝐑𝐈𝐀═╗
-┃ 👤 Destinatario: ${tag}
-┃ ⏳ Tempo: ${timeInput}
-┃
-┃ 📝 Messaggio:
-┃ ${reminderMessage}
-╚═════════════╝`,
+`┌┄🔔 ᴘʀᴏᴍᴇᴍᴏʀɪᴀ┄┐
+┆ 👤 Destinatario: ${tag}
+┆ ⏳ Tempo: ${timeInput}
+┆
+┆ 📝 Messaggio:
+┆ ${reminderMessage}
+└┄┄┄┄┄┄┄┄┄┄┄┄┄┘`,
     mentions: target === m.sender ? [] : [target]
   })
 
   setTimeout(async () => {
     await conn.sendMessage(target, {
       text:
-`⏰ 𝐏𝐑𝐎𝐌𝐄𝐌𝐎𝐑𝐈𝐀
+`⏰ ᴘʀᴏᴍᴇᴍᴏʀɪᴀ
 
 ${reminderMessage}`
     })

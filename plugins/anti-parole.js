@@ -59,7 +59,7 @@ const handler = async (m, { conn, text, args, command }) => {
     if (existing.includes(wNorm)) return conn.reply(chatId, 'Questa parola è già presente nella lista.', m)
     chat.forbiddenWords.push(wNorm)
     try { await global.db.write() } catch (e) {}
-    return conn.reply(chatId, `✅ Parola proibita aggiunta: ${word}\n> *Usa ''.listaparole'' per visualizzare le parole proibite.* `, m)
+    return conn.reply(chatId, `✔️ Parola proibita aggiunta: ${word}\n> *Usa ''.listaparole'' per visualizzare le parole proibite.* `, m)
   }
 
   if (cmd === 'delparola') {
@@ -71,7 +71,7 @@ const handler = async (m, { conn, text, args, command }) => {
       if (idx < 0 || idx >= chat.forbiddenWords.length) return conn.reply(chatId, 'Indice non valido.', m)
       const removed = chat.forbiddenWords.splice(idx, 1)[0]
       try { await global.db.write() } catch (e) {}
-      return conn.reply(chatId, `✅ Parola proibita rimossa: ${removed}`, m)
+      return conn.reply(chatId, `✔️ Parola proibita rimossa: ${removed}`, m)
     }
 
     const wNorm = raw.toLowerCase().trim()
@@ -80,7 +80,7 @@ const handler = async (m, { conn, text, args, command }) => {
     if (i === -1) return conn.reply(chatId, 'Parola non trovata nella lista.', m)
     const removed = chat.forbiddenWords.splice(i, 1)[0]
     try { await global.db.write() } catch (e) {}
-    return conn.reply(chatId, `✅ Parola proibita rimossa: ${removed}`, m)
+    return conn.reply(chatId, `✔️ Parola proibita rimossa: ${removed}`, m)
   }
 
   if (cmd === 'listaparole') {

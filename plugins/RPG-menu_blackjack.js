@@ -1,4 +1,4 @@
-//Plugin by Zeno, Lucifero & 333 staff
+//Plugin by Zeno, Lucifero & zenobot staff
 
 let handler = async (m, { conn }) => {
   let user = global.db.data.users[m.sender]
@@ -7,17 +7,17 @@ let handler = async (m, { conn }) => {
 
   await conn.sendMessage(m.chat, {
     text:
-`╔═🃏 𝐁𝐋𝐀𝐂𝐊𝐉𝐀𝐂𝐊 ═╗
-┃ 💰 Portafoglio: *${money} XP333*
-┃
-┃ Scegli la puntata
-╚══════╝`,
+`┌┄🃏 ʙʟᴀᴄᴋᴊᴀᴄᴋ ┄┐
+┆ 💰 Portafoglio: *${money} ZenoCoin*
+┆
+┆ Scegli la puntata
+└┄┄┄┄┄┄┘`,
     buttons: [
-      { buttonId: bet(100), buttonText: { displayText: "100 XP333" }, type: 1 },
-      { buttonId: bet(200), buttonText: { displayText: "200 XP333" }, type: 1 },
-      { buttonId: bet(500), buttonText: { displayText: "500 XP333" }, type: 1 },
-      { buttonId: bet(1000), buttonText: { displayText: "1000 XP333" }, type: 1 },
-      { buttonId: bet(10000), buttonText: { displayText: "10000 XP333" }, type: 1 }
+      { buttonId: bet(100), buttonText: { displayText: "100 ZenoCoin" }, type: 1 },
+      { buttonId: bet(200), buttonText: { displayText: "200 ZenoCoin" }, type: 1 },
+      { buttonId: bet(500), buttonText: { displayText: "500 ZenoCoin" }, type: 1 },
+      { buttonId: bet(1000), buttonText: { displayText: "1000 ZenoCoin" }, type: 1 },
+      { buttonId: bet(10000), buttonText: { displayText: "10000 ZenoCoin" }, type: 1 }
     ],
     headerType: 1
   }, { quoted: m })

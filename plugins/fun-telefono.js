@@ -1,4 +1,4 @@
-//Plugin by Zeno, Lucifero & 333 staff
+//Plugin by Zeno, Lucifero & zenobot staff
 
 let handler = async (m, { text }) => {
 
@@ -11,7 +11,7 @@ let handler = async (m, { text }) => {
   let valido = telefoniValidi.some(v => t.includes(v))
 
   if (!valido) {
-    return m.reply("❌ Quello non è un telefono, coglione.")
+    return m.reply("✖️ Quello non è un telefono, coglione.")
   }
 
   function pickRandom(arr) {
@@ -94,19 +94,19 @@ let handler = async (m, { text }) => {
   let voto = Math.floor(Math.random() * 10) + 1
 
   let risposta = `
-╭━ 📱 𝐀𝐍𝐀𝐋𝐈𝐒𝐈 𝐓𝐄𝐋𝐄𝐅𝐎𝐍𝐎 ━╮
+┌┄ 📱 ᴀɴᴀʟɪꜱɪ ᴛᴇʟᴇꜰᴏɴᴏ ┄┐
 
-📲 𝐃𝐢𝐬𝐩𝐨𝐬𝐢𝐭𝐢𝐯𝐨:
+📲 ᴅɪꜱᴘᴏꜱɪᴛɪᴠᴏ:
 ➤ ${text}
 
-🧠 𝐏𝐫𝐨𝐟𝐢𝐥𝐨 𝐮𝐭𝐞𝐧𝐭𝐞:
+🧠 ᴘʀᴏꜰɪʟᴏ ᴜᴛᴇɴᴛᴇ:
 ➤ ${frase}
 
-📊 𝐕𝐚𝐥𝐮𝐭𝐚𝐳𝐢𝐨𝐧𝐞:
+📊 ᴠᴀʟᴜᴛᴀᴢɪᴏɴᴇ:
 ➤ ${voto}/10
 
-╰━━━━━━━━━━━━╯
-> *BY 333 BOT*
+└┄┄┄┄┄┄┄┄┄┄┄┄┘
+> *BY ZENOBOT*
 `
 
   m.reply(risposta.trim())

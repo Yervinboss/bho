@@ -1,4 +1,4 @@
-//Plugin by Zeno, Lucifero & 333 staff
+//Plugin by Zeno, Lucifero & zenobot staff
 
 export async function before(m, { conn, isAdmin, isBotAdmin }) {
   if (m.isBaileys && m.fromMe) return true;
@@ -24,7 +24,7 @@ export async function before(m, { conn, isAdmin, isBotAdmin }) {
   });
 
   await conn.sendMessage(m.chat, {
-    text: `🚫 @${m.sender.split('@')[0]} 𝐢 𝐥𝐢𝐧𝐤 𝐝𝐢 𝐓𝐞𝐥𝐞𝐠𝐫𝐚𝐦 𝐧𝐨𝐧 𝐬𝐨𝐧𝐨 𝐜𝐨𝐧𝐬𝐞𝐧𝐭𝐢𝐭𝐢!!\n\n𝐜𝐨𝐧𝐬𝐞𝐠𝐮𝐞𝐧𝐳𝐞: 𝐞𝐬𝐩𝐮𝐥𝐬𝐢𝐨𝐧𝐞 𝐝𝐚𝐥 𝐠𝐫𝐮𝐩𝐩𝐨.`,
+    text: `🚫 @${m.sender.split('@')[0]} ɪ ʟɪɴᴋ ᴅɪ ᴛᴇʟᴇɢʀᴀᴍ ɴᴏɴ ꜱᴏɴᴏ ᴄᴏɴꜱᴇɴᴛɪᴛɪ!!\n\nᴄᴏɴꜱᴇɢᴜᴇɴᴢᴇ: ᴇꜱᴘᴜʟꜱɪᴏɴᴇ ᴅᴀʟ ɢʀᴜᴘᴘᴏ.`,
     mentions: [m.sender]
   });
 

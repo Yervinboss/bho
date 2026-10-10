@@ -1,7 +1,7 @@
-//Plugin by 333 staff
+//Plugin by zenobot staff
 
 let handler = async (m, { conn }) => {
-  if (!m.isGroup) return m.reply('❌ Questo comando funziona solo nei gruppi.')
+  if (!m.isGroup) return m.reply('✖️ Questo comando funziona solo nei gruppi.')
 
   const chatId = m.chat
   if (!global.db.data.chats[chatId]) global.db.data.chats[chatId] = {}
@@ -17,7 +17,7 @@ let handler = async (m, { conn }) => {
     mentions.push(jid)
   })
 
-  text += '\n━━━━━━━━━━━━━━━━━━━━━━\n'
+  text += '\n┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄\n'
   text += '🛡️ *Comandi Disponibili ai Moderatori*\n\n'
   text += '• .pin / .unpin - Fissa/defissa messaggi\n'
   text += '• .setwelcome - Imposta messaggio di benvenuto\n'

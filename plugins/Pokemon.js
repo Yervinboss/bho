@@ -1,4 +1,4 @@
-//Plugin by Zeno, Lucifero & 333 staff
+//Plugin by Zeno, Lucifero & zenobot staff
 
 import fs from 'fs/promises'
 import fsSync from 'fs'
@@ -30,11 +30,11 @@ const TIPI = {
 }
 
 function getRarita(hp) {
-  if (hp >= 120) return { stars: "★★★★★", label: "LEGGENDARIO" }
-  if (hp >= 100) return { stars: "★★★★☆", label: "ULTRA RARO"  }
-  if (hp >= 80)  return { stars: "★★★☆☆", label: "RARO"        }
-  if (hp >= 60)  return { stars: "★★☆☆☆", label: "NON COMUNE"  }
-  return              { stars: "★☆☆☆☆", label: "COMUNE"      }
+  if (hp >= 120) return { stars: "✧✧✧✧✧", label: "LEGGENDARIO" }
+  if (hp >= 100) return { stars: "✧✧✧✧✧", label: "ULTRA RARO"  }
+  if (hp >= 80)  return { stars: "✧✧✧✧✧", label: "RARO"        }
+  if (hp >= 60)  return { stars: "✧✧✧✧✧", label: "NON COMUNE"  }
+  return              { stars: "✧✧✧✧✧", label: "COMUNE"      }
 }
 
 function statBar(val, max = 160) {
@@ -112,13 +112,13 @@ function buildCard(poke, dataC = null) {
     : `${tipo1.emoji} ${tipo1.ita}`
 
   const movesStr = poke.moves
-    .map((m, i) => `┃  ${["①","②","③","④"][i]} ${m}`)
+    .map((m, i) => `┆  ${["①","②","③","④"][i]} ${m}`)
     .join("\n")
 
-  const dataRiga = dataC ? `\n┃  📅 Catturato il: ${dataC}` : ""
+  const dataRiga = dataC ? `\n┆  📅 Catturato il: ${dataC}` : ""
 
   return `
-  #${padId(poke.id)}  ★ POKÉDEX CARD ★   
+  #${padId(poke.id)}  ✧ POKÉDEX CARD ✧   
   ${poke.nameIT.padEnd(26)}
  ${tipoStr.padEnd(26)}
   ${rarita.stars}  ${rarita.label.padEnd(14)}
@@ -155,7 +155,7 @@ let handler = async (m, { conn, args, command }) => {
     try {
       poke = await fetchPokemon(randomId)
     } catch {
-      return m.reply("❌ Errore nel trovare un Pokémon. Riprova!")
+      return m.reply("✖️ Errore nel trovare un Pokémon. Riprova!")
     }
 
     const giaHai  = !!utente.catturati[poke.id]
@@ -229,14 +229,14 @@ let handler = async (m, { conn, args, command }) => {
     )
 
     if (!trovato) {
-      return m.reply(`❌ Non hai ancora catturato *${query.toUpperCase()}*!\nUsa *.cattura* per trovarlo o *.pokedex* per vedere la tua collezione.`)
+      return m.reply(`✖️ Non hai ancora catturato *${query.toUpperCase()}*!\nUsa *.cattura* per trovarlo o *.pokedex* per vedere la tua collezione.`)
     }
 
     let poke
     try {
       poke = await fetchPokemon(trovato.id)
     } catch {
-      return m.reply("❌ Errore nel caricare i dati. Riprova!")
+      return m.reply("✖️ Errore nel caricare i dati. Riprova!")
     }
 
     const carta   = buildCard(poke, trovato.catturato)

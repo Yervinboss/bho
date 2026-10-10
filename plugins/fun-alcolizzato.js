@@ -1,4 +1,4 @@
-//Plugin by Zeno, Lucifero & 333 staff
+//Plugin by Zeno, Lucifero & zenobot staff
 
 let handler = async (m, { conn, command, text }) => {
 let target = m.mentionedJid?.[0] 
@@ -10,16 +10,16 @@ let number = target.split("@")[0]
 
 
     let finalPhrase = width >= 30 
-        ?"😅 𝐢𝐥 𝐛𝐫𝐨 𝐞̀ 𝐜𝐚𝐥𝐚𝐭𝐨 𝐢𝐧 𝐝𝐞𝐩𝐫𝐞𝐬𝐬𝐢𝐨𝐧𝐞\n━━━━━━━━━━━━━━━━━━\n> 𝟥𝟥𝟥 𝔹𝕆𝕋"
-        : "👮 𝐢𝐥 𝐫𝐚𝐠𝐚𝐳𝐳𝐨/𝐚 𝐞̀ 𝐚𝐬𝐭𝐞𝐦𝐢𝐨/𝐚\n━━━━━━━━━━━━━━━━━━\n> 𝟥𝟥𝟥 𝔹𝕆𝕋";
+        ?"😅 ɪʟ ʙʀᴏ ᴇ̀ ᴄᴀʟᴀᴛᴏ ɪɴ ᴅᴇᴘʀᴇꜱꜱɪᴏɴᴇ\n┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄\n> ᴢᴇɴᴏʙᴏᴛ"
+        : "👮 ɪʟ ʀᴀɢᴀᴢᴢᴏ/ᴀ ᴇ̀ ᴀꜱᴛᴇᴍɪᴏ/ᴀ\n┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄\n> ᴢᴇɴᴏʙᴏᴛ";
 
 
     let message = `
-━━━━━━━━━━━━━━━━━━
-𝐌𝐎𝐌𝐄𝐍𝐓𝐎 𝐀𝐋𝐂𝐎𝐋 𝐓𝐄𝐒𝐓!🍷
-━━━━━━━━━━━━━━━━━━
-@${number} 𝐞̀ 𝐚𝐥𝐜𝐨𝐥𝐢𝐳𝐳𝐚𝐭𝐨 𝐚𝐥 *${width}%🍷!* 
-━━━━━━━━━━━━━━━━━━
+┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄
+ᴍᴏᴍᴇɴᴛᴏ ᴀʟᴄᴏʟ ᴛᴇꜱᴛ!🍷
+┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄
+@${number} ᴇ̀ ᴀʟᴄᴏʟɪᴢᴢᴀᴛᴏ ᴀʟ *${width}%🍷!* 
+┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄
 ${finalPhrase}
 `.trim();
 
@@ -27,7 +27,7 @@ ${finalPhrase}
 };
 
 handler.command = /^(alcolizzato)$/i;
-handler.help = ['𝐚𝐥𝐜𝐨𝐥𝐢𝐳𝐳𝐚𝐭𝐨 @𝐭𝐚𝐠'];
+handler.help = ['ᴀʟᴄᴏʟɪᴢᴢᴀᴛᴏ @ᴛᴀɢ'];
 handler.tags = ['fun'];
 
 export default handler;

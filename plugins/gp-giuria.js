@@ -1,9 +1,9 @@
-// Plugin by Zeno, Lucifero & 333 staff
+// Plugin by Zeno, Lucifero & zenobot staff
 
 let handler = async (m, { conn, participants, groupMetadata, args, isAdmin }) => {
   try {
-    if (!m.isGroup) return m.reply('❌ Questo comando funziona solo nei gruppi.');
-    if (!isAdmin) return m.reply('❌ Solo gli admin del gruppo possono usare questo comando.');
+    if (!m.isGroup) return m.reply('✖️ Questo comando funziona solo nei gruppi.');
+    if (!isAdmin) return m.reply('✖️ Solo gli admin del gruppo possono usare questo comando.');
 
     global.giuriaCases = global.giuriaCases || new Map();
     const voteActions = ['colpevole', 'innocente', 'no', 'guilty', 'notguilty'];
@@ -29,18 +29,18 @@ let handler = async (m, { conn, participants, groupMetadata, args, isAdmin }) =>
         try {
           await conn.groupParticipantsUpdate(chat, [caseData.target], 'remove');
           return await conn.sendMessage(chat, {
-            text: `⚖️ Processo concluso!\n\n${getMention(caseData.issuer)} ha avviato un processo contro ${getMention(caseData.target)}.\n\nRisultato: *COLPEVOLE*\n✅ Voti colpevole: ${guiltyCount}\n❌ Voti non colpevole: ${innocentCount}\n\n${getMention(caseData.target)} è stato rimosso dal gruppo.`,
+            text: `⚖️ Processo concluso!\n\n${getMention(caseData.issuer)} ha avviato un processo contro ${getMention(caseData.target)}.\n\nRisultato: *COLPEVOLE*\n✔️ Voti colpevole: ${guiltyCount}\n✖️ Voti non colpevole: ${innocentCount}\n\n${getMention(caseData.target)} è stato rimosso dal gruppo.`,
             mentions: [caseData.issuer, caseData.target, ...mentionList, groupOwnerId].filter(Boolean),
             contextInfo: { mentionedJid: [caseData.issuer, caseData.target, ...mentionList, groupOwnerId].filter(Boolean) }
           });
         } catch (error) {
           console.error(error);
-          return await m.reply('❌ Errore durante la rimozione del membro. Verifica che il bot sia admin.');
+          return await m.reply('✖️ Errore durante la rimozione del membro. Verifica che il bot sia admin.');
         }
       }
 
       return await conn.sendMessage(chat, {
-        text: `⚖️ Processo concluso!\n\n${getMention(caseData.issuer)} ha avviato un processo contro ${getMention(caseData.target)}.\n\nRisultato: *NON COLPEVOLE*\n✅ Voti colpevole: ${guiltyCount}\n❌ Voti non colpevole: ${innocentCount}\n\n${getMention(caseData.target)} rimane nel gruppo.`,
+        text: `⚖️ Processo concluso!\n\n${getMention(caseData.issuer)} ha avviato un processo contro ${getMention(caseData.target)}.\n\nRisultato: *NON COLPEVOLE*\n✔️ Voti colpevole: ${guiltyCount}\n✖️ Voti non colpevole: ${innocentCount}\n\n${getMention(caseData.target)} rimane nel gruppo.`,
         mentions: [caseData.issuer, caseData.target, ...mentionList, groupOwnerId].filter(Boolean),
         contextInfo: { mentionedJid: [caseData.issuer, caseData.target, ...mentionList, groupOwnerId].filter(Boolean) }
       });
@@ -48,16 +48,16 @@ let handler = async (m, { conn, participants, groupMetadata, args, isAdmin }) =>
 
     if (isVote) {
       const caseData = global.giuriaCases.get(caseId);
-      if (!caseData) return m.reply('❌ Questa giuria non esiste o è scaduta.');
-      if (caseData.chat !== m.chat) return m.reply('❌ Questo voto non appartiene a questa chat.');
-      if (!isAdmin) return m.reply('❌ Solo gli admin possono votare questa giuria.');
+      if (!caseData) return m.reply('✖️ Questa giuria non esiste o è scaduta.');
+      if (caseData.chat !== m.chat) return m.reply('✖️ Questo voto non appartiene a questa chat.');
+      if (!isAdmin) return m.reply('✖️ Solo gli admin possono votare questa giuria.');
 
       const voter = participants.find(p => [p.id, p.jid].includes(m.sender));
-      if (!voter || !(voter.admin === 'admin' || voter.admin === 'superadmin')) return m.reply('❌ Solo gli admin possono votare questa giuria.');
+      if (!voter || !(voter.admin === 'admin' || voter.admin === 'superadmin')) return m.reply('✖️ Solo gli admin possono votare questa giuria.');
 
       const normalizedVote = voteAction === 'colpevole' || voteAction === 'guilty' ? 'colpevole' : 'innocente';
       const previousVote = caseData.voters.get(m.sender);
-      if (previousVote === normalizedVote) return m.reply(`❌ Hai già votato *${normalizedVote}*.`);
+      if (previousVote === normalizedVote) return m.reply(`✖️ Hai già votato *${normalizedVote}*.`);
 
       if (previousVote && caseData[previousVote] instanceof Set) caseData[previousVote].delete(m.sender);
 
@@ -68,7 +68,7 @@ let handler = async (m, { conn, participants, groupMetadata, args, isAdmin }) =>
       const guiltyCount = (caseData.colpevole || new Set()).size;
       const innocentCount = (caseData.innocente || new Set()).size;
 
-      await m.reply(`🗳️ Voto registrato: *${normalizedVote}*\n\n✅ Colpevole: ${guiltyCount}\n❌ Non colpevole: ${innocentCount}`);
+      await m.reply(`🗳️ Voto registrato: *${normalizedVote}*\n\n✔️ Colpevole: ${guiltyCount}\n✖️ Non colpevole: ${innocentCount}`);
 
       if (guiltyCount >= 3) await completeCase(caseId, m.chat);
       return;
@@ -76,21 +76,21 @@ let handler = async (m, { conn, participants, groupMetadata, args, isAdmin }) =>
 
     // normale apertura caso
     const target = m.mentionedJid?.[0] || m.quoted?.sender;
-    if (!target) return m.reply('❌ Usa il comando così: .giuria @user motivo');
-    if (target === m.sender) return m.reply('❌ Non puoi aprire un processo contro te stesso.');
-    if (groupAdmins.some(p => p.id === target || p.jid === target)) return m.reply('❌ Non puoi aprire un processo contro un altro admin.');
+    if (!target) return m.reply('✖️ Usa il comando così: .giuria @user motivo');
+    if (target === m.sender) return m.reply('✖️ Non puoi aprire un processo contro te stesso.');
+    if (groupAdmins.some(p => p.id === target || p.jid === target)) return m.reply('✖️ Non puoi aprire un processo contro un altro admin.');
 
     // blocca contro owner del bot (global.owner entries)
     const isBotOwnerTarget = (global.owner || []).some(([num]) => (`${num}@s.whatsapp.net` === target) || (num === target.split('@')[0]));
-    if (isBotOwnerTarget) return m.reply('❌ Non puoi aprire un processo contro il proprietario del bot.');
+    if (isBotOwnerTarget) return m.reply('✖️ Non puoi aprire un processo contro il proprietario del bot.');
 
     // Evita più processi contemporanei nello stesso gruppo
     for (const [, v] of global.giuriaCases) {
-      if (v && v.chat === m.chat) return m.reply('❌ È già in corso un processo in questo gruppo. Attendi la sua conclusione.');
+      if (v && v.chat === m.chat) return m.reply('✖️ È già in corso un processo in questo gruppo. Attendi la sua conclusione.');
     }
 
     const reason = args.slice(m.mentionedJid?.length ? 1 : 0).join(' ').trim();
-    if (!reason) return m.reply('❌ Devi specificare un motivo. Esempio: .giuria @user comportamento scorretto');
+    if (!reason) return m.reply('✖️ Devi specificare un motivo. Esempio: .giuria @user comportamento scorretto');
 
     const id = 'giuria_' + Math.random().toString(36).slice(2, 10) + Date.now().toString(36);
     const caseData = {
@@ -110,7 +110,7 @@ let handler = async (m, { conn, participants, groupMetadata, args, isAdmin }) =>
 
     const adminsListText = groupAdmins.map((v, i) => `✧👑 ${i + 1}. @${v.id.split('@')[0]}`).join('\n');
     const mentionChat = [...new Set([m.sender, target, ...mentionList, groupOwnerId].filter(Boolean))];
-    const text = `⚖️ *GIURIA AVVIATA*\n\n${getMention(m.sender)} ha avviato un processo contro ${getMention(target)}\n*Motivo:* ${reason}\n\n*Admin taggati:*\n${adminsListText}\n\n🕒 Tempo per votare: 2 minuti\n✅ 3 voti "Colpevole" per rimuovere\n❌ Altrimenti rimane\n\n🔔 Admin, votate con i pulsanti sotto.`;
+    const text = `⚖️ *GIURIA AVVIATA*\n\n${getMention(m.sender)} ha avviato un processo contro ${getMention(target)}\n*Motivo:* ${reason}\n\n*Admin taggati:*\n${adminsListText}\n\n🕒 Tempo per votare: 2 minuti\n✔️ 3 voti "Colpevole" per rimuovere\n✖️ Altrimenti rimane\n\n🔔 Admin, votate con i pulsanti sotto.`;
 
     await conn.sendMessage(m.chat, {
       text,
@@ -124,7 +124,7 @@ let handler = async (m, { conn, participants, groupMetadata, args, isAdmin }) =>
     }, { quoted: m });
   } catch (e) {
     console.error(e);
-    m.reply('❌ Errore interno nel comando giuria.');
+    m.reply('✖️ Errore interno nel comando giuria.');
   }
 };
 

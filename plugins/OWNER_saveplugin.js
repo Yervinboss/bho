@@ -1,4 +1,4 @@
-//Plugin by Zeno, Lucifero & 333 staff
+//Plugin by Zeno, Lucifero & zenobot staff
 
 import fs from 'fs'
 const PROTECTED_PLUGIN_NAMES = new Set(['crediti', 'crediti.js']);
@@ -11,7 +11,7 @@ let handler = async (m, { text, usedPrefix, command }) => {
     await fs.writeFileSync(path, m.quoted.text)
   let prova = { "key": {"participants":"0@s.whatsapp.net", "fromMe": false, "id": "Halo"
   }, "message": { 
-  "locationMessage": { name: '𝐏𝐥𝐮𝐠𝐢𝐧 𝐬𝐚𝐥𝐯𝐚𝐭𝐨 ✓',
+  "locationMessage": { name: 'ᴘʟᴜɢɪɴ ꜱᴀʟᴠᴀᴛᴏ ✓',
 "jpegThumbnail": await(await fetch('https://telegra.ph/file/876cc3f192ec040e33aba.png')).buffer(),
   "vcard": `BEGIN:VCARD\nVERSION:3.0\nN:Sy;Bot;;;\nFN:y\nitem1.TEL;waid=${m.sender.split('@')[0]}:${m.sender.split('@')[0]}\nitem1.X-ABLabel:Ponsel\nEND:VCARD`
   }}, "participant": "0@s.whatsapp.net"}

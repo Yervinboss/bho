@@ -1,4 +1,4 @@
-//Plugin by Zeno, Lucifero & 333 staff
+//Plugin by Zeno, Lucifero & zenobot staff
 
 let handler = async (m, { conn, command, groupMetadata }) => {
     if (command === 'trovafid') {
@@ -23,7 +23,7 @@ let handler = async (m, { conn, command, groupMetadata }) => {
         } while (b === a);
         
 
-        m.reply(`══════ •⊰✦⊱• ══════\n𝐓𝐮 𝐞 ${toM(b)} 𝐨𝐫𝐚 𝐬𝐢𝐞𝐭𝐞 𝐟𝐢𝐝𝐚𝐧𝐳𝐚𝐭𝐢\n══════ •⊰✦⊱• ══════`, null, {
+        m.reply(`┄┄┄┄┄┄ •‹❖›• ┄┄┄┄┄┄\nᴛᴜ ᴇ ${toM(b)} ᴏʀᴀ ꜱɪᴇᴛᴇ ꜰɪᴅᴀɴᴢᴀᴛɪ\n┄┄┄┄┄┄ •‹❖›• ┄┄┄┄┄┄`, null, {
             mentions: [a, b],
             contextInfo: {
                 mentionedJid: [a, b]
@@ -32,7 +32,7 @@ let handler = async (m, { conn, command, groupMetadata }) => {
     }
 };
 
-handler.help = ['𝐭𝐫𝐨𝐯𝐚𝐟𝐢𝐝']
+handler.help = ['ᴛʀᴏᴠᴀꜰɪᴅ']
 handler.tags = ['fun']
 handler.command = /^(trovafid)$/i
 handler.group = true

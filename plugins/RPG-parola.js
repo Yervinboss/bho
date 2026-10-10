@@ -1,4 +1,4 @@
-//Plugin by Zeno, Lucifero & 333 staff
+//Plugin by Zeno, Lucifero & zenobot staff
 //Crediti a Davide di Davebot
 
 const parole = [
@@ -8,7 +8,7 @@ const parole = [
     'londra', 'parigi', 'berlino', 'madrid', 'chitarra', 'pianoforte',
     'calcio', 'basket', 'tennis', 'universo', 'galassia', 'pianeta',
     'arcobaleno', 'montagna', 'oceano', 'castello', 'drago', 'ninja',
-    'pirata', 'robot', 'vampiro', 'fantasma', 'samurai', 'zenofrocio', 'mammadizeno', 'luciferobellissimo', '333bot', 'ornitorinco', 'caccola', 'porno', 'sesso', 
+    'pirata', 'robot', 'vampiro', 'fantasma', 'samurai', 'zenofrocio', 'mammadizeno', 'luciferobellissimo', 'zenobot', 'ornitorinco', 'caccola', 'porno', 'sesso', 
 ]
 
 const cooldownTime = 30 * 60 * 1000
@@ -52,7 +52,7 @@ handler.before = async function (m) {
         delete global.parolaGame[chatId]
 
         await this.sendMessage(chatId, {
-            text: `🏆 Che riflessi! @${m.sender.split('@')[0]} è stato il primo!\n\nLa parola era: *${game.word}*\nHai vinto *${game.reward} XP333*!`,
+            text: `🏆 Che riflessi! @${m.sender.split('@')[0]} è stato il primo!\n\nLa parola era: *${game.word}*\nHai vinto *${game.reward} ZenoCoin*!`,
             contextInfo: { mentionedJid: [m.sender] }
         })
         return
@@ -73,7 +73,7 @@ handler.before = async function (m) {
     }
 
     await this.sendMessage(chatId, {
-        text: `🎯 𝐏𝐀𝐑𝐎𝐋𝐀 𝐀𝐓𝐓𝐈𝐕𝐀!\n\n✍️ Scrivi per primo: *${word}*\n\n🏆 Il primo che la scrive vince *${reward} XP333*!\n\nHai 30 secondi!`
+        text: `🎯 ᴘᴀʀᴏʟᴀ ᴀᴛᴛɪᴠᴀ!\n\n✍️ Scrivi per primo: *${word}*\n\n🏆 Il primo che la scrive vince *${reward} ZenoCoin*!\n\nHai 30 secondi!`
     })
 
     setTimeout(async () => {

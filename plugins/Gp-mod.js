@@ -1,6 +1,6 @@
 // Plugin di Blood - Gestione Moderatori (Finti Admin)
 let handler = async (m, { conn, text, command, usedPrefix, isOwner, isAdmin }) => {
-    if (!isOwner && !isAdmin) return m.reply("❌ Questo comando è riservato al proprietario del bot o agli admin del gruppo.")
+    if (!isOwner && !isAdmin) return m.reply("✖️ Questo comando è riservato al proprietario del bot o agli admin del gruppo.")
 
     let chatId = m.chat
     if (!global.db.data.chats[chatId]) global.db.data.chats[chatId] = {}
@@ -13,7 +13,7 @@ let handler = async (m, { conn, text, command, usedPrefix, isOwner, isAdmin }) =
         if (!who) return m.reply(`Tagga qualcuno per aggiungerlo come moderatore.`)
         if (mods.includes(who)) return m.reply("⚠️ Utente già presente.")
         mods.push(who)
-        return m.reply(`✅ @${who.split('@')[0]} aggiunto!\nPuò usare i comandi admin, tranne gestire i ruoli.\n> *Digita ''.mods'' per vedere la lista e i comandi per i moderatori*\n\n> *Digita ''delmodall'' per rimuovere tutti i moderatori*`, null, { mentions: [who] })
+        return m.reply(`✔️ @${who.split('@')[0]} aggiunto!\nPuò usare i comandi admin, tranne gestire i ruoli.\n> *Digita ''.mods'' per vedere la lista e i comandi per i moderatori*\n\n> *Digita ''delmodall'' per rimuovere tutti i moderatori*`, null, { mentions: [who] })
     }
 
     if (command === 'delmod') {

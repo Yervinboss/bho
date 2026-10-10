@@ -1,4 +1,4 @@
-//Plugin by Zeno, Lucifero & 333 staff
+//Plugin by Zeno, Lucifero & zenobot staff
 
 
 const RAPID_KEY = "c9d9e589b3mshc7eecec96ccc03ep126bb1jsnbd4082441abd"
@@ -33,28 +33,28 @@ let handler = async (m, { conn, args }) => {
 
   if (!cmd) {
     return m.reply(
-`╭──────────────────╮
-┃ 📸 𝐂𝐎𝐌𝐀𝐍𝐃𝐈 𝐈𝐍𝐒𝐓𝐀𝐆𝐑𝐀𝐌
-┃━━━━━━━━━━━━━━━━━━
-┃ *.instagram profilo @utente*
-┃ → info profilo completo
-┃
-┃ *.instagram post @utente*
-┃ → ultimi post dell'utente
-┃
-┃ *.instagram storie @utente*
-┃ → storie attive
-╰──────────────────╯`)
+`┌┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┐
+┆ 📸 ᴄᴏᴍᴀɴᴅɪ ɪɴꜱᴛᴀɢʀᴀᴍ
+┆┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄
+┆ *.instagram profilo @utente*
+┆ → info profilo completo
+┆
+┆ *.instagram post @utente*
+┆ → ultimi post dell'utente
+┆
+┆ *.instagram storie @utente*
+┆ → storie attive
+└┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┘`)
   }
 
   if (cmd === "profilo") {
     const username = args[1]?.replace("@", "")
-    if (!username) return m.reply("❌ Specifica un utente!\nEs: *.instagram profilo @cristiano*")
+    if (!username) return m.reply("✖️ Specifica un utente!\nEs: *.instagram profilo @cristiano*")
 
     await m.reply(`🔍 Cerco il profilo @${username}...`)
 
     const data = await fetchIG("api/instagram/profile", { username })
-    if (!data?.result) return m.reply("❌ Utente non trovato.")
+    if (!data?.result) return m.reply("✖️ Utente non trovato.")
 
     const u = data.result
     const nome = u.full_name || username
@@ -62,27 +62,27 @@ let handler = async (m, { conn, args }) => {
     const followers = formatNum(u.follower_count || u.edge_followed_by?.count)
     const following = formatNum(u.following_count || u.edge_follow?.count)
     const post = formatNum(u.media_count || u.edge_owner_to_timeline_media?.count)
-    const verificato = u.is_verified ? "✅ Verificato" : ""
+    const verificato = u.is_verified ? "✔️ Verificato" : ""
     const privato = u.is_private ? "🔒 Privato" : "🌍 Pubblico"
     const categoria = u.category || ""
-    const sito = u.external_url ? `\n┃ 🌐 ${u.external_url}` : ""
+    const sito = u.external_url ? `\n┆ 🌐 ${u.external_url}` : ""
     const avatar = u.profile_pic_url || u.hd_profile_pic_url_info?.url
 
     const testo =
-`╭──────────────────╮
-┃ 📸 𝐏𝐑𝐎𝐅𝐈𝐋𝐎 𝐈𝐍𝐒𝐓𝐀𝐆𝐑𝐀𝐌
-┃━━━━━━━━━━━━━━━━━━
-┃ 👤 *${nome}* ${verificato}
-┃ 🔗 @${u.username || username}
-┃ ${privato}${categoria ? `\n┃ 📌 ${categoria}` : ""}${sito}
-┃━━━━━━━━━━━━━━━━━━
-┃ 👥 Follower: *${followers}*
-┃ ➡️ Following: *${following}*
-┃ 🖼 Post: *${post}*
-┃━━━━━━━━━━━━━━━━━━
-┃ 📝 *Bio:*
-┃ ${bio}
-╰──────────────────╯`
+`┌┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┐
+┆ 📸 ᴘʀᴏꜰɪʟᴏ ɪɴꜱᴛᴀɢʀᴀᴍ
+┆┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄
+┆ 👤 *${nome}* ${verificato}
+┆ 🔗 @${u.username || username}
+┆ ${privato}${categoria ? `\n┆ 📌 ${categoria}` : ""}${sito}
+┆┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄
+┆ 👥 Follower: *${followers}*
+┆ ➡️ Following: *${following}*
+┆ 🖼 Post: *${post}*
+┆┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄
+┆ 📝 *Bio:*
+┆ ${bio}
+└┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┘`
 
     if (avatar) {
       await conn.sendMessage(chat, { image: { url: avatar }, caption: testo }, { quoted: m })
@@ -94,16 +94,16 @@ let handler = async (m, { conn, args }) => {
 
   if (cmd === "post") {
     const username = args[1]?.replace("@", "")
-    if (!username) return m.reply("❌ Specifica un utente!\nEs: *.instagram post @cristiano*")
+    if (!username) return m.reply("✖️ Specifica un utente!\nEs: *.instagram post @cristiano*")
 
     await m.reply(`🔍 Cerco i post di @${username}...`)
 
     const data = await fetchIG("api/instagram/posts", { username, maxId: "" })
-    if (!data?.result?.edges?.length) return m.reply("❌ Nessun post trovato o profilo privato.")
+    if (!data?.result?.edges?.length) return m.reply("✖️ Nessun post trovato o profilo privato.")
 
     const posts = data.result.edges.slice(0, 6)
 
-    let testo = `╭──────────────────╮\n┃ 🖼 𝐔𝐋𝐓𝐈𝐌𝐈 𝐏𝐎𝐒𝐓 @${username}\n┃━━━━━━━━━━━━━━━━━━\n`
+    let testo = `┌┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┐\n┆ 🖼 ᴜʟᴛɪᴍɪ ᴘᴏꜱᴛ @${username}\n┆┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄\n`
 
     for (let i = 0; i < posts.length; i++) {
       const node = posts[i].node
@@ -112,10 +112,10 @@ let handler = async (m, { conn, args }) => {
       const commenti = formatNum(node.comment_count || node.edge_media_to_comment?.count)
       const tipo = node.is_video ? "🎬 Video" : node.__typename === "XDTGraphSidecar" ? "🖼 Carosello" : "🖼 Foto"
       const link = `https://instagram.com/p/${node.code}`
-      testo += `┃\n┃ *${i + 1}.* ${tipo}\n┃ ❤️ ${likes} 💬 ${commenti}\n┃ 📝 ${caption.replace(/\n/g, " ")}...\n┃ 🔗 ${link}\n`
+      testo += `┆\n┆ *${i + 1}.* ${tipo}\n┆ ❤️ ${likes} 💬 ${commenti}\n┆ 📝 ${caption.replace(/\n/g, " ")}...\n┆ 🔗 ${link}\n`
     }
 
-    testo += `╰──────────────────╯`
+    testo += `└┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┘`
 
     const primoNode = posts[0].node
     const primaImg = primoNode.thumbnail_src || primoNode.display_url || primoNode.image_versions2?.candidates?.[0]?.url
@@ -130,12 +130,12 @@ let handler = async (m, { conn, args }) => {
 
   if (cmd === "storie") {
     const username = args[1]?.replace("@", "")
-    if (!username) return m.reply("❌ Specifica un utente!\nEs: *.instagram storie @cristiano*")
+    if (!username) return m.reply("✖️ Specifica un utente!\nEs: *.instagram storie @cristiano*")
 
     await m.reply(`🔍 Cerco le storie di @${username}...`)
 
     const data = await fetchIG("api/instagram/stories", { username })
-    if (!data?.result?.length) return m.reply(`❌ Nessuna storia attiva per @${username}.`)
+    if (!data?.result?.length) return m.reply(`✖️ Nessuna storia attiva per @${username}.`)
 
     const storie = data.result
 
@@ -163,13 +163,13 @@ let handler = async (m, { conn, args }) => {
   }
 
   return m.reply(
-`╭──────────────────╮
-┃ 📸 𝐂𝐎𝐌𝐀𝐍𝐃𝐈 𝐈𝐍𝐒𝐓𝐀𝐆𝐑𝐀𝐌
-┃━━━━━━━━━━━━━━━━━━
-┃ *.instagram profilo @utente*
-┃ *.instagram post @utente*
-┃ *.instagram storie @utente*
-╰──────────────────╯`)
+`┌┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┐
+┆ 📸 ᴄᴏᴍᴀɴᴅɪ ɪɴꜱᴛᴀɢʀᴀᴍ
+┆┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄
+┆ *.instagram profilo @utente*
+┆ *.instagram post @utente*
+┆ *.instagram storie @utente*
+└┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┘`)
 }
 
 handler.command = ["instagram"]

@@ -1,4 +1,4 @@
-//Plugin by Zeno, Lucifero & 333 staff
+//Plugin by Zeno, Lucifero & zenobot staff
 
 const sessions = new Map()
 const scheduledTasks = new Map()
@@ -142,20 +142,20 @@ const handler = async (m, { conn, args, isBotAdmin }) => {
   restorePendingSchedules(conn)
 
   if (!m.isGroup) {
-    return conn.reply(m.chat, '❌ Questo comando funziona solo nei gruppi.', m)
+    return conn.reply(m.chat, '✖️ Questo comando funziona solo nei gruppi.', m)
   }
 
   if (!isBotAdmin) {
-    return conn.reply(m.chat, '❌ Devo essere admin del gruppo per inviare messaggi con hidetag.', m)
+    return conn.reply(m.chat, '✖️ Devo essere admin del gruppo per inviare messaggi con hidetag.', m)
   }
 
   const text = args.join(' ').trim()
   if (!text) {
     return conn.reply(m.chat,
-`╔═✦ 𝐑𝐈𝐓𝐀𝐑𝐃𝐀𝐓𝐀𝐆 ✦═╗
-┃ Uso: .ritardatag <messaggio>
-┃ Esempio: .ritardatag messaggio casuale
-╚═════════════════╝`, m)
+`┌┄❖ ʀɪᴛᴀʀᴅᴀᴛᴀɢ ❖┄┐
+┆ Uso: .ritardatag <messaggio>
+┆ Esempio: .ritardatag messaggio casuale
+└┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┘`, m)
   }
 
   const key = `${m.chat}|${m.sender}`
@@ -193,7 +193,7 @@ handler.before = async (m, { conn }) => {
   const time = parseTimeInput(m.text.trim())
   if (!time) {
     await conn.sendMessage(m.chat, {
-      text: '❌ Orario non valido. Scrivi un orario tipo *18:30* oppure un ritardo come *10m*.'
+      text: '✖️ Orario non valido. Scrivi un orario tipo *18:30* oppure un ritardo come *10m*.'
     }, { quoted: m })
     return true
   }
@@ -217,7 +217,7 @@ handler.before = async (m, { conn }) => {
   scheduleTask(scheduled, conn)
 
   await conn.sendMessage(m.chat, {
-    text: `✅ Messaggio posticipato a *${time.when}* (${formattedAt}).`
+    text: `✔️ Messaggio posticipato a *${time.when}* (${formattedAt}).`
   }, { quoted: m })
 
   return true

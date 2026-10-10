@@ -1,4 +1,4 @@
-//Plugin by Zeno, Lucifero & 333 staff
+//Plugin by Zeno, Lucifero & zenobot staff
 
 let handler = async (m, { conn, usedPrefix, command, text }) => {
     let who;
@@ -13,17 +13,17 @@ let handler = async (m, { conn, usedPrefix, command, text }) => {
         who = text ? text.replace(/[^0-9]/g, '') + '@s.whatsapp.net' : m.chat;
     }
 
-    if (!who) return m.reply(`𝐦𝐞𝐧𝐳𝐢𝐨𝐧𝐚 𝐥𝐚 𝐩𝐞𝐫𝐬𝐨𝐧𝐚 𝐝𝐚 𝐬𝐭𝐮𝐩𝐫𝐚𝐫𝐞`);
+    if (!who) return m.reply(`ᴍᴇɴᴢɪᴏɴᴀ ʟᴀ ᴘᴇʀꜱᴏɴᴀ ᴅᴀ ꜱᴛᴜᴘʀᴀʀᴇ`);
 
 
     const thumbnailUrl = "https://files.catbox.moe/eu24ui.png"; // URL dell'immagine in miniatura
     const thumbnailBuffer = await (await fetch(thumbnailUrl)).buffer();
-    const thumbnailText = "𝐒𝐓𝐔𝐏𝐑𝐀"; // Testo miniatura compatibile
+    const thumbnailText = "ꜱᴛᴜᴘʀᴀ"; // Testo miniatura compatibile
 
     let abrazo = await conn.sendMessage(m.chat, {
-        text: `══════•⊰✰⊱•══════
-@${who.split('@')[0]} 𝙨𝙚𝙞 𝙨𝙩𝙖𝙩𝙖 𝙨𝙩𝙪𝙥𝙧𝙖𝙩𝙖 𝙖 𝟵𝟬 𝐝𝐚 @${m.sender.split('@')[0]} 𝙚 𝙩𝙞 𝙝𝙖 𝙩𝙧𝙖𝙩𝙩𝙖𝙩𝙤 𝙘𝙤𝙢𝙚 𝙪𝙣𝙖 𝙥𝙪𝙩𝙩𝙖𝙣𝙖 𝙙𝙞 𝙢𝙚𝙧𝙙𝙖 " 𝐀𝐡𝐡𝐡.., 𝐀𝐚𝐚𝐚𝐡𝐡, 𝐬𝐢 𝐜𝐨𝐧𝐭𝐢𝐧𝐮𝐚, 𝐧𝐨𝐧 𝐟𝐞𝐫𝐦𝐚𝐫𝐭𝐢, 𝐧𝐨𝐧 𝐟𝐞𝐫𝐦𝐚𝐫𝐭𝐢 " 𝙚 𝙩𝙞 𝙝𝙖 𝙡𝙖𝙨𝙘𝙞𝙖𝙩𝙤 𝙘𝙤𝙨𝙞̀ 𝙜𝙤𝙣𝙛𝙞𝙖 𝙘𝙝𝙚 𝙣𝙤𝙣 𝙧𝙞𝙚𝙨𝙘𝙞 𝙣𝙚𝙢𝙢𝙚𝙣𝙤 𝙖 𝙧𝙚𝙜𝙜𝙚𝙧𝙩𝙞 𝙞𝙣 𝙥𝙞𝙚𝙙𝙞 𝙨𝙩𝙪𝙥𝙞𝙙𝙖 𝙩𝙧𝙤𝙞𝙖 𝙙𝙞 𝙢𝙚𝙧𝙙𝙖.
-══════•⊰✰⊱•══════`,
+        text: `┄┄┄┄┄┄•‹✧›•┄┄┄┄┄┄
+@${who.split('@')[0]} ꜱᴇɪ ꜱᴛᴀᴛᴀ ꜱᴛᴜᴘʀᴀᴛᴀ ᴀ 𝟿𝟶 ᴅᴀ @${m.sender.split('@')[0]} ᴇ ᴛɪ ʜᴀ ᴛʀᴀᴛᴛᴀᴛᴏ ᴄᴏᴍᴇ ᴜɴᴀ ᴘᴜᴛᴛᴀɴᴀ ᴅɪ ᴍᴇʀᴅᴀ " ᴀʜʜʜ.., ᴀᴀᴀᴀʜʜ, ꜱɪ ᴄᴏɴᴛɪɴᴜᴀ, ɴᴏɴ ꜰᴇʀᴍᴀʀᴛɪ, ɴᴏɴ ꜰᴇʀᴍᴀʀᴛɪ " ᴇ ᴛɪ ʜᴀ ʟᴀꜱᴄɪᴀᴛᴏ ᴄᴏꜱɪ̀ ɢᴏɴꜰɪᴀ ᴄʜᴇ ɴᴏɴ ʀɪᴇꜱᴄɪ ɴᴇᴍᴍᴇɴᴏ ᴀ ʀᴇɢɢᴇʀᴛɪ ɪɴ ᴘɪᴇᴅɪ ꜱᴛᴜᴘɪᴅᴀ ᴛʀᴏɪᴀ ᴅɪ ᴍᴇʀᴅᴀ.
+┄┄┄┄┄┄•‹✧›•┄┄┄┄┄┄`,
         mentions: [who, m.sender],
     }, {
         quoted: {
@@ -46,7 +46,7 @@ let handler = async (m, { conn, usedPrefix, command, text }) => {
 };
 
 handler.command = ['stupra'];
-handler.help = ['stupra @𝐭𝐚𝐠'];
+handler.help = ['stupra @ᴛᴀɢ'];
 handler.tags = ['fun'];
 
 export default handler;

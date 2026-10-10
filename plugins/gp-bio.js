@@ -1,9 +1,9 @@
-//Plugin by Zeno, Lucifero & 333 staff
+//Plugin by Zeno, Lucifero & zenobot staff
 
 let handler = async (m, { conn, args, text }) => {
 
     if (!args || args.length === 0) {
-        return conn.sendMessage(m.chat, { text: '𝐃𝐞𝐬𝐜𝐫𝐢𝐳𝐢𝐨𝐧𝐞 𝐢𝐫𝐫𝐢𝐥𝐞𝐯𝐚𝐛𝐢𝐥𝐞.' });
+        return conn.sendMessage(m.chat, { text: 'ᴅᴇꜱᴄʀɪᴢɪᴏɴᴇ ɪʀʀɪʟᴇᴠᴀʙɪʟᴇ.' });
     }
 
     try {
@@ -12,14 +12,14 @@ let handler = async (m, { conn, args, text }) => {
 
 
         await conn.groupUpdateDescription(m.chat, groupDescription);
-        await conn.sendMessage(m.chat, { text: `𝐃𝐞𝐬𝐜𝐫𝐢𝐳𝐢𝐨𝐧𝐞 𝐝𝐞𝐥 𝐠𝐫𝐮𝐩𝐩𝐨 𝐜𝐚𝐦𝐛𝐢𝐚𝐭𝐚 ✔︎` });
+        await conn.sendMessage(m.chat, { text: `ᴅᴇꜱᴄʀɪᴢɪᴏɴᴇ ᴅᴇʟ ɢʀᴜᴘᴘᴏ ᴄᴀᴍʙɪᴀᴛᴀ ✔︎` });
     } catch (e) {
         console.error(e);
-        await conn.sendMessage(m.chat, { text: ' > ⚠️ 𝐄𝐫𝐫𝐨𝐫𝐞.' });
+        await conn.sendMessage(m.chat, { text: ' > ⚠️ ᴇʀʀᴏʀᴇ.' });
     }
 };
 
-handler.help = ['𝐛𝐢𝐨 <𝐝𝐞𝐬𝐜𝐫𝐢𝐳𝐢𝐨𝐧𝐞>']; 
+handler.help = ['ʙɪᴏ <ᴅᴇꜱᴄʀɪᴢɪᴏɴᴇ>']; 
 handler.tags = ['admin'];
 handler.command = /^(bio)$/i; //comando
 handler.group = true; // Solo nei gruppi

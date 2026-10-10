@@ -1,4 +1,4 @@
-//Plugin by Zeno, Lucifero & 333 staff
+//Plugin by Zeno, Lucifero & zenobot staff
 
 const handler = async (m, { conn, groupMetadata }) => {
   if (!m.isGroup) return await conn.sendMessage(m.chat, { text: 'Questo comando funziona solo nei gruppi.' })
@@ -27,7 +27,7 @@ const handler = async (m, { conn, groupMetadata }) => {
   values.sort((a, b) => b.total - a.total)
   const top = values.slice(0, 10)
 
-  const header = `🚨 𝐓𝐎𝐏 𝟏𝟎 𝐁𝐄𝐒𝐓𝐄𝐌𝐌𝐈𝐀𝐓𝐎𝐑𝐈 𝐃𝐄𝐋 𝐆𝐑𝐔𝐏𝐏𝐎\n` +
+  const header = `🚨 ᴛᴏᴘ 𝟷𝟶 ʙᴇꜱᴛᴇᴍᴍɪᴀᴛᴏʀɪ ᴅᴇʟ ɢʀᴜᴘᴘᴏ\n` +
     `👥 Gruppo: ${groupMetadata.subject || m.chat.split('@')[0]}\n\n`
 
   const lines = top.map((user, idx) => {

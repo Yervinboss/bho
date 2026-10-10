@@ -1,4 +1,4 @@
-//Plugin by Zeno, Lucifero & 333 staff
+//Plugin by Zeno, Lucifero & zenobot staff
 
 
 
@@ -8,7 +8,7 @@ async function handler(m, { conn }) {
 
   if (confirmation[m.sender]) {
     return conn.sendMessage(m.chat, {
-      text: '❌ Hai già un bonifico in corso, aspetta.',
+      text: '✖️ Hai già un bonifico in corso, aspetta.',
       mentions: [m.sender]
     }, { quoted: m })
   }
@@ -25,7 +25,7 @@ async function handler(m, { conn }) {
 
   if (isNaN(count) || !target) {
     return conn.sendMessage(m.chat, {
-      text: '❌ Formato non valido\n\nUsa .bonifico 100 @utente oppure rispondi a un messaggio con .bonifico 100',
+      text: '✖️ Formato non valido\n\nUsa .bonifico 100 @utente oppure rispondi a un messaggio con .bonifico 100',
       mentions: [m.sender]
     }, { quoted: m })
   }
@@ -34,18 +34,18 @@ async function handler(m, { conn }) {
 
   if (!users[who]) {
     return conn.sendMessage(m.chat, {
-      text: '❌ Destinatario non trovato.',
+      text: '✖️ Destinatario non trovato.',
       mentions: [m.sender]
     }, { quoted: m })
   }
 
   if (who === m.sender) {
-    return m.reply('❌ Non puoi fare bonifico a te stesso.')
+    return m.reply('✖️ Non puoi fare bonifico a te stesso.')
   }
 
   if ((user.money || 0) < count) {
     return conn.sendMessage(m.chat, {
-      text: '❌ 𝐍𝐨𝐧 𝐡𝐚𝐢 𝐚𝐛𝐛𝐚𝐬𝐭𝐚𝐧𝐳𝐚 𝐬𝐨𝐥𝐝𝐢!',
+      text: '✖️ ɴᴏɴ ʜᴀɪ ᴀʙʙᴀꜱᴛᴀɴᴢᴀ ꜱᴏʟᴅɪ!',
       mentions: [m.sender]
     }, { quoted: m })
   }
@@ -54,15 +54,15 @@ async function handler(m, { conn }) {
   const transactionId = `TRX-${Math.floor(1000 + Math.random() * 9000)}`
 
   const confirmText = `
-🏦 𝐁𝐀𝐍𝐂𝐀 𝟑𝟑𝟑
+🏦 ʙᴀɴᴄᴀ ᴢᴇɴᴏʙᴏᴛ
 
-💸 Stai per inviare: *${count} XP333*
+💸 Stai per inviare: *${count} ZenoCoin*
 🆔 Codice operazione: ${transactionId}
 
 👤 Destinatario: @${tag}
 
 ✔️ ACCEPT → conferma
-❌ DECLINE → annulla
+✖️ DECLINE → annulla
 
 ⏳ 60 secondi
 `.trim()
@@ -76,7 +76,7 @@ async function handler(m, { conn }) {
     timeout: setTimeout(() => {
       if (confirmation[m.sender]) {
         conn.sendMessage(m.chat, {
-          text: '❌ Bonifico annullato automaticamente (tempo scaduto).',
+          text: '✖️ Bonifico annullato automaticamente (tempo scaduto).',
           mentions: [m.sender]
         }, { quoted: m })
         delete confirmation[m.sender]
@@ -95,7 +95,7 @@ async function handler(m, { conn }) {
       },
       {
         buttonId: `.bonifico_confirm decline ${m.sender}`,
-        buttonText: { displayText: "❌ NO" },
+        buttonText: { displayText: "✖️ NO" },
         type: 1
       }
     ],
@@ -129,7 +129,7 @@ handler.before = async function (m, { conn }) {
   
 
   if (m.sender !== senderId) {
-    return m.reply('❌ Solo chi ha avviato il bonifico può usare questi tasti.')
+    return m.reply('✖️ Solo chi ha avviato il bonifico può usare questi tasti.')
   }
 
   const users = global.db.data.users
@@ -140,7 +140,7 @@ handler.before = async function (m, { conn }) {
     clearTimeout(data.timeout)
     delete confirmation[senderId]
     return conn.sendMessage(m.chat, {
-      text: '❌ Bonifico annullato.',
+      text: '✖️ Bonifico annullato.',
       mentions: [data.sender]
     }, { quoted: m })
   }
@@ -149,7 +149,7 @@ handler.before = async function (m, { conn }) {
     if ((user.money || 0) < data.count) {
       clearTimeout(data.timeout)
       delete confirmation[senderId]
-      return conn.sendMessage(m.chat, { text: '❌ Saldo insufficiente.' }, { quoted: m })
+      return conn.sendMessage(m.chat, { text: '✖️ Saldo insufficiente.' }, { quoted: m })
     }
 
     user.money -= data.count
@@ -159,7 +159,7 @@ handler.before = async function (m, { conn }) {
     delete confirmation[senderId]
 
     return conn.sendMessage(m.chat, {
-      text: `✔️ BONIFICO COMPLETATO\n\n💸 ${data.count} XP333\n👤 @${data.to.split('@')[0]}`,
+      text: `✔️ BONIFICO COMPLETATO\n\n💸 ${data.count} ZenoCoin\n👤 @${data.to.split('@')[0]}`,
       mentions: [data.to]
     }, { quoted: m })
   }

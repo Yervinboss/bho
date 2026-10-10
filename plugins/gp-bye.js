@@ -1,4 +1,4 @@
-//Plugin by Zeno, Lucifero & 333 staff
+//Plugin by Zeno, Lucifero & zenobot staff
 
 import fetch from 'node-fetch';
 
@@ -27,7 +27,7 @@ async function sendGoodbyeBatch(chatId, conn, users) {
   }
 
   const goodbyeText = users.map(user => {
-    let text = chat.sBye || `@${user.split('@')[0]} 𝐡𝐚 𝐥𝐚𝐬𝐜𝐢𝐚𝐭𝐨 𝐢𝐥 𝐠𝐫𝐮𝐩𝐩𝐨`;
+    let text = chat.sBye || `@${user.split('@')[0]} ʜᴀ ʟᴀꜱᴄɪᴀᴛᴏ ɪʟ ɢʀᴜᴘᴘᴏ`;
 
     return text
       .replace(/@user/g, `@${user.split('@')[0]}`)
@@ -39,11 +39,11 @@ async function sendGoodbyeBatch(chatId, conn, users) {
     key: {
       participants: '0@s.whatsapp.net',
       fromMe: false,
-      id: '333Bye'
+      id: 'zenobotBye'
     },
     message: {
       locationMessage: {
-        name: '𝐀𝐝𝐝𝐢𝐨 👋',
+        name: 'ᴀᴅᴅɪᴏ 👋',
         jpegThumbnail: ppBuffer.toString('base64'),
         vcard: 'BEGIN:VCARD\nVERSION:3.0\nN:;Bye;;;\nFN:Bye\nEND:VCARD'
       }
@@ -52,7 +52,7 @@ async function sendGoodbyeBatch(chatId, conn, users) {
   };
 
   await conn.sendMessage(chatId, {
-    text: `${goodbyeText}\n\n👥 𝐌𝐞𝐦𝐛𝐫𝐢 𝐫𝐢𝐦𝐚𝐧𝐞𝐧𝐭𝐢: ${groupMetadata.participants.length}`,
+    text: `${goodbyeText}\n\n👥 ᴍᴇᴍʙʀɪ ʀɪᴍᴀɴᴇɴᴛɪ: ${groupMetadata.participants.length}`,
     mentions: users
   }, { quoted: fakeBye });
 }

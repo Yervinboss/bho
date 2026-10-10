@@ -1,4 +1,4 @@
-//Plugin by Zeno, Lucifero & 333 staff
+//Plugin by Zeno, Lucifero & zenobot staff
 
 import axios from 'axios';
 
@@ -90,7 +90,7 @@ let handler = async (m, { conn, args }) => {
   const targetLang = Object.values(langMap).includes(langInput) ? langInput : langMap[Object.keys(langMap).find(k => k.toLowerCase().includes(langInput))];
 
   if (!targetLang) {
-    return conn.reply(m.chat, `❌ Lingua non riconosciuta. Usa *.traduci* per vedere la lista delle lingue disponibili.`, m);
+    return conn.reply(m.chat, `✖️ Lingua non riconosciuta. Usa *.traduci* per vedere la lista delle lingue disponibili.`, m);
   }
 
   try {
@@ -105,11 +105,11 @@ let handler = async (m, { conn, args }) => {
     );
   } catch (error) {
     console.error("Errore nella traduzione:", error);
-    return conn.reply(m.chat, `❌ Errore nella traduzione. Verifica i parametri e riprova.`, m);
+    return conn.reply(m.chat, `✖️ Errore nella traduzione. Verifica i parametri e riprova.`, m);
   }
 };
 
-handler.help = ['𝐭𝐫𝐚𝐝𝐮𝐜𝐢 <𝐭𝐞𝐬𝐭𝐨> <𝐥𝐢𝐧𝐠𝐮𝐚>'];
+handler.help = ['ᴛʀᴀᴅᴜᴄɪ <ᴛᴇꜱᴛᴏ> <ʟɪɴɢᴜᴀ>'];
 handler.tags = ['fun'];
 handler.command = /^traduci$/i;
 

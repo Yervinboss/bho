@@ -67,21 +67,21 @@ let handler = async (m, { conn, usedPrefix, command, __dirname, text, args }) =>
 
     if (simili.length === 0) {
       return m.reply(
-`╔═ ❌ 𝐅𝐈𝐋𝐄 𝐍𝐎𝐍 𝐓𝐑𝐎𝐕𝐀𝐓𝐎 ═╗
-┃
-┃ 📂 Plugin cercato:
-┃ *${filename}*
-┃
-┃ 😕 Nessun file simile trovato.
-┃
-╚══════════════╝`
+`┌┄ ✖️ ꜰɪʟᴇ ɴᴏɴ ᴛʀᴏᴠᴀᴛᴏ ┄┐
+┆
+┆ 📂 Plugin cercato:
+┆ *${filename}*
+┆
+┆ 😕 Nessun file simile trovato.
+┆
+└┄┄┄┄┄┄┄┄┄┄┄┄┄┄┘`
       )
     }
 
     const barre = simili.map((x, i) => {
       const filled = Math.round(x.score / 10)
       const bar    = '█'.repeat(filled) + '░'.repeat(10 - filled)
-      return `┃ ${i + 1}. [${bar}] ${x.score}%\n┃    ${x.file}`
+      return `┆ ${i + 1}. [${bar}] ${x.score}%\n┆    ${x.file}`
     }).join('\n')
 
     const buttons = simili.map(x => [
@@ -90,17 +90,17 @@ let handler = async (m, { conn, usedPrefix, command, __dirname, text, args }) =>
     ])
 
     return await conn.sendButton(m.chat,
-`╔═ 🔍 𝐅𝐈𝐋𝐄 𝐍𝐎𝐍 𝐓𝐑𝐎𝐕𝐀𝐓𝐎 ═╗
-┃
-┃ ❓ Cercavi: *${filename}*
-┃
-┃ 🎯 *Plugin simili trovati:*
-┃
+`┌┄ 🔍 ꜰɪʟᴇ ɴᴏɴ ᴛʀᴏᴠᴀᴛᴏ ┄┐
+┆
+┆ ❓ Cercavi: *${filename}*
+┆
+┆ 🎯 *Plugin simili trovati:*
+┆
 ${barre}
-┃
-┃ 👆 Tocca un bottone per eliminarlo direttamente!
-╚══════════════╝`,
-    '333 File Manager', null, buttons, m)
+┆
+┆ 👆 Tocca un bottone per eliminarlo direttamente!
+└┄┄┄┄┄┄┄┄┄┄┄┄┄┄┘`,
+    'zenobot File Manager', null, buttons, m)
   }
 
   await _fs.unlink(pluginPath)
@@ -113,7 +113,7 @@ ${barre}
     },
     "message": {
       "locationMessage": {
-        name: '𝐏𝐥𝐮𝐠𝐢𝐧 𝐞𝐥𝐢𝐦𝐢𝐧𝐚𝐭𝐨 ✓',
+        name: 'ᴘʟᴜɢɪɴ ᴇʟɪᴍɪɴᴀᴛᴏ ✓',
         "jpegThumbnail": await (await fetch('https://telegra.ph/file/6d491d5823b5778921229.png')).buffer(),
         "vcard": `BEGIN:VCARD\nVERSION:3.0\nN:Sy;Bot;;;\nFN:y\nitem1.TEL;waid=${m.sender.split('@')[0]}:${m.sender.split('@')[0]}\nitem1.X-ABLabel:Ponsel\nEND:VCARD`
       }

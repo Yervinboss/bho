@@ -2,7 +2,7 @@
 
 //Codice di antilink.js
 
-//Plugin by Zeno, Lucifero & 333 staff
+//Plugin by Zeno, Lucifero & zenobot staff
 
 import jsQR from 'jsqr'
 
@@ -38,10 +38,10 @@ async function kickForLink(m, conn, motivo) {
     }
   })
 
-  let warningMessage = `🚫 𝐔𝐓𝐄𝐍𝐓𝐄 𝐄𝐒𝐏𝐔𝐋𝐒𝐎 𝐏𝐄𝐑 𝐋𝐈𝐍𝐊!\n\n`
-  warningMessage += `👤 𝐔𝐭𝐞𝐧𝐭𝐞: @${m.sender.split('@')[0]}\n`
-  warningMessage += `📝 𝐌𝐨𝐭𝐢𝐯𝐨: ${motivo}\n`
-  warningMessage += `⚠️ 𝐀𝐳𝐢𝐨𝐧𝐞: 𝐌𝐞𝐬𝐬𝐚𝐠𝐠𝐢𝐨 𝐞𝐥𝐢𝐦𝐢𝐧𝐚𝐭𝐨 𝐞 𝐮𝐭𝐞𝐧𝐭𝐞 𝐞𝐬𝐩𝐮𝐥𝐬𝐨`
+  let warningMessage = `🚫 ᴜᴛᴇɴᴛᴇ ᴇꜱᴘᴜʟꜱᴏ ᴘᴇʀ ʟɪɴᴋ!\n\n`
+  warningMessage += `👤 ᴜᴛᴇɴᴛᴇ: @${m.sender.split('@')[0]}\n`
+  warningMessage += `📝 ᴍᴏᴛɪᴠᴏ: ${motivo}\n`
+  warningMessage += `⚠️ ᴀᴢɪᴏɴᴇ: ᴍᴇꜱꜱᴀɢɢɪᴏ ᴇʟɪᴍɪɴᴀᴛᴏ ᴇ ᴜᴛᴇɴᴛᴇ ᴇꜱᴘᴜʟꜱᴏ`
 
   await conn.sendMessage(m.chat, {
     text: warningMessage,
@@ -50,7 +50,7 @@ async function kickForLink(m, conn, motivo) {
       forwardedNewsletterMessageInfo: {
         newsletterJid: '120363341274693350@newsletter',
         serverMessageId: -1,
-        newsletterName: global.nomebot || '333'
+        newsletterName: global.nomebot || 'zenobot'
       }
     }
   })
@@ -89,7 +89,7 @@ export async function before(m, { conn, isAdmin, isBotAdmin }) {
     if (thisGroupCode && inviteCode === thisGroupCode) return true
 
     lastCheck[m.chat] = Date.now()
-    await kickForLink(m, conn, '𝐈𝐧𝐯𝐢𝐭𝐨 𝐝𝐢 𝐠𝐫𝐮𝐩𝐩𝐨 (𝐛𝐚𝐝𝐠𝐞) 𝐧𝐨𝐧 𝐜𝐨𝐧𝐬𝐞𝐧𝐭𝐢𝐭𝐨')
+    await kickForLink(m, conn, 'ɪɴᴠɪᴛᴏ ᴅɪ ɢʀᴜᴘᴘᴏ (ʙᴀᴅɢᴇ) ɴᴏɴ ᴄᴏɴꜱᴇɴᴛɪᴛᴏ')
     return false
   }
 
@@ -124,7 +124,7 @@ export async function before(m, { conn, isAdmin, isBotAdmin }) {
     const thisGroupCode = await getGroupCode(conn, m.chat)
     if (thisGroupCode && text.includes(thisGroupCode)) return true
 
-    await kickForLink(m, conn, '𝐋𝐢𝐧𝐤 𝐰𝐡𝐚𝐭𝐬𝐚𝐩𝐩 𝐧𝐨𝐧 𝐜𝐨𝐧𝐬𝐞𝐧𝐭𝐢𝐭𝐨')
+    await kickForLink(m, conn, 'ʟɪɴᴋ ᴡʜᴀᴛꜱᴀᴘᴘ ɴᴏɴ ᴄᴏɴꜱᴇɴᴛɪᴛᴏ')
     return false
   }
 
@@ -155,7 +155,7 @@ export async function before(m, { conn, isAdmin, isBotAdmin }) {
     const thisGroupCode = await getGroupCode(conn, m.chat)
     if (thisGroupCode && qrText.includes(thisGroupCode)) return true
 
-    await kickForLink(m, conn, '𝐐𝐫 𝐜𝐨𝐧 𝐥𝐢𝐧𝐤 𝐰𝐡𝐚𝐭𝐬𝐚𝐩𝐩')
+    await kickForLink(m, conn, 'ǫʀ ᴄᴏɴ ʟɪɴᴋ ᴡʜᴀᴛꜱᴀᴘᴘ')
     return false
   }
 

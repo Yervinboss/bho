@@ -1,4 +1,4 @@
-//Plugin by Zeno, Lucifero & 333 staff
+//Plugin by Zeno, Lucifero & zenobot staff
 
 import fetch from 'node-fetch'
 
@@ -20,7 +20,7 @@ let handler = async (m, { conn, args, command }) => {
       key: {
         participants: '0@s.whatsapp.net',
         fromMe: false,
-        id: '333BotAttivo'
+        id: 'ZenobotAttivo'
       },
       message: {
         locationMessage: {
@@ -39,7 +39,7 @@ let handler = async (m, { conn, args, command }) => {
 
   await conn.groupLeave(m.chat);
 };
-handler.help = ['𝐨𝐮𝐭'];
+handler.help = ['ᴏᴜᴛ'];
 handler.command = /^(out|leavegc|leave|salirdelgrupo)$/i;
 handler.group = true;
 handler.tags = ['owner'];

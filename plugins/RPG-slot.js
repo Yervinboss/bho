@@ -1,4 +1,4 @@
-//Plugin by Zeno, Lucifero & 333 staff
+//Plugin by Zeno, Lucifero & zenobot staff
 
 global.casinoRateLimit = global.casinoRateLimit || {}
 
@@ -25,7 +25,7 @@ let handler = async (m, { conn, args }) => {
   let bet = parseInt(args[0])
   let user = global.db.data.users[m.sender]
 
-  if (user.money < bet) return m.reply(`💸 Devi avere almeno ${bet} XP333`)
+  if (user.money < bet) return m.reply(`💸 Devi avere almeno ${bet} ZenoCoin`)
 
   let s = ["🍒","🍋","💎","7️⃣"]
   let r = () => s[Math.floor(Math.random()*s.length)]
@@ -37,21 +37,21 @@ let handler = async (m, { conn, args }) => {
   if (a===b && b===c) {
     user.money += bet*2
     text =
-`╔═🎰 𝐒𝐋𝐎𝐓 ═╗
-┃ ${a} ${b} ${c}
-┃ 💎 JACKPOT +${bet*2} XP333
-┃
-┃ 💼 Saldo: ${user.money} XP333
-╚══════╝`
+`┌┄🎰 ꜱʟᴏᴛ ┄┐
+┆ ${a} ${b} ${c}
+┆ 💎 JACKPOT +${bet*2} ZenoCoin
+┆
+┆ 💼 Saldo: ${user.money} ZenoCoin
+└┄┄┄┄┄┄┘`
   } else {
     user.money -= bet
     text =
-`╔═🎰 𝐒𝐋𝐎𝐓 ═╗
-┃ ${a} ${b} ${c}
-┃ 💀 Perso -${bet} XP333
-┃
-┃ 💼 Saldo: ${user.money} XP333
-╚══════╝`
+`┌┄🎰 ꜱʟᴏᴛ ┄┐
+┆ ${a} ${b} ${c}
+┆ 💀 Perso -${bet} ZenoCoin
+┆
+┆ 💼 Saldo: ${user.money} ZenoCoin
+└┄┄┄┄┄┄┘`
   }
 
   await conn.sendMessage(m.chat, {

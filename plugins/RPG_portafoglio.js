@@ -73,7 +73,7 @@ const renderCard = async ({
   )
 
   txt(
-    `${Number(bank).toLocaleString('it-IT')} XP333`,
+    `${Number(bank).toLocaleString('it-IT')} ZenoCoin`,
     x,
     cy + 28,
     '700 30px sans-serif',
@@ -91,7 +91,7 @@ const renderCard = async ({
   )
 
   txt(
-    `${Number(wallet).toLocaleString('it-IT')} XP333`,
+    `${Number(wallet).toLocaleString('it-IT')} ZenoCoin`,
     x,
     cy + 110,
     '700 30px sans-serif',
@@ -109,7 +109,7 @@ const renderCard = async ({
   )
 
   txt(
-    `${Number(stolen).toLocaleString('it-IT')} XP333`,
+    `${Number(stolen).toLocaleString('it-IT')} ZenoCoin`,
     x,
     cy + 188,
     '700 30px sans-serif',
@@ -184,7 +184,7 @@ const handler = async (m, { conn }) => {
     __dirname,
     '..',
     'icone',
-    '333bank.jpg'
+    'zenobotbank.jpg'
   )
 
   if (!fs.existsSync(cardImgPath)) {
@@ -194,10 +194,10 @@ const handler = async (m, { conn }) => {
 `💳 *PORTAFOGLIO*
 
 👤 @${who.split('@')[0]}
-🏦 Banca: ${bank} XP333
-👛 Tasca: ${money} XP333
-💰 Totale: ${total.toLocaleString('it-IT')} XP333
-🥷 Rubato: ${stolen} XP333
+🏦 Banca: ${bank} ZenoCoin
+👛 Tasca: ${money} ZenoCoin
+💰 Totale: ${total.toLocaleString('it-IT')} ZenoCoin
+🥷 Rubato: ${stolen} ZenoCoin
 💳 Carta: ${user.card}`,
       m
     )
@@ -219,7 +219,7 @@ const handler = async (m, { conn }) => {
       {
         image: imgBuffer,
         mimetype: 'image/jpeg',
-        caption: `💳 *333 Bank* — @${who.split('@')[0]}\n💰 Totale: ${total.toLocaleString('it-IT')} XP333`,
+        caption: `💳 *zenobot Bank* — @${who.split('@')[0]}\n💰 Totale: ${total.toLocaleString('it-IT')} ZenoCoin`,
         mentions: [who]
       },
       { quoted: m }
@@ -229,7 +229,7 @@ const handler = async (m, { conn }) => {
 
     conn.reply(
       m.chat,
-      `❌ Errore rendering: ${e.message}`,
+      `✖️ Errore rendering: ${e.message}`,
       m
     )
   }

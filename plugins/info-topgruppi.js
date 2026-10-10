@@ -21,35 +21,35 @@ let handler = async (m, { conn }) => {
   groups.sort((a, b) => b.total - a.total)
   let top10 = groups.slice(0, 10)
   const medals = ['🥇', '🥈', '🥉']
-  let text = `╭━〔 🏆 𝐓𝐎𝐏 𝟏𝟎 𝐆𝐑𝐔𝐏𝐏𝐈 🏆 〕━⬣\n`
-  text += `┃ 📊 𝐂𝐥𝐚𝐬𝐬𝐢𝐟𝐢𝐜𝐚 𝐝𝐞𝐢 𝐠𝐫𝐮𝐩𝐩𝐢 𝐩𝐢𝐮̀ 𝐚𝐭𝐭𝐢𝐯𝐢\n`
-  text += `┃\n`
+  let text = `┌┄〔 🏆 ᴛᴏᴘ 𝟷𝟶 ɢʀᴜᴘᴘɪ 🏆 〕┄⬣\n`
+  text += `┆ 📊 ᴄʟᴀꜱꜱɪꜰɪᴄᴀ ᴅᴇɪ ɢʀᴜᴘᴘɪ ᴘɪᴜ̀ ᴀᴛᴛɪᴠɪ\n`
+  text += `┆\n`
   if (top10.length === 0) {
-    text += `┃ ❌ Nessun gruppo trovato\n`
+    text += `┆ ✖️ Nessun gruppo trovato\n`
   } else {
     for (let i = 0; i < top10.length; i++) {
       let g = top10[i]
       let name = g.name || 'Gruppo Privato 🔒'
       let icon = medals[i] || '🔹'
-      text += `┃ ${icon} *${i + 1}°* ${name}\n`
-      text += `┃ ┗ 💬 ${g.total} messaggi\n┃\n`
+      text += `┆ ${icon} *${i + 1}°* ${name}\n`
+      text += `┆ └ 💬 ${g.total} messaggi\n┆\n`
     }
   }
-  text += `╰━━━━━━━━━━━━━━━━⬣`
+  text += `└┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄⬣`
   conn.sendMessage(m.chat, {
     text,
     contextInfo: {
       externalAdReply: {
-        title: '🏆 𝐓𝐎𝐏 𝟏𝟎 𝐆𝐑𝐔𝐏𝐏𝐈',
-        body: '𝐄𝐧𝐭𝐫𝐚 𝐧𝐞λ 𝐜𝐚𝐧𝐚λ𝐞 𝐝𝐢 𝟑𝟑𝟑 𝐛𝐨𝐭!',
+        title: '🏆 ᴛᴏᴘ 𝟷𝟶 ɢʀᴜᴘᴘɪ',
+        body: 'ᴇɴᴛʀᴀ ɴᴇλ ᴄᴀɴᴀλᴇ ᴅɪ ᴢᴇɴᴏʙᴏᴛ ʙᴏᴛ!',
         sourceUrl: 'https://whatsapp.com',
         mediaType: 1,
         renderLargerThumbnail: true
       }
     },
     buttons: [
-      { buttonId: '.top', buttonText: { displayText: '🏆 𝐓𝐨𝐩 𝐮𝐭𝐞𝐧𝐭𝐢' }, type: 1 },
-      { buttonId: '.statsgiornaliere', buttonText: { displayText: '📊 𝐒𝐭𝐚𝐭𝐢𝐬𝐭𝐢𝐜𝐡𝐞 𝐠𝐢𝐨𝐫𝐧𝐚𝐥𝐢𝐞𝐫𝐞' }, type: 1 }
+      { buttonId: '.top', buttonText: { displayText: '🏆 ᴛᴏᴘ ᴜᴛᴇɴᴛɪ' }, type: 1 },
+      { buttonId: '.statsgiornaliere', buttonText: { displayText: '📊 ꜱᴛᴀᴛɪꜱᴛɪᴄʜᴇ ɢɪᴏʀɴᴀʟɪᴇʀᴇ' }, type: 1 }
     ]
   }, { quoted: m })
 }

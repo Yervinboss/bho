@@ -1,6 +1,6 @@
 //Codice di gp-hidetag.js
 
-//Plugin by Zeno, Lucifero & 333 staff
+//Plugin by Zeno, Lucifero & zenobot staff
 
 
 
@@ -45,7 +45,7 @@ const handler = async (m, { conn, text, participants }) => {
         }
 
         if (quota.used >= 2) {
-          return m.reply(`❌ Hai esaurito i 2 tag da moderatore disponibili. Si resettano tra ${formatTime(HOUR - (now - quota.startedAt))}.`);
+          return m.reply(`✖️ Hai esaurito i 2 tag da moderatore disponibili. Si resettano tra ${formatTime(HOUR - (now - quota.startedAt))}.`);
         }
 
         quota.used += 1;
@@ -90,7 +90,7 @@ const handler = async (m, { conn, text, participants }) => {
       quoted?.type === 'viewOnceMessage'
 
     if (quoted && isViewOnce) {
-      return m.reply("❌ Non puoi usare hidetag su contenuti a visualizzazione singola (presto toglieremo questo blocco)")
+      return m.reply("✖️ Non puoi usare hidetag su contenuti a visualizzazione singola (presto toglieremo questo blocco)")
     }
 
     if (quoted) {
@@ -154,11 +154,11 @@ const handler = async (m, { conn, text, participants }) => {
       })
     }
 
-    return m.reply('❌ Inserisci testo o rispondi a qualcosa')
+    return m.reply('✖️ Inserisci testo o rispondi a qualcosa')
 
   } catch (e) {
     console.error('Errore hidetag:', e)
-    m.reply('❌ errore')
+    m.reply('✖️ errore')
   }
 }
 

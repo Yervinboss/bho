@@ -1,4 +1,4 @@
-//Plugin by Zeno, Lucifero & 333 staff
+//Plugin by Zeno, Lucifero & zenobot staff
 
 
 
@@ -19,16 +19,16 @@ let handler = async (m, { conn }) => {
     const top = users.slice(0, 10);
 
     const titles = [
-        '𝐑𝐞 𝐝𝐞𝐥 𝐠𝐫𝐮𝐩𝐩𝐨',
-        '𝐍𝐞𝐫𝐝',
-        '𝐍𝐞𝐫𝐝 𝐢𝐧𝐞𝐬𝐩𝐞𝐫𝐭𝐨',
-        '𝐏𝐫𝐞𝐬𝐞𝐧𝐭𝐞 𝐭𝐫𝐚 𝐧𝐨𝐢',
-        '𝐀 𝐯𝐨𝐥𝐭𝐞 𝐜’𝐞̀ 𝐚 𝐯𝐨𝐥𝐭𝐞 𝐧𝐨',
-        '𝐄́ 𝐭𝐢𝐦𝐢𝐝𝐨',
-        '𝐈𝐧𝐮𝐭𝐢𝐥𝐞',
-        '𝐅𝐚 𝐟𝐢𝐧𝐭𝐚 𝐝𝐢 𝐬𝐜𝐫𝐢𝐯𝐞𝐫𝐞',
-        '𝐂𝐨𝐧 𝐮𝐧𝐚 𝐯𝐢𝐭𝐚 𝐬𝐨𝐜𝐢𝐚𝐥𝐞',
-        '𝐅𝐚𝐢 𝐩𝐫𝐢𝐦𝐚 𝐚 𝐪𝐮𝐢𝐭𝐭𝐚𝐫𝐞'
+        'ʀᴇ ᴅᴇʟ ɢʀᴜᴘᴘᴏ',
+        'ɴᴇʀᴅ',
+        'ɴᴇʀᴅ ɪɴᴇꜱᴘᴇʀᴛᴏ',
+        'ᴘʀᴇꜱᴇɴᴛᴇ ᴛʀᴀ ɴᴏɪ',
+        'ᴀ ᴠᴏʟᴛᴇ ᴄ’ᴇ̀ ᴀ ᴠᴏʟᴛᴇ ɴᴏ',
+        'ᴇ́ ᴛɪᴍɪᴅᴏ',
+        'ɪɴᴜᴛɪʟᴇ',
+        'ꜰᴀ ꜰɪɴᴛᴀ ᴅɪ ꜱᴄʀɪᴠᴇʀᴇ',
+        'ᴄᴏɴ ᴜɴᴀ ᴠɪᴛᴀ ꜱᴏᴄɪᴀʟᴇ',
+        'ꜰᴀɪ ᴘʀɪᴍᴀ ᴀ ǫᴜɪᴛᴛᴀʀᴇ'
     ];
 
     chat.prevFirst = chat.prevFirst || null;
@@ -43,7 +43,7 @@ let handler = async (m, { conn }) => {
 
     chat.prevFirst = newFirst;
 
-    let text = `🏆 𝐓𝐎𝐏 𝟏𝟎 𝐔𝐓𝐄𝐍𝐓𝐈 𝐏𝐈𝐔̀ 𝐀𝐓𝐓𝐈𝐕𝐈 𝐃𝐄𝐋 𝐆𝐑𝐔𝐏𝐏𝐎\n> 𝐬𝐞 𝐬𝐞𝐢 𝐢𝐥 𝐩𝐫𝐢𝐦𝐨 𝐫𝐢𝐜𝐨𝐫𝐝𝐚 𝐝𝐢 𝐫𝐢𝐬𝐜𝐚𝐭𝐭𝐚𝐫𝐞 𝐢𝐥 𝐭𝐮𝐨 𝐩𝐫𝐞𝐦𝐢𝐨 𝐜𝐨𝐧 ’’.𝐩𝐫𝐞𝐦𝐢𝐨𝐭𝐨𝐩’’!\n\n`;
+    let text = `🏆 ᴛᴏᴘ 𝟷𝟶 ᴜᴛᴇɴᴛɪ ᴘɪᴜ̀ ᴀᴛᴛɪᴠɪ ᴅᴇʟ ɢʀᴜᴘᴘᴏ\n> ꜱᴇ ꜱᴇɪ ɪʟ ᴘʀɪᴍᴏ ʀɪᴄᴏʀᴅᴀ ᴅɪ ʀɪꜱᴄᴀᴛᴛᴀʀᴇ ɪʟ ᴛᴜᴏ ᴘʀᴇᴍɪᴏ ᴄᴏɴ ’’.ᴘʀᴇᴍɪᴏᴛᴏᴘ’’!\n\n`;
 
     const posEmojis = ['🥇','🥈','🥉','4️⃣','5️⃣','6️⃣','7️⃣','8️⃣','9️⃣','🔟'];
 
@@ -57,8 +57,8 @@ let handler = async (m, { conn }) => {
     text,
     mentions: top.map(u => u[0]),
     buttons: [
-        { buttonId: ".topgruppi", buttonText: { displayText: "🌍 𝐓𝐨𝐩 𝐠𝐫𝐮𝐩𝐩𝐢" }, type: 1 },
-        { buttonId: ".statsgiornaliere", buttonText: { displayText: "📊 𝐒𝐭𝐚𝐭𝐢𝐬𝐭𝐢𝐜𝐡𝐞 𝐠𝐢𝐨𝐫𝐧𝐚𝐥𝐢𝐞𝐫𝐞" }, type: 1 },
+        { buttonId: ".topgruppi", buttonText: { displayText: "🌍 ᴛᴏᴘ ɢʀᴜᴘᴘɪ" }, type: 1 },
+        { buttonId: ".statsgiornaliere", buttonText: { displayText: "📊 ꜱᴛᴀᴛɪꜱᴛɪᴄʜᴇ ɢɪᴏʀɴᴀʟɪᴇʀᴇ" }, type: 1 },
     ],
     headerType: 1
 });

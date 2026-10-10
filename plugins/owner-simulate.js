@@ -1,10 +1,10 @@
-//Plugin by Zeno, Lucifero & 333 staff
+//Plugin by Zeno, Lucifero & zenobot staff
 
 import fetch from 'node-fetch';
 
 let handler = async (m, { conn, usedPrefix, command, args: [evento], text }) => {
     if (!evento) return await m.reply(
-`ⓘ 𝐔𝐬𝐨 𝐝𝐞𝐥 𝐜𝐨𝐦𝐚𝐧𝐝𝐨:
+`ⓘ ᴜꜱᴏ ᴅᴇʟ ᴄᴏᴍᴀɴᴅᴏ:
 
 > ${usedPrefix + command} benvenuto @user
 > ${usedPrefix + command} addio @user
@@ -24,7 +24,7 @@ let handler = async (m, { conn, usedPrefix, command, args: [evento], text }) => 
         case 'bienvenida':
         case 'benvenuto':       
             act = 'add'
-            testoEvento = "𝐛𝐞𝐧𝐯𝐞𝐧𝐮𝐭𝐨"
+            testoEvento = "ʙᴇɴᴠᴇɴᴜᴛᴏ"
             
             let groupMetadata = await conn.groupMetadata(m.chat);
             let chat = global.db.data.chats[m.chat];
@@ -44,17 +44,17 @@ let handler = async (m, { conn, usedPrefix, command, args: [evento], text }) => 
                     ppBuffer = await (await fetch('https://telegra.ph/file/8ca14ef9fa43e99d1d196.jpg')).buffer();
                 }
                 
-                let welcomeText = chat.sWelcome || `╭─────────────────
-│ 👋 𝐁𝐞𝐧𝐯𝐞𝐧𝐮𝐭𝐨/𝐚!
-│
-│ @user
-│
-│ 📱 𝐆𝐫𝐮𝐩𝐩𝐨: @group
-│ 👥 𝐌𝐞𝐦𝐛𝐫𝐢: @count
-│
-│ 📜 𝐋𝐞𝐠𝐠𝐢 𝐥𝐚 𝐝𝐞𝐬𝐜𝐫𝐢𝐳𝐢𝐨𝐧𝐞:
-│ @desc
-╰─────────────────`;
+                let welcomeText = chat.sWelcome || `┌┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄
+┆ 👋 ʙᴇɴᴠᴇɴᴜᴛᴏ/ᴀ!
+┆
+┆ @user
+┆
+┆ 📱 ɢʀᴜᴘᴘᴏ: @group
+┆ 👥 ᴍᴇᴍʙʀɪ: @count
+┆
+┆ 📜 ʟᴇɢɢɪ ʟᴀ ᴅᴇꜱᴄʀɪᴢɪᴏɴᴇ:
+┆ @desc
+└┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄`;
                 
                 let welcome = welcomeText
                     .replace('@user', `@${user.split('@')[0]}`)
@@ -69,10 +69,10 @@ let handler = async (m, { conn, usedPrefix, command, args: [evento], text }) => 
                         forwardedNewsletterMessageInfo: {
                             newsletterJid: '120363341274693350@newsletter',
                             serverMessageId: '',
-                            newsletterName: global.db.data.nomedelbot || '333 BOT'
+                            newsletterName: global.db.data.nomedelbot || 'ZENOBOT'
                         },
                         externalAdReply: {
-                            title: '👋 𝐍𝐮𝐨𝐯𝐨 𝐌𝐞𝐦𝐛𝐫𝐨',
+                            title: '👋 ɴᴜᴏᴠᴏ ᴍᴇᴍʙʀᴏ',
                             body: `Benvenuto/a nel gruppo!`,
                             mediaType: 1,
                             renderLargerThumbnail: true,
@@ -91,7 +91,7 @@ let handler = async (m, { conn, usedPrefix, command, args: [evento], text }) => 
         case 'sacar':
         case 'addio':
             act = 'remove'
-            testoEvento = "𝐚𝐝𝐝𝐢𝐨"
+            testoEvento = "ᴀᴅᴅɪᴏ"
             
             let groupMeta = await conn.groupMetadata(m.chat);
             let chatData = global.db.data.chats[m.chat];
@@ -111,16 +111,16 @@ let handler = async (m, { conn, usedPrefix, command, args: [evento], text }) => 
                     ppBuffer = await (await fetch('https://telegra.ph/file/8ca14ef9fa43e99d1d196.jpg')).buffer();
                 }
                 
-                let byeText = chatData.sBye || `╭─────────────────
-│ 👋 𝐀𝐝𝐝𝐢𝐨!
-│
-│ @user
-│
-│ 📱 𝐆𝐫𝐮𝐩𝐩𝐨: @group
-│ 👥 𝐌𝐞𝐦𝐛𝐫𝐢: @count
-│
-│ 💭 𝐂𝐢 𝐦𝐚𝐧𝐜𝐡𝐞𝐫𝐚𝐢...
-╰─────────────────`;
+                let byeText = chatData.sBye || `┌┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄
+┆ 👋 ᴀᴅᴅɪᴏ!
+┆
+┆ @user
+┆
+┆ 📱 ɢʀᴜᴘᴘᴏ: @group
+┆ 👥 ᴍᴇᴍʙʀɪ: @count
+┆
+┆ 💭 ᴄɪ ᴍᴀɴᴄʜᴇʀᴀɪ...
+└┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄`;
                 
                 let bye = byeText
                     .replace('@user', `@${user.split('@')[0]}`)
@@ -134,10 +134,10 @@ let handler = async (m, { conn, usedPrefix, command, args: [evento], text }) => 
                         forwardedNewsletterMessageInfo: {
                             newsletterJid: '120363341274693350@newsletter',
                             serverMessageId: '',
-                            newsletterName: global.db.data.nomedelbot || '333 BOT'
+                            newsletterName: global.db.data.nomedelbot || 'ZENOBOT'
                         },
                         externalAdReply: {
-                            title: '👋 𝐀𝐝𝐝𝐢𝐨',
+                            title: '👋 ᴀᴅᴅɪᴏ',
                             body: `Un membro ha lasciato il gruppo`,
                             mediaType: 1,
                             renderLargerThumbnail: true,
@@ -155,7 +155,7 @@ let handler = async (m, { conn, usedPrefix, command, args: [evento], text }) => 
         case 'promozione':
         case 'p':       
             act = 'promote'
-            testoEvento = "𝐩𝐫𝐨𝐦𝐨𝐳𝐢𝐨𝐧𝐞"
+            testoEvento = "ᴘʀᴏᴍᴏᴢɪᴏɴᴇ"
             break
             
         case 'demote':
@@ -164,11 +164,11 @@ let handler = async (m, { conn, usedPrefix, command, args: [evento], text }) => 
         case 'retrocessione':
         case 'r':       
             act = 'demote'
-            testoEvento = "𝐫𝐞𝐭𝐫𝐨𝐜𝐞𝐬𝐬𝐢𝐨𝐧𝐞"
+            testoEvento = "ʀᴇᴛʀᴏᴄᴇꜱꜱɪᴏɴᴇ"
             break
             
         default:
-            throw `ⓘ 𝐈𝐧𝐬𝐞𝐫𝐢𝐬𝐜𝐢 𝐮𝐧𝐚 𝐨𝐩𝐳𝐢𝐨𝐧𝐞 𝐯𝐚𝐥𝐢𝐝𝐚:
+            throw `ⓘ ɪɴꜱᴇʀɪꜱᴄɪ ᴜɴᴀ ᴏᴘᴢɪᴏɴᴇ ᴠᴀʟɪᴅᴀ:
 
 > ${usedPrefix + command} benvenuto @user
 > ${usedPrefix + command} addio @user
@@ -176,8 +176,8 @@ let handler = async (m, { conn, usedPrefix, command, args: [evento], text }) => 
 > ${usedPrefix + command} retrocessione/r @user`
     }
     
-    m.reply(`> ⚠️ 𝐒𝐢𝐦𝐮𝐥𝐚𝐳𝐢𝐨𝐧𝐞 ${testoEvento}...
-> ⓘ 𝐈𝐥 𝐛𝐨𝐭 𝐬𝐭𝐚 𝐬𝐢𝐦𝐮𝐥𝐚𝐧𝐝𝐨 𝐮𝐧 𝐞𝐯𝐞𝐧𝐭𝐨, 𝐬𝐞𝐧𝐳𝐚 𝐞𝐟𝐟𝐞𝐭𝐭𝐢 𝐜𝐨𝐧𝐜𝐫𝐞𝐭𝐢 𝐧𝐞𝐥 𝐠𝐫𝐮𝐩𝐩𝐨.`)
+    m.reply(`> ⚠️ ꜱɪᴍᴜʟᴀᴢɪᴏɴᴇ ${testoEvento}...
+> ⓘ ɪʟ ʙᴏᴛ ꜱᴛᴀ ꜱɪᴍᴜʟᴀɴᴅᴏ ᴜɴ ᴇᴠᴇɴᴛᴏ, ꜱᴇɴᴢᴀ ᴇꜰꜰᴇᴛᴛɪ ᴄᴏɴᴄʀᴇᴛɪ ɴᴇʟ ɢʀᴜᴘᴘᴏ.`)
     
     if (act) return conn.participantsUpdate({
         id: m.chat,
@@ -186,7 +186,7 @@ let handler = async (m, { conn, usedPrefix, command, args: [evento], text }) => 
     })
 }
 
-handler.help = ['𝐬𝐢𝐦𝐮𝐥𝐚'] 
+handler.help = ['ꜱɪᴍᴜʟᴀ'] 
 handler.tags = ['owner']
 handler.command = /^sim|simula$/i
 handler.group = true

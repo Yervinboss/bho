@@ -16,13 +16,13 @@ let handler = async (m, { conn, args }) => {
   }
 
   const amount = Math.trunc(Number(args.find(arg => /^\d+$/.test(arg))));
-  if (!amount || amount < 1) return m.reply('Indica una quantità valida di XP333 da rubare.');
+  if (!amount || amount < 1) return m.reply('Indica una quantità valida di ZenoCoin da rubare.');
 
   ensureRpgXp(thief);
   ensureRpgXp(target);
 
   if (amount > target.rpgXp) {
-    return m.reply(`L'utente ha solo ${target.rpgXp} XP333.`);
+    return m.reply(`L'utente ha solo ${target.rpgXp} ZenoCoin.`);
   }
 
   const cooldownKey = `${m.chat}:${m.sender}`;
@@ -38,7 +38,7 @@ let handler = async (m, { conn, args }) => {
     addRpgXp(target, -amount);
     addRpgXp(thief, stolen);
     return conn.sendMessage(m.chat, {
-      text: `🕵️ @${m.sender.split('@')[0]} ha rubato ${stolen} XP333 a @${targetId.split('@')[0]}!`,
+      text: `🕵️ @${m.sender.split('@')[0]} ha rubato ${stolen} ZenoCoin a @${targetId.split('@')[0]}!`,
       mentions: [m.sender, targetId]
     }, { quoted: m });
   }
@@ -46,7 +46,7 @@ let handler = async (m, { conn, args }) => {
   const penalty = Math.max(10, Math.floor(amount * 0.2));
   addRpgXp(thief, -penalty);
   return conn.sendMessage(m.chat, {
-    text: `🚨 @${targetId.split('@')[0]} ha scoperto il tentativo di furto!\n@${m.sender.split('@')[0]} perde ${penalty} XP333 come penalità.`,
+    text: `🚨 @${targetId.split('@')[0]} ha scoperto il tentativo di furto!\n@${m.sender.split('@')[0]} perde ${penalty} ZenoCoin come penalità.`,
     mentions: [m.sender, targetId]
   }, { quoted: m });
 };

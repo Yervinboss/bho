@@ -1,4 +1,4 @@
-//Plugin by Zeno, Lucifero & 333 staff
+//Plugin by Zeno, Lucifero & zenobot staff
 
 import { existsSync, promises as fsPromises } from 'fs';
 import path from 'path';
@@ -14,16 +14,16 @@ const handler = async (message, { conn, isOwner, isROwner }) => {
 
   if (global.conn.user.jid !== conn.user.jid) {
     return conn.sendMessage(message.chat, {
-      text: "*🚨 𝐔𝐭𝐢𝐥𝐢𝐳𝐳𝐢 𝐪𝐮𝐞𝐬𝐭𝐨 𝐜𝐨𝐦𝐚𝐧𝐝𝐨 𝐝𝐢𝐫𝐞𝐭𝐭𝐚𝐦𝐞𝐧𝐭𝐞 𝐧𝐞𝐥 𝐧𝐮𝐦𝐞𝐫𝐨 𝐝𝐞𝐥 𝐛𝐨𝐭.*"
+      text: "*🚨 ᴜᴛɪʟɪᴢᴢɪ ǫᴜᴇꜱᴛᴏ ᴄᴏᴍᴀɴᴅᴏ ᴅɪʀᴇᴛᴛᴀᴍᴇɴᴛᴇ ɴᴇʟ ɴᴜᴍᴇʀᴏ ᴅᴇʟ ʙᴏᴛ.*"
     }, { quoted: message });
   }
 
   try {
-    const sessionFolder = "./333BotSession/";
+    const sessionFolder = "./ZenobotSession/";
 
     if (!existsSync(sessionFolder)) {
       return await conn.sendMessage(message.chat, {
-        text: "*❌ 𝐋𝐚 𝐜𝐚𝐫𝐭𝐞𝐥𝐥𝐚 𝐝𝐞𝐥𝐥𝐞 𝐬𝐞𝐬𝐬𝐢𝐨𝐧𝐢 𝐞̀ 𝐯𝐮𝐨𝐭𝐚 o 𝐧𝐨𝐧 𝐞𝐬𝐢𝐬𝐭𝐞.*"
+        text: "*✖️ ʟᴀ ᴄᴀʀᴛᴇʟʟᴀ ᴅᴇʟʟᴇ ꜱᴇꜱꜱɪᴏɴɪ ᴇ̀ ᴠᴜᴏᴛᴀ o ɴᴏɴ ᴇꜱɪꜱᴛᴇ.*"
       }, { quoted: message });
     }
 
@@ -38,17 +38,17 @@ const handler = async (message, { conn, isOwner, isROwner }) => {
     }
 
     await conn.sendMessage(message.chat, {
-      text: `💨 𝐇𝐨 𝐫𝐢𝐦𝐨𝐬𝐬𝐨 ${deletedCount} 𝐬𝐞𝐬𝐬𝐢𝐨𝐧𝐢 𝐜𝐨𝐧 𝐬𝐮𝐜𝐜𝐞𝐬𝐬𝐨! 𝐛𝐨𝐭 𝐯𝐞𝐥𝐨𝐜𝐢𝐳𝐳𝐚𝐭𝐨 🚀.`
+      text: `💨 ʜᴏ ʀɪᴍᴏꜱꜱᴏ ${deletedCount} ꜱᴇꜱꜱɪᴏɴɪ ᴄᴏɴ ꜱᴜᴄᴄᴇꜱꜱᴏ! ʙᴏᴛ ᴠᴇʟᴏᴄɪᴢᴢᴀᴛᴏ 🚀.`
     }, { quoted: message });
 
   } catch (error) {
     console.error('⚠️ Errore:', error);
-    await conn.sendMessage(message.chat, { text: "❌ 𝐄𝐫𝐫𝐨𝐫𝐞 𝐝𝐢 𝐞𝐥𝐢𝐦𝐢𝐧𝐚𝐳𝐢𝐨𝐧𝐞!" }, { quoted: message });
+    await conn.sendMessage(message.chat, { text: "✖️ ᴇʀʀᴏʀᴇ ᴅɪ ᴇʟɪᴍɪɴᴀᴢɪᴏɴᴇ!" }, { quoted: message });
   }
 
 };
 
-handler.help = ['.𝐝𝐬'];
+handler.help = ['.ᴅꜱ'];
 handler.tags = ["owner"];
 handler.command = /^(deletession|ds|clearallsession)$/i;
 handler.owner = false;

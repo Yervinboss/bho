@@ -1,4 +1,4 @@
-//Plugin by Zeno, Lucifero & 333 staff
+//Plugin by Zeno, Lucifero & zenobot staff
 
 
 
@@ -8,7 +8,7 @@ const handler = async (m, { conn, text, usedPrefix, command, participants }) => 
   const isOwner = m.sender === conn.user.jid || global.owner.some(owner => owner[0] === m.sender.split('@')[0]);
 
   if (!isAdmin && !isOwner) {
-    return m.reply(`*❌ Accesso Negato*\nSolo gli admin reali possono usare questo comando. Tu sei un admin temporaneo o un utente semplice.`);
+    return m.reply(`*✖️ Accesso Negato*\nSolo gli admin reali possono usare questo comando. Tu sei un admin temporaneo o un utente semplice.`);
   }
 
   let who;
@@ -53,7 +53,7 @@ const handler = async (m, { conn, text, usedPrefix, command, participants }) => 
     }, timer);
 
   } catch (e) {
-    m.reply('*❌ Errore:* Assicurati che il bot sia Admin.');
+    m.reply('*✖️ Errore:* Assicurati che il bot sia Admin.');
   }
 };
 

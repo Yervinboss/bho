@@ -1,4 +1,4 @@
-//Plugin by Zeno, Lucifero & 333 staff
+//Plugin by Zeno, Lucifero & zenobot staff
 
 global.banTimeouts = global.banTimeouts || {}
 
@@ -20,7 +20,7 @@ const scheduleBanExpiry = (conn, chatId, durationMs) => {
       delete currentChat.banExpiresAt
       delete global.banTimeouts[chatId]
       await conn.sendMessage(chatId, {
-        text: `✅ *Il bot è stato riattivato in questa chat.*`
+        text: `✔️ *Il bot è stato riattivato in questa chat.*`
       }).catch(() => {})
     } else {
       delete global.banTimeouts[chatId]
@@ -87,7 +87,7 @@ Il bot è già disattivato in questo gruppo.`
   if (!selected) return m.reply('⏳ Tempo scaduto, ban annullato.')
 
   const selectedDuration = banDurations.find(option => `ban_duration_${option.id}` === selected)
-  if (!selectedDuration) return m.reply('❌ Scelta non valida.')
+  if (!selectedDuration) return m.reply('✖️ Scelta non valida.')
 
   chat.isBanned = true
   if (selectedDuration.ms > 0) {
@@ -102,18 +102,18 @@ Il bot è già disattivato in questo gruppo.`
   const durationText = selectedDuration.ms > 0 ? `per ${selectedDuration.label}` : 'finchè non viene sbannato'
 
   await conn.sendMessage(m.chat, {
-    text: `╭─────────────╮
-│ 🚫 *BANCHAT ATTIVATO*
-│
-│ Il bot è stato disattivato
-│ in questo gruppo ${durationText}.
-│
-│ 📵 Nessun comando verrà eseguito
-│ durante questo periodo.
-│
-│ 👑 Azione eseguita da:
-│ @${m.sender.split('@')[0]}
-╰─────────────╯`,
+    text: `┌┄┄┄┄┄┄┄┄┄┄┄┄┄┐
+┆ 🚫 *BANCHAT ATTIVATO*
+┆
+┆ Il bot è stato disattivato
+┆ in questo gruppo ${durationText}.
+┆
+┆ 📵 Nessun comando verrà eseguito
+┆ durante questo periodo.
+┆
+┆ 👑 Azione eseguita da:
+┆ @${m.sender.split('@')[0]}
+└┄┄┄┄┄┄┄┄┄┄┄┄┄┘`,
     mentions: [m.sender]
   }, { quoted: m })
 }

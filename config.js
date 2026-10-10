@@ -103,21 +103,21 @@ global.owner = [
   ['393892430108', 'Zeno', true],
   ['66621409462', 'Matte', true],
   ['393701330693', 'Blood', true],
-  ['393508619454', '333 AntiNuke', true],
+  ['393508619454', 'zenobot AntiNuke', true],
 ]
 
 
-global.nomepack = '333'
-global.nomebot = ' ꙰ 𝟥𝟥𝟥 𝔹𝕆𝕋  ꙰'
-global.wm = '333'
+global.nomepack = 'zenobot'
+global.nomebot = '❖ ᴢᴇɴᴏʙᴏᴛ'
+global.wm = 'zenobot'
 global.autore = 'zeno'
 global.dev = 'lucifero'
-global.testobot = `333`
+global.testobot = `zenobot`
 global.versione = pkg.version
 global.errore = '⚠️ *Errore inatteso!* Usa il comando `.ticket` per avvisare gli owner.'
 
 
-global.repobot = 'https://github.com/Zeno/zeno'
+global.repobot = 'https://github.com/Yervinboss/bho'
 global.canale = 'https://whatsapp.com/channel/0029VauhQviCsU9Ibrwlkb0h'
 global.gruppo = 'https://chat.whatsapp.com/L7Hz1iQpctTDfOoU4LARWL?mode=gi_t' 
 
@@ -130,22 +130,22 @@ global.moment = moment
 
 
 global.APIKeys = { 
-    spotifyclientid: '333',
-    spotifysecret: '333',
-    browserless: '333',
-    screenshotone: '333',
-    screenshotone_default: '333',
-    tmdb: '333',
-    gemini:'333',
-    ocrspace: '333',
-    assemblyai: '333',
-    google: '333',
-    googlex: '333',
-    googleCX: '333',
-    genius: '333',
-    unsplash: '333',
+    spotifyclientid: 'zenobot',
+    spotifysecret: 'zenobot',
+    browserless: 'zenobot',
+    screenshotone: 'zenobot',
+    screenshotone_default: 'zenobot',
+    tmdb: 'zenobot',
+    gemini:'zenobot',
+    ocrspace: 'zenobot',
+    assemblyai: 'zenobot',
+    google: 'zenobot',
+    googlex: 'zenobot',
+    googleCX: 'zenobot',
+    genius: 'zenobot',
+    unsplash: 'zenobot',
     removebg: 'FEx4CYmYN1QRQWD1mbZp87jV',
-    openrouter: '333',
+    openrouter: 'zenobot',
     lastfm: '36f859a1fc4121e7f0e931806507d5f9',
 }
 

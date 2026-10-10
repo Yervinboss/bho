@@ -1,4 +1,4 @@
-//Plugin by Zeno, Lucifero & 333 staff
+//Plugin by Zeno, Lucifero & zenobot staff
 
 import fetch from 'node-fetch'
 import { parse } from 'node-html-parser'
@@ -8,7 +8,7 @@ let handler = async (m, { conn }) => {
   const titoloOriginale = global.lyricsRequest?.[sender]
 
   if (!titoloOriginale)
-    return m.reply("⏱️ 𝐒𝐨𝐧𝐨 𝐩𝐚𝐬𝐬𝐚𝐭𝐢 𝟏𝟓 𝐬𝐞𝐜𝐨𝐧𝐝𝐢 𝐝𝐚𝐥𝐥𝐚 𝐠𝐞𝐧𝐞𝐫𝐚𝐳𝐢𝐨𝐧𝐞 𝐝𝐞𝐥𝐥𝐚 𝐜𝐚𝐧𝐳𝐨𝐧𝐞! 𝐏𝐞𝐫 𝐚𝐯𝐞𝐫𝐞 𝐢𝐥 𝐭𝐞𝐬𝐭𝐨 𝐟𝐚𝐫𝐞 ’’.𝐩𝐥𝐚𝐲 (𝐜𝐚𝐧𝐳𝐨𝐧𝐞)’’ 𝐞 𝐬𝐜𝐡𝐢𝐚𝐜𝐜𝐢𝐚𝐫𝐞 ’’𝐬𝐢’’ 𝐞𝐧𝐭𝐫𝐨 𝟏𝟓 𝐬𝐞𝐜𝐨𝐧𝐝𝐢.")
+    return m.reply("⏱️ ꜱᴏɴᴏ ᴘᴀꜱꜱᴀᴛɪ 𝟷𝟻 ꜱᴇᴄᴏɴᴅɪ ᴅᴀʟʟᴀ ɢᴇɴᴇʀᴀᴢɪᴏɴᴇ ᴅᴇʟʟᴀ ᴄᴀɴᴢᴏɴᴇ! ᴘᴇʀ ᴀᴠᴇʀᴇ ɪʟ ᴛᴇꜱᴛᴏ ꜰᴀʀᴇ ’’.ᴘʟᴀʏ (ᴄᴀɴᴢᴏɴᴇ)’’ ᴇ ꜱᴄʜɪᴀᴄᴄɪᴀʀᴇ ’’ꜱɪ’’ ᴇɴᴛʀᴏ 𝟷𝟻 ꜱᴇᴄᴏɴᴅɪ.")
 
   if (global.pendingLyrics?.[sender]) {
     clearTimeout(global.pendingLyrics[sender])
@@ -25,17 +25,17 @@ let handler = async (m, { conn }) => {
       m.chat,
       {
         text:
-`📜 𝐓𝐄𝐒𝐓𝐎 𝐃𝐈 *${titoloOriginale}*
-━━━━━━━━━━━━━━
+`📜 ᴛᴇꜱᴛᴏ ᴅɪ *${titoloOriginale}*
+┄┄┄┄┄┄┄┄┄┄┄┄┄┄
 ${lyrics}
-━━━━━━━━━━━━━━
-> 𝟑𝟑𝟑 𝐝𝐨𝐰𝐧𝐥𝐨𝐚𝐝𝐞𝐫 𝐥𝐲𝐫𝐢𝐜𝐬`
+┄┄┄┄┄┄┄┄┄┄┄┄┄┄
+> ᴢᴇɴᴏʙᴏᴛ ᴅᴏᴡɴʟᴏᴀᴅᴇʀ ʟʏʀɪᴄꜱ`
       },
       { quoted: m }
     )
 
   } catch (e) {
-    m.reply(`❌ 𝐍𝐨𝐧 𝐡𝐨 𝐭𝐫𝐨𝐯𝐚𝐭𝐨 𝐢𝐥 𝐭𝐞𝐬𝐭𝐨 𝐝𝐢 "${titoloOriginale}".`)
+    m.reply(`✖️ ɴᴏɴ ʜᴏ ᴛʀᴏᴠᴀᴛᴏ ɪʟ ᴛᴇꜱᴛᴏ ᴅɪ "${titoloOriginale}".`)
   }
 
   delete global.lyricsRequest[sender]

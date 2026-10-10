@@ -1,4 +1,4 @@
-//Plugin by Zeno, Lucifero & 333 staff
+//Plugin by Zeno, Lucifero & zenobot staff
 
 import fetch from 'node-fetch';
 import fs from 'fs';
@@ -6,19 +6,19 @@ import fs from 'fs';
 let handler = async (m, { conn, usedPrefix, command, args, isOwner, isAdmin, isROwner }) => {
   const userName = m.pushName || 'Utente';
 
-  const imgBuffer = fs.readFileSync('icone/333.jpg');
+  const imgBuffer = fs.readFileSync('icone/zenobot.jpg');
 
   const fake = {
     key: {
       participants: '0@s.whatsapp.net',
       fromMe: false,
-      id: '333Attiva'
+      id: 'zenobotAttiva'
     },
     message: {
       locationMessage: {
-        name: '⚙️ 𝐒𝐢𝐬𝐭𝐞𝐦𝐚 𝐅𝐮𝐧𝐳𝐢𝐨𝐧𝐢',
+        name: '⚙️ ꜱɪꜱᴛᴇᴍᴀ ꜰᴜɴᴢɪᴏɴɪ',
         jpegThumbnail: imgBuffer.toString('base64'),
-        vcard: 'BEGIN:VCARD\nVERSION:3.0\nN:;333;;;\nFN:333\nEND:VCARD'
+        vcard: 'BEGIN:VCARD\nVERSION:3.0\nN:;zenobot;;;\nFN:zenobot\nEND:VCARD'
       }
     },
     participant: '0@s.whatsapp.net'
@@ -115,21 +115,21 @@ let handler = async (m, { conn, usedPrefix, command, args, isOwner, isAdmin, isR
     const adminCheck = m.isGroup && !(isAdmin || isOwner || isROwner);
     const ownerOnly = !isOwner && !isROwner;
 
-    const adminGuard = () => { result.status = '𝐂𝐨𝐦𝐚𝐧𝐝𝐨 𝐝𝐢𝐬𝐩𝐨𝐧𝐢𝐛𝐢𝐥𝐞 𝐬𝐨𝐥𝐨 𝐩𝐞𝐫 𝐚𝐝𝐦𝐢𝐧'; };
-    const ownerGuard = () => { result.status = '𝐒𝐨𝐥𝐨 𝐩𝐞𝐫 𝐨𝐰𝐧𝐞𝐫!'; };
-    const groupGuard = () => { result.status = '𝐂𝐨𝐦𝐚𝐧𝐝𝐨 𝐮𝐭𝐢𝐥𝐢𝐳𝐳𝐚𝐛𝐢𝐥𝐞 𝐬𝐨𝐥𝐨 𝐧𝐞𝐢 𝐠𝐫𝐮𝐩𝐩𝐢'; };
+    const adminGuard = () => { result.status = 'ᴄᴏᴍᴀɴᴅᴏ ᴅɪꜱᴘᴏɴɪʙɪʟᴇ ꜱᴏʟᴏ ᴘᴇʀ ᴀᴅᴍɪɴ'; };
+    const ownerGuard = () => { result.status = 'ꜱᴏʟᴏ ᴘᴇʀ ᴏᴡɴᴇʀ!'; };
+    const groupGuard = () => { result.status = 'ᴄᴏᴍᴀɴᴅᴏ ᴜᴛɪʟɪᴢᴢᴀʙɪʟᴇ ꜱᴏʟᴏ ɴᴇɪ ɢʀᴜᴘᴘɪ'; };
 
     const setChat = (key) => {
-      if (chat[key] === isEnable) { result.status = isEnable ? '𝐞̀ 𝐠𝐢𝐚̀ 𝐚𝐭𝐭𝐢𝐯𝐨.' : '𝐞̀ 𝐠𝐢𝐚̀ 𝐝𝐢𝐬𝐚𝐭𝐭𝐢𝐯𝐚𝐭𝐨.'; return; }
+      if (chat[key] === isEnable) { result.status = isEnable ? 'ᴇ̀ ɢɪᴀ̀ ᴀᴛᴛɪᴠᴏ.' : 'ᴇ̀ ɢɪᴀ̀ ᴅɪꜱᴀᴛᴛɪᴠᴀᴛᴏ.'; return; }
       chat[key] = isEnable;
-      result.status = isEnable ? '𝐀𝐭𝐭𝐢𝐯𝐚𝐭𝐨' : '𝐃𝐢𝐬𝐚𝐭𝐭𝐢𝐯𝐚𝐭𝐨';
+      result.status = isEnable ? 'ᴀᴛᴛɪᴠᴀᴛᴏ' : 'ᴅɪꜱᴀᴛᴛɪᴠᴀᴛᴏ';
       result.explanation = featureExplanations[key]?.[isEnable ? 0 : 1];
       result.success = true;
     };
     const setBot = (key) => {
-      if (bot[key] === isEnable) { result.status = isEnable ? '𝐞̀ 𝐠𝐢𝐚̀ 𝐚𝐭𝐭𝐢𝐯𝐨.' : '𝐞̀ 𝐠𝐢𝐚̀ 𝐝𝐢𝐬𝐚𝐭𝐭𝐢𝐯𝐚𝐭𝐨.'; return; }
+      if (bot[key] === isEnable) { result.status = isEnable ? 'ᴇ̀ ɢɪᴀ̀ ᴀᴛᴛɪᴠᴏ.' : 'ᴇ̀ ɢɪᴀ̀ ᴅɪꜱᴀᴛᴛɪᴠᴀᴛᴏ.'; return; }
       bot[key] = isEnable;
-      result.status = isEnable ? '𝐀𝐭𝐭𝐢𝐯𝐚𝐭𝐨' : '𝐃𝐢𝐬𝐚𝐭𝐭𝐢𝐯𝐚𝐭𝐨';
+      result.status = isEnable ? 'ᴀᴛᴛɪᴠᴀᴛᴏ' : 'ᴅɪꜱᴀᴛᴛɪᴠᴀᴛᴏ';
       result.explanation = featureExplanations[key]?.[isEnable ? 0 : 1];
       result.success = true;
     };
@@ -211,7 +211,7 @@ let handler = async (m, { conn, usedPrefix, command, args, isOwner, isAdmin, isR
           const metadata = conn.chats?.[m.chat]?.metadata || global.groupCache?.get(m.chat) || null
           const groupOwnerJid = metadata?.owner ? (conn.decodeJid ? conn.decodeJid(metadata.owner) : metadata.owner) : null
           const isGroupOwner = groupOwnerJid ? groupOwnerJid === m.sender : false
-          if (!(isGroupOwner || isOwner || isROwner)) { result.status = '𝐒𝐨𝐥𝐨 𝐢𝐥 𝐩𝐫𝐨𝐩𝐫𝐢𝐞𝐭𝐚𝐫𝐢𝐨 𝐝𝐞𝐥 𝐠𝐫𝐮𝐩𝐩𝐨 𝐨 𝐥\'𝐨𝐰𝐧𝐞𝐫 𝐝𝐞𝐥 𝐛𝐨𝐭 𝐩𝐮𝐨̀ 𝐚𝐭𝐭𝐢𝐯𝐚𝐫𝐞/𝐝𝐢𝐬𝐚𝐭𝐭𝐢𝐯𝐚𝐫𝐞 𝐚𝐧𝐭𝐢𝐧𝐮𝐤𝐞'; break; }
+          if (!(isGroupOwner || isOwner || isROwner)) { result.status = 'ꜱᴏʟᴏ ɪʟ ᴘʀᴏᴘʀɪᴇᴛᴀʀɪᴏ ᴅᴇʟ ɢʀᴜᴘᴘᴏ ᴏ ʟ\'ᴏᴡɴᴇʀ ᴅᴇʟ ʙᴏᴛ ᴘᴜᴏ̀ ᴀᴛᴛɪᴠᴀʀᴇ/ᴅɪꜱᴀᴛᴛɪᴠᴀʀᴇ ᴀɴᴛɪɴᴜᴋᴇ'; break; }
           setChat('antinuke')
         }
         break;
@@ -246,16 +246,16 @@ let handler = async (m, { conn, usedPrefix, command, args, isOwner, isAdmin, isR
         if (adminCheck) { adminGuard(); break; }
         setChat('antiLink'); break;
       default:
-        result.status = '𝐂𝐨𝐦𝐚𝐧𝐝𝐨 𝐧𝐨𝐧 𝐫𝐢𝐜𝐨𝐧𝐨𝐬𝐜𝐢𝐮𝐭𝐨, 𝐩𝐞𝐫 𝐯𝐞𝐝𝐞𝐫𝐞 𝐥𝐚 𝐥𝐢𝐬𝐭𝐚 𝐝𝐞𝐢 𝐜𝐨𝐦𝐚𝐧𝐝𝐢 𝐟𝐚𝐫𝐞 \'\'.𝐟𝐮𝐧𝐳𝐢𝐨𝐧𝐢\'\''; break;
+        result.status = 'ᴄᴏᴍᴀɴᴅᴏ ɴᴏɴ ʀɪᴄᴏɴᴏꜱᴄɪᴜᴛᴏ, ᴘᴇʀ ᴠᴇᴅᴇʀᴇ ʟᴀ ʟɪꜱᴛᴀ ᴅᴇɪ ᴄᴏᴍᴀɴᴅɪ ꜰᴀʀᴇ \'\'.ꜰᴜɴᴢɪᴏɴɪ\'\''; break;
     }
     return result;
   };
 
   const buildMessage = (result) => {
-    let icon = result.success ? (isEnable ? '🟢' : '🔴') : result.status.includes('𝐠𝐢𝐚̀') ? '🟡' : '⚠️';
-    let displayStatus = result.success ? (isEnable ? '𝐀𝐓𝐓𝐈𝐕𝐀𝐓𝐀' : '𝐃𝐈𝐒𝐀𝐓𝐓𝐈𝐕𝐀𝐓𝐀') : result.status;
-    const explanation = result.explanation ? `\n║ ℹ️ ${result.explanation}` : '';
-    return `╔═══「 𝐂𝐎𝐍𝐅𝐄𝐑𝐌𝐀 」═══✧\n║ 📌 *Funzione:* ${result.type}\n║ ${icon} *Stato:* ${displayStatus}${explanation}\n║ 👤 *Admin:* ${userName}\n╚════════════════✧\n\n`;
+    let icon = result.success ? (isEnable ? '🟢' : '🔴') : result.status.includes('ɢɪᴀ̀') ? '🟡' : '⚠️';
+    let displayStatus = result.success ? (isEnable ? 'ᴀᴛᴛɪᴠᴀᴛᴀ' : 'ᴅɪꜱᴀᴛᴛɪᴠᴀᴛᴀ') : result.status;
+    const explanation = result.explanation ? `\n┆ ℹ️ ${result.explanation}` : '';
+    return `┌┄┄┄「 ᴄᴏɴꜰᴇʀᴍᴀ 」┄┄┄✧\n┆ 📌 *Funzione:* ${result.type}\n┆ ${icon} *Stato:* ${displayStatus}${explanation}\n┆ 👤 *Admin:* ${userName}\n└┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄✧\n\n`;
   };
 
   const createSections = (features) => [
@@ -273,7 +273,7 @@ let handler = async (m, { conn, usedPrefix, command, args, isOwner, isAdmin, isR
   const firstArg = args[0] ? args[0].toLowerCase() : '';
   if (catalogs[firstArg]) {
     if (m.isGroup && !(isAdmin || isOwner || isROwner)) {
-      return conn.sendMessage(m.chat, { text: '𝐂𝐨𝐦𝐚𝐧𝐝𝐨 𝐝𝐢𝐬𝐩𝐨𝐧𝐢𝐛𝐢𝐥𝐞 𝐬𝐨𝐥𝐨 𝐩𝐞𝐫 𝐚𝐝𝐦𝐢𝐧' }, { quoted: fake });
+      return conn.sendMessage(m.chat, { text: 'ᴄᴏᴍᴀɴᴅᴏ ᴅɪꜱᴘᴏɴɪʙɪʟᴇ ꜱᴏʟᴏ ᴘᴇʀ ᴀᴅᴍɪɴ' }, { quoted: fake });
     }
     const results = catalogs[firstArg].map(key => toggleFeature(key));
     const msg = results.map(buildMessage).join('').trim();

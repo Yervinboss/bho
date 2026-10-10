@@ -1,4 +1,4 @@
-//Plugin by Zeno, Lucifero & 333 staff
+//Plugin by Zeno, Lucifero & zenobot staff
 
 global.casinoRateLimit = global.casinoRateLimit || {}
 
@@ -38,17 +38,17 @@ let handler = async (m, { conn, args, command }) => {
 
     return conn.sendMessage(m.chat, {
       text:
-`╔═🐎 𝐂𝐀𝐕𝐀𝐋𝐋𝐈 ═╗
-┃ 💰 Portafoglio: *${money} XP333*
-┃
-┃ Scegli la puntata
-╚══════╝`,
+`┌┄🐎 ᴄᴀᴠᴀʟʟɪ ┄┐
+┆ 💰 Portafoglio: *${money} ZenoCoin*
+┆
+┆ Scegli la puntata
+└┄┄┄┄┄┄┘`,
       buttons: [
-        { buttonId: bet(100), buttonText: { displayText: "100 XP333" }, type: 1 },
-        { buttonId: bet(200), buttonText: { displayText: "200 XP333" }, type: 1 },
-        { buttonId: bet(500), buttonText: { displayText: "500 XP333" }, type: 1 },
-        { buttonId: bet(1000), buttonText: { displayText: "1000 XP333" }, type: 1 },
-        { buttonId: bet(10000), buttonText: { displayText: "10000 XP333" }, type: 1 }
+        { buttonId: bet(100), buttonText: { displayText: "100 ZenoCoin" }, type: 1 },
+        { buttonId: bet(200), buttonText: { displayText: "200 ZenoCoin" }, type: 1 },
+        { buttonId: bet(500), buttonText: { displayText: "500 ZenoCoin" }, type: 1 },
+        { buttonId: bet(1000), buttonText: { displayText: "1000 ZenoCoin" }, type: 1 },
+        { buttonId: bet(10000), buttonText: { displayText: "10000 ZenoCoin" }, type: 1 }
       ],
       headerType: 1
     }, { quoted: m })
@@ -58,21 +58,21 @@ let handler = async (m, { conn, args, command }) => {
 
     let bet = parseInt(args[0])
 
-    if (!bet || bet < 50) return m.reply("💸 Puntata minima 50 XP333")
-    if (user.money < bet) return m.reply(`💸 Devi avere almeno ${bet} XP333`)
+    if (!bet || bet < 50) return m.reply("💸 Puntata minima 50 ZenoCoin")
+    if (user.money < bet) return m.reply(`💸 Devi avere almeno ${bet} ZenoCoin`)
 
     global.cavalli[m.sender] = { bet }
 
     return conn.sendMessage(m.chat, {
       text:
-`╔═🐎 𝐂𝐀𝐕𝐀𝐋𝐋𝐈 ═╗
-┃ 🎯 Scegli il cavallo
-┃ 💰 Puntata: *${bet} XP333*
-┃
-┃ 🐎 1 → Jonny
-┃ 🐎 2 → Zeno
-┃ 🐎 3 → Franco
-╚══════╝`,
+`┌┄🐎 ᴄᴀᴠᴀʟʟɪ ┄┐
+┆ 🎯 Scegli il cavallo
+┆ 💰 Puntata: *${bet} ZenoCoin*
+┆
+┆ 🐎 1 → Jonny
+┆ 🐎 2 → Zeno
+┆ 🐎 3 → Franco
+└┄┄┄┄┄┄┘`,
       buttons: [
         { buttonId: ".cavallo 1", buttonText: { displayText: "🐎 Jonny" }, type: 1 },
         { buttonId: ".cavallo 2", buttonText: { displayText: "🐎 Zeno" }, type: 1 },
@@ -87,7 +87,7 @@ let handler = async (m, { conn, args, command }) => {
     let scelta = parseInt(args[0])
     let game = global.cavalli[m.sender]
 
-    if (!game) return m.reply("❌ Devi prima fare .cavalli")
+    if (!game) return m.reply("✖️ Devi prima fare .cavalli")
 
     let cavalli = {
       1: "Jonny",
@@ -95,7 +95,7 @@ let handler = async (m, { conn, args, command }) => {
       3: "Franco"
     }
 
-    if (![1,2,3].includes(scelta)) return m.reply("❌ Scelta non valida")
+    if (![1,2,3].includes(scelta)) return m.reply("✖️ Scelta non valida")
 
     let vincitore = Math.floor(Math.random() * 3) + 1
     let nomeVincitore = cavalli[vincitore]
@@ -105,21 +105,21 @@ let handler = async (m, { conn, args, command }) => {
     if (scelta === vincitore) {
       user.money += game.bet * 2
       text =
-`╔═🐎 𝐂𝐀𝐕𝐀𝐋𝐋𝐈 ═╗
-┃ 🏆 Vincitore: *${nomeVincitore}*
-┃ 💰 Guadagno: +${game.bet * 2} XP333
-┃
-┃ 💼 Saldo: ${user.money} XP333
-╚══════╝`
+`┌┄🐎 ᴄᴀᴠᴀʟʟɪ ┄┐
+┆ 🏆 Vincitore: *${nomeVincitore}*
+┆ 💰 Guadagno: +${game.bet * 2} ZenoCoin
+┆
+┆ 💼 Saldo: ${user.money} ZenoCoin
+└┄┄┄┄┄┄┘`
     } else {
       user.money -= game.bet
       text =
-`╔═🐎 𝐂𝐀𝐕𝐀𝐋𝐋𝐈 ═╗
-┃ 🏆 Vincitore: *${nomeVincitore}*
-┃ 💀 Perso: -${game.bet} XP333
-┃
-┃ 💼 Saldo: ${user.money} XP333
-╚══════╝`
+`┌┄🐎 ᴄᴀᴠᴀʟʟɪ ┄┐
+┆ 🏆 Vincitore: *${nomeVincitore}*
+┆ 💀 Perso: -${game.bet} ZenoCoin
+┆
+┆ 💼 Saldo: ${user.money} ZenoCoin
+└┄┄┄┄┄┄┘`
     }
 
     delete global.cavalli[m.sender]

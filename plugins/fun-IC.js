@@ -1,4 +1,4 @@
-//Plugin by Zeno, Lucifero & 333 staff
+//Plugin by Zeno, Lucifero & zenobot staff
 
 import yts from 'yt-search'
 import { exec } from 'child_process'
@@ -116,7 +116,7 @@ let handler = async (m, { conn, command }) => {
   let search = await yts(query)
   let video = search.videos && search.videos[0]
 
-  if (!video) return m.reply('❌ Non ho trovato l\'audio per questa canzone, riprova più tardi.')
+  if (!video) return m.reply('✖️ Non ho trovato l\'audio per questa canzone, riprova più tardi.')
 
   let clipFile = path.join(TMP_DIR, `ic_clip_${Date.now()}.mp3`)
 
@@ -126,7 +126,7 @@ let handler = async (m, { conn, command }) => {
     await execPromise(`yt-dlp -x --audio-format mp3 --postprocessor-args "-ss 30 -t 30" -o "${clipFile}" "${video.url}"`)
   } catch (e) {
     try { if (fs.existsSync(clipFile)) fs.unlinkSync(clipFile) } catch {}
-    return m.reply('❌ Errore durante il recupero dell\'audio. Riprova.')
+    return m.reply('✖️ Errore durante il recupero dell\'audio. Riprova.')
   }
 
   let intro = `🎧 *IC - Indovina Canzone*\n\n`
@@ -170,14 +170,14 @@ handler.before = async function (m, { conn }) {
   game.attempts = game.attempts || {}
   const used = game.attempts[user] || 0
   if (used >= (game.maxAttempts || 3))
-    return m.reply(`❌ Hai esaurito i ${game.maxAttempts || 3} tentativi.`)
+    return m.reply(`✖️ Hai esaurito i ${game.maxAttempts || 3} tentativi.`)
 
   let guess = normalize(m.text)
   if (guess !== game.answer) {
     game.attempts[user] = used + 1
     const remaining = (game.maxAttempts || 3) - game.attempts[user]
-    if (remaining <= 0) return m.reply(`❌ Risposta errata. Hai esaurito i ${game.maxAttempts || 3} tentativi.`)
-    return m.reply(`❌ Risposta errata. Tentativi rimasti: ${remaining}`)
+    if (remaining <= 0) return m.reply(`✖️ Risposta errata. Hai esaurito i ${game.maxAttempts || 3} tentativi.`)
+    return m.reply(`✖️ Risposta errata. Tentativi rimasti: ${remaining}`)
   }
 
 
@@ -188,7 +188,7 @@ handler.before = async function (m, { conn }) {
   if (!global.db.data.users[user]) global.db.data.users[user] = {}
   global.db.data.users[user].money = (global.db.data.users[user].money || 0) + game.prize
 
-  let response = `✅ *RISPOSTA CORRETTA!*\n\n`
+  let response = `✔️ *RISPOSTA CORRETTA!*\n\n`
   response += `🎉 Complimenti @${user.split('@')[0]}\n`
   response += `🎤 Canzone: *${game.title}*\n`
   response += `🎵 Artista: *${game.artist}*\n`

@@ -1,4 +1,4 @@
-//Plugin by Zeno, Lucifero & 333 staff
+//Plugin by Zeno, Lucifero & zenobot staff
 
 import fs from 'fs'
 
@@ -13,7 +13,7 @@ let handler = async (m, { conn, isAdmin, command, text }) => {
   if (commandName === 'confermascarcero') {
     const adminJid = m.sender
     let data = global.scarceri[adminJid]
-    if (!data) return m.reply('❌ Nessuna richiesta di scarcero in corso')
+    if (!data) return m.reply('✖️ Nessuna richiesta di scarcero in corso')
 
     const targetJid = data.target
     const targetUser = global.db.data.users[targetJid]
@@ -21,7 +21,7 @@ let handler = async (m, { conn, isAdmin, command, text }) => {
 
     if (!adminUser || (adminUser.money || 0) < CAUZIONE) {
       delete global.scarceri[adminJid]
-      return m.reply(`❌ Servono almeno ${CAUZIONE} euro per scarcerare`)
+      return m.reply(`✖️ Servono almeno ${CAUZIONE} euro per scarcerare`)
     }
 
     adminUser.money -= CAUZIONE
@@ -34,7 +34,7 @@ let handler = async (m, { conn, isAdmin, command, text }) => {
     delete global.scarceri[adminJid]
 
     await conn.sendMessage(m.chat, {
-      text: `✅ @${targetJid.split('@')[0]} *è stato scarcerato!* 💰 Hai pagato ${CAUZIONE}€ di cauzione.\n\nPuoi tornare a scrivere e usare comandi.`,
+      text: `✔️ @${targetJid.split('@')[0]} *è stato scarcerato!* 💰 Hai pagato ${CAUZIONE}€ di cauzione.\n\nPuoi tornare a scrivere e usare comandi.`,
       mentions: [targetJid]
     }, { quoted: m })
     return
@@ -43,7 +43,7 @@ let handler = async (m, { conn, isAdmin, command, text }) => {
   if (commandName === 'annullascarcero') {
     const adminJid = m.sender
     delete global.scarceri[adminJid]
-    return m.reply('❌ Scarcero annullato')
+    return m.reply('✖️ Scarcero annullato')
   }
 
   const who = m.mentionedJid?.[0] || m.quoted?.sender || text?.split(/\s+/)?.[0]
@@ -106,7 +106,7 @@ let handler = async (m, { conn, isAdmin, command, text }) => {
         currentUser.muto = false
         currentUser.arrestoExpire = null
         await conn.sendMessage(m.chat, {
-          text: `✅ @${jailTarget.split('@')[0]} *ha scontato la pena. Puoi tornare a scrivere e usare comandi.*`,
+          text: `✔️ @${jailTarget.split('@')[0]} *ha scontato la pena. Puoi tornare a scrivere e usare comandi.*`,
           mentions: [jailTarget]
         })
       }
@@ -121,7 +121,7 @@ let handler = async (m, { conn, isAdmin, command, text }) => {
 
     if ((adminUser.money || 0) < CAUZIONE) {
       return await conn.sendMessage(m.chat, {
-        text: `❌ Non hai abbastanza soldi per scarcerare @${jailTarget.split('@')[0]}\n\n💰 Cauzione: ${CAUZIONE}€\n💵 Tuoi soldi: ${adminUser.money || 0}€`
+        text: `✖️ Non hai abbastanza soldi per scarcerare @${jailTarget.split('@')[0]}\n\n💰 Cauzione: ${CAUZIONE}€\n💵 Tuoi soldi: ${adminUser.money || 0}€`
       }, { quoted: m, mentions: [jailTarget] })
     }
 
@@ -131,8 +131,8 @@ let handler = async (m, { conn, isAdmin, command, text }) => {
     await conn.sendMessage(m.chat, {
       text: `❓ Sei sicuro di voler scarcerare @${jailTarget.split('@')[0]}?\n\n💰 Cauzione: ${CAUZIONE}€\n\nI tuoi soldi: ${adminUser.money || 0}€`,
       buttons: [
-        { buttonId: '.confermascarcero', buttonText: { displayText: '✅ SI' }, type: 1 },
-        { buttonId: '.annullascarcero', buttonText: { displayText: '❌ NO' }, type: 1 }
+        { buttonId: '.confermascarcero', buttonText: { displayText: '✔️ SI' }, type: 1 },
+        { buttonId: '.annullascarcero', buttonText: { displayText: '✖️ NO' }, type: 1 }
       ],
       headerType: 1,
       mentions: [jailTarget]

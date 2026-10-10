@@ -9,7 +9,7 @@ const handler = async (m, { conn, usedPrefix, command }) => {
 
     if (!/image|webp/i.test(mime)) {
         return await conn.sendMessage(m.chat, { 
-            text: `❌ Rispondi a un'immagine o a uno sticker contenente un QR code con *${usedPrefix + command}*`
+            text: `✖️ Rispondi a un'immagine o a uno sticker contenente un QR code con *${usedPrefix + command}*`
         }, { quoted: m })
     }
 
@@ -92,7 +92,7 @@ const handler = async (m, { conn, usedPrefix, command }) => {
 
         if (!qrData || qrData === 'null' || qrData.trim() === '') {
             return await conn.sendMessage(m.chat, { 
-                text: '❌ Nessun QR code trovato nell\'immagine.\n\n💡 *Suggerimenti:*\n- Assicurati che il codice sia ben visibile e non ritagliato.\n- Se è uno sticker, potrebbe essere troppo piccolo o deformato.' 
+                text: '✖️ Nessun QR code trovato nell\'immagine.\n\n💡 *Suggerimenti:*\n- Assicurati che il codice sia ben visibile e non ritagliato.\n- Se è uno sticker, potrebbe essere troppo piccolo o deformato.' 
             }, { quoted: m })
         }
 
@@ -116,12 +116,12 @@ const handler = async (m, { conn, usedPrefix, command }) => {
 
     } catch (e) {
         console.error('[QR Error Generale]:', e)
-        let errorMsg = '❌ Errore durante la scansione del QR code.'
+        let errorMsg = '✖️ Errore durante la scansione del QR code.'
 
         if (e.code === 'ECONNABORTED' || e.code === 'ETIMEDOUT') {
-            errorMsg = '❌ Timeout: I server di scansione non rispondono. Riprova più tardi.'
+            errorMsg = '✖️ Timeout: I server di scansione non rispondono. Riprova più tardi.'
         } else if (e.message) {
-            errorMsg = `❌ Errore: ${e.message}`
+            errorMsg = `✖️ Errore: ${e.message}`
         }
 
         await conn.sendMessage(m.chat, { text: errorMsg }, { quoted: m })

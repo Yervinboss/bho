@@ -1,4 +1,4 @@
-//Plugin by Zeno, Lucifero & 333 staff
+//Plugin by Zeno, Lucifero & zenobot staff
 
 global.casinoRateLimit = global.casinoRateLimit || {}
 
@@ -67,45 +67,45 @@ let handler = async (m, { conn, text }) => {
   }
 
   const user = global.db.data.users[m.sender]
-  if (!user) return m.reply('❌ Non sei registrato')
+  if (!user) return m.reply('✖️ Non sei registrato')
 
   const puntata = parseInt(text?.trim())
   if (!puntata || puntata <= 0) {
     return await conn.sendMessage(m.chat, {
       text:
-`╔═ ♠️ 𝐏𝐎𝐊𝐄𝐑 𝟑𝟑𝟑 ═╗
-┃
-┃ 🎴 *Poker a 5 carte*
-┃ *Vinci in base alla mano!*
-┃
-┃ 💰 *Puntate minime:* 10 XP333
-┃ 💼 *Tuoi soldi:* ${user.money || 0} XP333
-┃
-┃ 📊 *Pagamenti:*
-┃ 1️⃣ Coppia      → x1
-┃ 2️⃣ Doppia      → x1.5
-┃ 3️⃣ Tris        → x2
-┃ 📈 Scala        → x3
-┃ 🌊 Colore       → x4
-┃ 🏠 Full House   → x5
-┃ 💥 Poker        → x10
-┃ 🎖️ Scala Col.  → x20
-┃ 🏆 Scala Reale  → x50
-┃
-╚══════════════╝`,
-      footer: "𝟑𝟑𝟑 𝐂𝐀𝐒𝐈𝐍𝐎",
+`┌┄ ♠️ ᴘᴏᴋᴇʀ ᴢᴇɴᴏʙᴏᴛ ┄┐
+┆
+┆ 🎴 *Poker a 5 carte*
+┆ *Vinci in base alla mano!*
+┆
+┆ 💰 *Puntate minime:* 10 ZenoCoin
+┆ 💼 *Tuoi soldi:* ${user.money || 0} ZenoCoin
+┆
+┆ 📊 *Pagamenti:*
+┆ 1️⃣ Coppia      → x1
+┆ 2️⃣ Doppia      → x1.5
+┆ 3️⃣ Tris        → x2
+┆ 📈 Scala        → x3
+┆ 🌊 Colore       → x4
+┆ 🏠 Full House   → x5
+┆ 💥 Poker        → x10
+┆ 🎖️ Scala Col.  → x20
+┆ 🏆 Scala Reale  → x50
+┆
+└┄┄┄┄┄┄┄┄┄┄┄┄┄┄┘`,
+      footer: "ᴢᴇɴᴏʙᴏᴛ ᴄᴀꜱɪɴᴏ",
       buttons: [
-        { buttonId: ".poker 10",  buttonText: { displayText: "💸 Punta 10 XP333"  }, type: 1 },
-        { buttonId: ".poker 50",  buttonText: { displayText: "💰 Punta 50 XP333"  }, type: 1 },
-        { buttonId: ".poker 100", buttonText: { displayText: "🤑 Punta 100 XP333" }, type: 1 },
+        { buttonId: ".poker 10",  buttonText: { displayText: "💸 Punta 10 ZenoCoin"  }, type: 1 },
+        { buttonId: ".poker 50",  buttonText: { displayText: "💰 Punta 50 ZenoCoin"  }, type: 1 },
+        { buttonId: ".poker 100", buttonText: { displayText: "🤑 Punta 100 ZenoCoin" }, type: 1 },
         { buttonId: ".casino",    buttonText: { displayText: "🔙 Torna al Casino" }, type: 1 }
       ],
       headerType: 1
     }, { quoted: m })
   }
 
-  if (puntata < 10) return m.reply('❌ Puntata minima: *10 XP333*')
-  if ((user.money || 0) < puntata) return m.reply(`❌ Non hai abbastanza soldi! Hai *${user.money || 0} XP333*`)
+  if (puntata < 10) return m.reply('✖️ Puntata minima: *10 ZenoCoin*')
+  if ((user.money || 0) < puntata) return m.reply(`✖️ Non hai abbastanza soldi! Hai *${user.money || 0} ZenoCoin*`)
 
   const mazzo = mescola(creaMazzo())
   const mano = mazzo.slice(0, 5)
@@ -117,28 +117,28 @@ let handler = async (m, { conn, text }) => {
 
   if (mult === 0) {
     user.money -= puntata
-    esito = `❌ *Hai perso ${puntata} XP333!*`
+    esito = `✖️ *Hai perso ${puntata} ZenoCoin!*`
   } else {
     vincita = Math.floor(puntata * mult)
     user.money += vincita
-    esito = `✅ *Hai vinto ${vincita} XP333!*`
+    esito = `✔️ *Hai vinto ${vincita} ZenoCoin!*`
   }
 
   await conn.sendMessage(m.chat, {
     text:
-`╔═ ♠️ 𝐏𝐎𝐊𝐄𝐑 𝟑𝟑𝟑 ═╗
-┃
-┃ 🎴 *Le tue carte:*
-┃ ${carteStr}
-┃
-┃ 🏅 *${nome}*
-┃ 💵 Puntata: ${puntata} XP333
-┃ ${esito}
-┃
-┃ 💼 Saldo: *${user.money} XP333*
-┃
-╚══════════════╝`,
-    footer: "𝟑𝟑𝟑 𝐂𝐀𝐒𝐈𝐍𝐎",
+`┌┄ ♠️ ᴘᴏᴋᴇʀ ᴢᴇɴᴏʙᴏᴛ ┄┐
+┆
+┆ 🎴 *Le tue carte:*
+┆ ${carteStr}
+┆
+┆ 🏅 *${nome}*
+┆ 💵 Puntata: ${puntata} ZenoCoin
+┆ ${esito}
+┆
+┆ 💼 Saldo: *${user.money} ZenoCoin*
+┆
+└┄┄┄┄┄┄┄┄┄┄┄┄┄┄┘`,
+    footer: "ᴢᴇɴᴏʙᴏᴛ ᴄᴀꜱɪɴᴏ",
     buttons: [
       { buttonId: `.poker ${puntata}`, buttonText: { displayText: "🔄 Gioca ancora" }, type: 1 },
       { buttonId: ".casino",           buttonText: { displayText: "🔙 Torna al Casino" }, type: 1 }

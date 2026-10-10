@@ -1,4 +1,4 @@
-//Plugin by Zeno, Lucifero & 333 staff
+//Plugin by Zeno, Lucifero & zenobot staff
 
 const manually = `iscrivetevi tutti qua 
 https://whatsapp.com/channel/0029VauhQviCsU9Ibrwlkb0h
@@ -19,7 +19,7 @@ await conn.relayMessage(m.chat, msg.message, { messageId: msg.key.id })
 if (count===parseInt(args[0])) break
 }}
 handler.command = ['spam']
-handler.help = ['𝐬𝐩𝐚𝐦'];
+handler.help = ['ꜱᴘᴀᴍ'];
 handler.tags = ['owner']
 handler.owner = true
 export default handler

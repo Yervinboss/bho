@@ -1,4 +1,4 @@
-//Plugin by Zeno, Lucifero & 333 staff
+//Plugin by Zeno, Lucifero & zenobot staff
 
 let quizDB = [
 
@@ -83,13 +83,13 @@ delete global.quizGame[chat]
 global.quizPoints[chat] = global.quizPoints[chat] || {}
 global.quizPoints[chat][user] = (global.quizPoints[chat][user] || 0) + 10
 
-return m.reply("✅ CORRETTO +10 punti\n> usa .quizcalcio classifica per vedere la classifica")
+return m.reply("✔️ CORRETTO +10 punti\n> usa .quizcalcio classifica per vedere la classifica")
 } else {
 clearTimeout(global.quizTimer[chat])
 delete global.quizTimer[chat]
 delete global.quizGame[chat]
 
-return m.reply(`❌ Sbagliato\nRisposta: ${game.corretta}`)
+return m.reply(`✖️ Sbagliato\nRisposta: ${game.corretta}`)
 }
 }
 

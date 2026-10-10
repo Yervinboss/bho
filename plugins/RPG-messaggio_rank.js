@@ -1,4 +1,4 @@
-//Plugin by Zeno, Lucifero & 333 staff
+//Plugin by Zeno, Lucifero & zenobot staff
 
 import { addRpgXp } from '../lib/rpg-xp.js'
 
@@ -42,7 +42,7 @@ export async function before(m) {
 @${m.sender.split('@')[0]}
 
 🏆 Livello: ${user.lvl}
-💰 +${reward} XP333
+💰 +${reward} ZenoCoin
 📊 *prossimo rank tra 300 messaggi*
 > *digita ‘’.rank’’ per vedere il tuo rank*
 `,

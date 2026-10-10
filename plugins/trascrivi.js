@@ -1,4 +1,4 @@
-//Plugin by Zeno, Lucifero & 333 staff
+//Plugin by Zeno, Lucifero & zenobot staff
 
 import fs from "fs"
 import path from "path"
@@ -125,7 +125,7 @@ let handler = async (m, { conn }) => {
     let text = ""
     let source = ""
 
-    if (OPENAI_API_KEY && OPENAI_API_KEY !== "333") {
+    if (OPENAI_API_KEY && OPENAI_API_KEY !== "zenobot") {
         try {
             text = await transcribeWithOpenAI(wavPath)
             source = "OpenAI"
@@ -160,7 +160,7 @@ let handler = async (m, { conn }) => {
     cleanupFiles(oggPath, wavPath)
 
     if (!text) {
-        return conn.sendMessage(m.chat, { text: "❌ Non ho riconosciuto testo nell'audio." }, { quoted: m })
+        return conn.sendMessage(m.chat, { text: "✖️ Non ho riconosciuto testo nell'audio." }, { quoted: m })
     }
 
     conn.sendMessage(m.chat, { text: `📝 Trascrizione (${source}):\n${text}` }, { quoted: m })

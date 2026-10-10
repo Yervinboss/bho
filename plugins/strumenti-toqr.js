@@ -3,7 +3,7 @@ import axios from 'axios'
 const handler = async (m, { conn, text, usedPrefix, command }) => {
     if (!text) {
         const usage = `
-╭─⭓ 『 🔲 』 *GENERA QR CODE*
+┌┄⭓ 『 🔲 』 *GENERA QR CODE*
 
 Crea un QR code da testo, link, email, etc.
 
@@ -22,7 +22,7 @@ ${usedPrefix + command} +4915510441099
 ${usedPrefix + command} Ciao, questo è un messaggio!
 
 
-╰─⭓ `.trim()
+└┄⭓ `.trim()
 
         return await conn.sendMessage(m.chat, { text: usage }, { quoted: m })
     }
@@ -73,7 +73,7 @@ ${usedPrefix + command} Ciao, questo è un messaggio!
 
         console.log('[QR Generator] QR code generated, size:', qrBuffer.length)
 
-        let caption = `✅ *QR CODE GENERATO*\n\n`
+        let caption = `✔️ *QR CODE GENERATO*\n\n`
         caption += `📋 *Tipo:* ${displayType}\n`
 
         let preview = text
@@ -90,14 +90,14 @@ ${usedPrefix + command} Ciao, questo è un messaggio!
 
     } catch (e) {
         console.error('[QR Generator Error]:', e)
-        let errorMsg = '❌ Errore durante la generazione del QR code.'
+        let errorMsg = '✖️ Errore durante la generazione del QR code.'
 
         if (e.code === 'ECONNABORTED' || e.code === 'ETIMEDOUT') {
-            errorMsg = '❌ Timeout: L\'API sta impiegando troppo tempo. Riprova.'
+            errorMsg = '✖️ Timeout: L\'API sta impiegando troppo tempo. Riprova.'
         } else if (e.response?.status === 414) {
-            errorMsg = '❌ Errore: Il testo è troppo lungo per essere convertito in QR code.\n\n💡 Riduci la lunghezza del testo.'
+            errorMsg = '✖️ Errore: Il testo è troppo lungo per essere convertito in QR code.\n\n💡 Riduci la lunghezza del testo.'
         } else if (e.message) {
-            errorMsg = `❌ Errore: ${e.message}`
+            errorMsg = `✖️ Errore: ${e.message}`
         }
 
         await conn.sendMessage(m.chat, { text: errorMsg }, { quoted: m })

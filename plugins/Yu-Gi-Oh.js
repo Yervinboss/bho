@@ -1,4 +1,4 @@
-//Plugin by Zeno, Lucifero & 333 staff
+//Plugin by Zeno, Lucifero & zenobot staff
 
 import fs from 'fs/promises'
 import fsSync from 'fs'
@@ -35,12 +35,12 @@ const TIPI_CARTA = {
 }
 
 function getRarita(atk) {
-  if (atk === null || atk === undefined) return { stars: "★★★☆☆", label: "RARA"       }
-  if (atk >= 3000) return { stars: "★★★★★", label: "LEGGENDARIA" }
-  if (atk >= 2500) return { stars: "★★★★☆", label: "ULTRA RARA"  }
-  if (atk >= 2000) return { stars: "★★★☆☆", label: "RARA"        }
-  if (atk >= 1500) return { stars: "★★☆☆☆", label: "NON COMUNE"  }
-  return                { stars: "★☆☆☆☆", label: "COMUNE"      }
+  if (atk === null || atk === undefined) return { stars: "✧✧✧✧✧", label: "RARA"       }
+  if (atk >= 3000) return { stars: "✧✧✧✧✧", label: "LEGGENDARIA" }
+  if (atk >= 2500) return { stars: "✧✧✧✧✧", label: "ULTRA RARA"  }
+  if (atk >= 2000) return { stars: "✧✧✧✧✧", label: "RARA"        }
+  if (atk >= 1500) return { stars: "✧✧✧✧✧", label: "NON COMUNE"  }
+  return                { stars: "✧✧✧✧✧", label: "COMUNE"      }
 }
 
 function statBar(val, max = 5000) {
@@ -122,7 +122,7 @@ function buildCard(card, dataPesca = null) {
   const tipo    = TIPI_CARTA[card.type] || `🃏 ${card.type}`
   const nome    = trunc(card.name?.toUpperCase(), 26)
   const descrizione = trunc(card.desc, 80)
-  const dataRiga = dataPesca ? `\n┃  📅 Pescata il: ${dataPesca}` : ""
+  const dataRiga = dataPesca ? `\n┆  📅 Pescata il: ${dataPesca}` : ""
 
   let statsBlock = ""
   if (atk !== null || def !== null) {
@@ -134,11 +134,11 @@ function buildCard(card, dataPesca = null) {
 
   let livelloBlock = ""
   if (livello) {
-    livelloBlock = `┃  ${trunc(livello, 26)}\n`
+    livelloBlock = `┆  ${trunc(livello, 26)}\n`
   }
 
   return `
-  #${padId(card.id)}  ★ YGO CARD ★  
+  #${padId(card.id)}  ✧ YGO CARD ✧  
 
   ${nome.padEnd(26)}
   ${tipo.padEnd(26)}
@@ -172,7 +172,7 @@ let handler = async (m, { conn, args, command }) => {
     try {
       card = await fetchRandom()
     } catch {
-      return m.reply("❌ Errore nel pescare una carta. Riprova!")
+      return m.reply("✖️ Errore nel pescare una carta. Riprova!")
     }
 
     const giaHai = !!utente.collezione[card.id]
@@ -251,14 +251,14 @@ let handler = async (m, { conn, args, command }) => {
     )
 
     if (!trovata) {
-      return m.reply(`❌ Non hai ancora pescato *${query.toUpperCase()}*!\nUsa *.pesca* per trovarla o *.collezione* per vedere le tue carte.`)
+      return m.reply(`✖️ Non hai ancora pescato *${query.toUpperCase()}*!\nUsa *.pesca* per trovarla o *.collezione* per vedere le tue carte.`)
     }
 
     let card
     try {
       card = await fetchById(trovata.id)
     } catch {
-      return m.reply("❌ Errore nel caricare i dati. Riprova!")
+      return m.reply("✖️ Errore nel caricare i dati. Riprova!")
     }
 
     const carta   = buildCard(card, trovata.pescata)

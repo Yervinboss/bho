@@ -1,4 +1,4 @@
-//Plugin by Zeno, Lucifero & 333 staff
+//Plugin by Zeno, Lucifero & zenobot staff
 
 const DAY_MS = 24 * 60 * 60 * 1000
 const STATS_KEY = 'statsgiornaliere'
@@ -103,7 +103,7 @@ let handler = async (m, { conn, participants, groupMetadata, isAdmin }) => {
     const cmd = (m.text || '').trim().split(/\s+/)[0].replace(/^\./, '')
     if (!['statsgiornaliere','statsgiornaliera','statigiorno'].includes(cmd)) return
 
-    if (!m.isGroup) return m.reply('❌ Questo comando funziona solo nei gruppi.');
+    if (!m.isGroup) return m.reply('✖️ Questo comando funziona solo nei gruppi.');
     if (!global.dailyStats || global.dailyStats.date !== todayDate()) loadDailyStats()
     const chat = m.chat
 
@@ -196,7 +196,7 @@ let handler = async (m, { conn, participants, groupMetadata, isAdmin }) => {
 
   } catch (e) {
     console.error('statsgiornaliere handler error', e)
-    const msg = `❌ Errore nello script statsgiornaliere:\n${e && e.message ? e.message : String(e)}`
+    const msg = `✖️ Errore nello script statsgiornaliere:\n${e && e.message ? e.message : String(e)}`
     try { await m.reply(msg) } catch (e2) { console.error('reply error', e2) }
   }
 }

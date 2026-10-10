@@ -20,7 +20,7 @@ let handler = async (m, { conn, command }) => {
       } catch (e) { failed.push(jid) }
     }
 
-    return conn.reply(m.chat, `✅ Admin aggiunti: *${daPromuovere.length - failed.length}/${daPromuovere.length}*`, m)
+    return conn.reply(m.chat, `✔️ Admin aggiunti: *${daPromuovere.length - failed.length}/${daPromuovere.length}*`, m)
   }
 
   if (/^demoteall$/i.test(command)) {
@@ -39,7 +39,7 @@ let handler = async (m, { conn, command }) => {
       } catch (e) { failed.push(jid) }
     }
 
-    return conn.reply(m.chat, `✅ Admin rimossi: *${daDemotare.length - failed.length}/${daDemotare.length}*\n\nUsa *#ripristinaadmin* per ripristinarli.`, m)
+    return conn.reply(m.chat, `✔️ Admin rimossi: *${daDemotare.length - failed.length}/${daDemotare.length}*\n\nUsa *#ripristinaadmin* per ripristinarli.`, m)
   }
 
   if (/^ripristinaadmin$/i.test(command)) {
@@ -55,7 +55,7 @@ let handler = async (m, { conn, command }) => {
     }
 
     delete adminSnapshot[m.chat]
-    return conn.reply(m.chat, `✅ Admin ripristinati: *${snapshot.length - failed.length}/${snapshot.length}*`, m)
+    return conn.reply(m.chat, `✔️ Admin ripristinati: *${snapshot.length - failed.length}/${snapshot.length}*`, m)
   }
 }
 

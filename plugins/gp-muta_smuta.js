@@ -1,4 +1,4 @@
-//Plugin by Zeno, Lucifero & 333 staff
+//Plugin by Zeno, Lucifero & zenobot staff
 
 import fetch from 'node-fetch'
 
@@ -31,7 +31,7 @@ const scheduleMuteExpiry = (conn, chatId, targetJid, durationMs) => {
       delete currentUser.muteUntil
       delete global.muteTimeouts[targetJid]
       await conn.sendMessage(chatId, {
-        text: `✅ @${targetJid.split('@')[0]} *è stato smutato.*`,
+        text: `✔️ @${targetJid.split('@')[0]} *è stato smutato.*`,
         mentions: [targetJid]
       }).catch(() => {})
     } else {
@@ -92,7 +92,7 @@ let handler = async (m, {
     const isMod = mods.some(mod => (conn.decodeJid?.(mod) || mod) === (conn.decodeJid?.(m.sender) || m.sender))
 
 if (!isAdmin && !isMod)
-  return m.reply('𝐒𝐨𝐥𝐨 𝐮𝐧 𝐚𝐝𝐦𝐢𝐧 𝐨 𝐮𝐧 𝐦𝐨𝐝𝐞𝐫𝐚𝐭𝐨𝐫𝐞 𝐩𝐮𝐨̀ 𝐞𝐬𝐞𝐠𝐮𝐢𝐫𝐞 𝐪𝐮𝐞𝐬𝐭𝐨 𝐜𝐨𝐦𝐚𝐧𝐝𝐨 👑')
+  return m.reply('ꜱᴏʟᴏ ᴜɴ ᴀᴅᴍɪɴ ᴏ ᴜɴ ᴍᴏᴅᴇʀᴀᴛᴏʀᴇ ᴘᴜᴏ̀ ᴇꜱᴇɢᴜɪʀᴇ ǫᴜᴇꜱᴛᴏ ᴄᴏᴍᴀɴᴅᴏ 👑')
 
     let menzione = m.mentionedJid[0]
       ? m.mentionedJid[0]
@@ -100,16 +100,16 @@ if (!isAdmin && !isMod)
       ? m.quoted.sender
       : text
 
-    if (!menzione) return m.reply('𝐌𝐞𝐧𝐳𝐢𝐨𝐧𝐚 𝐮𝐧 𝐮𝐭𝐞𝐧𝐭𝐞 👤')
+    if (!menzione) return m.reply('ᴍᴇɴᴢɪᴏɴᴀ ᴜɴ ᴜᴛᴇɴᴛᴇ 👤')
 
     if (isMod && isGroupAdmin(menzione)) return m.reply('⛔ Un moderatore non può mutare un amministratore.')
 
-    if (menzione == conn.user.jid) return 'ⓘ 𝐍𝐨𝐧 𝐩𝐮𝐨𝐢 𝐦𝐮𝐭𝐚𝐫𝐞 𝐢𝐥 𝐛𝐨𝐭'
+    if (menzione == conn.user.jid) return 'ⓘ ɴᴏɴ ᴘᴜᴏɪ ᴍᴜᴛᴀʀᴇ ɪʟ ʙᴏᴛ'
 
-    if (isOwner(menzione)) return '👑 𝐍𝐨𝐧 𝐩𝐮𝐨𝐢 𝐦𝐮𝐭𝐚𝐫𝐞 𝐮𝐧 𝐨𝐰𝐧𝐞𝐫'
+    if (isOwner(menzione)) return '👑 ɴᴏɴ ᴘᴜᴏɪ ᴍᴜᴛᴀʀᴇ ᴜɴ ᴏᴡɴᴇʀ'
 
     let utente = global.db.data.users[menzione]
-    if (!utente) return m.reply('𝐔𝐭𝐞𝐧𝐭𝐞 𝐧𝐨𝐧 𝐭𝐫𝐨𝐯𝐚𝐭𝐨')
+    if (!utente) return m.reply('ᴜᴛᴇɴᴛᴇ ɴᴏɴ ᴛʀᴏᴠᴀᴛᴏ')
 
     if (utente.muteUntil && Date.now() >= utente.muteUntil) {
       utente.muto = false
@@ -118,13 +118,13 @@ if (!isAdmin && !isMod)
     }
 
     if (utente.muto === true)
-      return '𝐐𝐮𝐞𝐬𝐭𝐨 𝐮𝐭𝐞𝐧𝐭𝐞 𝐞̀ 𝐠𝐢𝐚 𝐦𝐮𝐭𝐚𝐭𝐨 🔇'
+      return 'ǫᴜᴇꜱᴛᴏ ᴜᴛᴇɴᴛᴇ ᴇ̀ ɢɪᴀ ᴍᴜᴛᴀᴛᴏ 🔇'
 
     let prova = {
       key: { participants: "0@s.whatsapp.net", fromMe: false, id: "Halo" },
       message: {
         locationMessage: {
-          name: '𝐔𝐓𝚵𝐍𝐓𝚵 𝐌𝐔𝐓𝚲𝐓Ꮻ 🔇',
+          name: 'ᴜᴛᴇɴᴛᴇ ᴍᴜᴛᴀᴛᏫ 🔇',
           jpegThumbnail: await (await fetch('https://telegra.ph/file/f8324d9798fa2ed2317bc.png')).buffer()
         }
       },
@@ -161,7 +161,7 @@ if (!isAdmin && !isMod)
     if (!selected) return m.reply('⏳ Tempo scaduto, muta annullato.')
 
     const selectedDuration = muteDurations.find(option => `mute_duration_${option.id}` === selected)
-    if (!selectedDuration) return m.reply('❌ Scelta non valida.')
+    if (!selectedDuration) return m.reply('✖️ Scelta non valida.')
 
     utente.muto = true
     if (selectedDuration.ms > 0) {
@@ -185,7 +185,7 @@ if (!isAdmin && !isMod)
     const isMod = mods.some(mod => (conn.decodeJid?.(mod) || mod) === (conn.decodeJid?.(m.sender) || m.sender))
 
 if (!isAdmin && !isMod)
-  return m.reply('𝐒𝐨𝐥𝐨 𝐮𝐧 𝐚𝐝𝐦𝐢𝐧 𝐨 𝐮𝐧 𝐦𝐨𝐝𝐞𝐫𝐚𝐭𝐨𝐫𝐞 𝐩𝐮𝐨̀ 𝐞𝐬𝐞𝐠𝐮𝐢𝐫𝐞 𝐪𝐮𝐞𝐬𝐭𝐨 𝐜𝐨𝐦𝐚𝐧𝐝𝐨 👑')
+  return m.reply('ꜱᴏʟᴏ ᴜɴ ᴀᴅᴍɪɴ ᴏ ᴜɴ ᴍᴏᴅᴇʀᴀᴛᴏʀᴇ ᴘᴜᴏ̀ ᴇꜱᴇɢᴜɪʀᴇ ǫᴜᴇꜱᴛᴏ ᴄᴏᴍᴀɴᴅᴏ 👑')
 
     let menzione = m.mentionedJid[0]
       ? m.mentionedJid[0]
@@ -193,17 +193,17 @@ if (!isAdmin && !isMod)
       ? m.quoted.sender
       : text
 
-    if (!menzione) return m.reply('𝐌𝐞𝐧𝐳𝐢𝐨𝐧𝐚 𝐮𝐧 𝐮𝐭𝐞𝐧𝐭𝐞 👤')
+    if (!menzione) return m.reply('ᴍᴇɴᴢɪᴏɴᴀ ᴜɴ ᴜᴛᴇɴᴛᴇ 👤')
 
     if (isMod && isGroupAdmin(menzione)) return m.reply('⛔ Un moderatore non può smutare un amministratore.')
 
-    if (isOwner(menzione)) return '👑 𝐆𝐥𝐢 𝐨𝐰𝐧𝐞𝐫 𝐧𝐨𝐧 𝐡𝐚𝐧𝐧𝐨 𝐛𝐢𝐬𝐨𝐠𝐧𝐨 𝐝𝐢 𝐞𝐬𝐬𝐞𝐫𝐞 𝐬𝐦𝐮𝐭𝐚𝐭𝐢 😏'
+    if (isOwner(menzione)) return '👑 ɢʟɪ ᴏᴡɴᴇʀ ɴᴏɴ ʜᴀɴɴᴏ ʙɪꜱᴏɢɴᴏ ᴅɪ ᴇꜱꜱᴇʀᴇ ꜱᴍᴜᴛᴀᴛɪ 😏'
 
     let utente = global.db.data.users[menzione]
-    if (!utente) return m.reply('𝐔𝐭𝐞𝐧𝐭𝐞 𝐧𝐨𝐧 𝐭𝐫𝐨𝐯𝐚𝐭𝐨')
+    if (!utente) return m.reply('ᴜᴛᴇɴᴛᴇ ɴᴏɴ ᴛʀᴏᴠᴀᴛᴏ')
 
     if (utente.arrestoExpire && Date.now() < utente.arrestoExpire) {
-      return m.reply('❌ Questo utente è attualmente in arresto e non può essere smutato con questo comando.')
+      return m.reply('✖️ Questo utente è attualmente in arresto e non può essere smutato con questo comando.')
     }
 
     if (utente.arrestoExpire && Date.now() >= utente.arrestoExpire) {
@@ -224,7 +224,7 @@ if (!isAdmin && !isMod)
       key: { participants: "0@s.whatsapp.net", fromMe: false, id: "Halo" },
       message: {
         locationMessage: {
-          name: '𝐔𝐓𝚵𝐍𝐓𝚵 𝐒𝐌𝐔𝐓𝚲𝐓Ꮻ 🔊',
+          name: 'ᴜᴛᴇɴᴛᴇ ꜱᴍᴜᴛᴀᴛᏫ 🔊',
           jpegThumbnail: await (await fetch('https://telegra.ph/file/aea704d0b242b8c41bf15.png')).buffer()
         }
       },

@@ -1,21 +1,21 @@
 {
-  "name": "333-bot",
+  "name": "zenobot",
   "version": "10.3",
   "description": "Il bot whatsapp più richiesto in Italia.",
-  "main": "333.js",
+  "main": "zenobot.js",
   "type": "module",
   "license": "Apache-2.0",
   "author": {
-    "name": "333",
-    "url": "https://github.com/Zeno/zeno"
+    "name": "zenobot",
+    "url": "https://github.com/Yervinboss/bho"
   },
-  "homepage": "https://github.com/Zeno/zeno",
+  "homepage": "https://github.com/Yervinboss/bho",
   "repository": {
     "type": "git",
-    "url": "https://github.com/Zeno/zeno"
+    "url": "https://github.com/Yervinboss/bho"
   },
   "bugs": {
-    "url": "https://github.com/Zeno/zeno/issues"
+    "url": "https://github.com/Yervinboss/bho/issues"
   },
   "keywords": [
     "whatsapp",
@@ -26,17 +26,17 @@
     "based",
     "baileys",
     "whatsapp-bot",
-    "333"
+    "zenobot"
   ],
   "directories": {
     "lib": "lib",
     "plugins": "plugins",
-    "333-sub": "333-sub"
+    "zenobot-sub": "zenobot-sub"
   },
   "scripts": {
     "start": "node index.js",
-    "code": "node 333.js code",
-    "qr": "node 333.js qr"
+    "code": "node zenobot.js code",
+    "qr": "node zenobot.js qr"
   },
   "dependencies": {
     "@adiwajshing/keyed-db": "^0.2.4",

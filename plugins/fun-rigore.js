@@ -1,4 +1,4 @@
-//Plugin by Zeno, Lucifero & 333 staff
+//Plugin by Zeno, Lucifero & zenobot staff
 
 global.rigori = global.rigori || {}
 
@@ -15,13 +15,13 @@ let handler = async (m, { conn, command }) => {
 
     return conn.sendMessage(m.chat, {
       text:
-`╔═⚽ 𝐑𝐈𝐆𝐎𝐑𝐄 ═╗
-┃ Scegli dove tirare
-┃
-┃ 🟢 Sinistra
-┃ ⚪ Centro
-┃ 🔴 Destra
-╚══════════════╝`,
+`┌┄⚽ ʀɪɢᴏʀᴇ ┄┐
+┆ Scegli dove tirare
+┆
+┆ 🟢 Sinistra
+┆ ⚪ Centro
+┆ 🔴 Destra
+└┄┄┄┄┄┄┄┄┄┄┄┄┄┄┘`,
       buttons: [
         { buttonId: ".tira sinistra", buttonText: { displayText: "🟢 Sinistra" }, type: 1 },
         { buttonId: ".tira centro", buttonText: { displayText: "⚪ Centro" }, type: 1 },
@@ -34,7 +34,7 @@ let handler = async (m, { conn, command }) => {
   if (command === "tira") {
 
     if (!global.rigori[m.sender])
-      return m.reply("❌ Usa prima .rigore")
+      return m.reply("✖️ Usa prima .rigore")
 
     let scelta = m.text.split(" ")[1]
 
@@ -50,21 +50,21 @@ let handler = async (m, { conn, command }) => {
       user.rigori.goal += 1
 
       text =
-`╔═⚽ 𝐆𝐎𝐋 ═╗
-┃ 🥅 Il portiere va ${portiere}
-┃ Tu tiri ${scelta}
-┃
-┃ ⚽ SEGNI!
-┃ Totale gol: *${user.rigori.goal}*
-╚══════════════╝`
+`┌┄⚽ ɢᴏʟ ┄┐
+┆ 🥅 Il portiere va ${portiere}
+┆ Tu tiri ${scelta}
+┆
+┆ ⚽ SEGNI!
+┆ Totale gol: *${user.rigori.goal}*
+└┄┄┄┄┄┄┄┄┄┄┄┄┄┄┘`
     } else {
       text =
-`╔═🧤 𝐏𝐀𝐑𝐀𝐓𝐀 ═╗
-┃ 🧤 Il portiere legge tutto
-┃ Vai ${scelta} pure tu
-┃
-┃ 💀 Che figura
-╚══════════════╝`
+`┌┄🧤 ᴘᴀʀᴀᴛᴀ ┄┐
+┆ 🧤 Il portiere legge tutto
+┆ Vai ${scelta} pure tu
+┆
+┆ 💀 Che figura
+└┄┄┄┄┄┄┄┄┄┄┄┄┄┄┘`
     }
 
     delete global.rigori[m.sender]
@@ -91,9 +91,9 @@ let handler = async (m, { conn, command }) => {
       .slice(0, 10)
 
     if (!users.length)
-      return m.reply("❌ Nessun gol registrato")
+      return m.reply("✖️ Nessun gol registrato")
 
-    let text = "🏆 𝐓𝐎𝐏 𝐑𝐈𝐆𝐎𝐑𝐈\n\n"
+    let text = "🏆 ᴛᴏᴘ ʀɪɢᴏʀɪ\n\n"
 
     users.forEach((u, i) => {
       text += `${i + 1}. @${u.jid.split("@")[0]} — *${u.goal} gol*\n`

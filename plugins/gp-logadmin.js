@@ -1,4 +1,4 @@
-//Plugin by Zeno, Lucifero & 333 staff
+//Plugin by Zeno, Lucifero & zenobot staff
 
 const ACTION_LABELS = {
   accepts: 'Richieste approvate',
@@ -219,13 +219,13 @@ const initPlugin = () => {
 initPlugin()
 
 const handler = async (m, { conn, args }) => {
-  if (!m.isGroup) return m.reply('❌ Questo comando funziona solo nei gruppi.')
+  if (!m.isGroup) return m.reply('✖️ Questo comando funziona solo nei gruppi.')
 
   const todayKey = getItalianDateKey()
   const todayDisplay = formatItalianDate(new Date(todayKey))
   const result = await formatAdminSummary(conn, m.chat, todayKey)
   if (!result) {
-    return m.reply(`✅ Nessuna azione amministrativa registrata per oggi (${todayDisplay}) in questo gruppo.`)
+    return m.reply(`✔️ Nessuna azione amministrativa registrata per oggi (${todayDisplay}) in questo gruppo.`)
   }
 
   await conn.sendMessage(m.chat, {

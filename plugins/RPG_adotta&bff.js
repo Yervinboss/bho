@@ -1,4 +1,4 @@
-//Plugin by Zeno, Lucifero & 333 staff
+//Plugin by Zeno, Lucifero & zenobot staff
 
 import fetch from 'node-fetch'
 
@@ -33,8 +33,8 @@ const adottaHandler = async (m, { conn }) => {
   const users = global.db.data.users
   const mention = m.mentionedJid[0] || m.quoted?.sender
 
-  if (!mention) return conn.reply(m.chat, '❌ Tagga qualcuno.')
-  if (mention === m.sender) return conn.reply(m.chat, '❌ Non puoi adottare te stesso.')
+  if (!mention) return conn.reply(m.chat, '✖️ Tagga qualcuno.')
+  if (mention === m.sender) return conn.reply(m.chat, '✖️ Non puoi adottare te stesso.')
 
   if (!users[m.sender]) users[m.sender] = {}
   if (!users[mention]) users[mention] = {}
@@ -43,21 +43,21 @@ const adottaHandler = async (m, { conn }) => {
   adopter.adottati = adopter.adottati || []
 
   if (adopter.adottati.includes(mention)) {
-    return conn.reply(m.chat, '❌ Hai già adottato questa persona.')
+    return conn.reply(m.chat, '✖️ Hai già adottato questa persona.')
   }
 
   await conn.sendMessage(m.chat, {
-    text: `╭─────────────╮
-│ 👶 *ADOZIONE*
-│
-│ @${m.sender.split('@')[0]} vuole adottarti
-│
-│ Premi un bottone sotto 👇
-╰─────────────╯`,
+    text: `┌┄┄┄┄┄┄┄┄┄┄┄┄┄┐
+┆ 👶 *ADOZIONE*
+┆
+┆ @${m.sender.split('@')[0]} vuole adottarti
+┆
+┆ Premi un bottone sotto 👇
+└┄┄┄┄┄┄┄┄┄┄┄┄┄┘`,
     mentions: [mention, m.sender],
     buttons: [
-      { buttonId: 'yes', buttonText: { displayText: '✅ Accetta' }, type: 1 },
-      { buttonId: 'no', buttonText: { displayText: '❌ Rifiuta' }, type: 1 }
+      { buttonId: 'yes', buttonText: { displayText: '✔️ Accetta' }, type: 1 },
+      { buttonId: 'no', buttonText: { displayText: '✖️ Rifiuta' }, type: 1 }
     ],
     headerType: 1
   }, { quoted: m })
@@ -74,7 +74,7 @@ const adottaHandler = async (m, { conn }) => {
     })
   } else {
     return conn.sendMessage(m.chat, {
-      text: `❌ @${mention.split('@')[0]} ha rifiutato`,
+      text: `✖️ @${mention.split('@')[0]} ha rifiutato`,
       mentions: [mention]
     })
   }
@@ -84,8 +84,8 @@ const miglioreamicoHandler = async (m, { conn }) => {
   const users = global.db.data.users
   const mention = m.mentionedJid[0] || m.quoted?.sender
 
-  if (!mention) return conn.reply(m.chat, '❌ Tagga qualcuno.')
-  if (mention === m.sender) return conn.reply(m.chat, '❌ Non puoi essere amico di te stesso.')
+  if (!mention) return conn.reply(m.chat, '✖️ Tagga qualcuno.')
+  if (mention === m.sender) return conn.reply(m.chat, '✖️ Non puoi essere amico di te stesso.')
 
   if (!users[m.sender]) users[m.sender] = {}
   if (!users[mention]) users[mention] = {}
@@ -94,21 +94,21 @@ const miglioreamicoHandler = async (m, { conn }) => {
   const target = users[mention]
 
   if (requester.miglioreamico === mention) {
-    return conn.reply(m.chat, '❌ Siete già migliori amici.')
+    return conn.reply(m.chat, '✖️ Siete già migliori amici.')
   }
 
   await conn.sendMessage(m.chat, {
-    text: `╭─────────────╮
-│ 🤝 *MIGLIORI AMICI*
-│
-│ @${m.sender.split('@')[0]} vuole essere tuo BFF
-│
-│ Premi un bottone 👇
-╰─────────────╯`,
+    text: `┌┄┄┄┄┄┄┄┄┄┄┄┄┄┐
+┆ 🤝 *MIGLIORI AMICI*
+┆
+┆ @${m.sender.split('@')[0]} vuole essere tuo BFF
+┆
+┆ Premi un bottone 👇
+└┄┄┄┄┄┄┄┄┄┄┄┄┄┘`,
     mentions: [mention, m.sender],
     buttons: [
-      { buttonId: 'yes', buttonText: { displayText: '✅ Accetta' }, type: 1 },
-      { buttonId: 'no', buttonText: { displayText: '❌ Rifiuta' }, type: 1 }
+      { buttonId: 'yes', buttonText: { displayText: '✔️ Accetta' }, type: 1 },
+      { buttonId: 'no', buttonText: { displayText: '✖️ Rifiuta' }, type: 1 }
     ],
     headerType: 1
   }, { quoted: m })
@@ -127,7 +127,7 @@ const miglioreamicoHandler = async (m, { conn }) => {
     })
   } else {
     return conn.sendMessage(m.chat, {
-      text: `❌ @${mention.split('@')[0]} ha rifiutato`,
+      text: `✖️ @${mention.split('@')[0]} ha rifiutato`,
       mentions: [mention]
     })
   }
@@ -137,19 +137,19 @@ const togliAdottaHandler = async (m, { conn }) => {
   const users = global.db.data.users
   const mention = m.mentionedJid[0] || m.quoted?.sender
 
-  if (!mention) return conn.reply(m.chat, '❌ Tagga qualcuno.')
+  if (!mention) return conn.reply(m.chat, '✖️ Tagga qualcuno.')
 
   const adopter = users[m.sender]
   adopter.adottati = adopter.adottati || []
 
   if (!adopter.adottati.includes(mention)) {
-    return conn.reply(m.chat, '❌ Non è tuo figlio.')
+    return conn.reply(m.chat, '✖️ Non è tuo figlio.')
   }
 
   adopter.adottati = adopter.adottati.filter(u => u !== mention)
 
   return conn.sendMessage(m.chat, {
-    text: `❌ @${mention.split('@')[0]} non è più tuo figlio`,
+    text: `✖️ @${mention.split('@')[0]} non è più tuo figlio`,
     mentions: [mention]
   })
 }
@@ -159,7 +159,7 @@ const togliMiglioreamicoHandler = async (m, { conn }) => {
   const requester = users[m.sender]
 
   if (!requester.miglioreamico) {
-    return conn.reply(m.chat, '❌ Non hai un migliore amico.')
+    return conn.reply(m.chat, '✖️ Non hai un migliore amico.')
   }
 
   const ex = requester.miglioreamico
