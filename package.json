@@ -34,7 +34,7 @@
     "zenobot-sub": "zenobot-sub"
   },
   "scripts": {
-    "start": "node index.js",
+    "start": "node --max-old-space-size=8192 index.js",
     "code": "node zenobot.js code",
     "qr": "node zenobot.js qr"
   },

@@ -1,174 +1,221 @@
-//Codice di antilink.js
+//Plugin by plugins zero
 
-//Codice di antilink.js
+import fs from 'fs'
+import path from 'path'
+import { fileURLToPath } from 'url'
+import { dirname } from 'path'
 
-//Plugin by Zeno, Lucifero & zenobot staff
+const __filename = fileURLToPath(import.meta.url)
+const __dirname = dirname(__filename)
 
-import jsQR from 'jsqr'
+const dbPath = path.join(__dirname, '../database/antilink.json')
+const WHITELIST_DOMAINS = ['tiktok.com', 'instagram.com', 'youtube.com', 'youtu.be']
+const RAW_LINK = /(https?:\/\/[^\s"\\]+)|(www\.[^\s"\\]+\.[a-z]{2,})/gi
+const CRASH = /[\u0600-\u06FF\u0900-\u0DFF\u200B-\u200F]{300,}/
+const MAX_RAW = 8000
+const SKIP = new Set(['url', 'directPath', 'mediaKey', 'fileSha256', 'fileEncSha256', 'mediaKeyTimestamp',
+    'jpegThumbnail', 'thumbnailDirectPath', 'thumbnailSha256', 'thumbnailEncSha256', 'waveform',
+    'streamingSidecar', 'scansSidecar', 'scanLengths', 'midQualityFileSha256', 'quotedMessage'])
+const strip = (k, v) => (SKIP.has(k) || v?.type === 'Buffer' || v instanceof Uint8Array) ? undefined : v
+const MEDIA = ['imageMessage', 'videoMessage', 'audioMessage', 'stickerMessage', 'documentMessage', 'ptvMessage', 'lottieStickerMessage']
+const BTN_IDS = ['antilinkkick', 'antilinkwarn', 'antilinkoff']
 
-let inviteCache = {}
-let lastCheck = {}
+const pureId = (jid) => (jid || '').split('@')[0].split(':')[0]
 
-async function getGroupCode(conn, chatId) {
-  let code = inviteCache[chatId]
-  if (code) return code
-
-  try {
-    code = await conn.groupInviteCode(chatId)
-    inviteCache[chatId] = code
-
-    setTimeout(() => {
-      delete inviteCache[chatId]
-    }, 10 * 60 * 1000)
-
-    return code
-  } catch (e) {
-    console.log('Errore invite:', e)
-    return null
-  }
+function isOwnerCheck(sender) {
+    if (!sender) return false
+    const num = pureId(sender)
+    const owners = global.owner || []
+    return owners.some(o => {
+        const id = Array.isArray(o) ? o[0] : o
+        return String(id).replace(/\D/g, '') === num
+    })
 }
 
-async function kickForLink(m, conn, motivo) {
-  await conn.sendMessage(m.chat, {
-    delete: {
-      remoteJid: m.chat,
-      fromMe: false,
-      id: m.key.id,
-      participant: m.sender
+async function isImmuneCheck(conn, jid, sender) {
+    if (isOwnerCheck(sender)) return true
+    try {
+        const meta = await conn.groupMetadata(jid)
+        const p = meta.participants.find(x => x.id === sender)
+        return !!(p && (p.admin === 'admin' || p.admin === 'superadmin'))
+    } catch {
+        return false
     }
-  })
-
-  let warningMessage = `🚫 ᴜᴛᴇɴᴛᴇ ᴇꜱᴘᴜʟꜱᴏ ᴘᴇʀ ʟɪɴᴋ!\n\n`
-  warningMessage += `👤 ᴜᴛᴇɴᴛᴇ: @${m.sender.split('@')[0]}\n`
-  warningMessage += `📝 ᴍᴏᴛɪᴠᴏ: ${motivo}\n`
-  warningMessage += `⚠️ ᴀᴢɪᴏɴᴇ: ᴍᴇꜱꜱᴀɢɢɪᴏ ᴇʟɪᴍɪɴᴀᴛᴏ ᴇ ᴜᴛᴇɴᴛᴇ ᴇꜱᴘᴜʟꜱᴏ`
-
-  await conn.sendMessage(m.chat, {
-    text: warningMessage,
-    contextInfo: {
-      mentionedJid: [m.sender],
-      forwardedNewsletterMessageInfo: {
-        newsletterJid: '120363341274693350@newsletter',
-        serverMessageId: -1,
-        newsletterName: global.nomebot || 'zenobot'
-      }
-    }
-  })
-
-  try {
-    await conn.groupParticipantsUpdate(m.chat, [m.sender], 'remove')
-  } catch (e) {
-    console.error('Errore durante espulsione:', e)
-  }
 }
 
-export async function before(m, { conn, isAdmin, isBotAdmin }) {
-  if (m.isBaileys && m.fromMe) return true
-  if (!m.isGroup) return false
-
-  const chat = global.db.data.chats[m.chat]
-  if (!chat.antiLink || chat.isBanned) return true
-
-  if (isAdmin || !isBotAdmin) return true
-
-  if (lastCheck[m.chat] && Date.now() - lastCheck[m.chat] < 3000) return true
-
-  const rawMsg = m.message || (m.msg && m.msg.message) || {}
-  const groupInvite =
-    rawMsg.groupInviteMessage ||
-    (m.msg && m.msg.groupInviteMessage) ||
-    null
-
-  if (groupInvite) {
-    const inviteGroupJid = groupInvite.groupJid
-    const inviteCode = groupInvite.inviteCode
-
-    if (inviteGroupJid === m.chat) return true
-
-    const thisGroupCode = await getGroupCode(conn, m.chat)
-    if (thisGroupCode && inviteCode === thisGroupCode) return true
-
-    lastCheck[m.chat] = Date.now()
-    await kickForLink(m, conn, 'ɪɴᴠɪᴛᴏ ᴅɪ ɢʀᴜᴘᴘᴏ (ʙᴀᴅɢᴇ) ɴᴏɴ ᴄᴏɴꜱᴇɴᴛɪᴛᴏ')
-    return false
-  }
-
-  const text = (() => {
-    const parts = []
-    const add = value => {
-      if (typeof value === 'string' && value.trim()) {
-        parts.push(value.trim())
-      }
+function getDB() {
+    if (!fs.existsSync(dbPath)) {
+        fs.mkdirSync(path.dirname(dbPath), { recursive: true })
+        fs.writeFileSync(dbPath, JSON.stringify({}))
     }
+    try { return JSON.parse(fs.readFileSync(dbPath, 'utf-8')) } catch { return {} }
+}
+function saveDB(data) { fs.writeFileSync(dbPath, JSON.stringify(data, null, 2)) }
 
-    add(m.text)
-    add(m.caption)
-    add(rawMsg?.conversation)
-    add(rawMsg?.extendedTextMessage?.text)
-    add(rawMsg?.imageMessage?.caption)
-    add(rawMsg?.videoMessage?.caption)
-    add(rawMsg?.documentMessage?.caption)
-    add(rawMsg?.stickerMessage?.packName)
-    add(rawMsg?.listMessage?.description)
-    add(rawMsg?.buttonsMessage?.contentText)
-    add(rawMsg?.buttonTextMessage?.text)
+const isWhitelisted = (l) => WHITELIST_DOMAINS.some(d => l.toLowerCase().includes(d))
 
-    return parts.join(' ').trim()
-  })()
-
-  const linkRegex = /(https?:\/\/)?(?:chat\.whatsapp\.com|wa\.me|whatsapp\.com)\/\S+/gi
-
-  if (linkRegex.test(text)) {
-    lastCheck[m.chat] = Date.now()
-
-    const thisGroupCode = await getGroupCode(conn, m.chat)
-    if (thisGroupCode && text.includes(thisGroupCode)) return true
-
-    await kickForLink(m, conn, 'ʟɪɴᴋ ᴡʜᴀᴛꜱᴀᴘᴘ ɴᴏɴ ᴄᴏɴꜱᴇɴᴛɪᴛᴏ')
-    return false
-  }
-
-  async function handleQrMedia(buffer) {
-    let createCanvas, loadImage
+async function sendAntilinkButtons(conn, jid, status, m) {
     try {
-      ({ createCanvas, loadImage } = await import('@napi-rs/canvas'))
-    } catch (err) {
-      ({ createCanvas, loadImage } = await import('canvas'))
-    }
-
-    const img = await loadImage(buffer)
-    const canvas = createCanvas(img.width, img.height)
-    const ctx = canvas.getContext('2d')
-    ctx.drawImage(img, 0, 0)
-
-    const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height)
-    const qr = jsQR(imageData.data, canvas.width, canvas.height)
-
-    if (!qr?.data) return true
-
-    let qrText = qr.data.toLowerCase()
-    if (!qrText.includes('chat.whatsapp.com') && !qrText.includes('wa.me')) return true
-
-    if (lastCheck[m.chat] && Date.now() - lastCheck[m.chat] < 3000) return true
-    lastCheck[m.chat] = Date.now()
-
-    const thisGroupCode = await getGroupCode(conn, m.chat)
-    if (thisGroupCode && qrText.includes(thisGroupCode)) return true
-
-    await kickForLink(m, conn, 'ǫʀ ᴄᴏɴ ʟɪɴᴋ ᴡʜᴀᴛꜱᴀᴘᴘ')
-    return false
-  }
-
-  if (m.mtype === 'imageMessage' || m.mtype === 'stickerMessage') {
-    try {
-      let buffer = await m.download()
-      return await handleQrMedia(buffer)
+        await conn.sendMessage(jid, {
+            text: `🔗 *GESTIONE ANTILINK*\n\nStato: *${status}*\nWhitelist: TikTok, Instagram, YouTube\n\nScegli:`,
+            footer: 'Zeno Bot - Moderazione',
+            buttons: [
+                { buttonId: 'antilinkkick', buttonText: { displayText: '🦵 Modalità Kick' }, type: 1 },
+                { buttonId: 'antilinkwarn', buttonText: { displayText: '⚠️ Modalità Warn' }, type: 1 },
+                { buttonId: 'antilinkoff', buttonText: { displayText: '❌ Disattiva' }, type: 1 }
+            ],
+            headerType: 1
+        }, { quoted: m })
     } catch (e) {
-      console.log('Errore QR:', e)
+        await conn.sendMessage(jid, {
+            text: `🔗 *GESTIONE ANTILINK*\n\nStato: *${status}*\nWhitelist: TikTok, Instagram, YouTube\n\nComandi:\n• .antilinkkick\n• .antilinkwarn\n• .antilinkoff`
+        }, { quoted: m })
     }
-  }
-
-  return true
 }
+
+async function handleButton(conn, m, id) {
+    const jid = m.chat
+    const sender = m.sender
+    const db = getDB()
+
+    const isOwnerUser = isOwnerCheck(sender)
+    const isImmuneUser = await isImmuneCheck(conn, jid, sender)
+    if (!isOwnerUser && !isImmuneUser) {
+        return conn.sendMessage(jid, { text: '❌ Solo admin!' }, { quoted: m })
+    }
+
+    if (id === 'antilinkkick') {
+        db[jid] = { enabled: true, mode: 'kick' }; saveDB(db)
+        return conn.sendMessage(jid, { text: '🔗🦵 Antilink *KICK* attivato.' }, { quoted: m })
+    }
+    if (id === 'antilinkwarn') {
+        db[jid] = { enabled: true, mode: 'warn' }; saveDB(db)
+        return conn.sendMessage(jid, { text: '🔗⚠️ Antilink *WARN* attivato.' }, { quoted: m })
+    }
+    if (id === 'antilinkoff') {
+        delete db[jid]; saveDB(db)
+        return conn.sendMessage(jid, { text: '🔗❌ Antilink disattivato.' }, { quoted: m })
+    }
+}
+
+let handler = async (m, { conn, command, isROwner }) => {
+    const jid = m.chat
+    if (!jid.endsWith('@g.us'))
+        return conn.sendMessage(jid, { text: '❌ Solo nei gruppi!' }, { quoted: m })
+
+    const sender = m.sender
+    const isOwnerUser = isROwner || isOwnerCheck(sender)
+    const isImmuneUser = await isImmuneCheck(conn, jid, sender)
+    if (!isOwnerUser && !isImmuneUser)
+        return conn.sendMessage(jid, { text: '❌ Solo admin!' }, { quoted: m })
+
+    const db = getDB()
+    const cmd = (command || '').toLowerCase()
+
+    if (cmd === 'antilinkkick') {
+        db[jid] = { enabled: true, mode: 'kick' }; saveDB(db)
+        return conn.sendMessage(jid, { text: '🔗🦵 Antilink *KICK* attivato.' }, { quoted: m })
+    }
+    if (cmd === 'antilinkwarn') {
+        db[jid] = { enabled: true, mode: 'warn' }; saveDB(db)
+        return conn.sendMessage(jid, { text: '🔗⚠️ Antilink *WARN* attivato.' }, { quoted: m })
+    }
+    if (cmd === 'antilinkoff') {
+        delete db[jid]; saveDB(db)
+        return conn.sendMessage(jid, { text: '🔗❌ Antilink disattivato.' }, { quoted: m })
+    }
+
+    const current = db[jid]
+    const status = current ? `Attivo (${current.mode.toUpperCase()})` : 'Disattivo'
+    return sendAntilinkButtons(conn, jid, status, m)
+}
+
+// ⚠️ before come proprietà dell'handler, NON come export separato
+handler.before = async function (m, { conn, isAdmin, isBotAdmin }) {
+    try {
+        const jid = m.chat
+        if (!jid || !jid.endsWith('@g.us')) return false
+
+        const msg = m.message || {}
+
+        // ---- CLICK SUI BOTTONI ----
+        const btnReply =
+            msg.buttonsResponseMessage?.selectedButtonId ||
+            msg.templateButtonReplyMessage?.selectedId ||
+            msg.listResponseMessage?.singleSelectReply?.selectedRowId ||
+            msg.interactiveResponseMessage?.nativeFlowResponseMessage?.paramsJson
+
+        let btnId = ''
+        if (btnReply) {
+            btnId = btnReply
+            if (typeof btnId === 'string' && btnId.trim().startsWith('{')) {
+                try {
+                    const parsed = JSON.parse(btnId)
+                    btnId = parsed.id || parsed.buttonId || ''
+                } catch {}
+            }
+        }
+
+        // fallback: click che arriva come testo puro senza prefisso
+        if (!btnId) {
+            const txt = String(m.text || msg.conversation || msg.extendedTextMessage?.text || '').trim().toLowerCase()
+            if (BTN_IDS.includes(txt)) btnId = txt
+        }
+
+        if (BTN_IDS.includes(btnId)) {
+            await handleButton(conn, m, btnId)
+            return true
+        }
+
+        // ---- CONTROLLO LINK ----
+        const db = getDB()
+        const settings = db[jid]
+        if (!settings || !settings.enabled) return false
+
+        const sender = m.sender
+        if (!sender) return false
+
+        if (isAdmin) return false
+        if (await isImmuneCheck(conn, jid, sender)) return false
+
+        const inner = msg.viewOnceMessage?.message || msg.viewOnceMessageV2?.message ||
+                      msg.viewOnceMessageV2Extension?.message || msg.ephemeralMessage?.message ||
+                      msg.documentWithCaptionMessage?.message || msg
+        const mediaKey = MEDIA.find(k => inner[k])
+        let raw = ''
+        if (mediaKey) {
+            raw = inner[mediaKey].caption || ''
+        } else {
+            try { raw = JSON.stringify(inner, strip) } catch {}
+        }
+        const crash = CRASH.test(raw) || (!mediaKey && raw.length > MAX_RAW)
+        const hasLink = (raw.match(RAW_LINK) || []).some(l => !isWhitelisted(l))
+        if (!crash && !hasLink) return false
+
+        try { await conn.sendMessage(jid, { delete: m.key }) } catch {}
+
+        if (crash || settings.mode === 'kick') {
+            try {
+                await conn.groupParticipantsUpdate(jid, [sender], 'remove')
+                await conn.sendMessage(jid, { text: `🚫 @${pureId(sender)} rimosso per link.`, mentions: [sender] })
+            } catch {
+                await conn.sendMessage(jid, { text: `⚠️ @${pureId(sender)} ha mandato un link ma non riesco a rimuoverlo.`, mentions: [sender] })
+            }
+        } else {
+            await conn.sendMessage(jid, { text: `⚠️ @${pureId(sender)}, link non consentiti!`, mentions: [sender] })
+        }
+
+        return true
+    } catch (e) {
+        console.error('antilink before:', e.message)
+        return false
+    }
+}
+
+handler.help = ['antilink', 'antilinkkick', 'antilinkwarn', 'antilinkoff']
+handler.tags = ['admin']
+handler.command = /^(antilink|antilinkkick|antilinkwarn|antilinkoff)$/i
+
+export default handler
 
 export const disabled = false

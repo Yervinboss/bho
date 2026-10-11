@@ -1,0 +1,23 @@
+//Plugin by Zeno
+
+const handler = async (m, {conn, isOwner}) => {
+  const chats = Object.entries(global.db.data.chats).filter((chat) => chat[1].isBanned);
+  const users = Object.entries(global.db.data.users).filter((user) => user[1].banned);
+  const caption = `
+┌〔ᴜᴛᴇɴᴛɪ ʙʟᴏᴄᴄᴀᴛɪ 👨🏻‍✈️〕
+├ Totale: ${users.length} ${users ? '\n' + users.map(([jid], i) => `
+├${isOwner ? '@' + jid.split`@`[0] : jid}`.trim()).join('\n') : '├'}
+└⋆˚｡⋆୨🌸୧⋆｡˚⋆
+
+┌〔ᴄʜᴀᴛ ʙʟᴏᴄᴄᴀᴛᴇ 👨🏻‍✈️〕
+├ Totale: ${chats.length} ${chats ? '\n' + chats.map(([jid], i) => `
+├ ${isOwner ? '@' + jid.split`@`[0] : jid}`.trim()).join('\n') : '├'}
+└⋆˚｡⋆୨🌸୧⋆｡˚⋆
+`.trim();
+  m.reply(caption, null, {mentions: conn.parseMention(caption)});
+};
+handler.help = ['ʙᴀɴʟɪꜱᴛ'];
+handler.command = /^banlist(ned)?|ban(ned)?list|daftarban(ned)?$/i;
+handler.mods = true;
+handler.tags = ['owner'];
+export default handler;

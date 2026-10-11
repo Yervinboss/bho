@@ -639,10 +639,10 @@ async function requestPairingCodeFlow() {
 
 if (!pairingMode && !hasExistingSession) {
     const menu = `
-${chalk.bgHex('#ff8fab').white('┌┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┐')}
+${chalk.bgHex('#ff8fab').white('┌⋆˚｡⋆୨🌸୧⋆｡˚⋆┐')}
 ${chalk.bgHex('#ff8fab').white('┆     ZENOBOT 2026      ┆')}
 ${chalk.bgHex('#ff8fab').white('┆       V10.3           ┆')}
-${chalk.bgHex('#ff8fab').white('└┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┘')}
+${chalk.bgHex('#ff8fab').white('└⋆˚｡⋆୨🌸୧⋆｡˚⋆┘')}
 
 ${chalk.yellow('Seleziona come collegarti:')}
 
@@ -652,7 +652,7 @@ ${chalk.gray('    → Scansiona con la fotocamera')}
 ${chalk.green('[2] 🔐 CODICE (8 caratteri)')}
 ${chalk.gray('    → Codice da inserire su WhatsApp')}
 
-${chalk.gray('┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄')}
+${chalk.gray('⋆˚｡⋆୨🌸୧⋆｡˚⋆')}
 
 ${chalk.cyan('Scegli solo 1 o 2 ↓')}
 `;
@@ -913,7 +913,7 @@ async function connectionUpdate(update) {
 📲 Scansiona il QR qui sotto
 ⏳ Valido ~45 secondi
 
-┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄
+⋆˚｡⋆୨🌸୧⋆｡˚⋆
 `));
         logSystem('WhatsApp › Dispositivi collegati › Collega un dispositivo → scansiona il QR.', 'whiteBright');
         global.qrGenerated = true;

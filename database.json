@@ -1,7 +1,7 @@
 {
   "users": {
     "393513673426@s.whatsapp.net": {
-      "exp": 187,
+      "exp": 748,
       "euro": 10,
       "muto": false,
       "registered": false,
@@ -14,11 +14,11 @@
       "role": "Novizio",
       "firstTime": 1791647894159,
       "spam": 0,
-      "messaggi": 27,
+      "messaggi": 480,
       "warn": 0,
       "warnCount": 0,
       "blasphemy": 0,
-      "comandiEseguiti": 11,
+      "comandiEseguiti": 44,
       "premium": false,
       "isAdmin": false,
       "nomeinsta": "",
@@ -35,17 +35,17 @@
       "lvl": 0,
       "rankMoneyEarned": 0,
       "rankXpEarned": 0,
-      "msgCount": 13,
+      "msgCount": 30,
       "rankStart": 1791647894174,
-      "messages": 27,
+      "messages": 480,
       "rankData": {
         "level": 0,
-        "messages": 13
+        "messages": 30
       },
       "rpgCurrency": "ZenoCoin"
     },
     "56972238932@s.whatsapp.net": {
-      "exp": 0,
+      "exp": 170,
       "euro": 10,
       "muto": false,
       "registered": false,
@@ -58,11 +58,11 @@
       "role": "Novizio",
       "firstTime": 1791647912611,
       "spam": 0,
-      "messaggi": 22,
+      "messaggi": 83,
       "warn": 0,
       "warnCount": 0,
       "blasphemy": 0,
-      "comandiEseguiti": 0,
+      "comandiEseguiti": 10,
       "premium": false,
       "isAdmin": false,
       "nomeinsta": "",
@@ -81,11 +81,11 @@
       "rankXpEarned": 0,
       "msgCount": 0,
       "rankStart": 1791647912614,
-      "messages": 22,
+      "messages": 83,
       "rpgCurrency": "ZenoCoin"
     },
     "639759767674@s.whatsapp.net": {
-      "exp": 0,
+      "exp": 221,
       "euro": 10,
       "muto": false,
       "registered": false,
@@ -98,11 +98,11 @@
       "role": "Novizio",
       "firstTime": 1791647975164,
       "spam": 0,
-      "messaggi": 3,
+      "messaggi": 35,
       "warn": 0,
       "warnCount": 0,
       "blasphemy": 0,
-      "comandiEseguiti": 0,
+      "comandiEseguiti": 13,
       "premium": false,
       "isAdmin": false,
       "nomeinsta": "",
@@ -119,13 +119,17 @@
       "lvl": 0,
       "rankMoneyEarned": 0,
       "rankXpEarned": 0,
-      "msgCount": 0,
+      "msgCount": 5,
       "rankStart": 1791647975547,
-      "messages": 3,
-      "rpgCurrency": "ZenoCoin"
+      "messages": 35,
+      "rpgCurrency": "ZenoCoin",
+      "rankData": {
+        "level": 0,
+        "messages": 5
+      }
     },
     "573215721964@s.whatsapp.net": {
-      "exp": 85,
+      "exp": 1632,
       "euro": 10,
       "muto": false,
       "registered": false,
@@ -138,7 +142,51 @@
       "role": "Novizio",
       "firstTime": 1791648235148,
       "spam": 0,
-      "messaggi": 8,
+      "messaggi": 178,
+      "warn": 0,
+      "warnCount": 0,
+      "blasphemy": 0,
+      "comandiEseguiti": 96,
+      "premium": false,
+      "isAdmin": false,
+      "nomeinsta": "",
+      "gruppiincuieadmin": "",
+      "autolevelup": true,
+      "lastclaim": 0,
+      "afk": 0,
+      "afkReason": "",
+      "limit": 15000,
+      "premiumDate": -1,
+      "premiumTime": 0,
+      "money": 0,
+      "joincount": 2,
+      "lvl": 0,
+      "rankMoneyEarned": 0,
+      "rankXpEarned": 0,
+      "msgCount": 34,
+      "rankStart": 1791648235159,
+      "messages": 178,
+      "rpgCurrency": "ZenoCoin",
+      "rankData": {
+        "level": 0,
+        "messages": 34
+      }
+    },
+    "393477508870@s.whatsapp.net": {
+      "exp": 85,
+      "euro": 10,
+      "muto": false,
+      "registered": false,
+      "name": "Bilotta",
+      "age": -1,
+      "regTime": -1,
+      "banned": false,
+      "bank": 0,
+      "level": 0,
+      "role": "Novizio",
+      "firstTime": 1791653023953,
+      "spam": 0,
+      "messaggi": 12,
       "warn": 0,
       "warnCount": 0,
       "blasphemy": 0,
@@ -159,14 +207,1094 @@
       "lvl": 0,
       "rankMoneyEarned": 0,
       "rankXpEarned": 0,
+      "msgCount": 7,
+      "rankStart": 1791653023955,
+      "messages": 12,
+      "rankData": {
+        "level": 0,
+        "messages": 7
+      },
+      "basket": {
+        "score": 1
+      },
+      "rpgCurrency": "ZenoCoin"
+    },
+    "393711817822@s.whatsapp.net": {
+      "exp": 0,
+      "euro": 10,
+      "muto": false,
+      "registered": false,
+      "name": "🗣️Rob~🇷🇴",
+      "age": -1,
+      "regTime": -1,
+      "banned": false,
+      "bank": 0,
+      "level": 0,
+      "role": "Novizio",
+      "firstTime": 1791653138230,
+      "spam": 0,
+      "messaggi": 1,
+      "warn": 0,
+      "warnCount": 0,
+      "blasphemy": 0,
+      "comandiEseguiti": 0,
+      "premium": false,
+      "isAdmin": false,
+      "nomeinsta": "",
+      "gruppiincuieadmin": "",
+      "autolevelup": true,
+      "lastclaim": 0,
+      "afk": 0,
+      "afkReason": "",
+      "limit": 15000,
+      "premiumDate": -1,
+      "premiumTime": 0,
+      "money": 0,
+      "joincount": 2,
+      "lvl": 0,
+      "rankMoneyEarned": 0,
+      "rankXpEarned": 0,
+      "msgCount": 1,
+      "rankStart": 1791653138232,
+      "rankData": {
+        "level": 0,
+        "messages": 1
+      },
+      "messages": 1,
+      "rpgCurrency": "ZenoCoin"
+    },
+    "393516413217@s.whatsapp.net": {
+      "exp": 34,
+      "euro": 10,
+      "muto": false,
+      "registered": false,
+      "name": "elizabeth",
+      "age": -1,
+      "regTime": -1,
+      "banned": false,
+      "bank": 0,
+      "level": 0,
+      "role": "Novizio",
+      "firstTime": 1791654233391,
+      "spam": 0,
+      "messaggi": 12,
+      "warn": 0,
+      "warnCount": 0,
+      "blasphemy": 0,
+      "comandiEseguiti": 2,
+      "premium": false,
+      "isAdmin": false,
+      "nomeinsta": "",
+      "gruppiincuieadmin": "",
+      "autolevelup": true,
+      "lastclaim": 0,
+      "afk": 0,
+      "afkReason": "",
+      "limit": 15000,
+      "premiumDate": -1,
+      "premiumTime": 0,
+      "money": 0,
+      "joincount": 2,
+      "lvl": 0,
+      "rankMoneyEarned": 0,
+      "rankXpEarned": 0,
       "msgCount": 3,
-      "rankStart": 1791648235159,
-      "messages": 8,
-      "rpgCurrency": "ZenoCoin",
+      "rankStart": 1791654233406,
       "rankData": {
         "level": 0,
         "messages": 3
-      }
+      },
+      "messages": 12,
+      "rpgCurrency": "ZenoCoin"
+    },
+    "393382783382@s.whatsapp.net": {
+      "exp": 0,
+      "euro": 10,
+      "muto": false,
+      "registered": false,
+      "name": "N",
+      "age": -1,
+      "regTime": -1,
+      "banned": false,
+      "bank": 0,
+      "level": 0,
+      "role": "Novizio",
+      "firstTime": 1791656224101,
+      "spam": 0,
+      "messaggi": 2,
+      "warn": 0,
+      "warnCount": 0,
+      "blasphemy": 0,
+      "comandiEseguiti": 0,
+      "premium": false,
+      "isAdmin": false,
+      "nomeinsta": "",
+      "gruppiincuieadmin": "",
+      "autolevelup": true,
+      "lastclaim": 0,
+      "afk": 0,
+      "afkReason": "",
+      "limit": 15000,
+      "premiumDate": -1,
+      "premiumTime": 0,
+      "money": 0,
+      "joincount": 2,
+      "lvl": 0,
+      "rankMoneyEarned": 0,
+      "rankXpEarned": 0,
+      "msgCount": 0,
+      "rankStart": 1791656224104,
+      "messages": 2,
+      "rpgCurrency": "ZenoCoin"
+    },
+    "393761412246@s.whatsapp.net": {
+      "exp": 0,
+      "euro": 10,
+      "muto": false,
+      "registered": false,
+      "name": "Cry",
+      "age": -1,
+      "regTime": -1,
+      "banned": false,
+      "bank": 0,
+      "level": 0,
+      "role": "Novizio",
+      "firstTime": 1791657743722,
+      "spam": 0,
+      "messaggi": 6,
+      "warn": 0,
+      "warnCount": 0,
+      "blasphemy": 0,
+      "comandiEseguiti": 0,
+      "premium": false,
+      "isAdmin": false,
+      "nomeinsta": "",
+      "gruppiincuieadmin": "",
+      "autolevelup": true,
+      "lastclaim": 0,
+      "afk": 0,
+      "afkReason": "",
+      "limit": 15000,
+      "premiumDate": -1,
+      "premiumTime": 0,
+      "money": 0,
+      "joincount": 2,
+      "messages": 6,
+      "rpgCurrency": "ZenoCoin"
+    },
+    "66826568920@s.whatsapp.net": {
+      "exp": 0,
+      "euro": 10,
+      "muto": false,
+      "registered": false,
+      "name": "LoqiV2",
+      "age": -1,
+      "regTime": -1,
+      "banned": false,
+      "bank": 0,
+      "level": 0,
+      "role": "Novizio",
+      "firstTime": 1791657949372,
+      "spam": 0,
+      "messaggi": 14,
+      "warn": 0,
+      "warnCount": 0,
+      "blasphemy": 0,
+      "comandiEseguiti": 0,
+      "premium": false,
+      "isAdmin": false,
+      "nomeinsta": "",
+      "gruppiincuieadmin": "",
+      "autolevelup": true,
+      "lastclaim": 0,
+      "afk": 0,
+      "afkReason": "",
+      "limit": 15000,
+      "premiumDate": -1,
+      "premiumTime": 0,
+      "money": 0,
+      "joincount": 2,
+      "messages": 14,
+      "rpgCurrency": "ZenoCoin"
+    },
+    "22862127743098@lid": {
+      "callCount": 1,
+      "banned": false,
+      "money": 0,
+      "bank": 0,
+      "rpgCurrency": "ZenoCoin"
+    },
+    "393461289421@s.whatsapp.net": {
+      "exp": 0,
+      "euro": 10,
+      "muto": false,
+      "registered": false,
+      "name": "Francesco Emilio Sborelli",
+      "age": -1,
+      "regTime": -1,
+      "banned": false,
+      "bank": 0,
+      "level": 0,
+      "role": "Novizio",
+      "firstTime": 1791661607029,
+      "spam": 0,
+      "messaggi": 1,
+      "warn": 0,
+      "warnCount": 0,
+      "blasphemy": 0,
+      "comandiEseguiti": 0,
+      "premium": false,
+      "isAdmin": false,
+      "nomeinsta": "",
+      "gruppiincuieadmin": "",
+      "autolevelup": true,
+      "lastclaim": 0,
+      "afk": 0,
+      "afkReason": "",
+      "limit": 15000,
+      "premiumDate": -1,
+      "premiumTime": 0,
+      "money": 0,
+      "joincount": 2,
+      "messages": 1,
+      "rpgCurrency": "ZenoCoin"
+    },
+    "393317191666@s.whatsapp.net": {
+      "exp": 0,
+      "euro": 10,
+      "muto": false,
+      "registered": false,
+      "name": "ele",
+      "age": -1,
+      "regTime": -1,
+      "banned": false,
+      "bank": 0,
+      "level": 0,
+      "role": "Novizio",
+      "firstTime": 1791661610786,
+      "spam": 0,
+      "messaggi": 24,
+      "warn": 0,
+      "warnCount": 0,
+      "blasphemy": 0,
+      "comandiEseguiti": 0,
+      "premium": false,
+      "isAdmin": false,
+      "nomeinsta": "",
+      "gruppiincuieadmin": "",
+      "autolevelup": true,
+      "lastclaim": 0,
+      "afk": 0,
+      "afkReason": "",
+      "limit": 15000,
+      "premiumDate": -1,
+      "premiumTime": 0,
+      "money": 0,
+      "joincount": 2,
+      "messages": 24,
+      "rpgCurrency": "ZenoCoin"
+    },
+    "393296164028@s.whatsapp.net": {
+      "exp": 0,
+      "euro": 10,
+      "muto": false,
+      "registered": false,
+      "name": "~L",
+      "age": -1,
+      "regTime": -1,
+      "banned": false,
+      "bank": 0,
+      "level": 0,
+      "role": "Novizio",
+      "firstTime": 1791662212761,
+      "spam": 0,
+      "messaggi": 1,
+      "warn": 0,
+      "warnCount": 0,
+      "blasphemy": 0,
+      "comandiEseguiti": 0,
+      "premium": false,
+      "isAdmin": false,
+      "nomeinsta": "",
+      "gruppiincuieadmin": "",
+      "autolevelup": true,
+      "lastclaim": 0,
+      "afk": 0,
+      "afkReason": "",
+      "limit": 15000,
+      "premiumDate": -1,
+      "premiumTime": 0,
+      "money": 0,
+      "joincount": 2,
+      "messages": 1,
+      "rpgCurrency": "ZenoCoin"
+    },
+    "393515659869@s.whatsapp.net": {
+      "exp": 0,
+      "euro": 10,
+      "muto": false,
+      "registered": false,
+      "name": "ꨄ",
+      "age": -1,
+      "regTime": -1,
+      "banned": false,
+      "bank": 0,
+      "level": 0,
+      "role": "Novizio",
+      "firstTime": 1791662763887,
+      "spam": 0,
+      "messaggi": 7,
+      "warn": 0,
+      "warnCount": 0,
+      "blasphemy": 0,
+      "comandiEseguiti": 0,
+      "premium": false,
+      "isAdmin": false,
+      "nomeinsta": "",
+      "gruppiincuieadmin": "",
+      "autolevelup": true,
+      "lastclaim": 0,
+      "afk": 0,
+      "afkReason": "",
+      "limit": 15000,
+      "premiumDate": -1,
+      "premiumTime": 0,
+      "money": 0,
+      "joincount": 2,
+      "messages": 7,
+      "rpgCurrency": "ZenoCoin"
+    },
+    "639627308106@s.whatsapp.net": {
+      "exp": 0,
+      "euro": 10,
+      "muto": false,
+      "registered": false,
+      "name": "Sig.wa",
+      "age": -1,
+      "regTime": -1,
+      "banned": false,
+      "bank": 0,
+      "level": 0,
+      "role": "Novizio",
+      "firstTime": 1791663259796,
+      "spam": 0,
+      "messaggi": 40,
+      "warn": 0,
+      "warnCount": 0,
+      "blasphemy": 0,
+      "comandiEseguiti": 0,
+      "premium": false,
+      "isAdmin": false,
+      "nomeinsta": "",
+      "gruppiincuieadmin": "",
+      "autolevelup": true,
+      "lastclaim": 0,
+      "afk": 0,
+      "afkReason": "",
+      "limit": 15000,
+      "premiumDate": -1,
+      "premiumTime": 0,
+      "money": 0,
+      "joincount": 2,
+      "messages": 40,
+      "rpgCurrency": "ZenoCoin"
+    },
+    "393279609465@s.whatsapp.net": {
+      "exp": 0,
+      "euro": 10,
+      "muto": false,
+      "registered": false,
+      "name": "17 64 22",
+      "age": -1,
+      "regTime": -1,
+      "banned": false,
+      "bank": 0,
+      "level": 0,
+      "role": "Novizio",
+      "firstTime": 1791663631323,
+      "spam": 0,
+      "messaggi": 4,
+      "warn": 0,
+      "warnCount": 0,
+      "blasphemy": 0,
+      "comandiEseguiti": 0,
+      "premium": false,
+      "isAdmin": false,
+      "nomeinsta": "",
+      "gruppiincuieadmin": "",
+      "autolevelup": true,
+      "lastclaim": 0,
+      "afk": 0,
+      "afkReason": "",
+      "limit": 15000,
+      "premiumDate": -1,
+      "premiumTime": 0,
+      "money": 0,
+      "joincount": 2,
+      "messages": 4,
+      "rpgCurrency": "ZenoCoin"
+    },
+    "393500833447@s.whatsapp.net": {
+      "exp": 0,
+      "euro": 10,
+      "muto": false,
+      "registered": false,
+      "name": "Matthew Paoli",
+      "age": -1,
+      "regTime": -1,
+      "banned": false,
+      "bank": 0,
+      "level": 0,
+      "role": "Novizio",
+      "firstTime": 1791663983808,
+      "spam": 0,
+      "messaggi": 2,
+      "warn": 0,
+      "warnCount": 0,
+      "blasphemy": 0,
+      "comandiEseguiti": 0,
+      "premium": false,
+      "isAdmin": false,
+      "nomeinsta": "",
+      "gruppiincuieadmin": "",
+      "autolevelup": true,
+      "lastclaim": 0,
+      "afk": 0,
+      "afkReason": "",
+      "limit": 15000,
+      "premiumDate": -1,
+      "premiumTime": 0,
+      "money": 0,
+      "joincount": 2,
+      "messages": 2,
+      "rpgCurrency": "ZenoCoin"
+    },
+    "393296625125@s.whatsapp.net": {
+      "exp": 0,
+      "euro": 10,
+      "muto": false,
+      "registered": false,
+      "name": "ang",
+      "age": -1,
+      "regTime": -1,
+      "banned": false,
+      "bank": 0,
+      "level": 0,
+      "role": "Novizio",
+      "firstTime": 1791664526941,
+      "spam": 0,
+      "messaggi": 24,
+      "warn": 0,
+      "warnCount": 0,
+      "blasphemy": 0,
+      "comandiEseguiti": 0,
+      "premium": false,
+      "isAdmin": false,
+      "nomeinsta": "",
+      "gruppiincuieadmin": "",
+      "autolevelup": true,
+      "lastclaim": 0,
+      "afk": 0,
+      "afkReason": "",
+      "limit": 15000,
+      "premiumDate": -1,
+      "premiumTime": 0,
+      "money": 0,
+      "joincount": 2,
+      "messages": 24,
+      "rpgCurrency": "ZenoCoin"
+    },
+    "393534323551@s.whatsapp.net": {
+      "exp": 0,
+      "euro": 10,
+      "muto": false,
+      "registered": false,
+      "name": "+39 353 432 3551",
+      "age": -1,
+      "regTime": -1,
+      "banned": false,
+      "bank": 0,
+      "level": 0,
+      "role": "Novizio",
+      "firstTime": 1791705900199,
+      "spam": 0,
+      "messaggi": 1,
+      "warn": 0,
+      "warnCount": 0,
+      "blasphemy": 0,
+      "comandiEseguiti": 0,
+      "premium": false,
+      "isAdmin": false,
+      "nomeinsta": "",
+      "gruppiincuieadmin": "",
+      "autolevelup": true,
+      "lastclaim": 0,
+      "afk": 0,
+      "afkReason": "",
+      "limit": 15000,
+      "premiumDate": -1,
+      "premiumTime": 0,
+      "money": 0,
+      "joincount": 2,
+      "messages": 1,
+      "rpgCurrency": "ZenoCoin"
+    },
+    "393276374289@s.whatsapp.net": {
+      "exp": 0,
+      "euro": 10,
+      "muto": false,
+      "registered": false,
+      "name": "Luca Cacazzi (Doc)",
+      "age": -1,
+      "regTime": -1,
+      "banned": false,
+      "bank": 0,
+      "level": 0,
+      "role": "Novizio",
+      "firstTime": 1791705901152,
+      "spam": 0,
+      "messaggi": 20,
+      "warn": 0,
+      "warnCount": 0,
+      "blasphemy": 0,
+      "comandiEseguiti": 0,
+      "premium": false,
+      "isAdmin": false,
+      "nomeinsta": "",
+      "gruppiincuieadmin": "",
+      "autolevelup": true,
+      "lastclaim": 0,
+      "afk": 0,
+      "afkReason": "",
+      "limit": 15000,
+      "premiumDate": -1,
+      "premiumTime": 0,
+      "money": 0,
+      "joincount": 2,
+      "messages": 20,
+      "rpgCurrency": "ZenoCoin"
+    },
+    "393888728445@s.whatsapp.net": {
+      "exp": 0,
+      "euro": 10,
+      "muto": false,
+      "registered": false,
+      "name": "Laes",
+      "age": -1,
+      "regTime": -1,
+      "banned": false,
+      "bank": 0,
+      "level": 0,
+      "role": "Novizio",
+      "firstTime": 1791705901208,
+      "spam": 0,
+      "messaggi": 1,
+      "warn": 0,
+      "warnCount": 0,
+      "blasphemy": 0,
+      "comandiEseguiti": 0,
+      "premium": false,
+      "isAdmin": false,
+      "nomeinsta": "",
+      "gruppiincuieadmin": "",
+      "autolevelup": true,
+      "lastclaim": 0,
+      "afk": 0,
+      "afkReason": "",
+      "limit": 15000,
+      "premiumDate": -1,
+      "premiumTime": 0,
+      "money": 0,
+      "joincount": 2,
+      "messages": 1,
+      "rpgCurrency": "ZenoCoin"
+    },
+    "393792033584@s.whatsapp.net": {
+      "exp": 0,
+      "euro": 10,
+      "muto": false,
+      "registered": false,
+      "name": "ciccio",
+      "age": -1,
+      "regTime": -1,
+      "banned": false,
+      "bank": 0,
+      "level": 0,
+      "role": "Novizio",
+      "firstTime": 1791705901212,
+      "spam": 0,
+      "messaggi": 1,
+      "warn": 0,
+      "warnCount": 0,
+      "blasphemy": 0,
+      "comandiEseguiti": 0,
+      "premium": false,
+      "isAdmin": false,
+      "nomeinsta": "",
+      "gruppiincuieadmin": "",
+      "autolevelup": true,
+      "lastclaim": 0,
+      "afk": 0,
+      "afkReason": "",
+      "limit": 15000,
+      "premiumDate": -1,
+      "premiumTime": 0,
+      "money": 0,
+      "joincount": 2,
+      "messages": 1,
+      "rpgCurrency": "ZenoCoin"
+    },
+    "393513157556@s.whatsapp.net": {
+      "exp": 0,
+      "euro": 10,
+      "muto": false,
+      "registered": false,
+      "name": "gaudi",
+      "age": -1,
+      "regTime": -1,
+      "banned": false,
+      "bank": 0,
+      "level": 0,
+      "role": "Novizio",
+      "firstTime": 1791705901234,
+      "spam": 0,
+      "messaggi": 1,
+      "warn": 0,
+      "warnCount": 0,
+      "blasphemy": 0,
+      "comandiEseguiti": 0,
+      "premium": false,
+      "isAdmin": false,
+      "nomeinsta": "",
+      "gruppiincuieadmin": "",
+      "autolevelup": true,
+      "lastclaim": 0,
+      "afk": 0,
+      "afkReason": "",
+      "limit": 15000,
+      "premiumDate": -1,
+      "premiumTime": 0,
+      "money": 0,
+      "joincount": 2,
+      "messages": 1,
+      "rpgCurrency": "ZenoCoin"
+    },
+    "393518425212@s.whatsapp.net": {
+      "exp": 0,
+      "euro": 10,
+      "muto": false,
+      "registered": false,
+      "name": "Niko",
+      "age": -1,
+      "regTime": -1,
+      "banned": false,
+      "bank": 0,
+      "level": 0,
+      "role": "Novizio",
+      "firstTime": 1791705901249,
+      "spam": 0,
+      "messaggi": 3,
+      "warn": 0,
+      "warnCount": 0,
+      "blasphemy": 0,
+      "comandiEseguiti": 0,
+      "premium": false,
+      "isAdmin": false,
+      "nomeinsta": "",
+      "gruppiincuieadmin": "",
+      "autolevelup": true,
+      "lastclaim": 0,
+      "afk": 0,
+      "afkReason": "",
+      "limit": 15000,
+      "premiumDate": -1,
+      "premiumTime": 0,
+      "money": 0,
+      "joincount": 2,
+      "messages": 3,
+      "rpgCurrency": "ZenoCoin"
+    },
+    "393713648402@s.whatsapp.net": {
+      "exp": 0,
+      "euro": 10,
+      "muto": false,
+      "registered": false,
+      "name": "+39 371 364 8402",
+      "age": -1,
+      "regTime": -1,
+      "banned": false,
+      "bank": 0,
+      "level": 0,
+      "role": "Novizio",
+      "firstTime": 1791705901263,
+      "spam": 0,
+      "messaggi": 1,
+      "warn": 0,
+      "warnCount": 0,
+      "blasphemy": 0,
+      "comandiEseguiti": 0,
+      "premium": false,
+      "isAdmin": false,
+      "nomeinsta": "",
+      "gruppiincuieadmin": "",
+      "autolevelup": true,
+      "lastclaim": 0,
+      "afk": 0,
+      "afkReason": "",
+      "limit": 15000,
+      "premiumDate": -1,
+      "premiumTime": 0,
+      "money": 0,
+      "joincount": 2,
+      "messages": 1,
+      "rpgCurrency": "ZenoCoin"
+    },
+    "393791390809@s.whatsapp.net": {
+      "exp": 0,
+      "euro": 10,
+      "muto": false,
+      "registered": false,
+      "name": "+39 379 139 0809",
+      "age": -1,
+      "regTime": -1,
+      "banned": false,
+      "bank": 0,
+      "level": 0,
+      "role": "Novizio",
+      "firstTime": 1791705901585,
+      "spam": 0,
+      "messaggi": 1,
+      "warn": 0,
+      "warnCount": 0,
+      "blasphemy": 0,
+      "comandiEseguiti": 0,
+      "premium": false,
+      "isAdmin": false,
+      "nomeinsta": "",
+      "gruppiincuieadmin": "",
+      "autolevelup": true,
+      "lastclaim": 0,
+      "afk": 0,
+      "afkReason": "",
+      "limit": 15000,
+      "premiumDate": -1,
+      "premiumTime": 0,
+      "money": 0,
+      "joincount": 2,
+      "messages": 1,
+      "rpgCurrency": "ZenoCoin"
+    },
+    "130829669949588@lid": {
+      "exp": 0,
+      "euro": 10,
+      "muto": false,
+      "registered": false,
+      "name": "zak #remigrazione diocnae",
+      "age": -1,
+      "regTime": -1,
+      "banned": false,
+      "bank": 0,
+      "level": 0,
+      "role": "Novizio",
+      "firstTime": 1791705901590,
+      "spam": 0,
+      "messaggi": 3,
+      "warn": 0,
+      "warnCount": 0,
+      "blasphemy": 0,
+      "comandiEseguiti": 0,
+      "premium": false,
+      "isAdmin": false,
+      "nomeinsta": "",
+      "gruppiincuieadmin": "",
+      "autolevelup": true,
+      "lastclaim": 0,
+      "afk": 0,
+      "afkReason": "",
+      "limit": 15000,
+      "premiumDate": -1,
+      "premiumTime": 0,
+      "money": 0,
+      "joincount": 2,
+      "messages": 3,
+      "rpgCurrency": "ZenoCoin"
+    },
+    "393202321536@s.whatsapp.net": {
+      "exp": 0,
+      "euro": 10,
+      "muto": false,
+      "registered": false,
+      "name": "martinafoid",
+      "age": -1,
+      "regTime": -1,
+      "banned": false,
+      "bank": 0,
+      "level": 0,
+      "role": "Novizio",
+      "firstTime": 1791705901605,
+      "spam": 0,
+      "messaggi": 3,
+      "warn": 0,
+      "warnCount": 0,
+      "blasphemy": 0,
+      "comandiEseguiti": 0,
+      "premium": false,
+      "isAdmin": false,
+      "nomeinsta": "",
+      "gruppiincuieadmin": "",
+      "autolevelup": true,
+      "lastclaim": 0,
+      "afk": 0,
+      "afkReason": "",
+      "limit": 15000,
+      "premiumDate": -1,
+      "premiumTime": 0,
+      "money": 0,
+      "joincount": 2,
+      "messages": 3,
+      "rpgCurrency": "ZenoCoin"
+    },
+    "393393567922@s.whatsapp.net": {
+      "exp": 0,
+      "euro": 10,
+      "muto": false,
+      "registered": false,
+      "name": "Gio",
+      "age": -1,
+      "regTime": -1,
+      "banned": false,
+      "bank": 0,
+      "level": 0,
+      "role": "Novizio",
+      "firstTime": 1791705901623,
+      "spam": 0,
+      "messaggi": 2,
+      "warn": 0,
+      "warnCount": 0,
+      "blasphemy": 0,
+      "comandiEseguiti": 0,
+      "premium": false,
+      "isAdmin": false,
+      "nomeinsta": "",
+      "gruppiincuieadmin": "",
+      "autolevelup": true,
+      "lastclaim": 0,
+      "afk": 0,
+      "afkReason": "",
+      "limit": 15000,
+      "premiumDate": -1,
+      "premiumTime": 0,
+      "money": 0,
+      "joincount": 2,
+      "messages": 2,
+      "rpgCurrency": "ZenoCoin"
+    },
+    "393509497258@s.whatsapp.net": {
+      "exp": 0,
+      "euro": 10,
+      "muto": false,
+      "registered": false,
+      "name": "giu<3",
+      "age": -1,
+      "regTime": -1,
+      "banned": false,
+      "bank": 0,
+      "level": 0,
+      "role": "Novizio",
+      "firstTime": 1791705901629,
+      "spam": 0,
+      "messaggi": 1,
+      "warn": 0,
+      "warnCount": 0,
+      "blasphemy": 0,
+      "comandiEseguiti": 0,
+      "premium": false,
+      "isAdmin": false,
+      "nomeinsta": "",
+      "gruppiincuieadmin": "",
+      "autolevelup": true,
+      "lastclaim": 0,
+      "afk": 0,
+      "afkReason": "",
+      "limit": 15000,
+      "premiumDate": -1,
+      "premiumTime": 0,
+      "money": 0,
+      "joincount": 2,
+      "messages": 1,
+      "rpgCurrency": "ZenoCoin"
+    },
+    "393476763694@s.whatsapp.net": {
+      "exp": 0,
+      "euro": 10,
+      "muto": false,
+      "registered": false,
+      "name": "+39 347 676 3694",
+      "age": -1,
+      "regTime": -1,
+      "banned": false,
+      "bank": 0,
+      "level": 0,
+      "role": "Novizio",
+      "firstTime": 1791705901633,
+      "spam": 0,
+      "messaggi": 1,
+      "warn": 0,
+      "warnCount": 0,
+      "blasphemy": 0,
+      "comandiEseguiti": 0,
+      "premium": false,
+      "isAdmin": false,
+      "nomeinsta": "",
+      "gruppiincuieadmin": "",
+      "autolevelup": true,
+      "lastclaim": 0,
+      "afk": 0,
+      "afkReason": "",
+      "limit": 15000,
+      "premiumDate": -1,
+      "premiumTime": 0,
+      "money": 0,
+      "joincount": 2,
+      "messages": 1,
+      "rpgCurrency": "ZenoCoin"
+    },
+    "393313403176@s.whatsapp.net": {
+      "exp": 0,
+      "euro": 10,
+      "muto": false,
+      "registered": false,
+      "name": "Enric",
+      "age": -1,
+      "regTime": -1,
+      "banned": false,
+      "bank": 0,
+      "level": 0,
+      "role": "Novizio",
+      "firstTime": 1791705901749,
+      "spam": 0,
+      "messaggi": 2,
+      "warn": 0,
+      "warnCount": 0,
+      "blasphemy": 0,
+      "comandiEseguiti": 0,
+      "premium": false,
+      "isAdmin": false,
+      "nomeinsta": "",
+      "gruppiincuieadmin": "",
+      "autolevelup": true,
+      "lastclaim": 0,
+      "afk": 0,
+      "afkReason": "",
+      "limit": 15000,
+      "premiumDate": -1,
+      "premiumTime": 0,
+      "money": 0,
+      "joincount": 2,
+      "messages": 2,
+      "rpgCurrency": "ZenoCoin"
+    },
+    "393270760015@s.whatsapp.net": {
+      "exp": 0,
+      "euro": 10,
+      "muto": false,
+      "registered": false,
+      "name": "𝒿",
+      "age": -1,
+      "regTime": -1,
+      "banned": false,
+      "bank": 0,
+      "level": 0,
+      "role": "Novizio",
+      "firstTime": 1791706458940,
+      "spam": 0,
+      "messaggi": 0,
+      "warn": 0,
+      "warnCount": 0,
+      "blasphemy": 0,
+      "comandiEseguiti": 0,
+      "premium": false,
+      "isAdmin": false,
+      "nomeinsta": "",
+      "gruppiincuieadmin": "",
+      "autolevelup": true,
+      "lastclaim": 0,
+      "afk": 0,
+      "afkReason": "",
+      "limit": 15000,
+      "premiumDate": -1,
+      "premiumTime": 0,
+      "money": 0,
+      "joincount": 2,
+      "rpgCurrency": "ZenoCoin"
+    },
+    "447882742392@s.whatsapp.net": {
+      "exp": 0,
+      "euro": 10,
+      "muto": false,
+      "registered": false,
+      "name": "𝗲ྤ𝘆⃕𝒆𝘀『вымирание』",
+      "age": -1,
+      "regTime": -1,
+      "banned": false,
+      "bank": 0,
+      "level": 0,
+      "role": "Novizio",
+      "firstTime": 1791707669023,
+      "spam": 0,
+      "messaggi": 3,
+      "warn": 0,
+      "warnCount": 0,
+      "blasphemy": 0,
+      "comandiEseguiti": 0,
+      "premium": false,
+      "isAdmin": false,
+      "nomeinsta": "",
+      "gruppiincuieadmin": "",
+      "autolevelup": true,
+      "lastclaim": 0,
+      "afk": 0,
+      "afkReason": "",
+      "limit": 15000,
+      "premiumDate": -1,
+      "premiumTime": 0,
+      "money": 0,
+      "joincount": 2,
+      "messages": 3
+    },
+    "393520555327@s.whatsapp.net": {
+      "exp": 0,
+      "euro": 10,
+      "muto": false,
+      "registered": false,
+      "name": "Killy",
+      "age": -1,
+      "regTime": -1,
+      "banned": false,
+      "bank": 0,
+      "level": 0,
+      "role": "Novizio",
+      "firstTime": 1791708247145,
+      "spam": 0,
+      "messaggi": 3,
+      "warn": 0,
+      "warnCount": 0,
+      "blasphemy": 0,
+      "comandiEseguiti": 0,
+      "premium": false,
+      "isAdmin": false,
+      "nomeinsta": "",
+      "gruppiincuieadmin": "",
+      "autolevelup": true,
+      "lastclaim": 0,
+      "afk": 0,
+      "afkReason": "",
+      "limit": 15000,
+      "premiumDate": -1,
+      "premiumTime": 0,
+      "money": 0,
+      "joincount": 2,
+      "messages": 3
     }
   },
   "chats": {
@@ -213,23 +1341,23 @@
       "expired": 0,
       "users": {
         "639759767674@s.whatsapp.net": {
-          "messages": 3
+          "messages": 32
         },
         "393513673426@s.whatsapp.net": {
-          "messages": 22
+          "messages": 125
         },
         "56972238932@s.whatsapp.net": {
-          "messages": 19
+          "messages": 78
         },
         "573215721964@s.whatsapp.net": {
-          "messages": 8
+          "messages": 85
         }
       },
       "topUsers": {
-        "639759767674@s.whatsapp.net": 3,
-        "393513673426@s.whatsapp.net": 22,
-        "56972238932@s.whatsapp.net": 19,
-        "573215721964@s.whatsapp.net": 8
+        "639759767674@s.whatsapp.net": 32,
+        "393513673426@s.whatsapp.net": 125,
+        "56972238932@s.whatsapp.net": 78,
+        "573215721964@s.whatsapp.net": 85
       },
       "topRich": {
         "639759767674@s.whatsapp.net": 0,
@@ -254,7 +1382,7 @@
             "close": 0,
             "restrict": 0,
             "unrestrict": 0,
-            "commands": 8
+            "commands": 33
           },
           "639759767674@s.whatsapp.net": {
             "accepts": 0,
@@ -265,7 +1393,7 @@
             "close": 0,
             "restrict": 0,
             "unrestrict": 0,
-            "commands": 0
+            "commands": 8
           },
           "573215721964@s.whatsapp.net": {
             "accepts": 0,
@@ -276,7 +1404,18 @@
             "close": 0,
             "restrict": 0,
             "unrestrict": 0,
-            "commands": 2
+            "commands": 26
+          },
+          "56972238932@s.whatsapp.net": {
+            "accepts": 0,
+            "removes": 0,
+            "promotes": 0,
+            "demotes": 0,
+            "open": 0,
+            "close": 0,
+            "restrict": 0,
+            "unrestrict": 0,
+            "commands": 3
           }
         }
       }
@@ -285,44 +1424,595 @@
       "isBanned": false,
       "expired": 0,
       "users": {}
+    },
+    "120363429804364027@g.us": {
+      "isBanned": false,
+      "welcome": false,
+      "goodbye": false,
+      "ai": false,
+      "vocali": false,
+      "antiporno": false,
+      "antioneview": false,
+      "autolevelup": false,
+      "antivoip": false,
+      "rileva": false,
+      "modoadmin": false,
+      "antiLink": true,
+      "antiLink2": false,
+      "slowmode": false,
+      "reaction": false,
+      "antispam": false,
+      "expired": 0,
+      "users": {
+        "573215721964@s.whatsapp.net": {
+          "messages": 37
+        },
+        "393477508870@s.whatsapp.net": {
+          "messages": 12
+        },
+        "393513673426@s.whatsapp.net": {
+          "messages": 30
+        },
+        "393711817822@s.whatsapp.net": {
+          "messages": 1
+        },
+        "393516413217@s.whatsapp.net": {
+          "messages": 12
+        },
+        "639759767674@s.whatsapp.net": {
+          "messages": 2
+        },
+        "393515659869@s.whatsapp.net": {
+          "messages": 7
+        },
+        "393792033584@s.whatsapp.net": {
+          "messages": 1
+        },
+        "393791390809@s.whatsapp.net": {
+          "messages": 1
+        },
+        "393313403176@s.whatsapp.net": {
+          "messages": 2
+        }
+      },
+      "topUsers": {
+        "573215721964@s.whatsapp.net": 37,
+        "393477508870@s.whatsapp.net": 12,
+        "393513673426@s.whatsapp.net": 30,
+        "393711817822@s.whatsapp.net": 1,
+        "393516413217@s.whatsapp.net": 12,
+        "639759767674@s.whatsapp.net": 2,
+        "393515659869@s.whatsapp.net": 7,
+        "393792033584@s.whatsapp.net": 1,
+        "393791390809@s.whatsapp.net": 1,
+        "393313403176@s.whatsapp.net": 2
+      },
+      "topRich": {
+        "573215721964@s.whatsapp.net": 0,
+        "393477508870@s.whatsapp.net": 0,
+        "393513673426@s.whatsapp.net": 0,
+        "393711817822@s.whatsapp.net": 0,
+        "393516413217@s.whatsapp.net": 0,
+        "639759767674@s.whatsapp.net": 0,
+        "393515659869@s.whatsapp.net": 0,
+        "393792033584@s.whatsapp.net": 0,
+        "393791390809@s.whatsapp.net": 0,
+        "393313403176@s.whatsapp.net": 0
+      },
+      "topBlasphemy": {
+        "573215721964@s.whatsapp.net": 0,
+        "393477508870@s.whatsapp.net": 0,
+        "393513673426@s.whatsapp.net": 0,
+        "393711817822@s.whatsapp.net": 0,
+        "393516413217@s.whatsapp.net": 0,
+        "639759767674@s.whatsapp.net": 0,
+        "393515659869@s.whatsapp.net": 0,
+        "393792033584@s.whatsapp.net": 0,
+        "393791390809@s.whatsapp.net": 0,
+        "393313403176@s.whatsapp.net": 0
+      },
+      "adminLogs": {
+        "2026-10-10": {
+          "573215721964@s.whatsapp.net": {
+            "accepts": 0,
+            "removes": 0,
+            "promotes": 0,
+            "demotes": 0,
+            "open": 0,
+            "close": 0,
+            "restrict": 0,
+            "unrestrict": 0,
+            "commands": 8
+          },
+          "393516413217@s.whatsapp.net": {
+            "accepts": 0,
+            "removes": 0,
+            "promotes": 0,
+            "demotes": 0,
+            "open": 0,
+            "close": 0,
+            "restrict": 0,
+            "unrestrict": 0,
+            "commands": 2
+          },
+          "393513673426@s.whatsapp.net": {
+            "accepts": 0,
+            "removes": 0,
+            "promotes": 0,
+            "demotes": 0,
+            "open": 0,
+            "close": 0,
+            "restrict": 0,
+            "unrestrict": 0,
+            "commands": 1
+          }
+        }
+      }
+    },
+    "573215721964@s.whatsapp.net": {
+      "isBanned": false,
+      "welcome": false,
+      "goodbye": false,
+      "ai": false,
+      "vocali": false,
+      "antiporno": false,
+      "antioneview": false,
+      "autolevelup": false,
+      "antivoip": false,
+      "rileva": false,
+      "modoadmin": false,
+      "antiLink": false,
+      "antiLink2": false,
+      "slowmode": false,
+      "reaction": false,
+      "antispam": false,
+      "expired": 0,
+      "users": {},
+      "topUsers": {},
+      "topRich": {},
+      "topBlasphemy": {}
+    },
+    "120363412674855883@g.us": {
+      "isBanned": false,
+      "expired": 0,
+      "users": {}
+    },
+    "120363402559902190@g.us": {
+      "isBanned": false,
+      "expired": 0,
+      "users": {}
+    },
+    "120363311970647606@g.us": {
+      "isBanned": false,
+      "expired": 0,
+      "users": {}
+    },
+    "120363430248448156@g.us": {
+      "isBanned": false,
+      "expired": 0,
+      "users": {}
+    },
+    "120363429792935925@g.us": {
+      "isBanned": false,
+      "expired": 0,
+      "users": {}
+    },
+    "120363415430524246@g.us": {
+      "isBanned": false,
+      "expired": 0,
+      "users": {}
+    },
+    "120363412837240806@g.us": {
+      "isBanned": false,
+      "expired": 0,
+      "users": {}
+    },
+    "120363430594024863@g.us": {
+      "isBanned": false,
+      "expired": 0,
+      "users": {}
+    },
+    "120363411034834102@g.us": {
+      "isBanned": false,
+      "expired": 0,
+      "users": {}
+    },
+    "120363429528178945@g.us": {
+      "isBanned": false,
+      "expired": 0,
+      "users": {}
+    },
+    "120363429810004266@g.us": {
+      "isBanned": false,
+      "expired": 0,
+      "users": {}
+    },
+    "120363411034463449@g.us": {
+      "isBanned": false,
+      "expired": 0,
+      "users": {}
+    },
+    "120363413369029588@g.us": {
+      "isBanned": false,
+      "expired": 0,
+      "users": {}
+    },
+    "120363426647057206@g.us": {
+      "isBanned": false,
+      "expired": 0,
+      "users": {
+        "393761412246@s.whatsapp.net": {
+          "messages": 6
+        },
+        "66826568920@s.whatsapp.net": {
+          "messages": 14
+        },
+        "393500833447@s.whatsapp.net": {
+          "messages": 2
+        },
+        "393534323551@s.whatsapp.net": {
+          "messages": 1
+        },
+        "573215721964@s.whatsapp.net": {
+          "messages": 2
+        },
+        "393513673426@s.whatsapp.net": {
+          "messages": 1
+        },
+        "447882742392@s.whatsapp.net": {
+          "messages": 3
+        }
+      },
+      "topUsers": {
+        "393761412246@s.whatsapp.net": 6,
+        "66826568920@s.whatsapp.net": 14,
+        "393500833447@s.whatsapp.net": 2,
+        "393534323551@s.whatsapp.net": 1,
+        "573215721964@s.whatsapp.net": 2,
+        "393513673426@s.whatsapp.net": 1,
+        "447882742392@s.whatsapp.net": 3
+      },
+      "topRich": {
+        "393761412246@s.whatsapp.net": 0,
+        "66826568920@s.whatsapp.net": 0,
+        "393500833447@s.whatsapp.net": 0,
+        "393534323551@s.whatsapp.net": 0,
+        "573215721964@s.whatsapp.net": 0,
+        "393513673426@s.whatsapp.net": 0,
+        "447882742392@s.whatsapp.net": 0
+      },
+      "topBlasphemy": {
+        "393761412246@s.whatsapp.net": 0,
+        "66826568920@s.whatsapp.net": 0,
+        "393500833447@s.whatsapp.net": 0,
+        "393534323551@s.whatsapp.net": 0,
+        "573215721964@s.whatsapp.net": 0,
+        "393513673426@s.whatsapp.net": 0,
+        "447882742392@s.whatsapp.net": 0
+      }
+    },
+    "120363310434399483@g.us": {
+      "isBanned": false,
+      "expired": 0,
+      "users": {
+        "393713648402@s.whatsapp.net": {
+          "messages": 1
+        }
+      },
+      "topUsers": {
+        "393713648402@s.whatsapp.net": 1
+      },
+      "topRich": {
+        "393713648402@s.whatsapp.net": 0
+      },
+      "topBlasphemy": {
+        "393713648402@s.whatsapp.net": 0
+      }
+    },
+    "120363412141882686@g.us": {
+      "isBanned": false,
+      "expired": 0,
+      "users": {
+        "393461289421@s.whatsapp.net": {
+          "messages": 1
+        },
+        "393317191666@s.whatsapp.net": {
+          "messages": 24
+        },
+        "639627308106@s.whatsapp.net": {
+          "messages": 40
+        },
+        "393279609465@s.whatsapp.net": {
+          "messages": 4
+        },
+        "393296625125@s.whatsapp.net": {
+          "messages": 24
+        },
+        "393276374289@s.whatsapp.net": {
+          "messages": 20
+        },
+        "393518425212@s.whatsapp.net": {
+          "messages": 3
+        },
+        "130829669949588@lid": {
+          "messages": 3
+        },
+        "393202321536@s.whatsapp.net": {
+          "messages": 3
+        },
+        "393393567922@s.whatsapp.net": {
+          "messages": 2
+        },
+        "393509497258@s.whatsapp.net": {
+          "messages": 1
+        },
+        "393520555327@s.whatsapp.net": {
+          "messages": 3
+        }
+      },
+      "topUsers": {
+        "393461289421@s.whatsapp.net": 1,
+        "393317191666@s.whatsapp.net": 24,
+        "639627308106@s.whatsapp.net": 40,
+        "393279609465@s.whatsapp.net": 4,
+        "393296625125@s.whatsapp.net": 24,
+        "393276374289@s.whatsapp.net": 20,
+        "393518425212@s.whatsapp.net": 3,
+        "130829669949588@lid": 3,
+        "393202321536@s.whatsapp.net": 3,
+        "393393567922@s.whatsapp.net": 2,
+        "393509497258@s.whatsapp.net": 1,
+        "393520555327@s.whatsapp.net": 3
+      },
+      "topRich": {
+        "393461289421@s.whatsapp.net": 0,
+        "393317191666@s.whatsapp.net": 0,
+        "639627308106@s.whatsapp.net": 0,
+        "393279609465@s.whatsapp.net": 0,
+        "393296625125@s.whatsapp.net": 0,
+        "393276374289@s.whatsapp.net": 0,
+        "393518425212@s.whatsapp.net": 0,
+        "130829669949588@lid": 0,
+        "393202321536@s.whatsapp.net": 0,
+        "393393567922@s.whatsapp.net": 0,
+        "393509497258@s.whatsapp.net": 0,
+        "393520555327@s.whatsapp.net": 0
+      },
+      "topBlasphemy": {
+        "393461289421@s.whatsapp.net": 0,
+        "393317191666@s.whatsapp.net": 0,
+        "639627308106@s.whatsapp.net": 0,
+        "393279609465@s.whatsapp.net": 0,
+        "393296625125@s.whatsapp.net": 0,
+        "393276374289@s.whatsapp.net": 0,
+        "393518425212@s.whatsapp.net": 0,
+        "130829669949588@lid": 0,
+        "393202321536@s.whatsapp.net": 0,
+        "393393567922@s.whatsapp.net": 0,
+        "393509497258@s.whatsapp.net": 0,
+        "393520555327@s.whatsapp.net": 0
+      }
+    },
+    "120363430444565356@g.us": {
+      "isBanned": false,
+      "expired": 0,
+      "users": {}
+    },
+    "120363400597026975@g.us": {
+      "isBanned": false,
+      "expired": 0,
+      "users": {
+        "393476763694@s.whatsapp.net": {
+          "messages": 1
+        }
+      },
+      "topUsers": {
+        "393476763694@s.whatsapp.net": 1
+      },
+      "topRich": {
+        "393476763694@s.whatsapp.net": 0
+      },
+      "topBlasphemy": {
+        "393476763694@s.whatsapp.net": 0
+      }
+    },
+    "393382783382@s.whatsapp.net": {
+      "isBanned": false,
+      "welcome": false,
+      "goodbye": false,
+      "ai": false,
+      "vocali": false,
+      "antiporno": false,
+      "antioneview": false,
+      "autolevelup": false,
+      "antivoip": false,
+      "rileva": false,
+      "modoadmin": false,
+      "antiLink": false,
+      "antiLink2": false,
+      "slowmode": false,
+      "reaction": false,
+      "antispam": false,
+      "expired": 0,
+      "users": {},
+      "topUsers": {},
+      "topRich": {},
+      "topBlasphemy": {}
+    },
+    "120363431328266139@g.us": {
+      "isBanned": false,
+      "welcome": false,
+      "goodbye": false,
+      "ai": false,
+      "vocali": false,
+      "antiporno": false,
+      "antioneview": false,
+      "autolevelup": false,
+      "antivoip": false,
+      "rileva": false,
+      "modoadmin": false,
+      "antiLink": false,
+      "antiLink2": false,
+      "slowmode": false,
+      "reaction": false,
+      "antispam": false,
+      "expired": 0,
+      "users": {
+        "393513673426@s.whatsapp.net": {
+          "messages": 48
+        },
+        "573215721964@s.whatsapp.net": {
+          "messages": 50
+        },
+        "639759767674@s.whatsapp.net": {
+          "messages": 1
+        }
+      },
+      "topUsers": {
+        "393513673426@s.whatsapp.net": 48,
+        "573215721964@s.whatsapp.net": 50,
+        "639759767674@s.whatsapp.net": 1
+      },
+      "topRich": {
+        "393513673426@s.whatsapp.net": 0,
+        "573215721964@s.whatsapp.net": 0,
+        "639759767674@s.whatsapp.net": 0
+      },
+      "topBlasphemy": {
+        "393513673426@s.whatsapp.net": 0,
+        "573215721964@s.whatsapp.net": 0,
+        "639759767674@s.whatsapp.net": 0
+      }
+    },
+    "22862127743098@lid": {
+      "isBanned": false,
+      "welcome": false,
+      "goodbye": false,
+      "ai": false,
+      "vocali": false,
+      "antiporno": false,
+      "antioneview": false,
+      "autolevelup": false,
+      "antivoip": false,
+      "rileva": false,
+      "modoadmin": false,
+      "antiLink": false,
+      "antiLink2": false,
+      "slowmode": false,
+      "reaction": false,
+      "antispam": false,
+      "expired": 0,
+      "users": {},
+      "topUsers": {},
+      "topRich": {},
+      "topBlasphemy": {}
+    },
+    "393296164028@s.whatsapp.net": {
+      "isBanned": false,
+      "welcome": false,
+      "goodbye": false,
+      "ai": false,
+      "vocali": false,
+      "antiporno": false,
+      "antioneview": false,
+      "autolevelup": false,
+      "antivoip": false,
+      "rileva": false,
+      "modoadmin": false,
+      "antiLink": false,
+      "antiLink2": false,
+      "slowmode": false,
+      "reaction": false,
+      "antispam": false,
+      "expired": 0,
+      "users": {},
+      "topUsers": {},
+      "topRich": {},
+      "topBlasphemy": {}
+    },
+    "status@broadcast": {
+      "isBanned": false,
+      "welcome": false,
+      "goodbye": false,
+      "ai": false,
+      "vocali": false,
+      "antiporno": false,
+      "antioneview": false,
+      "autolevelup": false,
+      "antivoip": false,
+      "rileva": false,
+      "modoadmin": false,
+      "antiLink": false,
+      "antiLink2": false,
+      "slowmode": false,
+      "reaction": false,
+      "antispam": false,
+      "expired": 0,
+      "users": {},
+      "topUsers": {},
+      "topRich": {},
+      "topBlasphemy": {}
+    },
+    "393513157556@s.whatsapp.net": {
+      "isBanned": false,
+      "welcome": false,
+      "goodbye": false,
+      "ai": false,
+      "vocali": false,
+      "antiporno": false,
+      "antioneview": false,
+      "autolevelup": false,
+      "antivoip": false,
+      "rileva": false,
+      "modoadmin": false,
+      "antiLink": false,
+      "antiLink2": false,
+      "slowmode": false,
+      "reaction": false,
+      "antispam": false,
+      "expired": 0,
+      "users": {},
+      "topUsers": {},
+      "topRich": {},
+      "topBlasphemy": {}
     }
   },
   "stats": {
     "menu-principale.js": {
-      "total": 8,
-      "success": 8,
-      "last": 1791648650032,
-      "lastSuccess": 1791648650032
+      "total": 34,
+      "success": 34,
+      "last": 1791707475335,
+      "lastSuccess": 1791707475335
     },
     "menu-admin.js": {
-      "total": 2,
-      "success": 2,
-      "last": 1791648518315,
-      "lastSuccess": 1791648518315
+      "total": 10,
+      "success": 10,
+      "last": 1791706906251,
+      "lastSuccess": 1791706906251
     },
     "menu-RPG.js": {
-      "total": 1,
-      "success": 1,
-      "last": 1791647953741,
-      "lastSuccess": 1791647953741
+      "total": 2,
+      "success": 2,
+      "last": 1791706797884,
+      "lastSuccess": 1791706797884
     },
     "menu-owner.js": {
-      "total": 1,
-      "success": 1,
-      "last": 1791648245924,
-      "lastSuccess": 1791648245924
+      "total": 8,
+      "success": 8,
+      "last": 1791706787698,
+      "lastSuccess": 1791706787698
     },
     "menu-funzioni.js": {
-      "total": 1,
-      "success": 1,
-      "last": 1791648252922,
-      "lastSuccess": 1791648252922
+      "total": 4,
+      "success": 4,
+      "last": 1791706965508,
+      "lastSuccess": 1791706965508
     },
     "fun-playlist.js": {
-      "total": 1,
-      "success": 1,
-      "last": 1791648334868,
-      "lastSuccess": 1791648334868
+      "total": 5,
+      "success": 5,
+      "last": 1791662198004,
+      "lastSuccess": 1791662198004
     },
     "assistenza.js": {
       "total": 2,
@@ -335,6 +2025,174 @@
       "success": 3,
       "last": 1791648656371,
       "lastSuccess": 1791648656371
+    },
+    "gp-hidetag.js": {
+      "total": 1,
+      "success": 1,
+      "last": 1791648755025,
+      "lastSuccess": 1791648755025
+    },
+    "ADMIN_admins.js": {
+      "total": 1,
+      "success": 0,
+      "last": 1791648764022,
+      "lastSuccess": 0
+    },
+    "menu-giochi.js": {
+      "total": 5,
+      "success": 5,
+      "last": 1791706806426,
+      "lastSuccess": 1791706806426
+    },
+    "afk.js": {
+      "total": 2,
+      "success": 2,
+      "last": 1791648874095,
+      "lastSuccess": 1791648874095
+    },
+    "ticket.js": {
+      "total": 1,
+      "success": 1,
+      "last": 1791648927425,
+      "lastSuccess": 1791648927425
+    },
+    "gp-promuovi.js": {
+      "total": 1,
+      "success": 1,
+      "last": 1791649256994,
+      "lastSuccess": 1791649256994
+    },
+    "info-ping.js": {
+      "total": 10,
+      "success": 10,
+      "last": 1791656286394,
+      "lastSuccess": 1791656286394
+    },
+    "fun_play.js": {
+      "total": 3,
+      "success": 3,
+      "last": 1791649424086,
+      "lastSuccess": 1791649424086
+    },
+    "fun-coda.js": {
+      "total": 3,
+      "success": 3,
+      "last": 1791649415766,
+      "lastSuccess": 1791649415766
+    },
+    "fun-testo_play.js": {
+      "total": 1,
+      "success": 1,
+      "last": 1791649443772,
+      "lastSuccess": 1791649443772
+    },
+    "info-speed.js": {
+      "total": 1,
+      "success": 1,
+      "last": 1791650151307,
+      "lastSuccess": 1791650151307
+    },
+    "fun-gay.js": {
+      "total": 1,
+      "success": 1,
+      "last": 1791652617669,
+      "lastSuccess": 1791652617669
+    },
+    "fun-figa.js": {
+      "total": 1,
+      "success": 1,
+      "last": 1791652644839,
+      "lastSuccess": 1791652644839
+    },
+    "owner-addowner.js": {
+      "total": 1,
+      "success": 1,
+      "last": 1791653080784,
+      "lastSuccess": 1791653080784
+    },
+    "fun-basket.js": {
+      "total": 4,
+      "success": 4,
+      "last": 1791653136404,
+      "lastSuccess": 1791653136404
+    },
+    "gc-controlloantilink.js": {
+      "total": 20,
+      "success": 20,
+      "last": 1791656375117,
+      "lastSuccess": 1791656375117
+    },
+    "gp-fissa-unpin.js": {
+      "total": 2,
+      "success": 2,
+      "last": 1791654269891,
+      "lastSuccess": 1791654269891
+    },
+    "trova-jid.js": {
+      "total": 1,
+      "success": 1,
+      "last": 1791654235932,
+      "lastSuccess": 1791654235932
+    },
+    "antilink.js": {
+      "total": 11,
+      "success": 11,
+      "last": 1791706875211,
+      "lastSuccess": 1791706875211
+    },
+    "Song.js": {
+      "total": 21,
+      "success": 21,
+      "last": 1791661889125,
+      "lastSuccess": 1791661889125
+    },
+    "music-pl.js": {
+      "total": 5,
+      "success": 5,
+      "last": 1791706473322,
+      "lastSuccess": 1791706473322
+    },
+    "music-song.js": {
+      "total": 4,
+      "success": 4,
+      "last": 1791665200043,
+      "lastSuccess": 1791665200043
+    },
+    "owner-kick.js": {
+      "total": 4,
+      "success": 4,
+      "last": 1791706632279,
+      "lastSuccess": 1791706632279
+    },
+    "obbligo o verita.js": {
+      "total": 1,
+      "success": 1,
+      "last": 1791706837895,
+      "lastSuccess": 1791706837895
+    },
+    "gp-welcome2.js": {
+      "total": 2,
+      "success": 2,
+      "last": 1791706942808,
+      "lastSuccess": 1791706942808
+    },
+    "info-id.js": {
+      "total": 1,
+      "success": 1,
+      "last": 1791706972806,
+      "lastSuccess": 1791706972806
+    },
+    "owner-mute.js": {
+      "total": 2,
+      "success": 2,
+      "last": 1791707005981,
+      "lastSuccess": 1791707005981
+    },
+    "gp-tag2.js": {
+      "total": 2,
+      "success": 2,
+      "last": 1791707661074,
+      "lastSuccess": 1791707661074
     }
   },
   "msgs": {},
@@ -347,16 +2205,35 @@
       "soloCreatore": false,
       "status": 0,
       "anticall": true
+    },
+    "393513673426@s.whatsapp.net": {
+      "autoread": false,
+      "jadibotmd": false,
+      "antiPrivate": true,
+      "soloCreatore": false,
+      "status": 0,
+      "anticall": true
     }
   },
   "statsgiornaliere": {
     "date": "10/10/2026",
     "chats": {
       "120363414807574256@g.us": {
-        "total": 18,
+        "total": 59,
         "users": {
-          "573215721964@s.whatsapp.net": 4,
-          "393513673426@s.whatsapp.net": 14
+          "573215721964@s.whatsapp.net": 25,
+          "393513673426@s.whatsapp.net": 31,
+          "639759767674@s.whatsapp.net": 3
+        }
+      },
+      "120363429804364027@g.us": {
+        "total": 27,
+        "users": {
+          "573215721964@s.whatsapp.net": 13,
+          "393477508870@s.whatsapp.net": 8,
+          "393711817822@s.whatsapp.net": 1,
+          "393516413217@s.whatsapp.net": 3,
+          "639759767674@s.whatsapp.net": 2
         }
       }
     }
@@ -459,7 +2336,379 @@
         "sender": "393513673426@s.whatsapp.net",
         "text": "👑 *PANNELLO ADMIN*\n\nCiao @12786855841877, sei un amministratore! ✅\n\n📋 *Comandi admin disponibili:*\n• `.warn @tag` — Richiama utente\n• `.mute @tag` — Muta utente\n• `.tag <testo>` — Tagga tutti\n• `.aperto` / `.chiuso` — Gestisci il gruppo\n• `.p @tag` / `.d @tag` — Promuovi/rimuovi admin\n• `.link` / `.qr` — Link e QR del gruppo\n• `.antilink` — Pannello antilink\n• `.antispam` — Pannello antispam\n• `.antivoip` — Scansiona stranieri\n• `.antibot` — Pannello antibot",
         "timestamp": 1791648657
+      },
+      {
+        "id": "2AAEDC18EB82D6E75EF8",
+        "sender": "573215721964@s.whatsapp.net",
+        "text": ".menu",
+        "timestamp": 1791648725
+      },
+      {
+        "id": "3EB0DB1CDB33447STARFALL295B594",
+        "sender": "393513673426@s.whatsapp.net",
+        "text": "⚡ *MENU PRINCIPALE DI ZENO ULTIMATE*",
+        "timestamp": 1791648725
+      },
+      {
+        "id": "3EB0EA6A89CE2FSTARFALL359CD03C",
+        "sender": "393513673426@s.whatsapp.net",
+        "text": "👑 *PANNELLO ADMIN*\n\nCiao @12786855841877, sei un amministratore! ✅\n\n📋 *Comandi admin disponibili:*\n• `.warn @tag` — Richiama utente\n• `.mute @tag` — Muta utente\n• `.tag <testo>` — Tagga tutti\n• `.aperto` / `.chiuso` — Gestisci il gruppo\n• `.p @tag` / `.d @tag` — Promuovi/rimuovi admin\n• `.link` / `.qr` — Link e QR del gruppo\n• `.antilink` — Pannello antilink\n• `.antispam` — Pannello antispam\n• `.antivoip` — Scansiona stranieri\n• `.antibot` — Pannello antibot",
+        "timestamp": 1791648743
+      },
+      {
+        "id": "2A43C697E9DD58A4126C",
+        "sender": "573215721964@s.whatsapp.net",
+        "text": ".tag negro",
+        "timestamp": 1791648754
+      },
+      {
+        "id": "3EB006E236STARFALL426A64F81557",
+        "sender": "393513673426@s.whatsapp.net",
+        "text": "negro",
+        "timestamp": 1791648755
+      },
+      {
+        "id": "2A5241C0E9850BF64328",
+        "sender": "573215721964@s.whatsapp.net",
+        "text": ".admins",
+        "timestamp": 1791648763
+      },
+      {
+        "id": "3EB0F613A1STARFALLBA0B391C73AC",
+        "sender": "393513673426@s.whatsapp.net",
+        "text": "╭━━━━〔 ✦ *ℹ️ FORSE INTENDEVI* ✦ 〕━━━━⬣\n┃ Comando *.admins* non trovato.\n┃ Forse intendevi *.admin* ?\n╰━━━━━━━━━━━━━━━━━━━⬣",
+        "timestamp": 1791648763
+      },
+      {
+        "id": "2AD9CA89CB3686ADF087",
+        "sender": "573215721964@s.whatsapp.net",
+        "text": ".msnu",
+        "timestamp": 1791648843
+      },
+      {
+        "id": "2A99CFFB1D7BC542A98E",
+        "sender": "573215721964@s.whatsapp.net",
+        "text": ".menu",
+        "timestamp": 1791648845
+      },
+      {
+        "id": "2A91B5C7E30980182B7F",
+        "sender": "573215721964@s.whatsapp.net",
+        "text": ".afk sono agy",
+        "timestamp": 1791648869
+      },
+      {
+        "id": "2A05781C56C02B283047",
+        "sender": "573215721964@s.whatsapp.net",
+        "text": "Bottone: .afk_scope group",
+        "timestamp": 1791648874
+      },
+      {
+        "id": "2A3B9939A881A3FC7946",
+        "sender": "573215721964@s.whatsapp.net",
+        "text": "hha",
+        "timestamp": 1791648883
+      },
+      {
+        "id": "2AC72E61F34CAF100DB3",
+        "sender": "573215721964@s.whatsapp.net",
+        "text": ".antibot",
+        "timestamp": 1791648890
+      },
+      {
+        "id": "2A0E78BC0BAC0676701A",
+        "sender": "573215721964@s.whatsapp.net",
+        "text": ".antibot",
+        "timestamp": 1791648895
+      },
+      {
+        "id": "2A346D8FBBE64897BD8E",
+        "sender": "573215721964@s.whatsapp.net",
+        "text": ".menu",
+        "timestamp": 1791648897
+      },
+      {
+        "id": "2ABA04E01BBF07DEE143",
+        "sender": "573215721964@s.whatsapp.net",
+        "text": ".ticket",
+        "timestamp": 1791648927
+      },
+      {
+        "id": "2A8ADA7427E8C25C7AF8",
+        "sender": "573215721964@s.whatsapp.net",
+        "text": ".menu",
+        "timestamp": 1791649245
+      },
+      {
+        "id": "2AB46CA580AF71D2481C",
+        "sender": "573215721964@s.whatsapp.net",
+        "text": ".d",
+        "timestamp": 1791649249
+      },
+      {
+        "id": "2A023DA1BBD98E75D635",
+        "sender": "573215721964@s.whatsapp.net",
+        "text": ".d",
+        "timestamp": 1791649254
+      },
+      {
+        "id": "2A69184C0830215A3192",
+        "sender": "573215721964@s.whatsapp.net",
+        "text": ".p",
+        "timestamp": 1791649257
+      },
+      {
+        "id": "2AB2FE480EBDCF594C82",
+        "sender": "573215721964@s.whatsapp.net",
+        "text": ".menu",
+        "timestamp": 1791649281
+      },
+      {
+        "id": "AC8194A66C2729D995762FC603FC4FA6",
+        "sender": "393513673426@s.whatsapp.net",
+        "text": ".ping",
+        "timestamp": 1791649357
+      },
+      {
+        "id": "ACD92218F92A85F1AC8E3B685B28290A",
+        "sender": "393513673426@s.whatsapp.net",
+        "text": ". play biscia 18k",
+        "timestamp": 1791649383
+      },
+      {
+        "id": "AC7D302D8ADA53E3E4CF1ED537FE1B7B",
+        "sender": "393513673426@s.whatsapp.net",
+        "text": "Template: .play_select 1",
+        "timestamp": 1791649394
+      },
+      {
+        "id": "ACA6DFFD9E325F798AC0BE7596C8BA9A",
+        "sender": "393513673426@s.whatsapp.net",
+        "text": "Bottone: .add_queue",
+        "timestamp": 1791649400
+      },
+      {
+        "id": "ACD571A4DCA825A6588FA1B8E372932A",
+        "sender": "393513673426@s.whatsapp.net",
+        "text": "Template: .show_queue",
+        "timestamp": 1791649403
+      },
+      {
+        "id": "AC9ECB01B6471BBA07C85133893EF55E",
+        "sender": "393513673426@s.whatsapp.net",
+        "text": "Template: .play_queue",
+        "timestamp": 1791649405
+      },
+      {
+        "id": "AC3C1F577DB78234B0E12548A91AB3F6",
+        "sender": "393513673426@s.whatsapp.net",
+        "text": "Bottone: .play_audio",
+        "timestamp": 1791649424
+      },
+      {
+        "id": "ACE4AA258D9371F668034F01CEEEC760",
+        "sender": "393513673426@s.whatsapp.net",
+        "text": "Template: .lyrics_yes",
+        "timestamp": 1791649440
+      },
+      {
+        "id": "2A578F0286ED2CE9EECB",
+        "sender": "573215721964@s.whatsapp.net",
+        "text": ".men",
+        "timestamp": 1791649661
+      },
+      {
+        "id": "2AEAF4759705A905DC39",
+        "sender": "573215721964@s.whatsapp.net",
+        "text": ".manu",
+        "timestamp": 1791649663
+      },
+      {
+        "id": "2A188685B2ADC0C33CA1",
+        "sender": "573215721964@s.whatsapp.net",
+        "text": ".menu",
+        "timestamp": 1791649694
+      },
+      {
+        "id": "2A74E7E19702087A3474",
+        "sender": "573215721964@s.whatsapp.net",
+        "text": "Messaggio di sistema",
+        "timestamp": 1791650388
+      },
+      {
+        "id": "2A6A56AB45AEFC4B6D84",
+        "sender": "573215721964@s.whatsapp.net",
+        "text": ".vv",
+        "timestamp": 1791651168
+      },
+      {
+        "id": "2AF7F2BDB8767A1A6029",
+        "sender": "573215721964@s.whatsapp.net",
+        "text": ".ping",
+        "timestamp": 1791651173
+      },
+      {
+        "id": "2A6C4476BE4305BC2322",
+        "sender": "573215721964@s.whatsapp.net",
+        "text": ".vv",
+        "timestamp": 1791651174
+      },
+      {
+        "id": "2AFA263E3B1496DBB2E4",
+        "sender": "573215721964@s.whatsapp.net",
+        "text": ".ping",
+        "timestamp": 1791651174
+      },
+      {
+        "id": "2AC6D018B2C01874A888",
+        "sender": "573215721964@s.whatsapp.net",
+        "text": ".vv",
+        "timestamp": 1791651188
+      },
+      {
+        "id": "AC6DD9EC271213BDA97AE04C8D4B40D1",
+        "sender": "393513673426@s.whatsapp.net",
+        "text": ".menu",
+        "timestamp": 1791651703
+      },
+      {
+        "id": "AC5636BE1C271D91EBA37B291D2DA3D0",
+        "sender": "393513673426@s.whatsapp.net",
+        "text": ".ping",
+        "timestamp": 1791652604
+      },
+      {
+        "id": "AC089B753C3A84180177108A8E3D6501",
+        "sender": "393513673426@s.whatsapp.net",
+        "text": ".menu",
+        "timestamp": 1791652607
+      },
+      {
+        "id": "AC7BD81295FA05AAA986D43C00DAB22C",
+        "sender": "393513673426@s.whatsapp.net",
+        "text": ". gay",
+        "timestamp": 1791652617
+      },
+      {
+        "id": "AC2EAD97D574FEDE8E7730F4A26859AC",
+        "sender": "393513673426@s.whatsapp.net",
+        "text": ".ping",
+        "timestamp": 1791652625
+      },
+      {
+        "id": "AC1C8FE2902B022E52E0B6B512CF8180",
+        "sender": "393513673426@s.whatsapp.net",
+        "text": ".figa",
+        "timestamp": 1791652644
+      },
+      {
+        "id": "2AC8FCD33239C792AF32",
+        "sender": "573215721964@s.whatsapp.net",
+        "text": ".antilink",
+        "timestamp": 1791653548
+      },
+      {
+        "id": "2AEBF60BB8A99CBE75ED",
+        "sender": "573215721964@s.whatsapp.net",
+        "text": ".antilink on",
+        "timestamp": 1791653553
+      },
+      {
+        "id": "2AC2C5F6D5DBDFDBDA30",
+        "sender": "573215721964@s.whatsapp.net",
+        "text": ".antilink on",
+        "timestamp": 1791653663
+      },
+      {
+        "id": "2A80CD80E40DD6106DAA",
+        "sender": "573215721964@s.whatsapp.net",
+        "text": ".antilink of",
+        "timestamp": 1791653669
+      },
+      {
+        "id": "2A57A9D61F21486D8B73",
+        "sender": "573215721964@s.whatsapp.net",
+        "text": ".antilink off",
+        "timestamp": 1791653676
+      },
+      {
+        "id": "AC5444245EE13658EBBC396E2F199209",
+        "sender": "639759767674@s.whatsapp.net",
+        "text": ".antilink off",
+        "timestamp": 1791654407
+      },
+      {
+        "id": "ACA175437DEDAAEF8E8D7B9DF5E9211F",
+        "sender": "639759767674@s.whatsapp.net",
+        "text": ".antilink on",
+        "timestamp": 1791654416
+      },
+      {
+        "id": "ACC28A6E63CCC5E7B46206EF73D6285B",
+        "sender": "639759767674@s.whatsapp.net",
+        "text": ".antilink off",
+        "timestamp": 1791654626
+      },
+      {
+        "id": "AC8BB5BA474BE28A010AF61AC6F7AF87",
+        "sender": "639759767674@s.whatsapp.net",
+        "text": ".antilink on",
+        "timestamp": 1791654633
+      },
+      {
+        "id": "AC4971514BA42C57DF3B3443DAD38AE9",
+        "sender": "639759767674@s.whatsapp.net",
+        "text": ".ping",
+        "timestamp": 1791655968
+      },
+      {
+        "id": "ACCE8AF0B7199679CC8C6A524E65698D",
+        "sender": "639759767674@s.whatsapp.net",
+        "text": ".antilink off",
+        "timestamp": 1791655972
+      },
+      {
+        "id": "ACE5C20381FBAD194833ABABC1543BA9",
+        "sender": "639759767674@s.whatsapp.net",
+        "text": ".antilink off",
+        "timestamp": 1791656374
+      }
+    ],
+    "120363429804364027@g.us": [
+      {
+        "id": "AC54167011F85D4F88510638EC7B12A9",
+        "sender": "393516413217@s.whatsapp.net",
+        "text": "sprechi più acqua dell'ai",
+        "timestamp": 1791654013
+      },
+      {
+        "id": "AC1EE8B9FAE29540DB7DC8ABCC4E4BD6",
+        "sender": "393516413217@s.whatsapp.net",
+        "text": ".pin",
+        "timestamp": 1791654021
+      },
+      {
+        "id": "AC921A3F5BB5DF5FB09727BB725412CA",
+        "sender": "393516413217@s.whatsapp.net",
+        "text": "Bottone: .pinfinal 86400 eyJpZCI6IjJBNDlEODBBMTQzNDk1OTQwN0JFIiwiZnJvbU1lIjpmYWxzZSwicmVtb3RlSmlkIjoiMTIwMzYzNDI5ODA0MzY0MDI3QGcudXMiLCJwYXJ0aWNpcGFudCI6IjU3MzIxNTcyMTk2NEBzLndoYXRzYXBwLm5ldCJ9",
+        "timestamp": 1791654269
+      },
+      {
+        "id": "AC8A6C0EC2FC88AE79A14395CA9CD1B1",
+        "sender": "639759767674@s.whatsapp.net",
+        "text": "l",
+        "timestamp": 1791654651
+      },
+      {
+        "id": "ACDBE4C93C6FD11B79BFC60F33E43C5E",
+        "sender": "639759767674@s.whatsapp.net",
+        "text": ".antilink off",
+        "timestamp": 1791654654
       }
     ]
-  }
+  },
+  "tickets": {},
+  "owners": [
+    "393477508870@s.whatsapp.net"
+  ]
 }

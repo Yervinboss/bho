@@ -97,13 +97,10 @@ global.resolveLidToJid = function resolveLidToJid(jid, conn = global.conn, parti
 };
 
 	
-global.zeno = ['393882471151',]
+global.zeno = ['573215721964',]
 global.owner = [
-  ['393294241699', 'Lucifero', true],
-  ['393892430108', 'Zeno', true],
-  ['66621409462', 'Matte', true],
-  ['393701330693', 'Blood', true],
-  ['393508619454', 'zenobot AntiNuke', true],
+  ['573215721964', 'Zeno', true],
+  ['393513673426', 'Luiz', true],
 ]
 
 
@@ -111,16 +108,13 @@ global.nomepack = 'zenobot'
 global.nomebot = '❖ ᴢᴇɴᴏʙᴏᴛ'
 global.wm = 'zenobot'
 global.autore = 'zeno'
-global.dev = 'lucifero'
+global.dev = 'zeno'
 global.testobot = `zenobot`
 global.versione = pkg.version
 global.errore = '⚠️ *Errore inatteso!* Usa il comando `.ticket` per avvisare gli owner.'
 
 
-global.repobot = 'https://github.com/Yervinboss/bho'
-global.canale = 'https://whatsapp.com/channel/0029VauhQviCsU9Ibrwlkb0h'
-global.gruppo = 'https://chat.whatsapp.com/L7Hz1iQpctTDfOoU4LARWL?mode=gi_t' 
-
+global.gruppo = 'https://chat.whatsapp.com/LD4KX7ZnXnX7ftBAjRYtAr'
 
 global.cheerio = cheerio
 global.fs = fs
